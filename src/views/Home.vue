@@ -13,33 +13,33 @@
           <div class="headinStuff">
             <h1 class="tridi">Asthriona</h1>
             <br />
-              <b-col cols="12" class="text-center">
-                <h3 class="void">
-                  {{ random[Math.round(Math.random() * random.length)] }}
-                </h3>
-              </b-col>
-              <h3 class="tridi2">
-                <a
-                  href="https://twitter.com/asthriona"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  ><b-icon icon="twitter" variant="dark"></b-icon
-                ></a>
-                ●
-                <a
-                  href="https://instagram.com/asthrionaa"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  ><b-icon icon="instagram" variant="dark"></b-icon
-                ></a>
-                ●
-                <a
-                  href="https://github.com/asthriona"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  ><b-icon icon="github" variant="dark"></b-icon
-                ></a>
+            <b-col cols="12" class="text-center">
+              <h3 class="void">
+                {{ random[Math.round(Math.random() * random.length)] }}
               </h3>
+            </b-col>
+            <h3 class="tridi2">
+              <a
+                href="https://twitter.com/asthriona"
+                target="_blank"
+                rel="noopener noreferrer"
+                ><b-icon icon="twitter" variant="dark"></b-icon
+              ></a>
+              ●
+              <a
+                href="https://instagram.com/asthrionaa"
+                target="_blank"
+                rel="noopener noreferrer"
+                ><b-icon icon="instagram" variant="dark"></b-icon
+              ></a>
+              ●
+              <a
+                href="https://github.com/asthriona"
+                target="_blank"
+                rel="noopener noreferrer"
+                ><b-icon icon="github" variant="dark"></b-icon
+              ></a>
+            </h3>
           </div>
         </b-row>
       </div>
@@ -319,7 +319,7 @@ export default {
     1px 22px 10px rgba(16, 16, 16, 0.2), 1px 25px 35px rgba(16, 16, 16, 0.2),
     1px 30px 60px rgba(16, 16, 16, 0.4);
 }
-.headinStuff{
+.headinStuff {
   width: 100%;
 }
 .void {

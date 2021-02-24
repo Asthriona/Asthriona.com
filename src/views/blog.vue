@@ -15,13 +15,15 @@
         <b-col cols="7" offset="1">
           <div class="error" v-if="errors">
             <h1>Waps! An error happened!</h1>
-            <hr>
+            <hr />
             <p>
-            Aparently our server made a mess! You can retry by refreshing the page.<br>
-            if after refreshing this message is still showing, it mean what should never happened happened... <br>
-            <strong>The Gateway is broken! D:</strong>
+              Aparently our server made a mess! You can retry by refreshing the
+              page.<br />
+              if after refreshing this message is still showing, it mean what
+              should never happened happened... <br />
+              <strong>The Gateway is broken! D:</strong>
             </p>
-            <pre>{{errors}}</pre>
+            <pre>{{ errors }}</pre>
           </div>
           <b-card
             v-for="posts in posts"
@@ -112,7 +114,7 @@ export default {
       .get("http://localhost:3000/api/ashblog/post")
       .then(response => (this.posts = response.data.data.articles))
       .catch(error => (this.errors = error));
-  },
+  }
 };
 </script>
 
@@ -129,7 +131,7 @@ article .card-img {
   object-fit: cover;
   height: 10rem;
 }
-pre{
-  color: aliceblue;  
+pre {
+  color: aliceblue;
 }
 </style>

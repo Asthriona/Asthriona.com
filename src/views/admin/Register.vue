@@ -12,7 +12,7 @@
               <p>Aye! An error successfuly happened! <br /></p>
               <hr />
               <p class="mb-0">
-                {{error}}
+                {{ error }}
               </p>
             </b-alert>
           </div>
@@ -71,7 +71,7 @@ import TheFooter from "../../components/TheFooter";
 export default {
   data() {
     return {
-      error: '',
+      error: "",
       form: {
         username: "",
         email: "",
@@ -82,13 +82,14 @@ export default {
   methods: {
     onSubmit(event) {
       event.preventDefault();
-      axios
-        .post("http://localhost:3000/api/auth/register", this.form)
-        .then(response => {
-          console.log(response)
-        }, err =>{
-          this.error = err.response.data
-        })
+      axios.post("http://localhost:3000/api/auth/register", this.form).then(
+        response => {
+          console.log(response);
+        },
+        err => {
+          this.error = err.response.data;
+        }
+      );
     },
     onReset(event) {
       event.preventDefault();

@@ -1,9 +1,9 @@
 <template>
-<div class="kldfjsl"></div>
+  <div class="kldfjsl"></div>
 </template>
 
 <script>
 export default {
-    name: "loginComp"
-}
+  name: "loginComp"
+};
 </script>

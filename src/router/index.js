@@ -3,10 +3,10 @@ import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
 import Blog from "../views/blog.vue";
 import PostShow from "../views/_postShow.vue";
-import Login from "../views/admin/login.vue"
-import Admin from "../views/admin/adminHome.vue"
-import Register from "../views/admin/Register.vue"
-import NewPost from "../views/admin/newPost.vue"
+import Login from "../views/admin/login.vue";
+import Admin from "../views/admin/adminHome.vue";
+import Register from "../views/admin/Register.vue";
+import NewPost from "../views/admin/newPost.vue";
 
 Vue.use(VueRouter);
 

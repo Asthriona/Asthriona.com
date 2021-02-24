@@ -62,7 +62,7 @@
                   {{form.markdown}}
               </p>
             </b-card> -->
-            <h4 v-if="form.img" class="mt-4"> Image Preview</h4>
+            <h4 v-if="form.img" class="mt-4">Image Preview</h4>
             <b-img :src="form.img" v-if="form.img" class="mt-4"></b-img>
           </b-col>
         </b-row>
@@ -119,16 +119,17 @@ export default {
   methods: {
     async onSubmit(event) {
       event.preventDefault();
-      await axios.post('http://localhost:3000/api/ashblog/post/new', this.form)
-      .then(this.$router.push('/admin'))
+      await axios
+        .post("http://localhost:3000/api/ashblog/post/new", this.form)
+        .then(this.$router.push("/admin"));
     },
     onReset(event) {
       event.preventDefault();
       // Reset our form values
-      this.form.title = "",
-      this.form.description = "",
-      this.form.markdown = "",
-      this.form.img = ""
+      (this.form.title = ""),
+        (this.form.description = ""),
+        (this.form.markdown = ""),
+        (this.form.img = "");
     }
   }
 };

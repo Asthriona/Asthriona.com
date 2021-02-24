@@ -74,10 +74,10 @@ export default {
         res => {
           if (res.status == 200) {
             localStorage.setItem("token", res.data);
-            this.error = "Logged In!"
+            this.error = "Logged In!";
             this.form.username = "";
             this.form.password = "";
-            this.$router.push('/admin')
+            this.$router.push("/admin");
           }
         },
         err => {
