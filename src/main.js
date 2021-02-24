@@ -13,6 +13,7 @@ Vue.config.productionTip = false;
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap-vue/dist/bootstrap-vue.css";
 import './registerServiceWorker'
+Vue.use(require('vue-moment'));
 Vue.use(BootstrapVue);
 Vue.use(IconsPlugin);
 Vue.component('font-awesome-icon', FontAwesomeIcon)
