@@ -88,23 +88,20 @@
         </b-col>
       </b-row>
     </b-container>
-    <TheFooter />
   </div>
 </template>
 
 <script>
 import axios from "axios";
 import TheHeader from "../components/TheHeader";
-import TheFooter from "../components/TheFooter";
 export default {
   name: "Blog",
   components: {
-    TheHeader,
-    TheFooter
+    TheHeader
   },
   data() {
     return {
-      posts: null,
+      posts: "",
       errors: ""
     };
   },
