@@ -7,6 +7,7 @@ import Login from "../views/admin/login.vue";
 import Admin from "../views/admin/adminHome.vue";
 import Register from "../views/admin/Register.vue";
 import NewPost from "../views/admin/newPost.vue";
+import EditPost from "../views/admin/EditPost.vue";
 
 Vue.use(VueRouter);
 
@@ -45,6 +46,11 @@ const routes = [
     path: "/admin/newPost",
     name: "NewPost",
     component: NewPost
+  },
+  {
+    path: "/admin/editPost/:slug",
+    name: "EditPost",
+    component: EditPost
   },
   {
     path: "/about",

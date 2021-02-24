@@ -40,7 +40,12 @@
           >
             <p>{{ posts.description }}</p>
             <router-link :to="'/blog/' + posts.slug">Read</router-link> |
-            <b-button variant="warning" @click="hide">Edit</b-button> |
+            <router-link :to="'/admin/editPost/' + posts.slug"
+              ><b-button variant="warning" @click="hide"
+                >Edit</b-button
+              ></router-link
+            >
+            |
             <b-button variant="danger" @click="remove(posts)">Delete</b-button>
             |
             <b-button variant="secondary" @click="hide">Hide</b-button>
