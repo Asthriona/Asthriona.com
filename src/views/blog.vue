@@ -29,13 +29,18 @@
             v-for="posts in posts"
             :key="posts"
             bg-variant="#212226"
-            :title="posts.title"
             :img-src="posts.img"
             tag="article"
             style="max-width: 100%;"
             class="mt-4 mb-4"
             img-height="200"
           >
+            <router-link :to="'/blog/' + posts.slug"
+              ><h1>{{ posts.title }}</h1></router-link
+            >
+            <small>
+              {{ posts.createdAt | moment("MMMM Do YYYY, h:mm a") }}
+            </small>
             <p>{{ posts.description }}</p>
             <router-link :to="'/blog/' + posts.slug">Read More</router-link>
           </b-card>
@@ -116,6 +121,13 @@ export default {
 </script>
 
 <style scoped>
+a h1 {
+  color: aliceblue;
+}
+a:hover h1 {
+  color: aliceblue;
+  text-decoration: none;
+}
 .card {
   background-color: #1b1b1b;
   color: aliceblue;

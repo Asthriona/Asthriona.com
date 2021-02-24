@@ -9,7 +9,7 @@
       <b-row>
         <b-col cols="12">
           <h1 class="mt-4">{{ post.title }}</h1>
-          <small> {{ post.createdAt }} </small>
+          <small> {{ post.createdAt | moment("MMMM Do YYYY, h:mm a") }} </small>
           <hr />
           <div class="content" v-html="post.sanitizedHtml"></div>
         </b-col>
