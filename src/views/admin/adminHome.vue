@@ -1,8 +1,7 @@
 <template>
   <div>
     <TheHeader />
-    <h1>ADMIN HOME</h1>
-    <h2>
+    <h2 class="m-4">
       Sup {{ username }}
       <b-icon v-if="username == 'Asthriona'" icon="patch-check"></b-icon
       ><b-icon
@@ -11,7 +10,8 @@
       ></b-icon>
       ?
     </h2>
-    <b-button variant="danger" @click="logout">logout</b-button>
+    <b-button variant="danger" class="m-4" @click="logout">logout</b-button>
+    <hr />
     <b-container>
       <b-row>
         <b-col cols="8" class="text-center">
@@ -23,9 +23,11 @@
     </b-container>
     <b-container v-if="isAdmin == true">
       <b-row>
-        <b-col cols="8">
+        <b-col lg="8" sm="12">
           <router-link to="/admin/newpost"
-            ><b-button variant="primary">New Post</b-button></router-link
+            ><b-button class="mt-4" variant="primary"
+              >New Post</b-button
+            ></router-link
           >
           <b-card
             v-for="posts in posts"

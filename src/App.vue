@@ -21,6 +21,7 @@ export default {
 <style>
 html body {
   background-color: #212226;
+  overflow-x: hidden;
 }
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;

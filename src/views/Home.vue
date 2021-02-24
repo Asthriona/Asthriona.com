@@ -49,8 +49,8 @@
       <b-row>
         <div class="content text-left">
           <div class="who">
-            <b-col cols="12" offset="1"><h1>Who am I?</h1></b-col>
-            <b-col cols="12" offset="2">
+            <b-col cols="12" offset-lg="1"><h1>Who am I?</h1></b-col>
+            <b-col cols="12" offset-lg="2">
               <p>
                 I'm mostly working on personal Project Like Yukiko, Freyja,
                 Watcher, Loky, Asthriona networks. <br />
@@ -67,10 +67,10 @@
             </b-col>
           </div>
           <div class="who">
-            <b-col cols="12" offset="1">
+            <b-col cols="12" offset-lg="1">
               <h1>What I do everyday</h1>
             </b-col>
-            <b-col cols="12" offset="2">
+            <b-col cols="12" offset-lg="2">
               <p>
                 I'm mostly working on personal Project Like Yukiko, Freyja,
                 Watcher, Loky, Asthriona networks. <br />
@@ -87,7 +87,7 @@
             </b-col>
           </div>
           <div class="who">
-            <b-col cols="12" offset="1">
+            <b-col cols="12" offset-lg="1">
               <h1>Works</h1>
             </b-col>
             <b-col cols="12">
@@ -184,10 +184,10 @@
             </b-col>
           </div>
           <div class="who">
-            <b-col cols="12" offset="1">
+            <b-col cols="12" offset-lg="1">
               <h1>World of Warcraft</h1>
             </b-col>
-            <b-col cols="12" offset="2">
+            <b-col cols="12" offset-lg="2">
               <p>
                 This game became a big part of my life, I play since end of
                 Burning Crusade.<br />
@@ -201,10 +201,10 @@
             </b-col>
           </div>
           <div class="who">
-            <b-col cols="12" offset="1">
+            <b-col cols="12" offset-lg="1">
               <h1>Contact</h1>
             </b-col>
-            <b-col cols="12" offset="2">
+            <b-col cols="12" offset-lg="2">
               <ul>
                 <li>
                   Twitter:

@@ -12,7 +12,7 @@
     </b-container>
     <b-container fluid>
       <b-row>
-        <b-col cols="7" offset="1">
+        <b-col lg="7" sm="12" offset-lg="1">
           <div class="error" v-if="errors">
             <h1>Waps! An error happened!</h1>
             <hr />
@@ -45,7 +45,7 @@
             <router-link :to="'/blog/' + posts.slug">Read More</router-link>
           </b-card>
         </b-col>
-        <b-col cols="3" class="mt-4">
+        <b-col lg="3" sm="12" class="mt-4">
           <b-card
             bg-variant="#212226"
             title="Asthriona Ng"
