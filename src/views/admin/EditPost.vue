@@ -50,14 +50,14 @@
                 ></b-form-input>
               </b-form-group>
             </b-form-group>
-                                <b-form-checkbox
-                    id="checkbox-1"
-                    v-model="form.hidden"
-                    name="checkbox-1"
-                    unchecked-value="false"
-                  >
-                    Hide the post
-                  </b-form-checkbox>
+            <b-form-checkbox
+              id="checkbox-1"
+              v-model="form.hidden"
+              name="checkbox-1"
+              unchecked-value="false"
+            >
+              Hide the post
+            </b-form-checkbox>
             <b-button type="submit" variant="primary">Submit</b-button>
             <b-button type="reset" variant="danger">Reset</b-button>
           </b-form>
