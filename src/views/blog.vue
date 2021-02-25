@@ -113,7 +113,7 @@ export default {
   mounted() {
     document.title = "Asthriona - Blog";
     axios
-      .get("http://localhost:3000/api/ashblog/post")
+      .get("https://gateway.asthriona.com/api/ashblog/post")
       .then(response => (this.posts = response.data.data.articles))
       .catch(error => (this.errors = error));
   }

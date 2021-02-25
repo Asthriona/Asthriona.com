@@ -82,7 +82,7 @@ export default {
   methods: {
     onSubmit(event) {
       event.preventDefault();
-      axios.post("http://localhost:3000/api/auth/register", this.form).then(
+      axios.post("https://gateway.asthriona.com/api/auth/register", this.form).then(
         response => {
           console.log(response);
         },

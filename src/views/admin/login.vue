@@ -70,7 +70,7 @@ export default {
   methods: {
     onSubmit(event) {
       event.preventDefault();
-      axios.post("http://localhost:3000/api/auth/login", this.form).then(
+      axios.post("https://gateway.asthriona.com/api/auth/login", this.form).then(
         res => {
           if (res.status == 200) {
             localStorage.setItem("token", res.data);

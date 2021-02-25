@@ -89,7 +89,7 @@ export default {
   },
   async mounted() {
     axios
-      .get("http://localhost:3000/api/auth/user", {
+      .get("https://gateway.asthriona.com/api/auth/user", {
         headers: { Authorization: "Bearer " + localStorage.getItem("token") }
       })
       .then(res => {
@@ -97,7 +97,7 @@ export default {
         this.isAdmin = res.data.isAdmin;
       });
     await axios
-      .get(`http://localhost:3000/api/ashblog/post/${this.$route.params.slug}`)
+      .get(`https://gateway.asthriona.com/api/ashblog/post/${this.$route.params.slug}`)
       .then(res => {
         const article = res.data.data.article;
         console.log(article);
@@ -117,7 +117,7 @@ export default {
       event.preventDefault();
       await axios
         .post(
-          "http://localhost:3000/api/ashblog/post/edit/" + this.postId,
+          "https://gateway.asthriona.com/api/ashblog/post/edit/" + this.postId,
           this.form
         )
         .then(res => {

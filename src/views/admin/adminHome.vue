@@ -121,7 +121,7 @@ export default {
     },
     remove(posts) {
       axios
-        .post("http://localhost:3000/api/ashblog/", { slug: posts.slug })
+        .post("https://gateway.asthriona.com/api/ashblog/", { slug: posts.slug })
         .then(res => {
           console.log(res);
           this.message = "Post deleted!";
@@ -130,7 +130,7 @@ export default {
         });
     },
     postUpdates() {
-      axios.get("http://localhost:3000/api/ashblog/post/admin").then(res => {
+      axios.get("https://gateway.asthriona.com/api/ashblog/post/admin").then(res => {
         this.posts = res.data.data.articles;
       });
     },
@@ -142,7 +142,7 @@ export default {
   mounted() {
     document.title = "Asthriona - Admin";
     axios
-      .get("http://localhost:3000/api/auth/user", {
+      .get("https://gateway.asthriona.com/api/auth/user", {
         headers: { Authorization: "Bearer " + localStorage.getItem("token") }
       })
       .then(res => {
@@ -151,7 +151,7 @@ export default {
         this.isAdmin = res.data.isAdmin;
       });
     axios
-      .get("http://localhost:3000/api/ashblog/post/admin")
+      .get("https://gateway.asthriona.com/api/ashblog/post/admin")
       .then(response => (this.posts = response.data.data.articles))
       .catch(error => (this.errors = error));
   }

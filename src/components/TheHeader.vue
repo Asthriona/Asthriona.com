@@ -50,7 +50,7 @@ export default {
   },
   mounted() {
     axios
-      .get("http://localhost:3000/api/auth/user", {
+      .get("https://gateway.asthriona.com/api/auth/user", {
         headers: { Authorization: "Bearer " + localStorage.getItem("token") }
       })
       .then(res => {
