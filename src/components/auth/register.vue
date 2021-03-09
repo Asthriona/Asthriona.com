@@ -1,7 +1,5 @@
-/* eslint-disable */
 <template>
   <div>
-    <TheHeader />
     <b-container>
       <b-row>
         <b-col cols="3"></b-col>
@@ -17,9 +15,6 @@
             </b-alert>
           </div>
           <b-form @submit="onSubmit" @reset="onReset">
-            <h1>
-              <router-link to="/admin/login">LOGIN</router-link> | Register
-            </h1>
             <label for="text-username">Username</label>
             <b-form-input
               id="username"
@@ -58,16 +53,11 @@
         <b-col cols="3"></b-col>
       </b-row>
     </b-container>
-
-    <TheFooter />
   </div>
 </template>
 
 <script>
 import axios from "axios";
-//import loginComp from "../../components/auth/login"
-import TheHeader from "../../components/TheHeader";
-import TheFooter from "../../components/TheFooter";
 export default {
   data() {
     return {
@@ -82,7 +72,7 @@ export default {
   methods: {
     onSubmit(event) {
       event.preventDefault();
-      axios.post("https://gateway.asthriona.com/api/auth/register", this.form).then(
+      axios.post("http://localhost:3000/api/auth/register", this.form).then(
         response => {
           console.log(response);
         },
@@ -101,11 +91,6 @@ export default {
         this.show = true;
       });
     }
-  },
-  components: {
-    TheHeader,
-    //loginComp,
-    TheFooter
   },
   mounted() {}
 };
