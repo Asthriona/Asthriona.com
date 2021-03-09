@@ -5,7 +5,6 @@ import Blog from "../views/blog.vue";
 import PostShow from "../views/_postShow.vue";
 import Login from "../views/admin/login.vue";
 import Admin from "../views/admin/adminHome.vue";
-import Register from "../views/admin/Register.vue";
 import NewPost from "../views/admin/newPost.vue";
 import EditPost from "../views/admin/EditPost.vue";
 
@@ -36,11 +35,6 @@ const routes = [
     path: "/admin/login",
     name: "Login",
     component: Login
-  },
-  {
-    path: "/admin/Register",
-    name: "Register",
-    component: Register
   },
   {
     path: "/admin/newPost",
