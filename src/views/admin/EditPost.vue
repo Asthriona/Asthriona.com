@@ -97,7 +97,9 @@ export default {
         this.isAdmin = res.data.isAdmin;
       });
     await axios
-      .get(`https://gateway.asthriona.com/api/ashblog/post/${this.$route.params.slug}`)
+      .get(
+        `https://gateway.asthriona.com/api/ashblog/post/${this.$route.params.slug}`
+      )
       .then(res => {
         const article = res.data.data.article;
         console.log(article);

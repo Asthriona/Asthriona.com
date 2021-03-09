@@ -121,7 +121,9 @@ export default {
     },
     remove(posts) {
       axios
-        .post("https://gateway.asthriona.com/api/ashblog/", { slug: posts.slug })
+        .post("https://gateway.asthriona.com/api/ashblog/", {
+          slug: posts.slug
+        })
         .then(res => {
           console.log(res);
           this.message = "Post deleted!";
@@ -130,9 +132,11 @@ export default {
         });
     },
     postUpdates() {
-      axios.get("https://gateway.asthriona.com/api/ashblog/post/admin").then(res => {
-        this.posts = res.data.data.articles;
-      });
+      axios
+        .get("https://gateway.asthriona.com/api/ashblog/post/admin")
+        .then(res => {
+          this.posts = res.data.data.articles;
+        });
     },
     hide() {
       this.message = "Not implemented yet";
