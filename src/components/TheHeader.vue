@@ -34,6 +34,12 @@
         </nav>
       </div>
     </div>
+    <div class="LoginAlert text-center" v-if="error">
+      <p>
+        It seems like something went wrong with your user. Please Logout and
+        relog in to fix the issue.
+      </p>
+    </div>
   </div>
 </template>
 
@@ -45,19 +51,23 @@ export default {
     return {
       username: "",
       email: "",
-      isAdmin: ""
+      isAdmin: "",
+      error: ""
     };
   },
   mounted() {
+    if (!localStorage.getItem("token")) return;
     axios
-      .get("https://gateway.asthriona.com/api/auth/user", {
+      .get("http://gateway.asthriona.com/api/auth/user", {
         headers: { Authorization: "Bearer " + localStorage.getItem("token") }
       })
       .then(res => {
         this.username = res.data.username;
         this.email = res.data.email;
         this.isAdmin = res.data.isAdmin;
-        console.log(res.data.isAdmin);
+      })
+      .catch(err => {
+        this.error = err;
       });
   }
 };
@@ -128,5 +138,9 @@ li {
 
 #nav a.router-link-exact-active {
   color: #42b983 !important;
+}
+.LoginAlert {
+  background-color: red;
+  height: 25px;
 }
 </style>
