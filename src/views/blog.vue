@@ -49,7 +49,7 @@
           <b-card
             bg-variant="#212226"
             title="Asthriona Ng"
-            img-src="https://asthriona.s3.fr-par.scw.cloud/ShareX/2021/01/b39918a26754f2ec2c66577b1c84edbb.png"
+            img-src="https://asthriona.s3.fr-par.scw.cloud/ShareX/2021/03/VALORANT-Win64-Shipping_050321-052513PM.png"
             tag="side"
             style="max-width: 100%;"
             class="mx-2 ml-4 mb-4 text-center"
