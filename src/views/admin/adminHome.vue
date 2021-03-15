@@ -10,6 +10,9 @@
       ></b-icon>
       ?
     </h2>
+    <div class="userAdminLink" v-if="isAdmin == true">
+      <router-link to="/admin/userprofile">User profile</router-link>
+    </div>
     <b-button variant="danger" class="m-4" @click="logout">logout</b-button>
     <hr />
     <b-container>

@@ -49,7 +49,7 @@
           <b-card
             bg-variant="#212226"
             title="Asthriona Ng"
-            img-src="https://asthriona.s3.fr-par.scw.cloud/ShareX/2021/03/VALORANT-Win64-Shipping_050321-052513PM.png"
+            :img-src="avatar"
             tag="side"
             style="max-width: 100%;"
             class="mx-2 ml-4 mb-4 text-center"
@@ -107,15 +107,22 @@ export default {
   data() {
     return {
       posts: "",
-      errors: ""
+      errors: "",
+      avatar: ""
     };
   },
-  mounted() {
+  
+  async beforeMount() {
     document.title = "Asthriona - Blog";
-    axios
+    await axios
       .get(process.env.VUE_APP_URI+"/ashblog/post")
       .then(response => (this.posts = response.data.data.articles))
       .catch(error => (this.errors = error));
+      await axios.get(`${process.env.VUE_APP_URI}/user/getuser?username=Asthriona`)
+      .then(user =>{
+        console.log(user)
+        this.avatar = user.data.avatar
+      })
   }
 };
 </script>
