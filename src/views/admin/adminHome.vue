@@ -121,7 +121,7 @@ export default {
     },
     remove(posts) {
       axios
-        .post("https://gateway.asthriona.com/api/ashblog/", {
+        .post(process.env.VUE_APP_URI+"/ashblog/", {
           slug: posts.slug
         })
         .then(res => {
@@ -133,7 +133,7 @@ export default {
     },
     postUpdates() {
       axios
-        .get("https://gateway.asthriona.com/api/ashblog/post/admin")
+        .get(process.env.VUE_APP_URI+"/ashblog/post/admin")
         .then(res => {
           this.posts = res.data.data.articles;
         });
@@ -146,7 +146,7 @@ export default {
   mounted() {
     document.title = "Asthriona - Admin";
     axios
-      .get("https://gateway.asthriona.com/api/auth/user", {
+      .get(process.env.VUE_APP_URI+"/auth/user", {
         headers: { Authorization: "Bearer " + localStorage.getItem("token") }
       })
       .then(res => {
@@ -155,7 +155,7 @@ export default {
         this.isAdmin = res.data.isAdmin;
       });
     axios
-      .get("https://gateway.asthriona.com/api/ashblog/post/admin")
+      .get(process.env.VUE_APP_URI+"/ashblog/post/admin")
       .then(response => (this.posts = response.data.data.articles))
       .catch(error => (this.errors = error));
   }

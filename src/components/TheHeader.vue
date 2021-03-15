@@ -58,7 +58,7 @@ export default {
   mounted() {
     if (!localStorage.getItem("token")) return;
     axios
-      .get("https://gateway.asthriona.com/api/auth/user", {
+      .get(process.env.VUE_APP_URI+"/auth/user", {
         headers: { Authorization: "Bearer " + localStorage.getItem("token") }
       })
       .then(res => {

@@ -72,7 +72,7 @@ export default {
   methods: {
     onSubmit(event) {
       event.preventDefault();
-      axios.post("https://gateway.asthriona.com/api/auth/register", this.form).then(
+      axios.post(process.env.VUE_APP_URI+"/auth/register", this.form).then(
         response => {
           console.log(response);
         },

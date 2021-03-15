@@ -89,7 +89,7 @@ export default {
   },
   async mounted() {
     axios
-      .get("https://gateway.asthriona.com/api/auth/user", {
+      .get(process.env.VUE_APP_URI+"/auth/user", {
         headers: { Authorization: "Bearer " + localStorage.getItem("token") }
       })
       .then(res => {
@@ -98,7 +98,7 @@ export default {
       });
     await axios
       .get(
-        `https://gateway.asthriona.com/api/ashblog/post/${this.$route.params.slug}`
+        `${process.env.VUE_APP_URI}/ashblog/post/${this.$route.params.slug}`
       )
       .then(res => {
         const article = res.data.data.article;
@@ -119,7 +119,7 @@ export default {
       event.preventDefault();
       await axios
         .post(
-          "https://gateway.asthriona.com/api/ashblog/post/edit/" + this.postId,
+          process.env.VUE_APP_URI+"/ashblog/post/edit/" + this.postId,
           this.form
         )
         .then(res => {

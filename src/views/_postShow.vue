@@ -34,7 +34,7 @@ export default {
     document.title = "Asthriona - Blog";
     axios
       .get(
-        `https://gateway.asthriona.com/api/ashblog/post/${this.$route.params.slug}`,
+        `${process.env.VUE_APP_URI}/ashblog/post/${this.$route.params.slug}`,
         { withCredentials: true }
       )
       .then(response =>

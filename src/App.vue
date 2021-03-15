@@ -1,6 +1,5 @@
 <template>
   <div id="app">
-    <font-awesome-icon icon="7B633911-F123-4191-B64D-63379A562306" />
     <Nishikino />
     <router-view />
     <TheFooter />

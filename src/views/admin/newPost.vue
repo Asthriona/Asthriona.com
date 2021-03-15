@@ -119,7 +119,7 @@ export default {
   mounted() {
     document.title = "Asthriona - New Post";
     axios
-      .get("https://gateway.asthriona.com/api/auth/user", {
+      .get(process.env.VUE_APP_URI+"/auth/user", {
         headers: { Authorization: "Bearer " + localStorage.getItem("token") }
       })
       .then(res => {
@@ -131,7 +131,7 @@ export default {
     async onSubmit(event) {
       event.preventDefault();
       await axios
-        .post("https://gateway.asthriona.com/api/ashblog/post/new", this.form)
+        .post(process.env.VUE_APP_URI+"/ashblog/post/new", this.form)
         .then(this.$router.push("/admin"));
     },
     onReset(event) {
