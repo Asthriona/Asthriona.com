@@ -89,7 +89,7 @@ export default {
   },
   async mounted() {
     axios
-      .get(process.env.VUE_APP_URI+"/auth/user", {
+      .get(process.env.VUE_APP_URI + "/auth/user", {
         headers: { Authorization: "Bearer " + localStorage.getItem("token") }
       })
       .then(res => {
@@ -97,9 +97,7 @@ export default {
         this.isAdmin = res.data.isAdmin;
       });
     await axios
-      .get(
-        `${process.env.VUE_APP_URI}/ashblog/post/${this.$route.params.slug}`
-      )
+      .get(`${process.env.VUE_APP_URI}/ashblog/post/${this.$route.params.slug}`)
       .then(res => {
         const article = res.data.data.article;
         console.log(article);
@@ -119,7 +117,7 @@ export default {
       event.preventDefault();
       await axios
         .post(
-          process.env.VUE_APP_URI+"/ashblog/post/edit/" + this.postId,
+          process.env.VUE_APP_URI + "/ashblog/post/edit/" + this.postId,
           this.form
         )
         .then(res => {

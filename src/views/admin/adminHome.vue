@@ -124,7 +124,7 @@ export default {
     },
     remove(posts) {
       axios
-        .post(process.env.VUE_APP_URI+"/ashblog/", {
+        .post(process.env.VUE_APP_URI + "/ashblog/", {
           slug: posts.slug
         })
         .then(res => {
@@ -135,11 +135,9 @@ export default {
         });
     },
     postUpdates() {
-      axios
-        .get(process.env.VUE_APP_URI+"/ashblog/post/admin")
-        .then(res => {
-          this.posts = res.data.data.articles;
-        });
+      axios.get(process.env.VUE_APP_URI + "/ashblog/post/admin").then(res => {
+        this.posts = res.data.data.articles;
+      });
     },
     hide() {
       this.message = "Not implemented yet";
@@ -149,7 +147,7 @@ export default {
   mounted() {
     document.title = "Asthriona - Admin";
     axios
-      .get(process.env.VUE_APP_URI+"/auth/user", {
+      .get(process.env.VUE_APP_URI + "/auth/user", {
         headers: { Authorization: "Bearer " + localStorage.getItem("token") }
       })
       .then(res => {
@@ -158,7 +156,7 @@ export default {
         this.isAdmin = res.data.isAdmin;
       });
     axios
-      .get(process.env.VUE_APP_URI+"/ashblog/post/admin")
+      .get(process.env.VUE_APP_URI + "/ashblog/post/admin")
       .then(response => (this.posts = response.data.data.articles))
       .catch(error => (this.errors = error));
   }

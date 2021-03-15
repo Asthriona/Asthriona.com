@@ -1,9 +1,9 @@
 <template>
   <div>
-      <TheHeader />
+    <TheHeader />
     <b-container>
       <b-row>
-          <h1 v-if="message">Info: {{message}}</h1>
+        <h1 v-if="message">Info: {{ message }}</h1>
         <b-col cols="12" class="text-center">
           <h1>USER PROFILE</h1>
         </b-col>
@@ -37,8 +37,8 @@ import TheHeader from "../../components/TheHeader";
 import axios from "axios";
 export default {
   name: "UserProfile",
-  components:{
-      TheHeader
+  components: {
+    TheHeader
   },
   data() {
     return {
@@ -54,23 +54,25 @@ export default {
         headers: { Authorization: "Bearer " + localStorage.getItem("token") }
       })
       .then(data => {
-        this.username = data.data.username
+        this.username = data.data.username;
       });
-      await axios.get(`${process.env.VUE_APP_URI}/user/getuser?username=${this.username}`)
-      .then(user =>{
-          this.avatar = user.data.avatar
-      })
+    await axios
+      .get(`${process.env.VUE_APP_URI}/user/getuser?username=${this.username}`)
+      .then(user => {
+        this.avatar = user.data.avatar;
+      });
   },
   methods: {
     onSubmit() {
-      axios.post(`${process.env.VUE_APP_URI}/user/postuser`, {
+      axios
+        .post(`${process.env.VUE_APP_URI}/user/postuser`, {
           username: this.username,
           avatar: this.new_avatar
-      })
-      .then(res =>{
-          this.avatar = res.data.avatar
-          this.message = res.data.message
-      })
+        })
+        .then(res => {
+          this.avatar = res.data.avatar;
+          this.message = res.data.message;
+        });
     },
     onReset(event) {
       event.preventDefault();

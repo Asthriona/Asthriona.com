@@ -59,7 +59,7 @@ export default {
   methods: {
     onSubmit(event) {
       event.preventDefault();
-      axios.post(process.env.VUE_APP_URI+"/auth/login", this.form).then(
+      axios.post(process.env.VUE_APP_URI + "/auth/login", this.form).then(
         res => {
           if (res.status == 200) {
             localStorage.setItem("token", res.data);

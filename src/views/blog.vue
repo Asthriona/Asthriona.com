@@ -111,18 +111,21 @@ export default {
       avatar: ""
     };
   },
-  
+
   async beforeMount() {
     document.title = "Asthriona - Blog";
     await axios
-      .get(process.env.VUE_APP_URI+"/ashblog/post")
+      .get(process.env.VUE_APP_URI + "/ashblog/post")
       .then(response => (this.posts = response.data.data.articles))
       .catch(error => (this.errors = error));
-      await axios.get(`${process.env.VUE_APP_URI}/user/getuser?username=Asthriona`)
-      .then(user =>{
-        console.log(user)
-        this.avatar = user.data.avatar ? user.data.avatar : "https://asthriona.s3.fr-par.scw.cloud/ShareX/2021/03/VALORANT-Win64-Shipping_050321-052513PM.png"
-      })
+    await axios
+      .get(`${process.env.VUE_APP_URI}/user/getuser?username=Asthriona`)
+      .then(user => {
+        console.log(user);
+        this.avatar = user.data.avatar
+          ? user.data.avatar
+          : "https://asthriona.s3.fr-par.scw.cloud/ShareX/2021/03/VALORANT-Win64-Shipping_050321-052513PM.png";
+      });
   }
 };
 </script>
