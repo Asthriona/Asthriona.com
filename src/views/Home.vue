@@ -96,7 +96,7 @@
                 <b-card
                   bg-variant="dark"
                   title="The Wall"
-                  img-src="https://asthriona.s3.fr-par.scw.cloud/img/2020/12/TheWallAsh.jpg"
+                  img-src="https://cdn.nishikino.xyz/asthriona/TheWallAsh.webp"
                   img-alt="Image"
                   img-top
                   tag="article"
@@ -114,7 +114,7 @@
                 <b-card
                   bg-variant="dark"
                   title="Yukiko"
-                  img-src="https://asthriona.s3.fr-par.scw.cloud/img/2020/12/YukikoAsh.jpg"
+                  img-src="https://cdn.nishikino.xyz/asthriona/YukikoAsh.webp"
                   img-alt="Image"
                   img-top
                   tag="article"
@@ -132,7 +132,7 @@
                 <b-card
                   bg-variant="dark"
                   title="AnimeFM"
-                  img-src="https://asthriona.s3.fr-par.scw.cloud/img/2020/12/AnimeFMAsh.jpg"
+                  img-src="https://cdn.nishikino.xyz/asthriona/AnimeFMAsh.webp"
                   img-alt="Image"
                   img-top
                   tag="article"
@@ -150,7 +150,7 @@
                 <b-card
                   bg-variant="dark"
                   title="Asthriona.com"
-                  img-src="https://asthriona.s3.fr-par.scw.cloud/img/2020/12/AshASh.jpg"
+                  img-src="https://cdn.nishikino.xyz/asthriona/AshASh.webp"
                   img-alt="Image"
                   img-top
                   tag="article"
@@ -168,7 +168,7 @@
                 <b-card
                   bg-variant="dark"
                   title="Cloudsdale Radio"
-                  img-src="https://asthriona.s3.fr-par.scw.cloud/img/2020/12/CRAsh.jpg"
+                  img-src="https://cdn.nishikino.xyz/asthriona/CRAsh.webp"
                   img-alt="Image"
                   img-top
                   tag="article"
