@@ -8,6 +8,7 @@ import Admin from "../views/admin/adminHome.vue";
 import NewPost from "../views/admin/newPost.vue";
 import EditPost from "../views/admin/EditPost.vue";
 import UserProfile from "../views/admin/UserProfile.vue";
+import Server from "../views/Server.vue";
 
 Vue.use(VueRouter);
 
@@ -51,6 +52,11 @@ const routes = [
     path: "/admin/userprofile",
     name: "UserProfile",
     component: UserProfile
+  },
+  {
+    path: "/server",
+    name: "Server",
+    component: Server
   },
   {
     path: "/about",
