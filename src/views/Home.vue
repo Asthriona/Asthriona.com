@@ -269,7 +269,7 @@ export default {
       ]
     };
   },
-  beforeMount(){
+  beforeMount() {
     document.title = "Asthriona";
   },
   computed: {
