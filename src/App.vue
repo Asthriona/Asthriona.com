@@ -1,16 +1,20 @@
 <template>
   <div id="app">
     <Nishikino />
+    <TheHeader />
     <router-view />
     <TheFooter />
   </div>
 </template>
 
 <script>
+import TheHeader from "./components/TheHeader";
 import TheFooter from "./components/TheFooter";
 import Nishikino from "./components/Nishikino";
+
 export default {
   components: {
+    TheHeader,
     TheFooter,
     Nishikino
   }

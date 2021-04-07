@@ -44,7 +44,6 @@
         </b-row>
       </div>
     </b-container>
-    <TheHeader />
     <b-container>
       <b-row>
         <div class="content text-left">
@@ -239,13 +238,9 @@
 
 <script>
 // @ is an alias to /src
-import TheHeader from "../components/TheHeader";
 import allBackgroundImages from "../assets/images/backgrounds/allbg";
 export default {
   name: "Home",
-  components: {
-    TheHeader
-  },
   data() {
     return {
       allBackgroundImages,
@@ -273,6 +268,9 @@ export default {
         "Website goes BRRRRRR!"
       ]
     };
+  },
+  beforeMount(){
+    document.title = "Asthriona";
   },
   computed: {
     backgroundImage() {

@@ -1,6 +1,5 @@
 <template>
   <div>
-    <TheHeader />
     <div
       class="post-thumbnail"
       v-bind:style="{ 'background-image': 'url(' + post.img + ')' }"
@@ -19,12 +18,8 @@
 </template>
 <script>
 import axios from "axios";
-import TheHeader from "../components/TheHeader";
 export default {
   name: "PostShow",
-  components: {
-    TheHeader
-  },
   data() {
     return {
       post: null

@@ -1,6 +1,5 @@
 <template>
   <div>
-    <TheHeader />
     <h2 class="m-4">
       Sup {{ username }}
       <b-icon v-if="username == 'Asthriona'" icon="patch-check"></b-icon
@@ -87,21 +86,13 @@
         </b-col>
       </b-row>
     </b-container>
-
-    <TheFooter />
   </div>
 </template>
 
 <script>
 import axios from "axios";
-import TheHeader from "../../components/TheHeader";
-import TheFooter from "../../components/TheFooter";
 export default {
   name: "AdminHome",
-  components: {
-    TheHeader,
-    TheFooter
-  },
   data() {
     return {
       username: "",

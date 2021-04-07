@@ -1,7 +1,6 @@
 /* eslint-disable */
 <template>
   <div>
-    <TheHeader />
     <h3>
       <ul>
         <li @click="comp = '1'"><b-icon icon="person-fill"></b-icon> Login</li>
@@ -13,16 +12,12 @@
     </h3>
     <loginComp v-if="comp == '1'" />
     <RegisterComp v-if="comp == '2'" />
-
-    <TheFooter />
   </div>
 </template>
 
 <script>
 import loginComp from "../../components/auth/login";
 import RegisterComp from "../../components/auth/register";
-import TheHeader from "../../components/TheHeader";
-import TheFooter from "../../components/TheFooter";
 export default {
   name: "Login",
   data() {
@@ -31,10 +26,8 @@ export default {
     };
   },
   components: {
-    TheHeader,
     loginComp,
-    RegisterComp,
-    TheFooter
+    RegisterComp
   }
 };
 </script>

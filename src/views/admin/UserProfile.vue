@@ -1,6 +1,5 @@
 <template>
   <div>
-    <TheHeader />
     <b-container>
       <b-row>
         <h1 v-if="message">Info: {{ message }}</h1>
@@ -33,13 +32,9 @@
 </template>
 
 <script>
-import TheHeader from "../../components/TheHeader";
 import axios from "axios";
 export default {
   name: "UserProfile",
-  components: {
-    TheHeader
-  },
   data() {
     return {
       avatar: "",

@@ -1,7 +1,6 @@
 /* eslint-disable */
 <template>
   <div>
-    <TheHeader />
     <b-container>
       <b-row>
         <b-col cols="12" class="SiteTitle text-center">
@@ -98,12 +97,8 @@
 
 <script>
 import axios from "axios";
-import TheHeader from "../components/TheHeader";
 export default {
   name: "Blog",
-  components: {
-    TheHeader
-  },
   data() {
     return {
       posts: "",
