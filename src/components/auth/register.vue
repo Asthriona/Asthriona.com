@@ -46,8 +46,8 @@
               placeholder="Password"
             ></b-form-input>
             <b-form-text id="password-help-block">
-              Your password must be 8-20 characters long, can contain letters and
-              numbers, special characters and emoji.
+              Your password must be 8-20 characters long, can contain letters
+              and numbers, special characters and emoji.
             </b-form-text>
             <b-button type="submit" variant="primary">Submit</b-button>
             <b-button type="reset" variant="danger" class="resetBtn"
@@ -80,7 +80,7 @@ export default {
       event.preventDefault();
       axios.post(process.env.VUE_APP_URI + "/auth/register", this.form).then(
         response => {
-          this.success = response.data.username
+          this.success = response.data.username;
         },
         err => {
           this.error = err.response.data;

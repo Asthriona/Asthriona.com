@@ -126,7 +126,7 @@ li {
   padding: 0.3rem !important;
 }
 
-.router-link-exact-active{
+.router-link-exact-active {
   border-bottom: 3px solid #ffe65d !important;
 }
 
