@@ -126,8 +126,8 @@ li {
   padding: 0.3rem !important;
 }
 
-.nav-link.nav-link.nuxt-link-exact-active {
-  border-bottom: 3px solid #06c4d1 !important;
+.router-link-exact-active{
+  border-bottom: 3px solid #ffe65d !important;
 }
 
 .nav-links a {
