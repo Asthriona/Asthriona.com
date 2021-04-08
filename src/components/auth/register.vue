@@ -10,8 +10,14 @@
               <p>Aye! An error successfuly happened! <br /></p>
               <hr />
               <p class="mb-0">
-                {{ error }}
+                {{ error.message }}
               </p>
+            </b-alert>
+          </div>
+          <div v-if="success">
+            <b-alert show variant="success">
+              <h4 class="alert-heading">Aye!</h4>
+              <p>Your account has been created! <br /></p>
             </b-alert>
           </div>
           <b-form @submit="onSubmit" @reset="onReset">
@@ -40,9 +46,8 @@
               placeholder="Password"
             ></b-form-input>
             <b-form-text id="password-help-block">
-              Your password must be 8-20 characters long, contain letters and
-              numbers, and must not contain spaces, special characters, or
-              emoji.
+              Your password must be 8-20 characters long, can contain letters and
+              numbers, special characters and emoji.
             </b-form-text>
             <b-button type="submit" variant="primary">Submit</b-button>
             <b-button type="reset" variant="danger" class="resetBtn"
@@ -62,6 +67,7 @@ export default {
   data() {
     return {
       error: "",
+      success: "",
       form: {
         username: "",
         email: "",
@@ -74,7 +80,7 @@ export default {
       event.preventDefault();
       axios.post(process.env.VUE_APP_URI + "/auth/register", this.form).then(
         response => {
-          console.log(response);
+          this.success = response.data.username
         },
         err => {
           this.error = err.response.data;
