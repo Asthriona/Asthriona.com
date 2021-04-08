@@ -1,11 +1,13 @@
 /* eslint-disable */
 <template>
   <div>
-    <b-container>
+    <b-container fluid class="header">
       <b-row>
         <b-col cols="12" class="SiteTitle text-center">
-          <h1 class="MainLine">Asthriona</h1>
+          <div class="mainTextBlock">
+            <h1 class="MainLine">Asthriona</h1>
           <h3 class="SecondLine">Insert random line here!</h3>
+          </div>
         </b-col>
       </b-row>
     </b-container>
@@ -147,5 +149,11 @@ article .card-img {
 }
 pre {
   color: aliceblue;
+}
+.header{
+  background-image: url(https://asthriona.s3.fr-par.scw.cloud/ShareX/2021/04/blogHeader.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 </style>
