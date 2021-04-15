@@ -1,6 +1,6 @@
 <template>
   <div>
-    <b-container>
+    <!-- <b-container>
       <b-row>
         <b-col cols="3"></b-col>
         <b-col>
@@ -57,7 +57,10 @@
         </b-col>
         <b-col cols="3"></b-col>
       </b-row>
-    </b-container>
+    </b-container> -->
+    <center>
+      <h1>Registration are temporary disabled.</h1>
+    </center>
   </div>
 </template>
 
