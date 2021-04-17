@@ -100,7 +100,6 @@ export default {
       .get(`${process.env.VUE_APP_URI}/ashblog/post/${this.$route.params.slug}`)
       .then(res => {
         const article = res.data.data.article;
-        console.log(article);
         this.title = article.title;
         this.form.title = article.title;
         this.form.description = article.description;

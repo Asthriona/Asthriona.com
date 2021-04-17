@@ -118,8 +118,7 @@ export default {
         .post(process.env.VUE_APP_URI + "/ashblog/", {
           slug: posts.slug
         })
-        .then(res => {
-          console.log(res);
+        .then( ()=>{
           this.message = "Post deleted!";
           this.variant = "success";
           this.postUpdates();
