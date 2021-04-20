@@ -52,7 +52,8 @@
             |
             <b-button variant="danger" @click="remove(posts)">Delete</b-button>
             |
-            <b-button variant="secondary" @click="hide">Hide</b-button>
+            <b-button variant="secondary" v-if="posts.hidden == false" @click="hide">Hide</b-button>
+            <b-button variant="secondary" v-else @click="hide">Un-hide</b-button>
           </b-card>
         </b-col>
       </b-row>
@@ -103,15 +104,10 @@ export default {
       variant: ""
     };
   },
-  created() {
-    if (localStorage.getItem("token") === null) {
-      this.$router.push("/admin/login");
-    }
-  },
   methods: {
     logout() {
-      localStorage.clear();
-      this.$router.push("/");
+      axios.get(process.env.VUE_APP_URI + "/auth/logout", {withCredentials: true})
+      location.href = '/';
     },
     remove(posts) {
       axios
@@ -134,17 +130,26 @@ export default {
       this.variant = "warning";
     }
   },
+  beforeMount(){
+    axios
+      .get(process.env.VUE_APP_URI + "/auth/user", {withCredentials:  true})
+      .then(res => {
+        const user = res.data
+        this.username = user.username
+        this.email = user.email
+        this.isAdmin = user.isAdmin
+        return user.username
+      })
+      .then(res=>{
+        console.log(res)
+        if (!res) {
+        return this.$router.push("/admin/login");
+      }
+      })
+  },
   mounted() {
     document.title = "Asthriona - Admin";
-    axios
-      .get(process.env.VUE_APP_URI + "/auth/user", {
-        headers: { Authorization: "Bearer " + localStorage.getItem("token") }
-      })
-      .then(res => {
-        this.username = res.data.username;
-        this.email = res.data.email;
-        this.isAdmin = res.data.isAdmin;
-      });
+      
     axios
       .get(process.env.VUE_APP_URI + "/ashblog/post/admin")
       .then(response => (this.posts = response.data.data.articles))

@@ -1,27 +1,27 @@
 <template>
   <div class="Fuck U Rise!">
-    <!-- <b-container>
+    <b-container>
       <b-row>
         <b-col cols="3"></b-col>
         <b-col>
           <b-form @submit="onSubmit" @reset="onReset">
             <div v-if="error">
-              <b-alert show variant="danger">
+              <b-alert show :variant="error">
                 <h4 class="alert-heading">Well done!</h4>
                 <p>Aye! An error successfuly happened! <br /></p>
                 <hr />
                 <p class="mb-0">
-                  Credentials Invalide
+                  {{message || "redirecting..."}}
                 </p>
               </b-alert>
             </div>
-            <label for="text-username">Username</label>
+            <label for="text-email">email</label>
             <b-form-input
-              id="username"
-              label="username"
-              v-model="form.username"
-              description="Enter your username"
-              placeholder="Username"
+              id="email"
+              label="email"
+              v-model="form.email"
+              description="Enter your Email"
+              placeholder="Email"
             ></b-form-input>
             <label for="text-password">Password</label>
             <b-form-input
@@ -39,10 +39,10 @@
         </b-col>
         <b-col cols="3"></b-col>
       </b-row>
-    </b-container> -->
-    <center>
+    </b-container>
+    <!-- <center>
       <h1>Logins are temporary disabled.</h1>
-    </center>
+    </center> -->
   </div>
 </template>
 
@@ -53,21 +53,23 @@ export default {
   data() {
     return {
       form: {
-        username: "",
+        email: "",
         password: ""
       },
-      error: ""
+      error: "",
+      message: ""
     };
   },
   methods: {
     onSubmit(event) {
       event.preventDefault();
-      axios.post(process.env.VUE_APP_URI + "/auth/login", this.form).then(
+      axios.post(process.env.VUE_APP_URI + "/auth/login", this.form, {withCredentials: true}).then(
         res => {
           if (res.status == 200) {
-            localStorage.setItem("token", res.data);
-            this.error = "Logged In!";
-            this.form.username = "";
+            console.log(res.data)
+            this.error = res.data.error;
+            this.message = res.data.message;
+            this.form.email = "";
             this.form.password = "";
             this.$router.push("/admin");
           }

@@ -56,15 +56,13 @@ export default {
     };
   },
   mounted() {
-    if (!localStorage.getItem("token")) return;
     axios
-      .get(process.env.VUE_APP_URI + "/auth/user", {
-        headers: { Authorization: "Bearer " + localStorage.getItem("token") }
-      })
+      .get(process.env.VUE_APP_URI + "/auth/user", {withCredentials:  true})
       .then(res => {
-        this.username = res.data.username;
-        this.email = res.data.email;
-        this.isAdmin = res.data.isAdmin;
+        const user = res.data
+        this.username = user.username
+        this.email = user.email
+        this.isAdmin = user.isAdmin
       })
       .catch(err => {
         this.error = err;

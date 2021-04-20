@@ -1,6 +1,6 @@
 <template>
   <div>
-    <!-- <b-container>
+    <b-container>
       <b-row>
         <b-col cols="3"></b-col>
         <b-col>
@@ -17,7 +17,8 @@
           <div v-if="success">
             <b-alert show variant="success">
               <h4 class="alert-heading">Aye!</h4>
-              <p>Your account has been created! <br /></p>
+              <p>Your account {{success}} has been created! <br />
+              We sent you an email to verify your address, click the link and you should be able to login!</p>
             </b-alert>
           </div>
           <b-form @submit="onSubmit" @reset="onReset">
@@ -57,10 +58,10 @@
         </b-col>
         <b-col cols="3"></b-col>
       </b-row>
-    </b-container> -->
-    <center>
+    </b-container>
+    <!-- <center>
       <h1>Registration are temporary disabled.</h1>
-    </center>
+    </center> -->
   </div>
 </template>
 
