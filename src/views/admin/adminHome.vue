@@ -132,7 +132,7 @@ export default {
   },
   beforeMount(){
     axios
-      .get(process.env.VUE_APP_URI + "/auth/user", {withCredentials:  true})
+      .get(process.env.VUE_APP_URI + "/user", {withCredentials:  true})
       .then(res => {
         const user = res.data
         this.username = user.username
@@ -141,7 +141,6 @@ export default {
         return user.username
       })
       .then(res=>{
-        console.log(res)
         if (!res) {
         return this.$router.push("/admin/login");
       }
