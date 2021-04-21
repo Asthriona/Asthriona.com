@@ -151,7 +151,7 @@ export default {
     document.title = "Asthriona - Admin";
       
     axios
-      .get(process.env.VUE_APP_URI + "/ashblog/post/admin")
+      .get(process.env.VUE_APP_URI + "/ashblog/post/admin", {withCredentials: true})
       .then(response => (this.posts = response.data.data.articles))
       .catch(error => (this.errors = error));
   }

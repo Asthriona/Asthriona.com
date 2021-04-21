@@ -91,6 +91,19 @@
               ></b-img>
             </p>
           </b-card>
+                    <b-card
+                    @click="like"
+            bg-variant="#212226"
+            title="Like the blog?"
+            tag="side"
+            style="max-width: 100%;"
+            class="mt-4 mx-2 ml-4 mb-4 text-center"
+          >
+              <h1 style="cursor: pointer"><b-icon style="color:red" icon="heart-fill"></b-icon></h1>
+            <h5 class="text-center">
+              {{likes}} Likes
+            </h5>
+          </b-card>
         </b-col>
       </b-row>
     </b-container>
@@ -105,7 +118,8 @@ export default {
     return {
       posts: "",
       errors: "",
-      avatar: ""
+      avatar: "",
+      likes: ""
     };
   },
 
@@ -122,8 +136,16 @@ export default {
           ? user.data.avatar
           : "https://asthriona.s3.fr-par.scw.cloud/ShareX/2021/03/VALORANT-Win64-Shipping_050321-052513PM.png";
       });
-  }
-};
+    await axios.get(process.env.VUE_APP_URI + "/ashblog/Getlikes")
+    .then(res =>{this.likes = res.data.likes})
+  },
+  methods: {
+    async like(){
+    await axios.get(process.env.VUE_APP_URI + "/ashblog/likes")
+    .then(res =>{this.likes = res.data.likes})
+    }
+}
+}
 </script>
 
 <style scoped>
