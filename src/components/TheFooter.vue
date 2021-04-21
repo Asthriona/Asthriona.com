@@ -77,10 +77,7 @@ export default {
           " Seconds, ";
       }, 1000);
       console.log(
-        "Asthriona.com\nHosted by Nishikino Networks, \nDNS by Asthriona ltd.\nCode by Asthriona \nTheme by Asthriona Inspired by Aimee ('http://www.mangoya.cn') (Part of the code belong to them.)"
-      );
-      console.log(
-        "Header Images by Riot Games Artists. ('https://www.riotgames.com/en')"
+        "Asthriona.com\nHosted by Nishikino Networks, \nDNS by Asthriona ltd.\nCode by Asthriona \nTheme by Asthriona, Project Inspired by Aimee ('http://www.mangoya.cn') (Part of the code belong to them.)\nHeader Images by Riot Games Artists. ('https://www.riotgames.com/en')"
       );
     }
   },
