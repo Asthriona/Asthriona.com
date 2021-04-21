@@ -45,13 +45,6 @@ export default {
   },
   async beforeMount() {
     await axios
-      .get(process.env.VUE_APP_URI + "/auth/user", {
-        headers: { Authorization: "Bearer " + localStorage.getItem("token") }
-      })
-      .then(data => {
-        this.username = data.data.username;
-      });
-    await axios
       .get(`${process.env.VUE_APP_URI}/user/getuser?username=${this.username}`)
       .then(user => {
         this.avatar = user.data.avatar;
