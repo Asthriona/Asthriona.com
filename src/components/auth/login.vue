@@ -66,7 +66,6 @@ export default {
       axios.post(process.env.VUE_APP_URI + "/auth/login", this.form, {withCredentials: true}).then(
         res => {
           if (res.status == 200) {
-            console.log(res.data)
             this.error = res.data.error;
             this.message = res.data.message;
             this.form.email = "";
