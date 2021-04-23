@@ -11,7 +11,7 @@
                 <p>Aye! An error successfuly happened! <br /></p>
                 <hr />
                 <p class="mb-0">
-                  {{message || "redirecting..."}}
+                  {{ message || "redirecting..." }}
                 </p>
               </b-alert>
             </div>
@@ -63,20 +63,24 @@ export default {
   methods: {
     onSubmit(event) {
       event.preventDefault();
-      axios.post(process.env.VUE_APP_URI + "/auth/login", this.form, {withCredentials: true}).then(
-        res => {
-          if (res.status == 200) {
-            this.error = res.data.error;
-            this.message = res.data.message;
-            this.form.email = "";
-            this.form.password = "";
-            this.$router.push("/admin");
+      axios
+        .post(process.env.VUE_APP_URI + "/auth/login", this.form, {
+          withCredentials: true
+        })
+        .then(
+          res => {
+            if (res.status == 200) {
+              this.error = res.data.error;
+              this.message = res.data.message;
+              this.form.email = "";
+              this.form.password = "";
+              this.$router.push("/admin");
+            }
+          },
+          err => {
+            this.error = err.response.data;
           }
-        },
-        err => {
-          this.error = err.response.data;
-        }
-      );
+        );
     },
     onReset(event) {
       event.preventDefault();

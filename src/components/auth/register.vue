@@ -17,8 +17,11 @@
           <div v-if="success">
             <b-alert show variant="success">
               <h4 class="alert-heading">Aye!</h4>
-              <p>Your account {{success}} has been created! <br />
-              We sent you an email to verify your address, click the link and you should be able to login!</p>
+              <p>
+                Your account {{ success }} has been created! <br />
+                We sent you an email to verify your address, click the link and
+                you should be able to login!
+              </p>
             </b-alert>
           </div>
           <b-form @submit="onSubmit" @reset="onReset">

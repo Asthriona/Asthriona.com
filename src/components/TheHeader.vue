@@ -57,12 +57,12 @@ export default {
   },
   mounted() {
     axios
-      .get(process.env.VUE_APP_URI + "/auth/user", {withCredentials:  true})
+      .get(process.env.VUE_APP_URI + "/auth/user", { withCredentials: true })
       .then(res => {
-        const user = res.data
-        this.username = user.username
-        this.email = user.email
-        this.isAdmin = user.isAdmin
+        const user = res.data;
+        this.username = user.username;
+        this.email = user.email;
+        this.isAdmin = user.isAdmin;
       })
       .catch(err => {
         this.error = err;

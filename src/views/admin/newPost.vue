@@ -131,7 +131,9 @@ export default {
     async onSubmit(event) {
       event.preventDefault();
       await axios
-        .post(process.env.VUE_APP_URI + "/ashblog/post/new", this.form, {withCredentials: true})
+        .post(process.env.VUE_APP_URI + "/ashblog/post/new", this.form, {
+          withCredentials: true
+        })
         .then(this.$router.push("/admin"));
     },
     onReset(event) {

@@ -32,8 +32,16 @@
             <h2 class="AuthorName">
               {{ author.username }}
               <span
-                ><b-icon v-if="author.isVerified == true" icon="patch-check" id="tooltip-verified" ></b-icon>
-                <b-icon id="tooltip-dev" icon="wrench" v-if="author.isAdmin == true"></b-icon>
+                ><b-icon
+                  v-if="author.isVerified == true"
+                  icon="patch-check"
+                  id="tooltip-verified"
+                ></b-icon>
+                <b-icon
+                  id="tooltip-dev"
+                  icon="wrench"
+                  v-if="author.isAdmin == true"
+                ></b-icon>
                 <b-tooltip target="tooltip-dev" triggers="hover">
                   Developper
                 </b-tooltip>
@@ -84,7 +92,8 @@ export default {
           username: "Asthriona",
           isVerified: true,
           isAdmin: false,
-          avatar: 'https://cdn.nishikino.xyz/asthriona/ProfilePict/asthriona.gif',
+          avatar:
+            "https://cdn.nishikino.xyz/asthriona/ProfilePict/asthriona.gif",
           text: "Waw! best post i've ever read! Incrediblblblblblble!",
           time: Date.now()
         },
@@ -92,7 +101,8 @@ export default {
           username: "RiseDev",
           isVerified: false,
           isAdmin: true,
-          avatar: 'https://pbs.twimg.com/profile_images/1338904649907253249/MnYcLS0v_400x400.jpg',
+          avatar:
+            "https://pbs.twimg.com/profile_images/1338904649907253249/MnYcLS0v_400x400.jpg",
           text: "Dayum!1!",
           time: Date.now()
         },
@@ -100,7 +110,8 @@ export default {
           username: "Some Poggers",
           isVerified: false,
           isAdmin: false,
-          avatar: 'https://asthriona.s3.fr-par.scw.cloud/ShareX/2021/04/SjzBDRI3.jpg',
+          avatar:
+            "https://asthriona.s3.fr-par.scw.cloud/ShareX/2021/04/SjzBDRI3.jpg",
           text: "fuck me",
           time: Date.now()
         },
@@ -108,7 +119,8 @@ export default {
           username: "Lights",
           isVerified: false,
           isAdmin: false,
-          avatar: 'https://pbs.twimg.com/profile_images/1366239469347635202/Ssu53nH7_400x400.jpg',
+          avatar:
+            "https://pbs.twimg.com/profile_images/1366239469347635202/Ssu53nH7_400x400.jpg",
           text: "oh my...",
           time: Date.now()
         },
@@ -116,10 +128,11 @@ export default {
           username: "Deadmau5",
           isVerified: true,
           isAdmin: false,
-          avatar: 'https://pbs.twimg.com/profile_images/1296188634404737031/RUJOD0mL_400x400.jpg',
+          avatar:
+            "https://pbs.twimg.com/profile_images/1296188634404737031/RUJOD0mL_400x400.jpg",
           text: "WAW this post broke the cube... again!",
           time: Date.now()
-        },
+        }
       ],
       author: {
         profilePict:
@@ -164,7 +177,7 @@ export default {
 .authorDesc {
   margin-left: 7.5rem !important;
 }
-.comment{
+.comment {
   display: block;
   background: #18181b;
   padding: 10px;
@@ -174,7 +187,7 @@ export default {
   border-width: 1px;
   border-radius: 10px;
 }
-.comUsername{
+.comUsername {
   display: block;
   position: relative;
   margin-right: 10px;

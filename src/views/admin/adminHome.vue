@@ -52,8 +52,15 @@
             |
             <b-button variant="danger" @click="remove(posts)">Delete</b-button>
             |
-            <b-button variant="secondary" v-if="posts.hidden == false" @click="hide">Hide</b-button>
-            <b-button variant="secondary" v-else @click="hide">Un-hide</b-button>
+            <b-button
+              variant="secondary"
+              v-if="posts.hidden == false"
+              @click="hide"
+              >Hide</b-button
+            >
+            <b-button variant="secondary" v-else @click="hide"
+              >Un-hide</b-button
+            >
           </b-card>
         </b-col>
       </b-row>
@@ -106,15 +113,17 @@ export default {
   },
   methods: {
     logout() {
-      axios.get(process.env.VUE_APP_URI + "/auth/logout", {withCredentials: true})
-      location.href = '/';
+      axios.get(process.env.VUE_APP_URI + "/auth/logout", {
+        withCredentials: true
+      });
+      location.href = "/";
     },
     remove(posts) {
       axios
         .post(process.env.VUE_APP_URI + "/ashblog/", {
           slug: posts.slug
         })
-        .then( ()=>{
+        .then(() => {
           this.message = "Post deleted!";
           this.variant = "success";
           this.postUpdates();
@@ -130,27 +139,29 @@ export default {
       this.variant = "warning";
     }
   },
-  beforeMount(){
+  beforeMount() {
     axios
-      .get(process.env.VUE_APP_URI + "/user", {withCredentials:  true})
+      .get(process.env.VUE_APP_URI + "/user", { withCredentials: true })
       .then(res => {
-        const user = res.data
-        this.username = user.username
-        this.email = user.email
-        this.isAdmin = user.isAdmin
-        return user.username
+        const user = res.data;
+        this.username = user.username;
+        this.email = user.email;
+        this.isAdmin = user.isAdmin;
+        return user.username;
       })
-      .then(res=>{
+      .then(res => {
         if (!res) {
-        return this.$router.push("/admin/login");
-      }
-      })
+          return this.$router.push("/admin/login");
+        }
+      });
   },
   mounted() {
     document.title = "Asthriona - Admin";
-      
+
     axios
-      .get(process.env.VUE_APP_URI + "/ashblog/post/admin", {withCredentials: true})
+      .get(process.env.VUE_APP_URI + "/ashblog/post/admin", {
+        withCredentials: true
+      })
       .then(response => (this.posts = response.data.data.articles))
       .catch(error => (this.errors = error));
   }
