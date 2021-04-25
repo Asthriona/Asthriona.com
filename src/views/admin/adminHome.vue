@@ -10,8 +10,8 @@
       ?
     </h2>
     <div class="userAdminLink" v-if="isAdmin == true">
-      <router-link to="/admin/userprofile">User profile</router-link>
     </div>
+    <router-link to="/admin/userprofile">User profile</router-link> <br>
     <b-button variant="danger" class="m-4" @click="logout">logout</b-button>
     <hr />
     <b-container>
@@ -123,7 +123,7 @@ export default {
       axios
         .post(process.env.VUE_APP_URI + "/ashblog/", {
           slug: posts.slug
-        })
+        }, {withCredentials: true})
         .then(() => {
           this.message = "Post deleted!";
           this.variant = "success";
