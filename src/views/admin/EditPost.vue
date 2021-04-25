@@ -89,7 +89,7 @@ export default {
   },
   async mounted() {
     axios
-      .get(process.env.VUE_APP_URI + "/auth/user", {
+      .get(process.env.VUE_APP_URI + "/user", {
         headers: { Authorization: "Bearer " + localStorage.getItem("token") }
       })
       .then(res => {

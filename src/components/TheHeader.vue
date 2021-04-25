@@ -21,12 +21,12 @@
                 <b-icon icon="person-circle"></b-icon> {{ username
                 }}<small
                   ><b-icon
-                    v-if="username == 'Asthriona'"
+                    v-if="isVerified == true"
                     icon="patch-check"
                   ></b-icon
                   ><b-icon
                     icon="wrench"
-                    v-if="isAdmin == true && username !== 'Asthriona'"
+                    v-if="isAdmin == true && isVerified == false"
                   ></b-icon
                 ></small></li
             ></router-link>
@@ -52,17 +52,20 @@ export default {
       username: "",
       email: "",
       isAdmin: "",
+      isVerified: "",
       error: ""
     };
   },
   mounted() {
     axios
-      .get(process.env.VUE_APP_URI + "/auth/user", { withCredentials: true })
+      .get(process.env.VUE_APP_URI + "/user", { withCredentials: true })
       .then(res => {
         const user = res.data;
+        console.log(user)
         this.username = user.username;
         this.email = user.email;
         this.isAdmin = user.isAdmin;
+        this.isVerified = user.isVerified
       })
       .catch(err => {
         this.error = err;
