@@ -1,11 +1,11 @@
 <template>
   <div>
     <h2 class="m-4">
-      Sup {{ username }}
-      <b-icon v-if="username == 'Asthriona'" icon="patch-check"></b-icon
+      Sup {{ username }} 
+      <b-icon v-if="isVerified == true" icon="patch-check"></b-icon
       ><b-icon
         icon="wrench"
-        v-if="isAdmin == true && username !== 'Asthriona'"
+        v-if="isAdmin == true && isVerified == false"
       ></b-icon>
       ?
     </h2>
@@ -106,6 +106,7 @@ export default {
       username: "",
       email: "",
       isAdmin: "",
+      isVerified: "",
       posts: "",
       message: "",
       variant: ""
@@ -144,9 +145,11 @@ export default {
       .get(process.env.VUE_APP_URI + "/user", { withCredentials: true })
       .then(res => {
         const user = res.data;
+        console.log(user)
         this.username = user.username;
         this.email = user.email;
         this.isAdmin = user.isAdmin;
+        this.isVerified = user.isVerified
         return user.username;
       })
       .then(res => {
