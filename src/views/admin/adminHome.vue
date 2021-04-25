@@ -83,13 +83,13 @@
           <p>
             As I like crediting people I took inspiration from or even code
             sometimes here we go! <br />
-            The there is entirely coded by me (still in early beta, dont really
+            This website is entirely coded by me (still in early beta, dont really
             know vue yet.) but strongly inspired by
             <a href="www.mangoya.cn" target="_blank" rel="noopener noreferrer"
               >Aimee</a
             >
             <br />
-            The footer is also from them.
+            The footer is their code.
           </p>
         </b-col>
       </b-row>
