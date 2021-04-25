@@ -46,6 +46,7 @@
               class="mb-2 mr-sm-2 mb-sm-0"
               name="username"
               :placeholder="username ? username : 'USERNAME'"
+              v-model="new_username"
             >
             </b-form-input>
             <b-button type="submit" variant="primary">Save</b-button>
@@ -77,6 +78,7 @@ export default {
     return {
       avatar: "",
       new_avatar: "",
+      new_username: "",
       username: "",
       admin: "",
       verified: "",
@@ -104,7 +106,7 @@ export default {
         .post(
           `${process.env.VUE_APP_URI}/user`,
           {
-            username: this.username,
+            username: this.new_username,
             avatar: this.new_avatar
           },
           { withCredentials: true }
