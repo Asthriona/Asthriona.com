@@ -1,7 +1,7 @@
 <template>
   <div>
     <h2 class="m-4">
-      Sup {{ username }} 
+      Sup {{ username }}
       <b-icon v-if="isVerified == true" icon="patch-check"></b-icon
       ><b-icon
         icon="wrench"
@@ -9,9 +9,8 @@
       ></b-icon>
       ?
     </h2>
-    <div class="userAdminLink" v-if="isAdmin == true">
-    </div>
-    <router-link to="/admin/userprofile">User profile</router-link> <br>
+    <div class="userAdminLink" v-if="isAdmin == true"></div>
+    <router-link to="/admin/userprofile">User profile</router-link> <br />
     <b-button variant="danger" class="m-4" @click="logout">logout</b-button>
     <hr />
     <b-container>
@@ -83,8 +82,8 @@
           <p>
             As I like crediting people I took inspiration from or even code
             sometimes here we go! <br />
-            This website is entirely coded by me (still in early beta, dont really
-            know vue yet.) but strongly inspired by
+            This website is entirely coded by me (still in early beta, dont
+            really know vue yet.) but strongly inspired by
             <a href="www.mangoya.cn" target="_blank" rel="noopener noreferrer"
               >Aimee</a
             >
@@ -121,9 +120,13 @@ export default {
     },
     remove(posts) {
       axios
-        .post(process.env.VUE_APP_URI + "/ashblog/", {
-          slug: posts.slug
-        }, {withCredentials: true})
+        .post(
+          process.env.VUE_APP_URI + "/ashblog/",
+          {
+            slug: posts.slug
+          },
+          { withCredentials: true }
+        )
         .then(() => {
           this.message = "Post deleted!";
           this.variant = "success";
@@ -145,11 +148,11 @@ export default {
       .get(process.env.VUE_APP_URI + "/user", { withCredentials: true })
       .then(res => {
         const user = res.data;
-        console.log(user)
+        console.log(user);
         this.username = user.username;
         this.email = user.email;
         this.isAdmin = user.isAdmin;
-        this.isVerified = user.isVerified
+        this.isVerified = user.isVerified;
         return user.username;
       })
       .then(res => {
