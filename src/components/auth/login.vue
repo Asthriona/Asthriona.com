@@ -7,12 +7,8 @@
           <b-form @submit="onSubmit" @reset="onReset">
             <div v-if="error">
               <b-alert show :variant="error">
-                <h4 class="alert-heading">Well done!</h4>
-                <p>Aye! An error successfuly happened! <br /></p>
-                <hr />
-                <p class="mb-0">
-                  {{ message || "redirecting..." }}
-                </p>
+                <h4 class="alert-heading">Message</h4>
+                <p>{{message}} <br /></p>
               </b-alert>
             </div>
             <label for="text-email">email</label>
@@ -70,6 +66,11 @@ export default {
         .then(
           res => {
             if (res.status == 200) {
+              if(res.data.VerifiedEmail == false){
+                this.error = "danger",
+                this.message = "You need to verify your email! if you don't get the email or you cant verify because of an error please contact support@asthriona.com";
+                return null
+              }
               this.error = res.data.error;
               this.message = res.data.message;
               this.form.email = "";
