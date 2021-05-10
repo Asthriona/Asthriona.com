@@ -274,7 +274,7 @@ export default {
   },
   computed: {
     backgroundImage() {
-      var bg = Math.floor(Math.random() * 5) + 1;
+      var bg = Math.floor(Math.random() * 6) + 1;
       return {
         backgroundImage: `${this.allBackgroundImages[bg]}`
       };
