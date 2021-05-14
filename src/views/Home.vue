@@ -8,6 +8,7 @@
       }"
       fluid
     >
+    <!-- <video autoplay muted loop id="bgvids" src="../assets/agent-background-generic.mp4"></video> -->
       <div class="masterhead">
         <b-row class="vh-100" align-v="center">
           <div class="headinStuff">
@@ -401,5 +402,13 @@ li {
   width: 20%;
   margin-bottom: 16px;
   padding: 0 8px;
+}
+#bgvids {
+  z-index: -1;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
 }
 </style>
