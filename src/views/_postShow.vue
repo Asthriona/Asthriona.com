@@ -57,7 +57,7 @@
       <br />
       <b-row>
         <div class="comments" v-if="user == null">
-          <h1>Comments are disabled for this article.</h1>
+          <h1>Only poggers can comment on this post.</h1>
         </div>
         <div class="comments" v-else>
           <div class="user">
@@ -69,12 +69,40 @@
             <button disabled="disabled">Submit</button>
           </form>
         </div>
-        <!-- <b-col cols="8">
-          <div class="comment" v-for="comments in comment" :key="comments.username">
-            <b-img left :src="comments.avatar" height="50px" rounded="circle" alt=""></b-img> <h3 class="comUsername"> - {{ comments.username}} <small><b-icon v-if="comments.isVerified == true" icon="patch-check" id="tooltip-verified"></b-icon><b-icon id="tooltip-dev" icon="wrench" v-if="comments.isAdmin == true"></b-icon></small></h3> <br>
-            {{comments.text}}
+        <b-col cols="8">
+          <div
+            class="comment"
+            v-for="comments in comment"
+            :key="comments.username"
+          >
+            <b-img
+              left
+              :src="comments.avatar"
+              height="50px"
+              rounded="circle"
+              alt=""
+            ></b-img>
+            <h3 class="comUsername">
+              - {{ comments.username }}
+              <small
+                ><b-icon
+                  v-if="comments.isVerified == true"
+                  icon="patch-check"
+                  id="tooltip-verified"
+                ></b-icon
+                ><b-icon
+                  id="tooltip-dev"
+                  icon="wrench"
+                  v-if="comments.isAdmin == true"
+                ></b-icon
+              ></small>
+            </h3>
+            <br />
+            {{ comments.text }}
+            <hr />
+            {{ comments.time | moment("MMMM Do YYYY, h:mm a") }}
           </div>
-        </b-col> -->
+        </b-col>
       </b-row>
     </b-container>
   </div>
@@ -157,11 +185,6 @@ export default {
           ? (this.post = response.data.data.article)
           : { title: "Error! API seems to be down :/" }
       );
-  },
-  methods: {
-    logs() {
-      console.log(this.post);
-    }
   }
 };
 </script>
