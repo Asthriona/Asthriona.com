@@ -1,7 +1,7 @@
 <template>
   <div>
     <h2 class="m-4">
-      Sup {{ username }}
+      Sup <b-avatar :src="avatar"></b-avatar> {{ username }}
       <b-icon v-if="isVerified == true" icon="patch-check"></b-icon
       ><b-icon
         icon="wrench"
@@ -108,7 +108,8 @@ export default {
       isVerified: "",
       posts: "",
       message: "",
-      variant: ""
+      variant: "",
+      avatar: "",
     };
   },
   methods: {
@@ -153,6 +154,7 @@ export default {
         this.email = user.email;
         this.isAdmin = user.isAdmin;
         this.isVerified = user.isVerified;
+        this.avatar = user.avatar;
         return user.username;
       })
       .then(res => {
