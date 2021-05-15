@@ -8,7 +8,7 @@
       }"
       fluid
     >
-    <!-- <video autoplay muted loop id="bgvids" src="../assets/agent-background-generic.mp4"></video> -->
+      <!-- <video autoplay muted loop id="bgvids" src="../assets/agent-background-generic.mp4"></video> -->
       <div class="masterhead">
         <b-row class="vh-100" align-v="center">
           <div class="headinStuff">
@@ -246,27 +246,16 @@ export default {
     return {
       allBackgroundImages,
       random: [
-        "Poggu!",
-        "Poggy!",
-        "Pog!",
-        "Kappa",
-        "TriHard",
-        "PogChamp",
-        "4Head",
-        "cmonbruh",
-        "LUL",
-        "OmegaLuL",
-        "hahaa",
         "/*This line is disabled*/",
-        '<h1 class="headline" style="text-transform: uppercase;">this text is huge<h1>',
-        'console.log("hello world!")',
-        "im a twitch creep :)",
+        "死にたい",
+        "空に消えたい",
+        "Better keep it “just me”, It’s better that way, trust me",
+        "it’s Me, Myself and I again",
         "Hello from Speedtest.net!",
         "Trump has been banned from our platform",
         "Welcome to 2020 Season 2!",
         "You can now play 2020 as luigi",
-        "Click here to cancel your subscription to 2021",
-        "Website goes BRRRRRR!"
+        "Click here to cancel your subscription to 2021"
       ]
     };
   },
