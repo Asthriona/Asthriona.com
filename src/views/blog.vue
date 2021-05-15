@@ -6,7 +6,10 @@
         <b-col cols="12" class="SiteTitle text-center">
           <div class="mainTextBlock">
             <h1 class="MainLine">Asthriona</h1>
-            <h3 class="SecondLine">Insert random line here!</h3>
+            <h3 class="SecondLine">
+              A broken heart was blinded by a beautiful mind.
+            </h3>
+            <h6><b style="margin-left:25%;">&mdash;DEMONDICE, 2019</b></h6>
           </div>
         </b-col>
       </b-row>
