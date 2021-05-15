@@ -65,6 +65,12 @@ export default {
         })
         .then(
           res => {
+            console.log(res.status)
+            if(res.status == 401){
+              console.log("no user")
+              this.error = "danger",
+              this.message = "ERROR: Email or password are incorrect"
+            }
             if (res.status == 200) {
               if (res.data.VerifiedEmail == false) {
                 (this.error = "danger"),
@@ -80,7 +86,9 @@ export default {
             }
           },
           err => {
-            this.error = err.response.data;
+            this.error = "danger"
+            this.message = "Email or password are incorrect";
+            return err
           }
         );
     },
