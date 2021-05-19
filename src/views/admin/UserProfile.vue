@@ -101,7 +101,8 @@ export default {
       });
   },
   methods: {
-    onSubmit() {
+    onSubmit(event) {
+    event.preventDefault();
       axios
         .post(
           `${process.env.VUE_APP_URI}/user`,
