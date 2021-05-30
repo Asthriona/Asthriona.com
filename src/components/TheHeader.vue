@@ -56,6 +56,12 @@ export default {
       error: ""
     };
   },
+  metaInfo: {
+    meta: [
+      { charset: "utf-8" },
+      { name: "viewport", content: "width=device-width, initial-scale=1" }
+    ]
+  },
   mounted() {
     axios
       .get(process.env.VUE_APP_URI + "/user", { withCredentials: true })
