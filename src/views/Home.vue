@@ -270,11 +270,6 @@ export default {
       };
     }
   },
-  methods: {
-    logs() {
-      console.log(this.backgroundImage);
-    }
-  }
 };
 </script>
 

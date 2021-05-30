@@ -67,7 +67,6 @@ export default {
       .get(process.env.VUE_APP_URI + "/user", { withCredentials: true })
       .then(res => {
         const user = res.data;
-        console.log(user);
         this.username = user.username;
         this.email = user.email;
         this.isAdmin = user.isAdmin;
