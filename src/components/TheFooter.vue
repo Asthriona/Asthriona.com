@@ -3,7 +3,10 @@
     <div class="fcontainer footBack">
       <p>
         Code hosted on
-        <a href="https://github.com/Asthriona/Asthriona.com" target="_blank"
+        <a
+          href="https://github.com/Asthriona/Asthriona.com"
+          rel="noopener noreferrer"
+          target="_blank"
           >GitHub</a
         >. Website hosted by
         <a
@@ -26,8 +29,8 @@
       </p>
       <p>
         © Asthriona ltd 2019 -{{ new Date().getFullYear() }}
-        <a href="https://Asthriona.com">Asthriona</a>. Theme By
-        <a href="https://Asthriona.com/" target="_blank">Asthriona</a>
+        <router-link to="/">Asthriona</router-link>. Theme By
+        <router-link to="/">Asthriona</router-link>
       </p>
       <p>
         Credit: Nako's art by
