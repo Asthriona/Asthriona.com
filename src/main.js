@@ -4,6 +4,7 @@ import { BootstrapVue, IconsPlugin } from "bootstrap-vue";
 import App from "./App.vue";
 import "./registerServiceWorker";
 import router from "./router";
+import VueMeta from 'vue-meta'
 
 Vue.config.productionTip = false;
 
@@ -13,6 +14,7 @@ import './registerServiceWorker'
 Vue.use(require('vue-moment'));
 Vue.use(BootstrapVue);
 Vue.use(IconsPlugin);
+Vue.use(VueMeta);
 
 new Vue({
     router,
