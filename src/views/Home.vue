@@ -269,7 +269,7 @@ export default {
         backgroundImage: `${this.allBackgroundImages[bg]}`
       };
     }
-  },
+  }
 };
 </script>
 

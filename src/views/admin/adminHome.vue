@@ -109,7 +109,7 @@ export default {
       posts: "",
       message: "",
       variant: "",
-      avatar: "",
+      avatar: ""
     };
   },
   methods: {
