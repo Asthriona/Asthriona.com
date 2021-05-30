@@ -55,9 +55,10 @@
         </b-col>
       </b-row>
       <br />
+      <hr />
       <b-row>
-        <div class="comments" v-if="user == null">
-          <h1>Only poggers can comment on this post.</h1>
+        <div class="comments text-center" v-if="user == null">
+          <h2>Comments are disabled for this article.</h2>
         </div>
         <div class="comments" v-else>
           <div class="user">
@@ -115,53 +116,53 @@ export default {
     return {
       post: null,
       user: null,
-      comment: [
-        {
-          username: "Asthriona",
-          isVerified: true,
-          isAdmin: false,
-          avatar:
-            "https://cdn.nishikino.xyz/asthriona/ProfilePict/asthriona.gif",
-          text: "Waw! best post i've ever read! Incrediblblblblblble!",
-          time: Date.now()
-        },
-        {
-          username: "RiseDev",
-          isVerified: false,
-          isAdmin: true,
-          avatar:
-            "https://pbs.twimg.com/profile_images/1338904649907253249/MnYcLS0v_400x400.jpg",
-          text: "Dayum!1!",
-          time: Date.now()
-        },
-        {
-          username: "Some Poggers",
-          isVerified: false,
-          isAdmin: false,
-          avatar:
-            "https://asthriona.s3.fr-par.scw.cloud/ShareX/2021/04/SjzBDRI3.jpg",
-          text: "fuck me",
-          time: Date.now()
-        },
-        {
-          username: "Lights",
-          isVerified: false,
-          isAdmin: false,
-          avatar:
-            "https://pbs.twimg.com/profile_images/1366239469347635202/Ssu53nH7_400x400.jpg",
-          text: "oh my...",
-          time: Date.now()
-        },
-        {
-          username: "Deadmau5",
-          isVerified: true,
-          isAdmin: false,
-          avatar:
-            "https://pbs.twimg.com/profile_images/1296188634404737031/RUJOD0mL_400x400.jpg",
-          text: "WAW this post broke the cube... again!",
-          time: Date.now()
-        }
-      ],
+      // comment: [
+      //   {
+      //     username: "Asthriona",
+      //     isVerified: true,
+      //     isAdmin: false,
+      //     avatar:
+      //       "https://cdn.nishikino.xyz/asthriona/ProfilePict/asthriona.gif",
+      //     text: "Waw! best post i've ever read! Incrediblblblblblble!",
+      //     time: Date.now()
+      //   },
+      //   {
+      //     username: "RiseDev",
+      //     isVerified: false,
+      //     isAdmin: true,
+      //     avatar:
+      //       "https://pbs.twimg.com/profile_images/1338904649907253249/MnYcLS0v_400x400.jpg",
+      //     text: "Dayum!1!",
+      //     time: Date.now()
+      //   },
+      //   {
+      //     username: "Some Poggers",
+      //     isVerified: false,
+      //     isAdmin: false,
+      //     avatar:
+      //       "https://asthriona.s3.fr-par.scw.cloud/ShareX/2021/04/SjzBDRI3.jpg",
+      //     text: "fuck me",
+      //     time: Date.now()
+      //   },
+      //   {
+      //     username: "Lights",
+      //     isVerified: false,
+      //     isAdmin: false,
+      //     avatar:
+      //       "https://pbs.twimg.com/profile_images/1366239469347635202/Ssu53nH7_400x400.jpg",
+      //     text: "oh my...",
+      //     time: Date.now()
+      //   },
+      //   {
+      //     username: "Deadmau5",
+      //     isVerified: true,
+      //     isAdmin: false,
+      //     avatar:
+      //       "https://pbs.twimg.com/profile_images/1296188634404737031/RUJOD0mL_400x400.jpg",
+      //     text: "WAW this post broke the cube... again!",
+      //     time: Date.now()
+      //   }
+      // ],
       author: {
         profilePict:
           "https://cdn.nishikino.xyz/asthriona/ProfilePict/asthriona.gif",

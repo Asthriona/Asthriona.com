@@ -10,9 +10,9 @@
             <router-link to="/blog"
               ><li><b-icon icon="book"></b-icon> Blog</li></router-link
             >
-            <router-link to="/friends"
+            <!-- <router-link to="/friends"
               ><li><b-icon icon="newspaper"></b-icon> Friends</li></router-link
-            >
+            > -->
             <router-link to="/about"
               ><li>
                 <b-icon icon="patch-question"></b-icon> About
