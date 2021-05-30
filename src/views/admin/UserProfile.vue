@@ -102,7 +102,7 @@ export default {
   },
   methods: {
     onSubmit(event) {
-    event.preventDefault();
+      event.preventDefault();
       axios
         .post(
           `${process.env.VUE_APP_URI}/user`,
