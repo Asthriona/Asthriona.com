@@ -5,6 +5,7 @@
         <li>
           <b-img
             src="https://asthriona.s3.fr-par.scw.cloud/ShareX/2021/02/Nishikino_Maki_ALL_STARS_24x24.png"
+            alt="Nishikino Networks"
           ></b-img
           >&nbsp;
         </li>
@@ -20,6 +21,7 @@
             <b-img
               src="https://cdn.nishikino.xyz/asthriona/icons/android-chrome-192x192.png"
               width="20px"
+              alt="Asthriona.com"
             ></b-img>
             Asthriona.com
           </a>
@@ -34,6 +36,7 @@
             <b-img
               src="https://yukiko.app/img/ico/android-chrome-192x192.png"
               width="20px"
+              alt="Yukiko Discord bot"
             ></b-img>
             Yukiko
           </a>
@@ -49,6 +52,7 @@
             <b-img
               src="https://pbs.twimg.com/profile_images/1174208080164327424/beWGObS1_400x400.jpg"
               width="20px"
+              alt="Rainboom Studio"
             ></b-img>
             Rainboom Studio
           </a>
@@ -63,6 +67,7 @@
             <b-img
               src="https://pbs.twimg.com/profile_images/723714544221208580/VhITva-V_400x400.jpg"
               width="20px"
+              alt="Cloudsdale Radio"
             ></b-img>
             Cloudsdale Radio
           </a>
