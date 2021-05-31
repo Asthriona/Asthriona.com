@@ -88,7 +88,7 @@
               Networks. <br />
               Only those person can write/edit/delete posts on my blog. <br />
               if you are looking for the posts you liked or your profile please
-              <router-link to="/admin">click here</router-link> or
+              <router-link to="/user">click here</router-link> or
               <router-link to="/blog">click here</router-link> to get back to
               the lists of posts
             </p>
@@ -134,7 +134,7 @@ export default {
         .post(process.env.VUE_APP_URI + "/ashblog/post/new", this.form, {
           withCredentials: true
         })
-        .then(this.$router.push("/admin"));
+        .then(this.$router.push("/user"));
     },
     onReset(event) {
       event.preventDefault();

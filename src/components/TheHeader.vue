@@ -10,16 +10,41 @@
             <router-link to="/blog"
               ><li><b-icon icon="book"></b-icon> Blog</li></router-link
             >
-            <!-- <router-link to="/friends"
+            <router-link to="/friends"
               ><li><b-icon icon="newspaper"></b-icon> Friends</li></router-link
-            > -->
+            >
             <router-link to="/about"
               ><li>
                 <b-icon icon="patch-question"></b-icon> About
               </li></router-link
             >
+            <li>
+              <div>
+                <b-dropdown
+                  size="md"
+                  variant="bg-transparent text-white"
+                  toggle-class="text-decoration-none"
+                  no-caret
+                >
+                  <template class="otherLinks" #button-content>
+                    <b-icon icon="diagram3-fill"></b-icon> Other
+                    <span class="sr-only">Search</span>
+                  </template>
+                  <b-dropdown-item href="https://imgUp.asthriona.com"
+                    >Ash Img Up
+                    <b-icon font-scale="0.9" icon="box-arrow-up-right"></b-icon
+                  ></b-dropdown-item>
+                  <b-dropdown-item href="/server">Server List</b-dropdown-item>
+                  <span style="cursor: not-allowed;">
+                    <b-dropdown-item href="#" disabled
+                      >Gallery <i>Soon!</i>
+                    </b-dropdown-item>
+                  </span>
+                </b-dropdown>
+              </div>
+            </li>
             |
-            <router-link to="/admin">
+            <router-link to="/user">
               <li>
                 <b-icon icon="person-circle"></b-icon> {{ username
                 }}<small
@@ -80,6 +105,9 @@ export default {
 </script>
 
 <style scoped>
+.otherLinks {
+  background-color: rgba(0, 0, 0, 0) !important;
+}
 ul {
   list-style-type: none;
   padding: 0;

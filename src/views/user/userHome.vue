@@ -10,7 +10,7 @@
       ?
     </h2>
     <div class="userAdminLink" v-if="isAdmin == true"></div>
-    <router-link to="/admin/userprofile">User profile</router-link> <br />
+    <router-link to="/user/userprofile">User profile</router-link> <br />
     <b-button variant="danger" class="m-4" @click="logout">logout</b-button>
     <hr />
     <b-container>
@@ -25,7 +25,7 @@
     <b-container v-if="isAdmin == true">
       <b-row>
         <b-col lg="8" sm="12">
-          <router-link to="/admin/newpost"
+          <router-link to="/user/newpost"
             ><b-button class="mt-4" variant="primary"
               >New Post</b-button
             ></router-link
@@ -43,7 +43,7 @@
           >
             <p>{{ posts.description }}</p>
             <router-link :to="'/blog/' + posts.slug">Read</router-link> |
-            <router-link :to="'/admin/editPost/' + posts.slug"
+            <router-link :to="'/user/editPost/' + posts.slug"
               ><b-button variant="warning" @click="hide"
                 >Edit</b-button
               ></router-link
@@ -99,7 +99,7 @@
 <script>
 import axios from "axios";
 export default {
-  name: "AdminHome",
+  name: "UserHome",
   data() {
     return {
       username: "",
@@ -135,7 +135,7 @@ export default {
         });
     },
     postUpdates() {
-      axios.get(process.env.VUE_APP_URI + "/ashblog/post/admin").then(res => {
+      axios.get(process.env.VUE_APP_URI + "/ashblog/post/user").then(res => {
         this.posts = res.data.data.articles;
       });
     },
@@ -158,7 +158,7 @@ export default {
       })
       .then(res => {
         if (!res) {
-          return this.$router.push("/admin/login");
+          return this.$router.push("/user/login");
         }
       });
   },
