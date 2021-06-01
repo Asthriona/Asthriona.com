@@ -125,7 +125,13 @@ export default {
       likes: ""
     };
   },
-
+  metaInfo: {
+    title: "Asthriona | Blog",
+    htmlArrts: {
+      lang: "en",
+      amp: true
+    }
+  },
   async beforeMount() {
     document.title = "Asthriona - Blog";
     await axios
