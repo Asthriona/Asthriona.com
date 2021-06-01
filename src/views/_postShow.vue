@@ -114,7 +114,7 @@ export default {
   name: "PostShow",
   data() {
     return {
-      post: null,
+      post: "",
       user: null,
       // comment: [
       //   {
@@ -174,18 +174,18 @@ export default {
       }
     };
   },
-  mounted() {
-    document.title = "Asthriona - Blog";
+  beforeMount() {
     axios
       .get(
         `${process.env.VUE_APP_URI}/ashblog/post/${this.$route.params.slug}`,
         { withCredentials: true }
       )
-      .then(response =>
+      .then(response => {
+        document.title = `Asthriona | ${response.data.data.article.title}`;
         response
           ? (this.post = response.data.data.article)
-          : { title: "Error! API seems to be down :/" }
-      );
+          : { title: "Error! API seems to be down :/" };
+      });
   }
 };
 </script>
