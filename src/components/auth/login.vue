@@ -80,7 +80,7 @@ export default {
               this.message = res.data.message;
               this.form.email = "";
               this.form.password = "";
-              this.$router.push("/admin");
+              this.$router.push("/user");
             }
           },
           err => {
