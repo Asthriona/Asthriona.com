@@ -23,3 +23,4 @@ pnpm-debug.log*
 *.sw?
 src/router/workspace.code-workspace
 .env.production
+Asthriona Vue.code-workspace
