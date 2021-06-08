@@ -198,12 +198,36 @@
               <p>
                 This game became a big part of my life, I play since end of
                 Burning Crusade.<br />
-                My oldest archivement is [WoW's 5th Anniversary]<br />
-                I mainly play Death Knight Level 120 called Mâkoto on
-                Magtheridon.<br />
-                Also play a second "Main" character called "Alestra" It's a
-                space goat Pladin (I like paladin) and gearing up a Druid
-                restauration called "Maryy"<br />
+                My oldest archivement is
+                <a
+                  href="https://www.wowhead.com/achievement=4400/wows-5th-anniversary"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >[WoW's 5th Anniversary]</a
+                ><br />
+                I mainly play Death Knight Level 120 called
+                <a
+                  href="https://worldofwarcraft.com/en-gb/character/eu/magtheridon/Mâkoto"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Mâkoto</a
+                >
+                on Magtheridon.<br />
+                Also play a second "Main" character called
+                <a
+                  href="https://worldofwarcraft.com/en-gb/character/eu/magtheridon/Alestra"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >"Alestra"</a
+                >
+                It's a space goat Pladin (I like paladin) and gearing up a Druid
+                restauration called
+                <a
+                  href="https://worldofwarcraft.com/en-gb/character/eu/magtheridon/Maryy"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >"Maryy"</a
+                ><br />
               </p>
             </b-col>
           </div>
