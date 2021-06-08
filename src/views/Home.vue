@@ -215,10 +215,23 @@
               <ul>
                 <li>
                   Twitter:
-                  <a href="https://twitter.com/asthriona">@Asthriona</a>
+                  <a
+                    href="https://twitter.com/asthriona"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >@Asthriona</a
+                  >
                 </li>
                 <br />
-                <li>Discord: Asthriona#9604</li>
+                <li>
+                  Discord:
+                  <a
+                    href="https://dsc.bio/asthriona"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Asthriona#0001</a
+                  >
+                </li>
                 <br />
                 <li>
                   Mastodont:
