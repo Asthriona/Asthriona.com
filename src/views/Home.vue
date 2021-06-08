@@ -47,6 +47,27 @@
     </b-container>
     <b-container>
       <b-row>
+        <b-col cols="12">
+          <div class="spotify">
+            <h4 class="text-center">
+              <b-img
+                rounded="circle"
+                :src="
+                  img
+                    ? img
+                    : 'https://image.flaticon.com/icons/png/512/2111/2111624.png'
+                "
+                alt=""
+                height="50px"
+              />
+              <a :href="trackURL" target="_blank" rel="noopener noreferrer">
+                Now Playin: {{ title ? title : "Loading..." }} -
+                {{ artist ? artist : "Loading..." }}
+              </a>
+              {{ updateLast() }}
+            </h4>
+          </div>
+        </b-col>
         <div class="content text-left">
           <div class="who">
             <b-col cols="12" offset-lg="0"><h1>Who am I?</h1></b-col>
@@ -66,7 +87,7 @@
               </p>
             </b-col>
           </div>
-          <div class="who">
+          <div class="what">
             <b-col cols="12">
               <h1>What I do everyday</h1>
             </b-col>
@@ -86,7 +107,7 @@
               </p>
             </b-col>
           </div>
-          <div class="who">
+          <div class="works">
             <b-col cols="12">
               <h1>Works</h1>
             </b-col>
@@ -190,14 +211,14 @@
               </b-card-group>
             </b-col>
           </div>
-          <div class="who">
-            <b-col cols="12" offset-lg="1">
+          <div class="wow mt-4">
+            <b-col cols="12" class="mt-4">
               <h1>World of Warcraft</h1>
             </b-col>
-            <b-col cols="12" offset-lg="2">
+            <b-col cols="12" offset-lg="1">
               <p>
-                This game became a big part of my life, I play since end of
-                Burning Crusade.<br />
+                This game became a big part of my life, I play since the last
+                patch of Burning Crusade.<br />
                 My oldest archivement is
                 <a
                   href="https://www.wowhead.com/achievement=4400/wows-5th-anniversary"
@@ -231,11 +252,11 @@
               </p>
             </b-col>
           </div>
-          <div class="who">
-            <b-col cols="12" offset-lg="1">
+          <div class="contact">
+            <b-col cols="12">
               <h1>Contact</h1>
             </b-col>
-            <b-col cols="12" offset-lg="2">
+            <b-col cols="12" offset-lg="1">
               <ul>
                 <li>
                   Twitter:
@@ -284,11 +305,16 @@
 <script>
 // @ is an alias to /src
 import allBackgroundImages from "../assets/images/backgrounds/allbg";
+import axios from "axios";
 export default {
   name: "Home",
   data() {
     return {
       allBackgroundImages,
+      title: "",
+      artist: "",
+      img: "",
+      trackURL: "",
       random: [
         "/*This line is disabled*/",
         "死にたい",
@@ -305,6 +331,24 @@ export default {
   },
   beforeMount() {
     document.title = "Asthriona";
+    axios.get(`${process.env.VUE_APP_URI}/lastfm`).then(res => {
+      this.title = res.data.title;
+      this.artist = res.data.artist;
+      this.img = res.data.img;
+      this.trackURL = res.data.url;
+    });
+  },
+  methods: {
+    updateLast() {
+      setInterval(() => {
+        axios.get(`${process.env.VUE_APP_URI}/lastfm`).then(res => {
+          this.title = res.data.title;
+          this.artist = res.data.artist;
+          this.img = res.data.img;
+          this.trackURL = res.data.url;
+        });
+      }, 10000);
+    }
   },
   computed: {
     backgroundImage() {
@@ -423,7 +467,22 @@ li {
   color: #42b983 !important;
 }
 .content {
-  margin-top: 10rem;
+  margin-top: 2rem;
+}
+.spotify {
+  margin-top: 2rem;
+}
+.spotify a:link {
+  color: #cccccc;
+}
+.spotify a:visited {
+  color: #cccccc;
+}
+.spotify a:hover {
+  color: #cccccc;
+}
+.spotify a:active {
+  color: #cccccc;
 }
 .column {
   float: left;
