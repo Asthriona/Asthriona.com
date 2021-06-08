@@ -24,21 +24,21 @@
                 href="https://twitter.com/asthriona"
                 target="_blank"
                 rel="noopener noreferrer"
-                ><b-icon icon="twitter" variant="dark"></b-icon
+                ><b-icon icon="twitter" variant="light"></b-icon
               ></a>
               ●
               <a
                 href="https://instagram.com/asthrionaa"
                 target="_blank"
                 rel="noopener noreferrer"
-                ><b-icon icon="instagram" variant="dark"></b-icon
+                ><b-icon icon="instagram" variant="light"></b-icon
               ></a>
               ●
               <a
                 href="https://github.com/asthriona"
                 target="_blank"
                 rel="noopener noreferrer"
-                ><b-icon icon="github" variant="dark"></b-icon
+                ><b-icon icon="github" variant="light"></b-icon
               ></a>
             </h3>
           </div>
@@ -49,8 +49,8 @@
       <b-row>
         <div class="content text-left">
           <div class="who">
-            <b-col cols="12" offset-lg="1"><h1>Who am I?</h1></b-col>
-            <b-col cols="12" offset-lg="2">
+            <b-col cols="12" offset-lg="0"><h1>Who am I?</h1></b-col>
+            <b-col cols="12" offset-lg="1">
               <p>
                 I'm mostly working on personal Project Like Yukiko, Freyja,
                 Watcher, Loky, Asthriona networks. <br />
@@ -67,10 +67,10 @@
             </b-col>
           </div>
           <div class="who">
-            <b-col cols="12" offset-lg="1">
+            <b-col cols="12">
               <h1>What I do everyday</h1>
             </b-col>
-            <b-col cols="12" offset-lg="2">
+            <b-col cols="12" offset-lg="1">
               <p>
                 I'm mostly working on personal Project Like Yukiko, Freyja,
                 Watcher, Loky, Asthriona networks. <br />
@@ -87,12 +87,12 @@
             </b-col>
           </div>
           <div class="who">
-            <b-col cols="12" offset-lg="1">
+            <b-col cols="12">
               <h1>Works</h1>
             </b-col>
             <b-col cols="12">
-              <!-- THE WALL CARD -->
-              <div class="column">
+              <b-card-group>
+                <!-- THE WALL CARD -->
                 <b-card
                   bg-variant="dark"
                   title="The Wall"
@@ -107,10 +107,11 @@
                     WoW Guild Website<br />
                     > Express.js
                   </b-card-text>
+                  <b-button href="https://TheWall.ovh" variant="primary"
+                    >Visite</b-button
+                  >
                 </b-card>
-              </div>
-              <!-- YUKIKO CARD -->
-              <div class="column">
+                <!-- YUKIKO CARD -->
                 <b-card
                   bg-variant="dark"
                   title="Yukiko"
@@ -125,10 +126,11 @@
                     Public Discord bot <br />
                     > Discord.js
                   </b-card-text>
+                  <b-button href="https://yukiko.app" variant="primary"
+                    >Visite</b-button
+                  >
                 </b-card>
-              </div>
-              <!-- ANIMEFM CARD -->
-              <div class="column">
+                <!-- ANIMEFM CARD -->
                 <b-card
                   bg-variant="dark"
                   title="AnimeFM"
@@ -143,10 +145,11 @@
                     japan Web Radio<br />
                     > Vue & Azuracast
                   </b-card-text>
+                  <b-button href="https://animefm.co" variant="primary" disabled
+                    >Visite</b-button
+                  >
                 </b-card>
-              </div>
-              <!-- Asthriona CARD -->
-              <div class="column">
+                <!-- Asthriona CARD -->
                 <b-card
                   bg-variant="dark"
                   title="Asthriona.com"
@@ -161,10 +164,11 @@
                     Personal Website<br />
                     > VueJS
                   </b-card-text>
+                  <b-button href="javascript:;" variant="primary"
+                    >Visite</b-button
+                  >
                 </b-card>
-              </div>
-              <!-- Cloudsde Radio CARD -->
-              <div class="column">
+                <!-- Cloudsde Radio CARD -->
                 <b-card
                   bg-variant="dark"
                   title="Cloudsdale Radio"
@@ -172,15 +176,18 @@
                   img-alt="Image"
                   img-top
                   tag="article"
-                  style="min-width: 10rem;"
+                  style="min-width: 12rem;"
                   class="mb-2"
                 >
                   <b-card-text>
                     My Little Pony WebRadio<br />
                     > Express.js
                   </b-card-text>
+                  <b-button href="https://CloudsdaleRadio.com" variant="primary"
+                    >Visite</b-button
+                  >
                 </b-card>
-              </div>
+              </b-card-group>
             </b-col>
           </div>
           <div class="who">
