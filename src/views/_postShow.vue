@@ -14,167 +14,35 @@
         </b-col>
       </b-row>
       <hr />
-      <b-row>
-        <b-col cols="12">
-          <h4>About the Author:</h4>
-        </b-col>
-        <b-col cols="md-11 xs-12">
-          <b-img
-            left
-            :src="
-              author.profilePict ||
-                'https://cdn.nishikino.xyz/asthriona/ProfilePict/default.jpg'
-            "
-            height="100px"
-            class="rounded"
-          ></b-img>
-          <div class="img-text">
-            <h2 class="AuthorName">
-              {{ author.username }}
-              <span
-                ><b-icon
-                  v-if="author.isVerified == true"
-                  icon="patch-check"
-                  id="tooltip-verified"
-                ></b-icon>
-                <b-icon
-                  id="tooltip-dev"
-                  icon="wrench"
-                  v-if="author.isAdmin == true"
-                ></b-icon>
-                <b-tooltip target="tooltip-dev" triggers="hover">
-                  Developper
-                </b-tooltip>
-                <b-tooltip target="tooltip-verified" triggers="hover">
-                  Verified
-                </b-tooltip>
-              </span>
-            </h2>
-            <p class="authorDesc">{{ author.description }}</p>
-          </div>
-        </b-col>
-      </b-row>
-      <br />
+      <Author :postId="post._id" :authorId="post.authorId" />
       <hr />
-      <b-row>
-        <div class="comments text-center" v-if="user == null">
-          <h2>Comments are disabled for this article.</h2>
-        </div>
-        <div class="comments" v-else>
-          <div class="user">
-            <img :src="user.pp" :alt="user.username" /> {{ user.username }}
-          </div>
-          <form action="/Ashblog/comment/post" method="post">
-            <label for="comment">Your comment:</label>
-            <input type="text" name="comment" id="comment" />
-            <button disabled="disabled">Submit</button>
-          </form>
-        </div>
-        <b-col cols="8">
-          <div
-            class="comment"
-            v-for="comments in comment"
-            :key="comments.username"
-          >
-            <b-img
-              left
-              :src="comments.avatar"
-              height="50px"
-              rounded="circle"
-              alt=""
-            ></b-img>
-            <h3 class="comUsername">
-              - {{ comments.username }}
-              <small
-                ><b-icon
-                  v-if="comments.isVerified == true"
-                  icon="patch-check"
-                  id="tooltip-verified"
-                ></b-icon
-                ><b-icon
-                  id="tooltip-dev"
-                  icon="wrench"
-                  v-if="comments.isAdmin == true"
-                ></b-icon
-              ></small>
-            </h3>
-            <br />
-            {{ comments.text }}
-            <hr />
-            {{ comments.time | moment("MMMM Do YYYY, h:mm a") }}
-          </div>
-        </b-col>
-      </b-row>
+      <Comments :postId="post._id" :user="user" />
     </b-container>
+    <small> {{ post._id ? post._id : "NULL" }}</small>
   </div>
 </template>
 <script>
 import axios from "axios";
+import Author from "../components/posts/Author.vue";
+import Comments from "../components/posts/comments.vue";
 export default {
   name: "PostShow",
   data() {
     return {
       post: "",
-      user: null,
-      // comment: [
-      //   {
-      //     username: "Asthriona",
-      //     isVerified: true,
-      //     isAdmin: false,
-      //     avatar:
-      //       "https://cdn.nishikino.xyz/asthriona/ProfilePict/asthriona.gif",
-      //     text: "Waw! best post i've ever read! Incrediblblblblblble!",
-      //     time: Date.now()
-      //   },
-      //   {
-      //     username: "RiseDev",
-      //     isVerified: false,
-      //     isAdmin: true,
-      //     avatar:
-      //       "https://pbs.twimg.com/profile_images/1338904649907253249/MnYcLS0v_400x400.jpg",
-      //     text: "Dayum!1!",
-      //     time: Date.now()
-      //   },
-      //   {
-      //     username: "Some Poggers",
-      //     isVerified: false,
-      //     isAdmin: false,
-      //     avatar:
-      //       "https://asthriona.s3.fr-par.scw.cloud/ShareX/2021/04/SjzBDRI3.jpg",
-      //     text: "fuck me",
-      //     time: Date.now()
-      //   },
-      //   {
-      //     username: "Lights",
-      //     isVerified: false,
-      //     isAdmin: false,
-      //     avatar:
-      //       "https://pbs.twimg.com/profile_images/1366239469347635202/Ssu53nH7_400x400.jpg",
-      //     text: "oh my...",
-      //     time: Date.now()
-      //   },
-      //   {
-      //     username: "Deadmau5",
-      //     isVerified: true,
-      //     isAdmin: false,
-      //     avatar:
-      //       "https://pbs.twimg.com/profile_images/1296188634404737031/RUJOD0mL_400x400.jpg",
-      //     text: "WAW this post broke the cube... again!",
-      //     time: Date.now()
-      //   }
-      // ],
-      author: {
-        profilePict:
-          "https://cdn.nishikino.xyz/asthriona/ProfilePict/asthriona.gif",
-        username: "Asthriona",
-        description:
-          "People call me 'Cool kid' Because I know code, video editing, and I'm the best tank of <Eternal Vengeance>. But don't let them fool you! I'm not cool :D",
-        isVerified: true,
-        isAdmin: false
-      }
+      user: ""
     };
   },
-  beforeMount() {
+  components: {
+    Author,
+    Comments
+  },
+  async beforeMount() {
+    axios
+      .get(`${process.env.VUE_APP_URI}/user`, { withCredentials: true })
+      .then(res => {
+        this.user = res.data;
+      });
     axios
       .get(
         `${process.env.VUE_APP_URI}/ashblog/post/${this.$route.params.slug}`,
@@ -186,6 +54,28 @@ export default {
           ? (this.post = response.data.data.article)
           : { title: "Error! API seems to be down :/" };
       });
+  },
+  methods: {
+    // onSubmit(event) {
+    //   event.preventDefault();
+    //   axios
+    //     .post(
+    //       `${process.env.VUE_APP_URI}/ashblog/comment`,
+    //       {
+    //         postId: this.post._id,
+    //         content: this.form.comment
+    //       },
+    //       { withCredentials: true }
+    //     )
+    //     .then(() => {
+    //       this.comment.push({
+    //         avatar: this.user.avatar,
+    //         username: this.user.username,
+    //         content: this.form.comment,
+    //         createdAt: Date.now()
+    //       });
+    //     });
+    // }
   }
 };
 </script>
@@ -196,10 +86,6 @@ export default {
   height: 400px;
   background-size: cover;
   background-position: 50%;
-}
-.AuthorName,
-.authorDesc {
-  margin-left: 7.5rem !important;
 }
 .comment {
   display: block;
