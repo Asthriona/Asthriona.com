@@ -1,4 +1,5 @@
-# website
+# Asthriona.com
+[![Asthriona.com](https://github.com/Asthriona/Asthriona.com/actions/workflows/EsLint.yml/badge.svg)](https://github.com/Asthriona/Asthriona.com/actions/workflows/EsLint.yml)
 
 ## Project setup
 ```
