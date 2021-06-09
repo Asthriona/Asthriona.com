@@ -18,7 +18,9 @@
       <hr />
       <Comments :postId="post._id" :user="user" />
     </b-container>
-    <small> {{ post._id ? post._id : "NULL" }}</small>
+    <small style="color: #212226 !important;">
+      {{ post._id ? post._id : "NULL" }}</small
+    >
   </div>
 </template>
 <script>
