@@ -74,6 +74,7 @@ export default {
   data() {
     return {
       message: "",
+      variant: "",
       isAdmin: "",
       postId: "",
       postSlug: "",
@@ -90,7 +91,7 @@ export default {
   async mounted() {
     axios
       .get(process.env.VUE_APP_URI + "/user", {
-        headers: { Authorization: "Bearer " + localStorage.getItem("token") }
+        withCredentials: true
       })
       .then(res => {
         this.username = res.data.username;
@@ -114,16 +115,11 @@ export default {
   methods: {
     async onSubmit(event) {
       event.preventDefault();
-      await axios
-        .post(
-          process.env.VUE_APP_URI + "/ashblog/post/edit/" + this.postId,
-          this.form
-        )
-        .then(res => {
-          if (res.status != 200)
-            return (this.message = `Yikes! An error happened \n ${res.statusText}`);
-          this.$router.push(`/blog/${this.postSlug}`);
-        });
+      axios.post(
+        `${process.env.VUE_APP_URI}/ashblog/post/edit/${this.postId}`,
+        this.form,
+        { withCredentials: true }
+      );
     },
     onReset(event) {
       event.preventDefault();

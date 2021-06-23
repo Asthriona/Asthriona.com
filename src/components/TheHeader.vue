@@ -46,8 +46,9 @@
             |
             <router-link to="/user">
               <li>
-                <b-icon icon="person-circle"></b-icon> {{ username
-                }}<small
+                <b-avatar :src="avatar" icon="people-fill"></b-avatar>
+                {{ username }}
+                <small
                   ><b-icon v-if="isVerified == true" icon="patch-check"></b-icon
                   ><b-icon
                     icon="wrench"
@@ -78,7 +79,8 @@ export default {
       email: "",
       isAdmin: "",
       isVerified: "",
-      error: ""
+      error: "",
+      avatar: ""
     };
   },
   metaInfo: {
@@ -96,6 +98,7 @@ export default {
         this.email = user.email;
         this.isAdmin = user.isAdmin;
         this.isVerified = user.isVerified;
+        this.avatar = user.avatar;
       })
       .catch(err => {
         this.error = err;
