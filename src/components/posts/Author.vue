@@ -87,7 +87,7 @@
               </b-tooltip>
             </span>
           </h2>
-          <p class="authorDesc">{{ author.description }}</p>
+          <p class="authorDesc">Twitter: Asthriona, Instagram: @Asthrionaa</p>
         </div>
       </b-col>
     </b-row>
