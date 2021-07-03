@@ -37,13 +37,12 @@
         "title":"World Of Warcraft",
         "text": "Ce jeu est devenue une ennorme partie de ma vie, je joue depuis le dernier patch de Burning Crusade. <br> Mon haut fait le plus vieux est <a href='https://www.wowhead.com/achievement=4400/wows-5th-anniversary' target='_blank'>[WoW's 5th Anniversary]</a><br> Mon main est un Chevalier de la mort niveau 60 appeler <a href='https://worldofwarcraft.com/en-gb/character/eu/magtheridon/m%C3%A2koto' target='_blank'>Mâkoto</a> sur Magtheridon.<br> Et je travaille aussi sur un druid Protection appeler <a href='https://worldofwarcraft.com/en-gb/character/eu/magtheridon/maryy' target='_blank'>'Maryy'</a>"
       },
-      "contact": "Contact"
-    },
-    "contact": {
-      "title": "Contacte",
-      "twitter": "",
-      "discord": "",
-      "masto": "",
-      "email":"Email"
-  }
+      "contact": {
+        "title": "Contacte",
+        "twitter": "",
+        "discord": "",
+        "masto": "",
+        "email":"Email"
+    }
+    }
   }
