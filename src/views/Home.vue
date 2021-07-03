@@ -69,7 +69,11 @@
           </div>
         </b-col>
         <p>
-          <select class="custom-select" v-model="lang" @change="handleChange(event)">
+          <select
+            class="custom-select"
+            v-model="lang"
+            @change="handleChange(event)"
+          >
             <option value="ja">日本語</option>
             <option value="en">English</option>
             <option value="fr">Francais</option>
@@ -77,15 +81,16 @@
         </p>
         <div class="content text-left">
           <div class="who">
-            <b-col cols="12" offset-lg="0"><h1>{{ $t('home.who.title') }}</h1></b-col>
+            <b-col cols="12" offset-lg="0"
+              ><h1>{{ $t("home.who.title") }}</h1></b-col
+            >
             <b-col cols="12" offset-lg="1">
-              <p v-html="$t('home.who.text')">
-              </p>
+              <p v-html="$t('home.who.text')"></p>
             </b-col>
           </div>
           <div class="what">
             <b-col cols="12">
-              <h1>{{ $t('home.what.title') }}</h1>
+              <h1>{{ $t("home.what.title") }}</h1>
             </b-col>
             <b-col cols="12" offset-lg="1">
               <p v-html="$t('home.what.text')"></p>
@@ -93,7 +98,7 @@
           </div>
           <div class="works">
             <b-col cols="12">
-              <h1>{{ $t('home.works.title') }}</h1>
+              <h1>{{ $t("home.works.title") }}</h1>
             </b-col>
             <b-col cols="12">
               <b-card-group>
@@ -109,12 +114,12 @@
                   class="mb-2"
                 >
                   <b-card-text>
-                    {{$t('home.works.web.TheWall.desc')}}<br />
+                    {{ $t("home.works.web.TheWall.desc") }}<br />
                     > Express.js
                   </b-card-text>
-                  <b-button href="https://TheWall.ovh" variant="primary"
-                    >{{$t('home.works.visite')}}</b-button
-                  >
+                  <b-button href="https://TheWall.ovh" variant="primary">{{
+                    $t("home.works.visite")
+                  }}</b-button>
                 </b-card>
                 <!-- YUKIKO CARD -->
                 <b-card
@@ -128,12 +133,12 @@
                   class="mb-2"
                 >
                   <b-card-text>
-                    {{$t('home.works.web.Yukiko.desc')}} <br />
+                    {{ $t("home.works.web.Yukiko.desc") }} <br />
                     > Discord.js
                   </b-card-text>
-                  <b-button href="https://yukiko.app" variant="primary"
-                    >{{$t('home.works.visite')}}</b-button
-                  >
+                  <b-button href="https://yukiko.app" variant="primary">{{
+                    $t("home.works.visite")
+                  }}</b-button>
                 </b-card>
                 <!-- ANIMEFM CARD -->
                 <b-card
@@ -147,11 +152,14 @@
                   class="mb-2"
                 >
                   <b-card-text>
-                    {{$t('home.works.web.anime.desc')}}<br />
+                    {{ $t("home.works.web.anime.desc") }}<br />
                     > Vue & Azuracast
                   </b-card-text>
-                  <b-button href="https://animefm.co" variant="primary" disabled
-                    >{{$t('home.works.visite')}}</b-button
+                  <b-button
+                    href="https://animefm.co"
+                    variant="primary"
+                    disabled
+                    >{{ $t("home.works.visite") }}</b-button
                   >
                 </b-card>
                 <!-- Asthriona CARD -->
@@ -166,12 +174,12 @@
                   class="mb-2"
                 >
                   <b-card-text>
-                    {{$t('home.works.web.asthriona.desc')}}<br />
+                    {{ $t("home.works.web.asthriona.desc") }}<br />
                     > VueJS
                   </b-card-text>
-                  <b-button href="javascript:;" variant="primary"
-                    >{{$t('home.works.visite')}}</b-button
-                  >
+                  <b-button href="javascript:;" variant="primary">{{
+                    $t("home.works.visite")
+                  }}</b-button>
                 </b-card>
                 <!-- Cloudsde Radio CARD -->
                 <b-card
@@ -185,11 +193,13 @@
                   class="mb-2"
                 >
                   <b-card-text>
-                    {{$t('home.works.web.cloudsdale.desc')}}<br />
+                    {{ $t("home.works.web.cloudsdale.desc") }}<br />
                     > Express.js
                   </b-card-text>
-                  <b-button href="https://CloudsdaleRadio.com" variant="primary"
-                    >{{$t('home.works.visite')}}</b-button
+                  <b-button
+                    href="https://CloudsdaleRadio.com"
+                    variant="primary"
+                    >{{ $t("home.works.visite") }}</b-button
                   >
                 </b-card>
               </b-card-group>
@@ -197,7 +207,7 @@
           </div>
           <div class="wow mt-4">
             <b-col cols="12" class="mt-4">
-              <h1>{{ $t('home.wow.title') }}</h1>
+              <h1>{{ $t("home.wow.title") }}</h1>
             </b-col>
             <b-col cols="12" offset-lg="1">
               <p v-html="$t('home.wow.text')"></p>
@@ -205,7 +215,7 @@
           </div>
           <div class="contact">
             <b-col cols="12">
-              <h1>{{ $t('home.contact.title') }}</h1>
+              <h1>{{ $t("home.contact.title") }}</h1>
             </b-col>
             <b-col cols="12" offset-lg="1">
               <ul>
@@ -240,7 +250,7 @@
                 </li>
                 <br />
                 <li>
-                  {{ $t('home.contact.email') }}:
+                  {{ $t("home.contact.email") }}:
                   <a href="mailto:ping@asthriona.com">ping@Asthriona.com</a>
                 </li>
                 <br />
@@ -266,7 +276,7 @@ export default {
       artist: "",
       img: "",
       trackURL: "",
-      lang: localStorage.getItem('lang') || "en",
+      lang: localStorage.getItem("lang") || "en",
       random: [
         "/*This line is disabled*/",
         "死にたい",
@@ -282,13 +292,13 @@ export default {
     };
   },
   beforeMount() {
-    if(localStorage.getItem('lang') === 'ja'){
+    if (localStorage.getItem("lang") === "ja") {
       document.title = "アストリオナ";
-    }else{
+    } else {
       document.title = "Asthriona";
     }
-    if(!localStorage.getItem('lang')){
-      localStorage.setItem('lang', 'en')
+    if (!localStorage.getItem("lang")) {
+      localStorage.setItem("lang", "en");
     }
     axios.get(`${process.env.VUE_APP_URI}/lastfm`).then(res => {
       this.title = res.data.title;
@@ -299,8 +309,8 @@ export default {
   },
   methods: {
     handleChange() {
-      localStorage.setItem('lang', event.target.value)
-      window.location.reload()
+      localStorage.setItem("lang", event.target.value);
+      window.location.reload();
     },
     updateLast() {
       setInterval(() => {
