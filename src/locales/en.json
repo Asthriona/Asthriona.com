@@ -1,0 +1,48 @@
+{
+  "home": {
+    "who": {
+      "title": "Who am I?",
+      "text": "Hi, I'm Asthriona, I don't have a name, people call me 'weeb' or 'hey you!'. <br> Im kind, everyone like me. I don't know why. <br> I like Anime (maybe why everyone call me weeb), Video games (mainly World of Warcraft). <br> Im part of Eternal Vengeance, The best WoW guild EU."
+    },
+    "what": {
+      "title": "What I do everyday",
+      "text": "I'm mostly working on personal Project Like Yukiko, Freyja, Watcher, Loky, Asthriona networks. Playing video games is also a big part of my life since i'm able to hold a controler. i've got promoted admin of Eternal Veangeance, wich is a WoW Guilds and comunity around gaming in general. I'm their main tank (M+ player 92th thank of Maggi in S4), But also managing part of the guild events, and official developper. In the real world I'm a Network Engineer and kinda lost developper, Still learning."
+    },
+    "works": {
+      "title": "Works",
+      "web": {
+        "TheWall": {
+          "title": "The Wall",
+          "desc": "WoW Guild Website"
+        },
+        "Yukiko": {
+          "title": "Yukiko",
+          "desc": "Public Discord Bot"
+        },
+        "anime": {
+          "title": "AnimeFM",
+          "desc": "Japanese webradio"
+        },
+        "asthriona": {
+          "title": "Asthriona.com",
+          "desc": "Personal Website"
+        },
+        "cloudsdale": {
+          "title": "Cloudsdale Radio",
+          "desc": "Brony Webradio"
+        }
+      }
+    },
+    "wow": {
+      "title":"World Of Warcraft",
+      "text": "This game became a big part of my life, I play since the last patch of Burning Crusade. <br> My oldest archivement is <a href='https://www.wowhead.com/achievement=4400/wows-5th-anniversary' target='_blank'>[WoW's 5th Anniversary]</a><br> I mainly play Death Knight Level 120 called <a href='https://worldofwarcraft.com/en-gb/character/eu/magtheridon/m%C3%A2koto' target='_blank'>Mâkoto</a> on Magtheridon.<br> and gearing up a Druid restauration called <a href='https://worldofwarcraft.com/en-gb/character/eu/magtheridon/maryy' target='_blank'>'Maryy'</a>"
+    },
+    "contact": {
+      "title": "Contact",
+      "twitter": "",
+      "discord": "",
+      "masto": "",
+      "email":"Email"
+  }
+  }
+}

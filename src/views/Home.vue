@@ -68,55 +68,44 @@
             </h4>
           </div>
         </b-col>
+        <p>
+          <select
+            class="custom-select"
+            v-model="lang"
+            @change="handleChange(event)"
+          >
+            <option value="ja">日本語</option>
+            <option value="en">English</option>
+            <option value="fr">Francais</option>
+          </select>
+        </p>
         <div class="content text-left">
           <div class="who">
-            <b-col cols="12" offset-lg="0"><h1>Who am I?</h1></b-col>
+            <b-col cols="12" offset-lg="0"
+              ><h1>{{ $t("home.who.title") }}</h1></b-col
+            >
             <b-col cols="12" offset-lg="1">
-              <p>
-                I'm mostly working on personal Project Like Yukiko, Freyja,
-                Watcher, Loky, Asthriona networks. <br />
-                Playing video games is also a big part of my life since i'm able
-                to hold a controler. <br />
-                i've got promoted admin of Eternal Veangeance, wich is a WoW
-                Guilds and comunity around gaming in general. <br />
-                I'm their main tank (M+ player 92th thank of Maggi in S4), But
-                also managing part of the guild events, and official developper.
-                <br />
-                In the real world I'm a Network Engineer and kinda lost
-                developper, Still learning. <br />
-              </p>
+              <p v-html="$t('home.who.text')"></p>
             </b-col>
           </div>
           <div class="what">
             <b-col cols="12">
-              <h1>What I do everyday</h1>
+              <h1>{{ $t("home.what.title") }}</h1>
             </b-col>
             <b-col cols="12" offset-lg="1">
-              <p>
-                I'm mostly working on personal Project Like Yukiko, Freyja,
-                Watcher, Loky, Asthriona networks. <br />
-                Playing video games is also a big part of my life since i'm able
-                to hold a controler. <br />
-                i've got promoted admin of Eternal Veangeance, wich is a WoW
-                Guilds and comunity around gaming in general. <br />
-                I'm their main tank (M+ player 92th thank of Maggi in S4), But
-                also managing part of the guild events, and official developper.
-                <br />
-                In the real world I'm a Network Engineer and kinda lost
-                developper, Still learning. <br />
-              </p>
+              <p v-html="$t('home.what.text')"></p>
             </b-col>
           </div>
           <div class="works">
             <b-col cols="12">
-              <h1>Works</h1>
+              <h1>{{ $t("home.works.title") }}</h1>
             </b-col>
             <b-col cols="12">
               <b-card-group>
                 <!-- THE WALL CARD -->
                 <b-card
                   bg-variant="dark"
-                  title="The Wall"
+                  :title="$t('home.works.web.TheWall.title')"
                   img-src="https://cdn.nishikino.xyz/asthriona/TheWallAsh.webp"
                   img-alt="Image"
                   img-top
@@ -125,12 +114,12 @@
                   class="mb-2"
                 >
                   <b-card-text>
-                    WoW Guild Website<br />
+                    {{ $t("home.works.web.TheWall.desc") }}<br />
                     > Express.js
                   </b-card-text>
-                  <b-button href="https://TheWall.ovh" variant="primary"
-                    >Visite</b-button
-                  >
+                  <b-button href="https://TheWall.ovh" variant="primary">{{
+                    $t("home.works.visite")
+                  }}</b-button>
                 </b-card>
                 <!-- YUKIKO CARD -->
                 <b-card
@@ -144,12 +133,12 @@
                   class="mb-2"
                 >
                   <b-card-text>
-                    Public Discord bot <br />
+                    {{ $t("home.works.web.Yukiko.desc") }} <br />
                     > Discord.js
                   </b-card-text>
-                  <b-button href="https://yukiko.app" variant="primary"
-                    >Visite</b-button
-                  >
+                  <b-button href="https://yukiko.app" variant="primary">{{
+                    $t("home.works.visite")
+                  }}</b-button>
                 </b-card>
                 <!-- ANIMEFM CARD -->
                 <b-card
@@ -163,11 +152,14 @@
                   class="mb-2"
                 >
                   <b-card-text>
-                    japan Web Radio<br />
+                    {{ $t("home.works.web.anime.desc") }}<br />
                     > Vue & Azuracast
                   </b-card-text>
-                  <b-button href="https://animefm.co" variant="primary" disabled
-                    >Visite</b-button
+                  <b-button
+                    href="https://animefm.co"
+                    variant="primary"
+                    disabled
+                    >{{ $t("home.works.visite") }}</b-button
                   >
                 </b-card>
                 <!-- Asthriona CARD -->
@@ -182,12 +174,12 @@
                   class="mb-2"
                 >
                   <b-card-text>
-                    Personal Website<br />
+                    {{ $t("home.works.web.asthriona.desc") }}<br />
                     > VueJS
                   </b-card-text>
-                  <b-button href="javascript:;" variant="primary"
-                    >Visite</b-button
-                  >
+                  <b-button href="javascript:;" variant="primary">{{
+                    $t("home.works.visite")
+                  }}</b-button>
                 </b-card>
                 <!-- Cloudsde Radio CARD -->
                 <b-card
@@ -201,11 +193,13 @@
                   class="mb-2"
                 >
                   <b-card-text>
-                    My Little Pony WebRadio<br />
+                    {{ $t("home.works.web.cloudsdale.desc") }}<br />
                     > Express.js
                   </b-card-text>
-                  <b-button href="https://CloudsdaleRadio.com" variant="primary"
-                    >Visite</b-button
+                  <b-button
+                    href="https://CloudsdaleRadio.com"
+                    variant="primary"
+                    >{{ $t("home.works.visite") }}</b-button
                   >
                 </b-card>
               </b-card-group>
@@ -213,48 +207,15 @@
           </div>
           <div class="wow mt-4">
             <b-col cols="12" class="mt-4">
-              <h1>World of Warcraft</h1>
+              <h1>{{ $t("home.wow.title") }}</h1>
             </b-col>
             <b-col cols="12" offset-lg="1">
-              <p>
-                This game became a big part of my life, I play since the last
-                patch of Burning Crusade.<br />
-                My oldest archivement is
-                <a
-                  href="https://www.wowhead.com/achievement=4400/wows-5th-anniversary"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  >[WoW's 5th Anniversary]</a
-                ><br />
-                I mainly play Death Knight Level 120 called
-                <a
-                  href="https://worldofwarcraft.com/en-gb/character/eu/magtheridon/Mâkoto"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  >Mâkoto</a
-                >
-                on Magtheridon.<br />
-                Also play a second "Main" character called
-                <a
-                  href="https://worldofwarcraft.com/en-gb/character/eu/magtheridon/Alestra"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  >"Alestra"</a
-                >
-                It's a space goat Pladin (I like paladin) and gearing up a Druid
-                restauration called
-                <a
-                  href="https://worldofwarcraft.com/en-gb/character/eu/magtheridon/Maryy"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  >"Maryy"</a
-                ><br />
-              </p>
+              <p v-html="$t('home.wow.text')"></p>
             </b-col>
           </div>
           <div class="contact">
             <b-col cols="12">
-              <h1>Contact</h1>
+              <h1>{{ $t("home.contact.title") }}</h1>
             </b-col>
             <b-col cols="12" offset-lg="1">
               <ul>
@@ -289,7 +250,7 @@
                 </li>
                 <br />
                 <li>
-                  Email:
+                  {{ $t("home.contact.email") }}:
                   <a href="mailto:ping@asthriona.com">ping@Asthriona.com</a>
                 </li>
                 <br />
@@ -315,6 +276,7 @@ export default {
       artist: "",
       img: "",
       trackURL: "",
+      lang: localStorage.getItem("lang") || "en",
       random: [
         "/*This line is disabled*/",
         "死にたい",
@@ -330,7 +292,14 @@ export default {
     };
   },
   beforeMount() {
-    document.title = "Asthriona";
+    if (localStorage.getItem("lang") === "ja") {
+      document.title = "アストリオナ";
+    } else {
+      document.title = "Asthriona";
+    }
+    if (!localStorage.getItem("lang")) {
+      localStorage.setItem("lang", "en");
+    }
     axios.get(`${process.env.VUE_APP_URI}/lastfm`).then(res => {
       this.title = res.data.title;
       this.artist = res.data.artist;
@@ -339,6 +308,10 @@ export default {
     });
   },
   methods: {
+    handleChange() {
+      localStorage.setItem("lang", event.target.value);
+      window.location.reload();
+    },
     updateLast() {
       setInterval(() => {
         axios.get(`${process.env.VUE_APP_URI}/lastfm`).then(res => {
