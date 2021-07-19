@@ -1,5 +1,4 @@
-import Vue from "vue";
-import VueRouter from "vue-router";
+import { createRouter, createWebHistory } from "vue-router";
 import Home from "../views/Home.vue";
 import Blog from "../views/blog.vue";
 import PostShow from "../views/_postShow.vue";
@@ -10,8 +9,6 @@ import EditPost from "../views/user/EditPost.vue";
 import UserProfile from "../views/user/UserProfile.vue";
 import Server from "../views/Server.vue";
 import Friends from "../views/Friends.vue";
-
-Vue.use(VueRouter);
 
 const routes = [
   {
@@ -72,9 +69,8 @@ const routes = [
   }
 ];
 
-const router = new VueRouter({
-  mode: "history",
-  base: process.env.BASE_URL,
+const router = createRouter({
+  history: createWebHistory(process.env.BASE_URL),
   routes
 });
 
