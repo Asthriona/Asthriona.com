@@ -2,7 +2,6 @@
   <div id="app">
     <Nishikino />
     <TheHeader />
-    <h1>HELLO</h1>
     <router-view />
     <TheFooter />
   </div>

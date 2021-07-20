@@ -1,5 +1,5 @@
 /* eslint-disable */
-import { createApp } from 'vue'
+import Vue from "vue";
 import { BootstrapVue, IconsPlugin } from "bootstrap-vue";
 import App from "./App.vue";
 import "./registerServiceWorker";
@@ -12,14 +12,10 @@ import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap-vue/dist/bootstrap-vue.css";
 import './registerServiceWorker'
 import i18n from './i18n'
-
-createApp(App)
-.use(router)
-.use(BootstrapVue)
-.use(VueMeta)
-.use(IconsPlugin)
-.use(require('vue-moment'))
-.mount('#app')
+Vue.use(require('vue-moment'));
+Vue.use(BootstrapVue);
+Vue.use(IconsPlugin);
+Vue.use(VueMeta);
 
 new Vue({
     router,
