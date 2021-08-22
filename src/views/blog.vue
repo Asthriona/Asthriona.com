@@ -17,8 +17,11 @@
     <b-container fluid>
       <b-row>
         <b-col lg="7" sm="12" offset-lg="1">
-          <div class="error" v-if="errors">
-            <h1>Waps! An error happened!</h1>
+          <div class="error mt-4" v-if="errors">
+            <h1>
+              Error Asthriona is dead,
+              <span style="color:red;">mismatch</span> .
+            </h1>
             <hr />
             <p>
               Aparently our server made a mess! You can retry by refreshing the
