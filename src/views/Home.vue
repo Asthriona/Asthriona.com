@@ -28,7 +28,7 @@
               ></a>
               ●
               <a
-                href="https://instagram.com/asthrionaa"
+                href="https://instagram.com/asthriona.dev"
                 target="_blank"
                 rel="noopener noreferrer"
                 ><b-icon icon="instagram" variant="light"></b-icon
