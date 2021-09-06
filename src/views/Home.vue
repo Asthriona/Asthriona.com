@@ -254,6 +254,22 @@
                   <a href="mailto:ping@asthriona.com">ping@Asthriona.com</a>
                 </li>
                 <br />
+                <li>
+                  GPG:
+                  <a
+                    href="/pubkey.txt"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >0xC7D7BC3411B759FE</a
+                  >
+                  |
+                  <a
+                    href="http://pgp.mit.edu/pks/lookup?op=get&search=0xC7D7BC3411B759FE"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >[pgp.mit.edu]</a
+                  >
+                </li>
               </ul>
             </b-col>
           </div>
