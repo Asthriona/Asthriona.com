@@ -77,7 +77,7 @@ export default {
       axios
         .get(`${process.env.VUE_APP_URI}/ashblog/comment/${this.postId}`)
         .then(res => {
-          this.comment = res.data.comments;
+          this.comment = res.data.data.commentArray;
         });
     },
     onSubmit(event) {
