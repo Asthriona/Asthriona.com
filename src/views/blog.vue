@@ -146,7 +146,7 @@ export default {
       .then(user => {
         this.avatar = user.data.avatar
           ? user.data.avatar
-          : "https://asthriona.s3.fr-par.scw.cloud/ShareX/2021/03/VALORANT-Win64-Shipping_050321-052513PM.png";
+          : "https://cdn.nishikino.xyz/asthriona/ProfilePict/mako.png";
       });
     await axios.get(process.env.VUE_APP_URI + "/ashblog/Getlikes").then(res => {
       this.likes = res.data.likes;
