@@ -62,8 +62,7 @@
     </div>
     <div class="LoginAlert text-center" v-if="error">
       <p>
-        It seems like something went wrong with your user. Please Logout and
-        relog in to fix the issue.
+        {{ error }}
       </p>
     </div>
   </div>
@@ -101,7 +100,13 @@ export default {
         this.avatar = user.avatar;
       })
       .catch(err => {
-        this.error = err;
+        if (err.message == "Network Error") {
+          this.error =
+            "Asthriona's Gateway is down. Lots of feature on this website wont work.";
+        } else {
+          this.error =
+            "It seems like something went wrong with your user. Please Logout and relog in to fix the issue.";
+        }
       });
   }
 };
