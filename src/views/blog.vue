@@ -77,24 +77,47 @@
           </b-card>
           <b-card
             bg-variant="#212226"
-            title="Friends and things I use"
+            title="Friends, Partner and things I use"
             tag="side"
             style="max-width: 100%;"
             class="mt-4 mx-2 ml-4 mb-4 text-center"
           >
             <p>
-              <b-img
-                src="https://asthriona.s3.fr-par.scw.cloud/ShareX/2021/01/5185491.png"
-                height="50%"
-              ></b-img>
-              <b-img
+              <a
+                href="https://scaleway.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <b-img
+                  class="parthner-img"
+                  src="https://asthriona.s3.fr-par.scw.cloud/ShareX/2021/01/5185491.png"
+                ></b-img>
+              </a>
+              <!-- <b-img
+                class="parthner-img"
                 src="https://asthriona.s3.fr-par.scw.cloud/ShareX/2021/01/space.png"
                 height="50%"
-              ></b-img>
-              <b-img
-                src="https://asthriona.s3.fr-par.scw.cloud/ShareX/2021/01/cf-logo-v-rgb-rev.png"
-                height="50%"
-              ></b-img>
+              ></b-img> -->
+              <a
+                href="https://cloudflare.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <b-img
+                  class="parthner-img"
+                  src="https://asthriona.s3.fr-par.scw.cloud/ShareX/2021/01/cf-logo-v-rgb-rev.png"
+                ></b-img>
+              </a>
+              <a
+                href="https://asthriona.speedtest.net"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <b-img
+                  class="parthner-img"
+                  src="https://cdn.asthriona.com/i/2021/10/speedtestLogo.png"
+                ></b-img>
+              </a>
             </p>
           </b-card>
           <b-card
@@ -105,6 +128,7 @@
             style="max-width: 100%;"
             class="mt-4 mx-2 ml-4 mb-4 text-center"
           >
+            <p>click it's free! :D</p>
             <h1 style="cursor: pointer">
               <b-icon style="color:red" icon="heart-fill"></b-icon>
             </h1>
@@ -190,5 +214,19 @@ pre {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+}
+.parthner-img {
+  text-align: center;
+  height: 60px;
+  margin-left: 10px;
+  margin-top: 10px;
+  transition: all 0.5s ease-in-out;
+  filter: grayscale(100%);
+  opacity: 0.5;
+}
+.parthner-img:hover {
+  transition: all 0.5s ease-in-out;
+  filter: grayscale(0%);
+  opacity: 1;
 }
 </style>
