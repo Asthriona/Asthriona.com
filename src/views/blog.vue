@@ -134,6 +134,9 @@
             </h1>
             <h5 class="text-center">{{ likes }} Likes</h5>
           </b-card>
+          <b-col class="text-right noselect" cols="12">
+            <a class="gwar" @click="alink">A</a>
+          </b-col>
         </b-col>
       </b-row>
     </b-container>
@@ -181,6 +184,12 @@ export default {
       await axios.get(process.env.VUE_APP_URI + "/ashblog/likes").then(res => {
         this.likes = res.data.likes;
       });
+    },
+    alink() {
+      var audio = new Audio(
+        "https://cdn.nishikino.xyz/asthriona/blog/static/gawr-gura-a.wav"
+      );
+      audio.play();
     }
   }
 };
@@ -228,5 +237,21 @@ pre {
   transition: all 0.5s ease-in-out;
   filter: grayscale(0%);
   opacity: 1;
+}
+.gwar {
+  color: aliceblue;
+  font-size: 2rem;
+  font-weight: bold;
+  text-decoration: none;
+  cursor: pointer;
+  text-align: right;
+}
+.noselect {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 </style>
