@@ -1,7 +1,16 @@
 <template>
   <b-container>
     <b-row>
-      <b-col cols="12">
+      <b-col cols="12" v-if="user.isBanned == true">
+        <h1 class="text-center">You'r account has been banned.</h1>
+        <p>
+          Your account was associated with a Terms of Service violation. As a
+          result we have issued you a suspension from using any feature that
+          require a login. because of this, you cannot add your website as
+          friends.
+        </p>
+      </b-col>
+      <b-col cols="12" v-else>
         <div class="text-center">
           <h1>{{ message }}</h1>
         </div>
@@ -73,6 +82,7 @@ export default {
     return {
       show: true,
       message: "",
+      user: {},
       form: {
         name: "",
         link: "",
@@ -82,6 +92,14 @@ export default {
     };
   },
   beforeMount() {
+    axios
+      .get(`${process.env.VUE_APP_URI}/user`, { withCredentials: true })
+      .then(res => {
+        if (res.data.isBanned == true) {
+          this.show = false;
+          this.user = res.data;
+        }
+      });
     axios
       .get(`${process.env.VUE_APP_URI}/ashblog/updatefriend`, {
         withCredentials: true

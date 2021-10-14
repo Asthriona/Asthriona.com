@@ -5,6 +5,11 @@
         <h2>You need an account to post comments.</h2>
       </b-col>
     </b-row>
+    <b-row v-else-if="user.isBanned == true">
+      <b-col cols="12" class="text-center mt-4">
+        <h2>You are banned from commenting.</h2>
+      </b-col>
+    </b-row>
     <b-row v-else>
       <b-col cols="12">
         <b-form @submit="onSubmit">
@@ -35,16 +40,32 @@
             :key="comments.username"
           >
             <h4>
-              <b-avatar :src="comments.avatar"></b-avatar>
-              {{ comments.username }}
-              <b-icon
-                v-if="comments.isVerified == true"
-                icon="patch-check"
-              ></b-icon
-              ><b-icon
-                icon="wrench"
-                v-if="comments.isAdmin == true && comments.isVerified == false"
-              ></b-icon>
+              <span v-if="comments.isBanned == true">
+                <b-avatar
+                  :src="comments.avatar"
+                  style="filter: grayscale(1);"
+                ></b-avatar>
+                <strike>{{ comments.username }}</strike
+                >&#32;
+                <b-icon icon="shield-slash-fill" id="tooltipBanned"></b-icon>
+                <b-tooltip target="tooltipBanned" triggers="hover">
+                  This user has been banned.
+                </b-tooltip>
+              </span>
+              <span v-else>
+                <b-avatar :src="comments.avatar"></b-avatar>
+                {{ comments.username }}
+                <b-icon
+                  v-if="comments.isVerified == true"
+                  icon="patch-check"
+                ></b-icon
+                ><b-icon
+                  icon="wrench"
+                  v-if="
+                    comments.isAdmin == true && comments.isVerified == false
+                  "
+                ></b-icon>
+              </span>
             </h4>
             <div class="com-content">{{ comments.content }}</div>
             <small class="com-date">{{
@@ -95,7 +116,8 @@ export default {
         avatar: this.user.avatar,
         content: this.comsContent,
         isAdmin: this.user.isAdmin,
-        isVerified: this.user.isVerified
+        isVerified: this.user.isVerified,
+        isBanned: this.user.isBanned
       });
       this.comsContent = "";
     }
