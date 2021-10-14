@@ -169,10 +169,12 @@ export default {
       .then(response => (this.posts = response.data.data.articles))
       .catch(error => (this.errors = error));
     await axios
-      .get(`${process.env.VUE_APP_URI}/user/getuser?username=Asthriona`)
+      .get(
+        `${process.env.VUE_APP_URI}/user/getuser?username=6167a00883e7e25adc692bf7`
+      )
       .then(user => {
-        this.avatar = user.data.avatar
-          ? user.data.avatar
+        this.avatar = user.data
+          ? user.data
           : "https://cdn.nishikino.xyz/asthriona/ProfilePict/mako.png";
       });
     await axios.get(process.env.VUE_APP_URI + "/ashblog/Getlikes").then(res => {
