@@ -25,3 +25,4 @@ src/router/workspace.code-workspace
 .env.production
 Asthriona Vue.code-workspace
 .env
+workspace.code-workspace
