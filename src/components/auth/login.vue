@@ -11,6 +11,20 @@
                 <p>{{ message }} <br /></p>
               </b-alert>
             </div>
+            <div v-if="banned">
+              <b-alert show :variant="error">
+                <h4 class="alert-heading">Banned.</h4>
+                <p>
+                  Your account was associated with a Terms of Service violation
+                  of the follow category:
+                  <i>Other Terms of Service violation.</i> As result we have
+                  issued an indefinite suspension from using all sites services.
+                  <br />
+                  For futher information please read
+                  <a href="/blog/banned">This article</a>.
+                </p>
+              </b-alert>
+            </div>
             <label for="text-email">email</label>
             <b-form-input
               id="email"
@@ -53,7 +67,8 @@ export default {
         password: ""
       },
       error: "",
-      message: ""
+      message: "",
+      banned: ""
     };
   },
   methods: {
@@ -70,17 +85,22 @@ export default {
                 (this.message = "ERROR: Email or password are incorrect");
             }
             if (res.status == 200) {
+              if (res.data.isBanned == true) {
+                this.banned = true;
+                return;
+              }
               if (res.data.VerifiedEmail == false) {
                 (this.error = "danger"),
                   (this.message =
                     "You need to verify your email! if you don't get the email or you cant verify because of an error please contact support@asthriona.com");
                 return null;
+              } else {
+                this.error = res.data.error;
+                this.message = res.data.message;
+                this.form.email = "";
+                this.form.password = "";
+                this.$router.push("/user");
               }
-              this.error = res.data.error;
-              this.message = res.data.message;
-              this.form.email = "";
-              this.form.password = "";
-              this.$router.push("/user");
             }
           },
           err => {
