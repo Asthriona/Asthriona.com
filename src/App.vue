@@ -1,9 +1,18 @@
 <template>
   <div id="app">
-    <Nishikino />
-    <TheHeader />
-    <router-view />
-    <TheFooter />
+    <div class="logic" v-if="AsthrionaIsDead == false">
+      <Nishikino />
+      <TheHeader />
+      <router-view />
+      <TheFooter />
+    </div>
+    <div class="logic" v-else>
+      <Nishikino />
+      <AsthrionaIsDead />
+      <TheHeader />
+      <router-view />
+      <TheFooter />
+    </div>
   </div>
 </template>
 
@@ -11,12 +20,35 @@
 import TheHeader from "./components/TheHeader";
 import TheFooter from "./components/TheFooter";
 import Nishikino from "./components/Nishikino";
-
+import AsthrionaIsDead from "./components/AsthrionaIsDead";
+import axios from "axios";
 export default {
   components: {
     TheHeader,
     TheFooter,
-    Nishikino
+    Nishikino,
+    AsthrionaIsDead
+  },
+  data() {
+    return {
+      AsthrionaIsDead: ""
+    };
+  },
+  beforeMount() {
+    axios
+      .get(`${process.env.VUE_APP_URI}/admin/asthriona`)
+      .then(res => {
+        const data = res.data;
+        console.log(data);
+        if (data.isLiving == true) {
+          this.AsthrionaIsDead = false;
+        } else {
+          this.AsthrionaIsDead = true;
+        }
+      })
+      .catch(error => {
+        console.log(error);
+      });
   }
 };
 </script>

@@ -14,10 +14,19 @@
         </b-col>
       </b-row>
       <hr />
-      <Author :postId="post._id" :authorId="post.authorId" />
-      <hr />
-      <Comments :postId="post._id" :user="user" />
+      <div class="Author" v-if="AsthrionaIsDead == false">
+        <Author :postId="post._id" :authorId="post.authorId" />
+      </div>
+      <div class="author" v-else>
+        <Author :postId="post._id" :authorId="post.authorId" />
+        <h1>
+          Error Asthriona is dead,
+          <span style="color:red;">mismatch</span>.
+        </h1>
+      </div>
     </b-container>
+    <hr />
+    <Comments :postId="post._id" :user="user" />
     <small style="color: #212226 !important;">
       {{ post._id ? post._id : "NULL" }}</small
     >
@@ -32,7 +41,8 @@ export default {
   data() {
     return {
       post: "",
-      user: ""
+      user: "",
+      AsthrionaIsDead: ""
     };
   },
   components: {
@@ -40,6 +50,20 @@ export default {
     Comments
   },
   async beforeMount() {
+    axios
+      .get(`${process.env.VUE_APP_URI}/admin/asthriona`)
+      .then(res => {
+        const data = res.data;
+        console.log(data);
+        if (data.isLiving == true) {
+          this.AsthrionaIsDead = false;
+        } else {
+          this.AsthrionaIsDead = true;
+        }
+      })
+      .catch(error => {
+        console.log(error);
+      });
     axios
       .get(`${process.env.VUE_APP_URI}/user`, { withCredentials: true })
       .then(res => {

@@ -50,9 +50,6 @@
         <b-col cols="3"></b-col>
       </b-row>
     </b-container>
-    <!-- <center>
-      <h1>Logins are temporary disabled.</h1>
-    </center> -->
   </div>
 </template>
 

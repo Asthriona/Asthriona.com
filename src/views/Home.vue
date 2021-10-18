@@ -15,8 +15,12 @@
             <h1 class="tridi">Asthriona</h1>
             <br />
             <b-col cols="12" class="text-center">
-              <h3 class="void">
+              <h3 class="void" v-if="AsthrionaIsDead == false">
                 {{ random[Math.round(Math.random() * random.length)] }}
+              </h3>
+              <h3 class="void" v-else>
+                Error Asthriona is dead,
+                <span style="color:red;">mismatch</span>.
               </h3>
             </b-col>
             <h3 class="tridi2">
