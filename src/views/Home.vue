@@ -297,6 +297,7 @@ export default {
       img: "",
       trackURL: "",
       lang: localStorage.getItem("lang") || "en",
+      AsthrionaIsDead: false,
       random: [
         "/*This line is disabled*/",
         "死にたい",
