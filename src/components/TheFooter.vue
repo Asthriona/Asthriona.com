@@ -45,6 +45,16 @@
         >.
       </p>
       <p><span>Made with</span>❤️ <span>by Asthriona.</span></p>
+      <div class="foot_logo">
+        <p>Operating company</p>
+        <div class="figure">
+          <img
+            src="https://cdn.nishikino.xyz/asthriona/icons/footLogo.png"
+            alt="logo"
+            style="width:100%"
+          />
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -114,5 +124,24 @@ export default {
 .footBack a {
   color: #d86100;
   z-index: 3;
+}
+.fcontainer .foot_logo {
+  display: table;
+  max-width: 300px;
+  width: 100%;
+  margin: 0 auto 12px;
+}
+.fcontainer .foot_logo p {
+  display: table-cell;
+  width: 9em;
+  vertical-align: middle;
+  font-size: 12px;
+}
+.figure {
+  display: table-cell;
+  width: calc(100% - 7em);
+}
+.fcontainer .foot_logo .figure img {
+  width: 160px;
 }
 </style>
