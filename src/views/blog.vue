@@ -34,7 +34,7 @@
           </div>
           <b-card
             v-for="posts in posts"
-            :key="posts"
+            :key="posts.id"
             bg-variant="#212226"
             :img-src="posts.img"
             tag="article"
@@ -57,7 +57,6 @@
             bg-variant="#212226"
             title="Asthriona Ng"
             :img-src="avatar"
-            tag="side"
             style="max-width: 100%;"
             class="mx-2 ml-4 mb-4 text-center"
           >
@@ -78,7 +77,6 @@
           <b-card
             bg-variant="#212226"
             title="Friends, Partner and things I use"
-            tag="side"
             style="max-width: 100%;"
             class="mt-4 mx-2 ml-4 mb-4 text-center"
           >
@@ -124,7 +122,6 @@
             @click="like"
             bg-variant="#212226"
             title="Like the blog?"
-            tag="side"
             style="max-width: 100%;"
             class="mt-4 mx-2 ml-4 mb-4 text-center"
           >
