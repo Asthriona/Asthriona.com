@@ -10,6 +10,7 @@ import EditPost from "../views/user/EditPost.vue";
 import UserProfile from "../views/user/UserProfile.vue";
 import Server from "../views/Server.vue";
 import Friends from "../views/Friends.vue";
+import AdminHome from "../views/admin/index.vue";
 
 Vue.use(VueRouter);
 
@@ -63,6 +64,11 @@ const routes = [
     path: "/friends",
     name: "Friends",
     component: Friends
+  },
+  {
+    path: "/admin",
+    name: "AdminHome",
+    component: AdminHome
   },
   {
     path: "/about",
