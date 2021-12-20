@@ -81,4 +81,14 @@ html body {
   font-family: Asthriona;
   font-size: 4.5rem;
 }
+
+::-moz-selection {
+  color: white;
+  background: #d86100;
+}
+
+::selection {
+  color: white;
+  background: #d86100;
+}
 </style>
