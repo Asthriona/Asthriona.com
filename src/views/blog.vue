@@ -188,8 +188,7 @@ export default {
       this.likes++;
     },
     sendLikes() {
-      console.log("cast sendLikes")
-      if (this.addLike == 0) return console.log("No Like so no API request");
+      if (this.addLike == 0) return;
       axios
         .post(process.env.VUE_APP_URI + "/ashblog/likes", {
           likes: this.addLike
