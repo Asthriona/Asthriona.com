@@ -126,7 +126,7 @@ export default {
         })
         .catch(err => {
           this.message = err.message;
-          console.log(err);
+          return err;
         });
     },
     onReset(event) {

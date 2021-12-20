@@ -14,7 +14,19 @@
         </ul>
       </h3>
       <loginComp v-if="comp == '1'" />
+      <div class="reset" v-if="comp == '1'">
+        <b-container>
+          <b-row>
+            <b-col cols="12">
+              <a href="#passWdReset" class="resetLink" @click="comp = '3'"
+                >Forgot your password?</a
+              >
+            </b-col>
+          </b-row>
+        </b-container>
+      </div>
       <RegisterComp v-if="comp == '2'" />
+      <PasswdReset v-if="comp == '3'" />
     </div>
     <div class="loginView" v-else>
       <b-container>
@@ -45,6 +57,7 @@
 <script>
 import loginComp from "../../components/auth/login";
 import RegisterComp from "../../components/auth/register";
+import PasswdReset from "../../components/auth/Passwd-Reset";
 import axios from "axios";
 
 export default {
@@ -57,14 +70,14 @@ export default {
   },
   components: {
     loginComp,
-    RegisterComp
+    RegisterComp,
+    PasswdReset
   },
   beforeMount() {
     axios
       .get(`${process.env.VUE_APP_URI}/admin/asthriona`)
       .then(res => {
         const data = res.data;
-        console.log(data);
         if (data.isLiving == true) {
           this.AsthrionaIsDead = false;
         } else {
@@ -72,7 +85,7 @@ export default {
         }
       })
       .catch(error => {
-        console.log(error);
+        return error;
       });
   }
 };
@@ -92,5 +105,12 @@ li {
 li:hover {
   border-bottom: 2px solid #007bff;
   cursor: pointer;
+}
+.resetLink {
+  float: right;
+  position: relative;
+  right: 15rem;
+  color: #007bff;
+  text-decoration: none;
 }
 </style>

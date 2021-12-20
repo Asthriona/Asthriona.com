@@ -54,7 +54,6 @@ export default {
       .get(`${process.env.VUE_APP_URI}/admin/asthriona`)
       .then(res => {
         const data = res.data;
-        console.log(data);
         if (data.isLiving == true) {
           this.AsthrionaIsDead = false;
         } else {
@@ -62,7 +61,7 @@ export default {
         }
       })
       .catch(error => {
-        console.log(error);
+        return error;
       });
     axios
       .get(`${process.env.VUE_APP_URI}/user`, { withCredentials: true })
