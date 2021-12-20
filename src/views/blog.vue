@@ -149,7 +149,8 @@ export default {
       posts: "",
       errors: "",
       avatar: "",
-      likes: ""
+      likes: "",
+      addLike: 0
     };
   },
   metaInfo: {
@@ -178,11 +179,24 @@ export default {
       this.likes = res.data.likes;
     });
   },
+  mounted() {
+    setInterval(this.sendLikes, 10000);
+  },
   methods: {
-    async like() {
-      await axios.get(process.env.VUE_APP_URI + "/ashblog/likes").then(res => {
-        this.likes = res.data.likes;
-      });
+    like() {
+      this.addLike++;
+      this.likes++;
+    },
+    sendLikes() {
+      console.log("cast sendLikes")
+      if (this.addLike == 0) return console.log("No Like so no API request");
+      axios
+        .post(process.env.VUE_APP_URI + "/ashblog/likes", {
+          likes: this.addLike
+        })
+        .then(() => {
+          this.addLike = 0;
+        });
     },
     alink() {
       var audio = new Audio(
