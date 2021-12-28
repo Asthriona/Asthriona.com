@@ -108,11 +108,11 @@ export default {
         },
         {
           name: "Yuno",
-          usage: "Waiting for produiction use"
+          usage: "Waiting for production use"
         },
         {
           name: "Yuki",
-          usage: "Waiting for produiction use"
+          usage: "Waiting for production use"
         }
       ],
       OfflineServers: [
