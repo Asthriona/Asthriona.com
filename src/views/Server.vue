@@ -101,6 +101,18 @@ export default {
         {
           name: "Kurisu",
           usage: "Internal tools"
+        },
+        {
+          name: "Afterlife",
+          usage: "Yukiko Internal tools"
+        },
+        {
+          name: "Yuno",
+          usage: "Waiting for produiction use"
+        },
+        {
+          name: "Yuki",
+          usage: "Waiting for produiction use"
         }
       ],
       OfflineServers: [
