@@ -23,6 +23,34 @@
             </b-card>
           </b-card-group>
         </b-col>
+        <hr />
+        <b-col cols="12" class="text-center">
+          <h5>Yukiko Clusters:</h5>
+        </b-col>
+        <b-col cols="12">
+          <b-card-group>
+            <b-card
+              v-for="cluster in clusters"
+              :key="cluster.name"
+              bg-variant="dark"
+              text-variant="white"
+              :title="cluster.name"
+              tag="article"
+              style="max-width: 20rem; min-width: 15rem; min-height: 130px; text-align:center;"
+              class="mb-2 col-5"
+            >
+              <b-card-text>
+                <li
+                  style="list-style-type: none;"
+                  v-for="server in cluster.server"
+                  :key="server"
+                >
+                  {{ server }}
+                </li>
+              </b-card-text>
+            </b-card>
+          </b-card-group>
+        </b-col>
         <b-col cols="12">
           <div class="text-center">
             <h5>Offline/Dead Servers</h5>
@@ -53,6 +81,32 @@
 export default {
   data() {
     return {
+      clusters: [
+        {
+          name: "Fallen",
+          server: ["Shiro-UK", "Suzune-UK", "Makoto-UK", "Sadayo-UK"]
+        },
+        {
+          name: "fantasy",
+          server: ["Mitsuru-JP", "Orpheus-JP", "Sumire-JP", "Sadayo-JP"]
+        },
+        {
+          name: "Force",
+          server: ["Tali-USA", "Rukia-USA", "Winry-USA", "Yoruichi-USA"]
+        },
+        {
+          name: "Hope",
+          server: ["Cadenza-USA", "Aqua-USA", "Kurisu-USA", "Megumin-USA"]
+        },
+        {
+          name: "Myth",
+          server: ["ZeroTwo", "Calliope", "Amelia", "Gura", "Ina"]
+        },
+        {
+          name: "Council",
+          server: ["Korone", "Pekora", "Skye", "Sage", "Jett"]
+        }
+      ],
       OnlineServers: [
         {
           name: "Yukiko-01",
@@ -69,14 +123,6 @@ export default {
         {
           name: "Stardust-02",
           usage: "Static files hosting + Bot hosting for YDT"
-        },
-        {
-          name: "Shiro",
-          usage: "NodeJS App Hosting (Web)"
-        },
-        {
-          name: "Suzune",
-          usage: "Yukiko's Website"
         },
         {
           name: "ZeroTwo",
@@ -108,11 +154,23 @@ export default {
         },
         {
           name: "Yuno",
-          usage: "Waiting for production use"
+          usage: "Yukiko Bot Testing"
         },
         {
           name: "Yuki",
-          usage: "Waiting for production use"
+          usage: "Yukiko Web Testing"
+        },
+        {
+          name: "Maki",
+          usage: "Internal Tools"
+        },
+        {
+          name: "Kurisu",
+          usage: "Gateway Monitoring"
+        },
+        {
+          name: "Massami",
+          usage: "Bots Monitoring"
         }
       ],
       OfflineServers: [
@@ -161,7 +219,7 @@ export default {
           usage: "Cloudsdale Radio Relay"
         },
         {
-          name: "Applejack",
+          name: "Applejack-02",
           usage: "VPS Node"
         },
         {
@@ -169,11 +227,11 @@ export default {
           usage: "Static WebHost"
         },
         {
-          name: "Maki",
+          name: "Maki-old",
           usage: "NodeJS App Hosting"
         },
         {
-          name: "Applejack",
+          name: "Applejack-01",
           usage: "VPS Node"
         },
         {
