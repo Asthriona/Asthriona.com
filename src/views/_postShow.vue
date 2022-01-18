@@ -105,6 +105,25 @@ export default {
 };
 </script>
 
+<style>
+.content pre {
+  color: #aa3f81 !important;
+  background-color: #35373b;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 14px;
+  line-height: 1.5;
+  margin: 10px 0;
+}
+.content pre code {
+  color: #aa3f81 !important;
+}
+.content img {
+  max-width: 100%;
+  height: auto;
+}
+</style>
+
 <style scoped>
 .post-thumbnail {
   width: 100%;
