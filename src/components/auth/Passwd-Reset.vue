@@ -77,7 +77,7 @@ export default {
 .red {
   color: red;
 }
-.cursorClass{
+.cursorClass {
   cursor: not-allowed;
 }
 </style>
