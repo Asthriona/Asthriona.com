@@ -110,7 +110,7 @@ export default {
     onReset(event) {
       event.preventDefault();
       // Reset our form values
-      this.form.username = "";
+      this.form.email = "";
       this.form.password = "";
       this.show = false;
       this.$nextTick(() => {
