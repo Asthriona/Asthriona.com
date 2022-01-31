@@ -21,12 +21,32 @@
               target="_blank"
               rel="noopener noreferrer"
               >Rainboom Studio</a
-            >. Living in france at the moment, I'll move to UK in a few months
-            for a while and then hopefully Japan. I'm a big fan of the japanese
-            culture, and learning the language. When not coding, I like to work
-            on cars, Drifting is in my blood. Also Video games, I play those
-            since I'm able to hold a controler, or use a mouse as my first game
-            was Minesweeper on Windows 95.
+            >. Living in between Japan and france, I'll move to UK in a few
+            months for a while and then hopefully definitively to Japan. I love
+            japanese culture and learning the language. When I'm not working on
+            code, I use to work on cars, but sadly my last car got wreked. so
+            for now outside of work, i'm just doing more work, playing video
+            games, watching anime, and learning new things.
+            <br />
+            <!-- I'm a
+            big fan of the japanese culture, and learning the language. When not
+            coding, I like to work on cars, Drifting is in my blood. Also Video
+            games, I play those since I'm able to hold a controler, or use a
+            mouse as my first game was Minesweeper on Windows 95. -->
+          </p>
+          <p>
+            I have a bunch of project cars in mind, but most of them cannot be
+            releaved just yet! you will have to wait a bit longer :) <br />
+            all I can say is most of them will be drift build! gotta get better
+            at it soon! (*•̀ᴗ•́*)و ̑̑
+          </p>
+          <p>
+            About video games, with 20+ years of experience, I can say I have
+            some skills. Mostly when talking about racing sim. I always manage
+            to get on top of any leaderboard very quick. I think the funniest
+            part is when I beat my friends on their own tracks In real life.<br />
+            You know? Video games is not real life, but the result endup being
+            the same ( ͡° ͜ʖ ͡°)
           </p>
         </b-col>
         <b-col cols="12">
@@ -86,9 +106,18 @@
                 <td>Car List:</td>
                 <td>
                   <ul class="aboutLists">
-                    <li>Citroën C5 Gen 3</li>
-                    <li><strike>Nissian Silvia S15</strike></li>
-                    <li><strike>BMW M4 (2014, Drift Build)</strike></li>
+                    <li>
+                      <i>[Húxiān] Rx7 FC3S (Project)</i>
+                    </li>
+                    <li>
+                      <strike>[Yoruichi] Citroën C5 Gen 3</strike>
+                    </li>
+                    <li>
+                      <strike>[Izanagi] Nissian Silvia S15</strike>
+                    </li>
+                    <li>
+                      <strike>[Húwáng] BMW M4 (2014, Drift Build)</strike>
+                    </li>
                   </ul>
                 </td>
               </tr>
@@ -102,7 +131,7 @@
               </tr>
               <tr>
                 <td>Language I plan to learn:</td>
-                <td>Chinese, Korean, Greek?</td>
+                <td>Chinese, Korean</td>
               </tr>
               <tr>
                 <td>Coding Language:</td>
