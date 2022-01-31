@@ -129,4 +129,8 @@ export default {
 .btn {
   margin-top: 0.5rem;
 }
+.passwd-reset-link {
+  margin-top: 1rem;
+  float: left;
+}
 </style>
