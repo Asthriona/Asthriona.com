@@ -1,6 +1,7 @@
 <template>
   <div class="password-reset">
-    <h1>TEST</h1>
+    <h1 class="text-center red">THIS FEATURE IS NOT YET FUNCTIONAL</h1>
+    <hr />
     <b-container>
       <b-row>
         <b-col cols="12">
@@ -28,7 +29,12 @@
                 v-model="email"
               ></b-form-input>
             </b-form-group>
-            <b-button type="submit" variant="primary" class="w-100">
+            <b-button
+              type="submit"
+              variant="primary"
+              class="w-100 cursorClass"
+              disabled
+            >
               Reset Password
             </b-button>
           </b-form>
@@ -63,3 +69,15 @@ export default {
   }
 };
 </script>
+
+<style scoped>
+.password-reset {
+  margin-top: 100px;
+}
+.red {
+  color: red;
+}
+.cursorClass{
+  cursor: not-allowed;
+}
+</style>
