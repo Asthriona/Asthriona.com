@@ -15,10 +15,11 @@
               <b-alert show :variant="error">
                 <h4 class="alert-heading">Banned.</h4>
                 <p>
-                  Your account was associated with a Terms of Service violation
-                  of the follow category:
-                  <i>Other Terms of Service violation.</i> As result we have
-                  issued an indefinite suspension from using all sites services.
+                  Your account was associated with a Terms of Service violation.
+                  As result we have issued an account suspension from using all
+                  sites services. <br />
+                  Reason: {{ banReason }} <br />
+                  Expires: {{ banExpires | moment("MMM Do YYYY, hh:mm a") }}.
                   <br />
                   For futher information please read
                   <a href="/blog/banned">This article</a>.
@@ -65,7 +66,9 @@ export default {
       },
       error: "",
       message: "",
-      banned: ""
+      banned: "",
+      banReason: "",
+      banExpires: ""
     };
   },
   methods: {
@@ -83,7 +86,10 @@ export default {
             }
             if (res.status == 200) {
               if (res.data.isBanned == true) {
+                console.log(res.data);
                 this.banned = true;
+                this.banReason = res.data.banReason;
+                this.banExpires = res.data.banExpiry;
                 return;
               }
               if (res.data.VerifiedEmail == false) {
