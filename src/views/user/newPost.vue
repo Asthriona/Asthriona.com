@@ -31,14 +31,7 @@
                 ></b-form-input>
               </b-form-group>
               <b-form-group id="input-group-2" label="Post:" label-for="Post">
-                <b-form-textarea
-                  id="Post"
-                  v-model="form.markdown"
-                  placeholder="whats on your mind?"
-                  rows="10"
-                  max-rows="6"
-                ></b-form-textarea>
-
+                <mavon-editor v-model="form.markdown" />
                 <b-form-group id="input-group-1" label="Image:" label-for="img">
                   <b-form-input
                     id="img"
