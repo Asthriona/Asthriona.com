@@ -13,13 +13,15 @@
             </div>
             <div v-if="banned">
               <b-alert show :variant="error">
-                <h4 class="alert-heading">Banned.</h4>
+                <h4 class="alert-heading">{{ username }} is banned.</h4>
                 <p>
                   Your account was associated with a Terms of Service violation.
                   As result we have issued an account suspension from using all
                   sites services. <br />
                   Reason: {{ banReason }} <br />
-                  Expires: {{ banExpires | moment("MMM Do YYYY, hh:mm a") }}.
+                  Expires: {{ banExpires | moment("MMM Do YYYY, hh:mm a") }} ({{
+                    banFromNow || "Indefinite"
+                  }}).
                   <br />
                   For futher information please read
                   <a href="/blog/banned">This article</a>.
@@ -56,6 +58,7 @@
 
 <script>
 import axios from "axios";
+import moment from "moment";
 export default {
   name: "Login",
   data() {
@@ -66,9 +69,11 @@ export default {
       },
       error: "",
       message: "",
+      username: "",
       banned: "",
       banReason: "",
-      banExpires: ""
+      banExpires: "",
+      banFromNow: ""
     };
   },
   methods: {
@@ -88,8 +93,10 @@ export default {
               if (res.data.isBanned == true) {
                 console.log(res.data);
                 this.banned = true;
+                this.username = res.data.username;
                 this.banReason = res.data.banReason;
                 this.banExpires = res.data.banExpiry;
+                this.banFromNow = moment(res.data.banExpiry).fromNow();
                 return;
               }
               if (res.data.VerifiedEmail == false) {
