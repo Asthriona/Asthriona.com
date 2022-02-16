@@ -26,3 +26,4 @@ src/router/workspace.code-workspace
 Asthriona Vue.code-workspace
 .env
 workspace.code-workspace
+package-lock.json
