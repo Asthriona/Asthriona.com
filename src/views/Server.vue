@@ -14,16 +14,23 @@
               text-variant="white"
               :title="server.name"
               tag="article"
-              style="max-width: 20rem; min-width: 15rem; min-height: 130px; text-align:center;"
+              style="
+                max-width: 20rem;
+                min-width: 15rem;
+                min-height: 130px;
+                text-align: center;
+              "
               class="mb-2 col-5"
             >
               <b-card-text>
-                {{ server.usage }}
+                {{ server.usage }} <br />
+                Location: <i>{{ server.location || "NA" }}</i>
               </b-card-text>
             </b-card>
           </b-card-group>
         </b-col>
         <hr />
+        <b-col cols="12" class="spacer" style="margin-top: 50px"></b-col>
         <b-col cols="12" class="text-center">
           <h5>Yukiko Clusters:</h5>
         </b-col>
@@ -36,21 +43,40 @@
               text-variant="white"
               :title="cluster.name"
               tag="article"
-              style="max-width: 20rem; min-width: 15rem; min-height: 130px; text-align:center;"
+              style="
+                max-width: 20rem;
+                min-width: 15rem;
+                min-height: 130px;
+                text-align: center;
+              "
               class="mb-2 col-5"
             >
               <b-card-text>
                 <li
-                  style="list-style-type: none;"
+                  style="list-style-type: none"
                   v-for="server in cluster.server"
                   :key="server"
                 >
                   {{ server }}
                 </li>
+                <hr />
+                Location: {{ cluster.location }}
               </b-card-text>
             </b-card>
           </b-card-group>
+          <i
+            >Info: The location indicate the Physical location of all the
+            servers in a cluster, and DC indicate what datacenter each server
+            within a cluster is located. Eg: OSK3</i
+          >
+          <br />
+          <i
+            >Info 2: All server lister above are separate than my own
+            servers.</i
+          >
         </b-col>
+        <br />
+        <b-col cols="12" class="spacer" style="margin-top: 50px"></b-col>
         <b-col cols="12">
           <div class="text-center">
             <h5>Offline/Dead Servers</h5>
@@ -63,7 +89,12 @@
               text-variant="white"
               :title="server.name"
               tag="article"
-              style="max-width: 20rem; min-width: 15rem; min-height: 130px; text-align:center;"
+              style="
+                max-width: 20rem;
+                min-width: 15rem;
+                min-height: 130px;
+                text-align: center;
+              "
               class="mb-2 col-5"
             >
               <b-card-text>
@@ -84,94 +115,157 @@ export default {
       clusters: [
         {
           name: "Fallen",
-          server: ["Shiro-UK", "Suzune-UK", "Makoto-UK", "Sadayo-UK"]
+          server: ["Shiro", "Suzune", "Makoto", "Sadayo"],
+          location: "Glasgow DC1"
         },
         {
           name: "fantasy",
-          server: ["Mitsuru-JP", "Orpheus-JP", "Sumire-JP", "Sadayo-JP"]
+          server: ["Mitsuru", "Orpheus", "Sumire", "Sadayo"],
+          location: "Osaka DC3"
         },
         {
           name: "Force",
-          server: ["Tali-USA", "Rukia-USA", "Winry-USA", "Yoruichi-USA"]
+          server: ["Tali", "Rukia", "Winry", "Yoruichi"],
+          location: "New York DC3"
         },
         {
           name: "Hope",
-          server: ["Cadenza-USA", "Aqua-USA", "Kurisu-USA", "Megumin-USA"]
+          server: ["Cadenza", "Aqua", "Kurisu", "Megumin"],
+          location: "New York DC3 2"
         },
         {
           name: "Myth",
-          server: ["ZeroTwo", "Calliope", "Amelia", "Gura", "Ina"]
+          server: ["ZeroTwo", "Calliope", "Amelia", "Gura", "Ina"],
+          location: "Tokyo 1"
         },
         {
           name: "Council",
-          server: ["Korone", "Pekora", "Skye", "Sage", "Jett"]
+          server: ["Korone", "Pekora", "Skye", "Sage", "Jett"],
+          location: "Singapore 3"
         }
       ],
       OnlineServers: [
         {
           name: "Yukiko-01",
-          usage: "Hosting some Yukiko's code and comisisons bot"
+          usage: "Hosting some Yukiko's code and comisisons bot",
+          location: "Paris DC1"
         },
         {
           name: "Asthriona-mail",
-          usage: "Main Mail server"
+          usage: "Main Mail server",
+          location: "Paris 1"
         },
         {
           name: "Stardust-01",
-          usage: "Hosting Nishikino Network's Gateway"
+          usage: "Hosting Nishikino Network's Gateway",
+          location: "Paris DC1"
         },
         {
           name: "Stardust-02",
-          usage: "Static files hosting + Bot hosting for YDT"
+          usage: "Static files hosting + Bot hosting for YDT",
+          location: "Paris DC1"
         },
         {
           name: "ZeroTwo",
-          usage: "Main Yukiko server"
+          usage: "Main Yukiko server",
+          location: "Paris DC1"
         },
         {
           name: "Lyra",
-          usage: "Speedtest.net and main server"
+          usage: "Speedtest.net and main server",
+          location: "Paris DC2"
         },
         {
           name: "AfterLife",
-          usage: "DNS Server"
+          usage: "DNS Server",
+          location: "Tokyo 1"
         },
         {
           name: "Cadenza",
-          usage: "DNS Server"
+          usage: "DNS Server",
+          location: "Tokyo 1"
         },
         {
           name: "Maki",
-          usage: "Internal tools"
+          usage: "Internal tools",
+          location: "Tokyo 1"
         },
         {
           name: "Kurisu",
-          usage: "Internal tools"
+          usage: "Internal tools",
+          location: "Tokyo 1"
         },
         {
-          name: "Afterlife",
-          usage: "Yukiko Internal tools"
+          name: "Afterlife-SGP1",
+          usage: "Yukiko Internal tools",
+          location: "Singapore 1"
         },
         {
           name: "Yuno",
-          usage: "Yukiko Bot Testing"
+          usage: "Yukiko Bot Testing",
+          location: "West Virginia 3"
         },
         {
           name: "Yuki",
-          usage: "Yukiko Web Testing"
+          usage: "Yukiko Web Testing",
+          location: "West Virginia 3"
         },
         {
-          name: "Maki",
-          usage: "Internal Tools"
+          name: "Maki-osk3",
+          usage: "Internal Tools",
+          location: "Tokyo 2"
         },
         {
-          name: "Kurisu",
-          usage: "Gateway Monitoring"
+          name: "Kurisu-osk3",
+          usage: "Gateway Monitoring",
+          location: "Tokyo 2"
         },
         {
           name: "Massami",
-          usage: "Bots Monitoring"
+          usage: "Bots Monitoring",
+          location: "Tokyo 2"
+        },
+        {
+          name: "Nagi",
+          usage: "app-Firewall",
+          location: "Tokyo 2"
+        },
+        {
+          name: "Boogiepop",
+          usage: "Pre-Production.",
+          location: "Tokyo 2"
+        },
+        {
+          name: "Celty",
+          usage: "Pre-Production.",
+          location: "Tokyo 2"
+        },
+        {
+          name: "Marie",
+          usage: "Pre-Production.",
+          location: "Tokyo 2"
         }
+        // cov
+        // {
+        //   name: "cover-1",
+        //   usage: "Server Managed by my work place.",
+        //   location: "ap-northeast-1"
+        // },
+        // {
+        //   name: "cover-2",
+        //   usage: "Server Managed by my work place.",
+        //   location: "us-east-1"
+        // },
+        // {
+        //   name: "cover-3",
+        //   usage: "Server Managed by my work place.",
+        //   location: "ap-southeast-1"
+        // },
+        // {
+        //   name: "cover-4",
+        //   usage: "Server Managed by my work place.",
+        //   location: "ap-northeast-1"
+        // }
       ],
       OfflineServers: [
         {
