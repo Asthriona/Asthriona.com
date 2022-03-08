@@ -10,7 +10,7 @@
             height="200px"
             class="MakoAvatar"
           ></b-img>
-          <h1 class="display-4">Makoto "Asthriona" Ng</h1>
+          <h1 class="display-4">Makoto "Asthriona" Kobayashi</h1>
           <p>
             <b>Welcome to my Website!</b> <br />
             I am Asthriona, or Makoto, call me as you wish. I'm a full-stack
