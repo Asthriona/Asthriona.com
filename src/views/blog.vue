@@ -116,6 +116,28 @@
                   src="https://cdn.asthriona.com/i/2021/10/speedtestLogo.png"
                 ></b-img>
               </a>
+              <a
+                href="https://www.unrealengine.com/en-US/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <b-img
+                  class="parthner-img"
+                  style="height:100px;"
+                  src="https://cdn.asthriona.com/static/UE_Logo_stacked_unreal-engine_white.svg"
+                ></b-img>
+              </a>
+              <a
+                href="https://m.do.co/c/b58bc1c7b403"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <b-img
+                  class="parthner-img"
+                  style="height:100px;"
+                  src="https://cdn.asthriona.com/static/DO_Logo_vertical_blue.svg"
+                ></b-img>
+              </a>
             </p>
           </b-card>
           <b-card
