@@ -49,7 +49,7 @@
                 min-height: 130px;
                 text-align: center;
               "
-              class="mb-2 col-5"
+              class="mb-2 col-6"
             >
               <b-card-text>
                 <li
