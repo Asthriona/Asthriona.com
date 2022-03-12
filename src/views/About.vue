@@ -42,11 +42,12 @@
           </p>
           <p>
             About video games, with 20+ years of experience, I can say I have
-            some skills. Mostly when talking about racing sim. I always manage
-            to get on top of any leaderboard very quick. I think the funniest
-            part is when I beat my friends on their own tracks In real life.<br />
+            some skills. Mostly when talking about racing sim. <br />
+            I always manage to get on top of any leaderboard very quick. I think
+            the funniest part is when I beat my friends on their own tracks In
+            real life.<br />
             You know? Video games is not real life, but the result endup being
-            the same ( ͡° ͜ʖ ͡°)
+            the same! <small>Sup Thony?</small> ( ͡° ͜ʖ ͡°)
           </p>
         </b-col>
         <b-col cols="12">
@@ -59,7 +60,7 @@
             <tbody>
               <tr>
                 <td>Name:</td>
-                <td>Makoto "Asthriona" Ng</td>
+                <td>Makoto "Asthriona" Konayashi</td>
               </tr>
               <tr>
                 <td>Included features:</td>
@@ -92,9 +93,9 @@
                 <td>
                   <ul class="aboutLists">
                     <li><b>Custom Build</b></li>
-                    <li>AMD Ryzen 1500X</li>
-                    <li>x2 Nvidia GTX 1050</li>
-                    <li>32GB DDR4 RAM</li>
+                    <li>AMD Ryzen 1500X OC 4.0Ghz</li>
+                    <li>Nvidia GTX 1050 OC</li>
+                    <li>16GB DDR4 RAM</li>
                     <li><b>Pre built Asus Laptop</b></li>
                     <li><b>Keyboard:</b></li>
                     <li>Leopold FC900R PD</li>
@@ -107,10 +108,15 @@
                 <td>
                   <ul class="aboutLists">
                     <li>
-                      <i>[Húxiān] Rx7 FC3S (Project)</i>
+                      <i>[Húshén] Rx7 FD3S</i>
                     </li>
                     <li>
-                      <strike>[Yoruichi] Citroën C5 Gen 3</strike>
+                      <i>[Húxiān] Rx7 FC3S</i>
+                    </li>
+                    <li>
+                      <strike style="color:red;"
+                        >[Yoruichi] Citroën C5 Gen 3</strike
+                      >
                     </li>
                     <li>
                       <strike>[Izanagi] Nissian Silvia S15</strike>
@@ -119,6 +125,8 @@
                       <strike>[Húwáng] BMW M4 (2014, Drift Build)</strike>
                     </li>
                   </ul>
+                  <strike>Stike = sold // not owned anymore </strike> <br />
+                  <span style="color:red;">Stike + red = crashed</span>
                 </td>
               </tr>
               <tr>
@@ -155,12 +163,12 @@
               <tr></tr>
               <tr>
                 <th>Hosting</th>
-                <th>Cloudflare, Nishikino Network</th>
+                <th>Cloudflare, Nishikino Network, Scaleway, Digital Ocean</th>
               </tr>
               <tr></tr>
               <tr>
                 <th>Back End</th>
-                <th>Node.js, Express, MongoDB, Mongoose</th>
+                <th>Node.js, Express, MongoDB</th>
               </tr>
               <tr>
                 <th>DNS</th>
@@ -193,11 +201,11 @@ export default {
 <style scoped>
 ul li {
   text-decoration: none;
-  list-style-type: "=> ";
+  list-style-type: "⇒ ";
 }
 .aboutLists {
   text-decoration: none;
-  list-style-type: "=>";
+  list-style-type: "&#8658;";
 }
 table {
   border-collapse: separate;
