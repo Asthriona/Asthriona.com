@@ -3,25 +3,22 @@
     <b-container>
       <h1 class="text-center mt-4">Friends!!! :D</h1>
       <b-row>
-        <div v-for="blog in blogs" :key="blog">
-          <b-col>
-            <a :href="blog.link" target="_blank" rel="noopener noreferrer">
-              <b-card
-                :title="blog.name"
-                :img-src="blog.img"
-                img-alt="Image"
-                img-top
-                tag="article"
-                style="max-width: 18rem"
-                class="mb-2"
-              >
-                <b-card-text>
-                  {{ blog.desc }}
-                </b-card-text>
-              </b-card>
-            </a>
-          </b-col>
-        </div>
+        <b-col v-for="blog in blogs" :key="blog">
+          <b-card
+            :title="blog.name"
+            :img-src="blog.img"
+            :img-alt="`${blog.name}'s icon`"
+            img-top
+            tag="article"
+            style="max-width: 18rem;"
+            class="mb-2"
+          >
+            <b-card-text>
+              {{ blog.desc }}
+            </b-card-text>
+            <b-button :href="blog.link" variant="primary">Visite</b-button>
+          </b-card>
+        </b-col>
         <b-col cols="12" class="mb-4 text-center infos"
           ><small
             >You can add your blog here via your profile, an account is
