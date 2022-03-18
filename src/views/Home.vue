@@ -57,9 +57,7 @@
               <b-img
                 rounded="circle"
                 :src="
-                  img
-                    ? img
-                    : 'https://image.flaticon.com/icons/png/512/2111/2111624.png'
+                  img ? img : 'https://cdn.asthriona.com/static/spotify.png'
                 "
                 alt=""
                 height="50px"
