@@ -74,7 +74,7 @@
           <select
             class="custom-select"
             v-model="lang"
-            @change="handleChange(event)"
+            @change="handleChange(e)"
           >
             <option value="ja">日本語</option>
             <option value="en">English</option>
@@ -326,8 +326,8 @@ export default {
     });
   },
   methods: {
-    handleChange() {
-      localStorage.setItem("lang", event.target.value);
+    handleChange(e) {
+      localStorage.setItem("lang", e.target.value);
       window.location.reload();
     },
     updateLast() {
