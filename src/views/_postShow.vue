@@ -84,9 +84,18 @@ export default {
     meta: [
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@asthriona" },
-      { name: "twitter:title", content: `Asthriona Blog | ${this.post.title}` },
-      { name: "description", content: this.post.description },
-      { name: "twitter:image", content: this.post.img }
+      {
+        name: "twitter:title",
+        content: `Asthriona | "Blog"`
+      },
+      {
+        name: "description",
+        content: "Oops! seens like we can't find the infos of that post"
+      },
+      {
+        name: "twitter:image",
+        content: "https://cdn.nishikino.xyz/asthriona/blog/static/Fh6EIPrm_400x400.jpg"
+      }
     ]
   }
 };
