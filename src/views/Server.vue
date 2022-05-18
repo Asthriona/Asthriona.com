@@ -60,7 +60,8 @@
                   {{ server }}
                 </li>
                 <hr />
-                Location: {{ cluster.location }}
+                Location: {{ cluster.location }} <br />
+                Usage: {{ cluster.usage }}
               </b-card-text>
             </b-card>
           </b-card-group>
@@ -116,32 +117,38 @@ export default {
         {
           name: "Fallen",
           server: ["Shiro", "Suzune", "Makoto", "Sadayo"],
-          location: "Glasgow DC1"
+          location: "Glasgow DC1",
+          usage: "Web Cluster"
         },
         {
           name: "fantasy",
           server: ["Mitsuru", "Orpheus", "Sumire", "Sadayo"],
-          location: "Osaka DC3"
+          location: "Tokyo DC1",
+          usage: "Web Cluster"
         },
         {
           name: "Force",
           server: ["Tali", "Rukia", "Winry", "Yoruichi"],
-          location: "New York DC3"
+          location: "New York DC3",
+          usage: "Web Cluster"
         },
         {
           name: "Hope",
           server: ["Cadenza", "Aqua", "Kurisu", "Megumin"],
-          location: "New York DC3 2"
+          location: "New York DC3",
+          usage: "Web Cluster"
         },
         {
           name: "Myth",
           server: ["ZeroTwo", "Calliope", "Amelia", "Gura", "Ina"],
-          location: "Tokyo 1"
+          location: "Tokyo 1",
+          usage: "Bot Cluster"
         },
         {
           name: "Council",
           server: ["Korone", "Pekora", "Skye", "Sage", "Jett"],
-          location: "Singapore 3"
+          location: "Singapore 3",
+          usage: "Bot Cluster"
         }
       ],
       OnlineServers: [
@@ -244,6 +251,26 @@ export default {
           name: "Marie",
           usage: "Pre-Production.",
           location: "Tokyo 2"
+        },
+        {
+          name: "Fubuki",
+          usage: "Labs.",
+          location: "Tokyo 3"
+        },
+        {
+          name: "Hololive",
+          usage: "Labs.",
+          location: "Tokyo 3"
+        },
+        {
+          name: "Vshojo",
+          usage: "Labs.",
+          location: "Tokyo 3"
+        },
+        {
+          name: "Nijisansji",
+          usage: "Labs.",
+          location: "Tokyo 3"
         }
         // cov
         // {
@@ -350,6 +377,24 @@ export default {
         }
       ]
     };
+  },
+  metaInfo: {
+    meta: [
+      // twitter card
+      { name: "twitter:card", content: "summary" },
+      { name: "twitter:site", content: "@Asthriona" },
+      { name: "twitter:title", content: "Asthriona" },
+      {
+        name: "twitter:description",
+        content:
+          "Full-Stack dev | Maker of @YukikoApp | Japan/car Enthusiast. | Like: Miku. / Dislike: The world. | Links: http://bio.link/asthriona | pfp @lgisdead"
+      },
+      {
+        name: "twitter:image",
+        content:
+          "https://cdn.nishikino.xyz/asthriona/blog/static/Fh6EIPrm_400x400.jpg"
+      }
+    ]
   }
 };
 </script>
