@@ -28,18 +28,13 @@
                 >
                   <template class="otherLinks" #button-content>
                     <b-icon icon="diagram3-fill"></b-icon> Other
-                    <span class="sr-only">Search</span>
+                    <span class="sr-only">Things</span>
                   </template>
                   <b-dropdown-item href="https://imgUp.asthriona.com"
                     >Ash Img Up
                     <b-icon font-scale="0.9" icon="box-arrow-up-right"></b-icon
                   ></b-dropdown-item>
                   <b-dropdown-item href="/server">Server List</b-dropdown-item>
-                  <span style="cursor: not-allowed;">
-                    <b-dropdown-item href="#" disabled
-                      >Gallery <i>Soon!</i>
-                    </b-dropdown-item>
-                  </span>
                 </b-dropdown>
               </div>
             </li>
