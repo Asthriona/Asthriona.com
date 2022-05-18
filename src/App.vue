@@ -31,7 +31,8 @@ export default {
   },
   data() {
     return {
-      AsthrionaIsDead: ""
+      AsthrionaIsDead: "",
+      maintenance: ""
     };
   },
   beforeMount() {
