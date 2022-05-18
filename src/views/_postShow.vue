@@ -80,27 +80,14 @@ export default {
           : { title: "Error! API seems to be down :/" };
       });
   },
-  methods: {
-    // onSubmit(event) {
-    //   event.preventDefault();
-    //   axios
-    //     .post(
-    //       `${process.env.VUE_APP_URI}/ashblog/comment`,
-    //       {
-    //         postId: this.post._id,
-    //         content: this.form.comment
-    //       },
-    //       { withCredentials: true }
-    //     )
-    //     .then(() => {
-    //       this.comment.push({
-    //         avatar: this.user.avatar,
-    //         username: this.user.username,
-    //         content: this.form.comment,
-    //         createdAt: Date.now()
-    //       });
-    //     });
-    // }
+  metaInfo: {
+    meta: [
+      { name: "twitter:card", content: "summary" },
+      { name: "twitter:site", content: "@asthriona" },
+      { name: "twitter:title", content: `Asthriona Blog | ${this.post.title}` },
+      { name: "description", content: this.post.description },
+      { name: "twitter:image", content: this.post.img }
+    ]
   }
 };
 </script>

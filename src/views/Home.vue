@@ -335,6 +335,24 @@ export default {
         });
       }, 10000);
     }
+  },
+  metaInfo: {
+    meta: [
+      // twitter card
+      { name: "twitter:card", content: "summary" },
+      { name: "twitter:site", content: "@Asthriona" },
+      { name: "twitter:title", content: "Asthriona" },
+      {
+        name: "twitter:description",
+        content:
+          "Full-Stack dev | Maker of @YukikoApp | Japan/car Enthusiast. | Like: Miku. / Dislike: The world. | Links: http://bio.link/asthriona | pfp @lgisdead"
+      },
+      {
+        name: "twitter:image",
+        content:
+          "https://cdn.nishikino.xyz/asthriona/blog/static/Fh6EIPrm_400x400.jpg"
+      }
+    ]
   }
   // computed: {
   //   backgroundImage() {
