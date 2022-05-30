@@ -101,8 +101,8 @@
                 <!-- THE WALL CARD -->
                 <b-card
                   bg-variant="dark"
-                  :title="$t('home.works.web.TheWall.title')"
-                  img-src="https://cdn.nishikino.xyz/asthriona/TheWallAsh.webp"
+                  title="Asthriona.space"
+                  img-src="https://cdn.asthriona.com/i/2022/05/asthriona.spacebig.png"
                   img-alt="Image"
                   img-top
                   tag="article"
@@ -110,10 +110,10 @@
                   class="mb-2"
                 >
                   <b-card-text>
-                    {{ $t("home.works.web.TheWall.desc") }}<br />
-                    > Express.js
+                    Asthriona.space<br />
+                    > Vue.js
                   </b-card-text>
-                  <b-button href="https://TheWall.ovh" variant="primary">{{
+                  <b-button href="https://asthriona.space" variant="primary">{{
                     $t("home.works.visite")
                   }}</b-button>
                 </b-card>
