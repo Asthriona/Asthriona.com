@@ -94,7 +94,8 @@ export default {
       },
       {
         name: "twitter:image",
-        content: "https://cdn.nishikino.xyz/asthriona/blog/static/Fh6EIPrm_400x400.jpg"
+        content:
+          "https://cdn.nishikino.xyz/asthriona/blog/static/Fh6EIPrm_400x400.jpg"
       }
     ]
   }
