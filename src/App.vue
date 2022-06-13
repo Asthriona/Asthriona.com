@@ -1,16 +1,16 @@
 <template>
   <div id="app">
-    <div class="logic" v-if="AsthrionaIsDead == false">
-      <Nishikino />
-      <TheHeader :user="user" />
-      <router-view :user="user" />
-      <TheFooter />
-    </div>
-    <div class="logic" v-else>
+    <div class="logic" v-if="AsthrionaIsDead == true">
       <Nishikino />
       <AsthrionaIsDead />
       <TheHeader />
       <router-view />
+      <TheFooter />
+    </div>
+    <div class="logic" v-else>
+      <Nishikino />
+      <TheHeader :user="user" />
+      <router-view :user="user" />
       <TheFooter />
     </div>
   </div>
