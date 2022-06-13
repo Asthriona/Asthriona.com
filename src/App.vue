@@ -2,8 +2,8 @@
   <div id="app">
     <div class="logic" v-if="AsthrionaIsDead == false">
       <Nishikino />
-      <TheHeader />
-      <router-view />
+      <TheHeader :user="user" />
+      <router-view :user="user" />
       <TheFooter />
     </div>
     <div class="logic" v-else>
@@ -31,13 +31,26 @@ export default {
   },
   data() {
     return {
-      AsthrionaIsDead: "",
-      maintenance: ""
+      AsthrionaIsDead: false,
+      maintenance: false,
+      user: {}
     };
   },
   beforeMount() {
+    // get user
+    const token = localStorage.getItem("token");
+    if (!token) {
+      this.user = null;
+    }
     axios
-      .get(`${process.env.VUE_APP_URI}/admin/asthriona`)
+      .get(`${process.env.VUE_APP_URI}login/whoami`, {
+        headers: { Authorization: token }
+      })
+      .then(res => {
+        this.user = res.data.user;
+      });
+    axios
+      .get(`${process.env.VUE_APP_URI_V1}admin/asthriona`)
       .then(res => {
         const data = res.data;
         if (data.isLiving == true) {

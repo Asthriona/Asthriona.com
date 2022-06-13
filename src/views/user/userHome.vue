@@ -1,15 +1,16 @@
 <template>
   <div>
     <h2 class="m-4">
-      Sup <b-avatar :src="avatar"></b-avatar> {{ username }}
+      Sup <b-avatar :src="user.avatar"></b-avatar> {{ user.username }}
       <b-icon v-if="isVerified == true" icon="patch-check"></b-icon
       ><b-icon
         icon="wrench"
-        v-if="isAdmin == true && isVerified == false"
+        v-if="user.isAdmin == true && user.isVerified == false"
       ></b-icon>
       ?
     </h2>
-    <div class="userAdminLink" v-if="isAdmin == true"></div>
+    {{ user }}
+    <div class="userAdminLink" v-if="user.isAdmin == true">Admin link</div>
     <router-link to="/user/userprofile">User profile</router-link> <br />
     <b-button variant="danger" class="m-4" @click="logout">logout</b-button>
     <hr />
@@ -22,7 +23,7 @@
         </b-col>
       </b-row>
     </b-container>
-    <b-container v-if="isAdmin == true">
+    <b-container v-if="user.isAdmin == true">
       <b-row>
         <b-col lg="8" sm="12">
           <router-link to="/user/newpost"
@@ -100,17 +101,9 @@
 import axios from "axios";
 export default {
   name: "UserHome",
+  props: ["user"],
   data() {
-    return {
-      username: "",
-      email: "",
-      isAdmin: "",
-      isVerified: "",
-      posts: "",
-      message: "",
-      variant: "",
-      avatar: ""
-    };
+    return {};
   },
   methods: {
     logout() {
@@ -143,24 +136,6 @@ export default {
       this.message = "Not implemented yet";
       this.variant = "warning";
     }
-  },
-  beforeMount() {
-    axios
-      .get(process.env.VUE_APP_URI + "/user", { withCredentials: true })
-      .then(res => {
-        const user = res.data;
-        this.username = user.username;
-        this.email = user.email;
-        this.isAdmin = user.isAdmin;
-        this.isVerified = user.isVerified;
-        this.avatar = user.avatar;
-        return user.username;
-      })
-      .then(res => {
-        if (!res) {
-          return this.$router.push("/user/login");
-        }
-      });
   },
   mounted() {
     document.title = "Asthriona - Admin";

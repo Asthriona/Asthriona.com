@@ -27,7 +27,8 @@
             >
             </b-form-textarea>
           </b-form-group>
-          <b-button type="submit" variant="primary">Submit</b-button>
+          <b-button type="submit" variant="primary" disabled>Submit</b-button>
+          <h1>comments are temporary disabled.</h1>
         </b-form>
       </b-col>
     </b-row>

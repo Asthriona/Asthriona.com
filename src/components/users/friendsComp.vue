@@ -33,6 +33,7 @@
       </b-col>
       <b-col cols="12">
         <b-form @submit="onSubmit" @reset="onReset" v-if="show">
+          <h1>Friends Links submissions are temporary disabled</h1>
           <b-form-group id="name" label="Blog Name:" label-for="name">
             <b-form-input
               id="name"
@@ -67,7 +68,7 @@
               required
             ></b-form-input>
           </b-form-group>
-          <b-button type="submit" variant="primary">Submit</b-button>
+          <b-button type="submit" variant="primary" disabled>Submit</b-button>
           <b-button type="reset" variant="danger">Reset</b-button>
         </b-form>
       </b-col>

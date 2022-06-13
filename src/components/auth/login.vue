@@ -80,12 +80,12 @@ export default {
     onSubmit(event) {
       event.preventDefault();
       axios
-        .post(process.env.VUE_APP_URI + "/auth/login", this.form, {
+        .post(process.env.VUE_APP_URI + "login/login", this.form, {
           withCredentials: true
         })
         .then(
           res => {
-            if (res.status == 401) {
+            if (res.status === 401) {
               (this.error = "danger"),
                 (this.message = "ERROR: Email or password are incorrect");
             }
@@ -107,9 +107,8 @@ export default {
               } else {
                 this.error = res.data.error;
                 this.message = res.data.message;
-                this.form.email = "";
-                this.form.password = "";
-                this.$router.push("/user");
+                localStorage.setItem("token", res.data.token);
+                return (window.location.href = "/user");
               }
             }
           },

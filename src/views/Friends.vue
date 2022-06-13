@@ -42,7 +42,7 @@ export default {
     };
   },
   beforeMount() {
-    axios.get(process.env.VUE_APP_URI + "/ashblog/friends").then(res => {
+    axios.get(process.env.VUE_APP_URI_V1 + "ashblog/friends").then(res => {
       this.blogs = res.data.friends;
     });
   },

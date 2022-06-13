@@ -185,21 +185,23 @@ export default {
   async beforeMount() {
     document.title = "Asthriona - Blog";
     await axios
-      .get(process.env.VUE_APP_URI + "/ashblog/post")
+      .get(process.env.VUE_APP_URI_V1 + "ashblog/post")
       .then(response => (this.posts = response.data.data.articles))
       .catch(error => (this.errors = error));
     await axios
       .get(
-        `${process.env.VUE_APP_URI}/user/getuser?username=6167a00883e7e25adc692bf7`
+        `${process.env.VUE_APP_URI_V1}user/getuser?username=6167a00883e7e25adc692bf7`
       )
       .then(user => {
         this.avatar = user.data
           ? user.data
           : "https://cdn.nishikino.xyz/asthriona/ProfilePict/mako.png";
       });
-    await axios.get(process.env.VUE_APP_URI + "/ashblog/Getlikes").then(res => {
-      this.likes = res.data.likes;
-    });
+    await axios
+      .get(`${process.env.VUE_APP_URI_V1}ashblog/Getlikes`)
+      .then(res => {
+        this.likes = res.data.likes;
+      });
   },
   mounted() {
     setInterval(this.sendLikes, 10000);

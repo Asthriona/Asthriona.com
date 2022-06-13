@@ -39,18 +39,28 @@
               </div>
             </li>
             |
-            <router-link to="/user">
-              <li>
-                <b-avatar :src="avatar" icon="people-fill"></b-avatar>
-                {{ username }}
-                <small
-                  ><b-icon v-if="isVerified == true" icon="patch-check"></b-icon
-                  ><b-icon
-                    icon="wrench"
-                    v-if="isAdmin == true && isVerified == false"
-                  ></b-icon
-                ></small></li
-            ></router-link>
+            <div class="no-user" v-if="!user.username">
+              <router-link to="/user/login"
+                ><b-icon icon="people-fill"></b-icon
+              ></router-link>
+            </div>
+            <div class="user" v-else>
+              <router-link to="/user">
+                <li>
+                  <b-avatar :src="user.avatar" icon="people-fill"></b-avatar>
+                  {{ user.displayName }}
+                  <small
+                    ><b-icon
+                      v-if="user.isVerified == true"
+                      icon="patch-check"
+                    ></b-icon
+                    ><b-icon
+                      icon="wrench"
+                      v-if="user.isAdmin == true && user.isVerified == false"
+                    ></b-icon
+                  ></small></li
+              ></router-link>
+            </div>
           </ul>
         </nav>
       </div>
@@ -64,17 +74,12 @@
 </template>
 
 <script>
-import axios from "axios";
 export default {
   name: "TheHeader",
+  props: ["user"],
   data() {
     return {
-      username: "",
-      email: "",
-      isAdmin: "",
-      isVerified: "",
-      error: "",
-      avatar: ""
+      error: ""
     };
   },
   metaInfo: {
@@ -82,27 +87,6 @@ export default {
       { charset: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" }
     ]
-  },
-  mounted() {
-    axios
-      .get(process.env.VUE_APP_URI + "/user", { withCredentials: true })
-      .then(res => {
-        const user = res.data;
-        this.username = user.username;
-        this.email = user.email;
-        this.isAdmin = user.isAdmin;
-        this.isVerified = user.isVerified;
-        this.avatar = user.avatar;
-      })
-      .catch(err => {
-        if (err.message == "Network Error") {
-          this.error =
-            "Asthriona's Gateway is down. Lots of feature on this website wont work.";
-        } else {
-          this.error =
-            "It seems like something went wrong with your user. Please Logout and relog in to fix the issue.";
-        }
-      });
   }
 };
 </script>

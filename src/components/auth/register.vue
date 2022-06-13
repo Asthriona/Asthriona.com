@@ -1,6 +1,6 @@
 <template>
   <div>
-    <b-container>
+    <!-- <b-container>
       <b-row>
         <b-col cols="3"></b-col>
         <b-col>
@@ -61,10 +61,14 @@
         </b-col>
         <b-col cols="3"></b-col>
       </b-row>
-    </b-container>
-    <!-- <center>
-      <h1>Registration are temporary disabled.</h1>
-    </center> -->
+    </b-container> -->
+    <center>
+      <h1>Registration are temporary disabled from this website.</h1>
+      <h2>
+        Please head to <a href="https://asthriona.space">Asthriona.space</a> for
+        now.
+      </h2>
+    </center>
   </div>
 </template>
 

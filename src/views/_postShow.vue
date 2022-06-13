@@ -38,10 +38,10 @@ import Author from "../components/posts/Author.vue";
 import Comments from "../components/posts/comments.vue";
 export default {
   name: "PostShow",
+  props: ["user"],
   data() {
     return {
       post: "",
-      user: "",
       AsthrionaIsDead: ""
     };
   },
@@ -51,7 +51,7 @@ export default {
   },
   async beforeMount() {
     axios
-      .get(`${process.env.VUE_APP_URI}/admin/asthriona`)
+      .get(`${process.env.VUE_APP_URI_V1}admin/asthriona`)
       .then(res => {
         const data = res.data;
         if (data.isLiving == true) {
@@ -64,13 +64,8 @@ export default {
         return error;
       });
     axios
-      .get(`${process.env.VUE_APP_URI}/user`, { withCredentials: true })
-      .then(res => {
-        this.user = res.data;
-      });
-    axios
       .get(
-        `${process.env.VUE_APP_URI}/ashblog/post/${this.$route.params.slug}`,
+        `${process.env.VUE_APP_URI_V1}ashblog/post/${this.$route.params.slug}`,
         { withCredentials: true }
       )
       .then(response => {

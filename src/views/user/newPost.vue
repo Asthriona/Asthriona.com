@@ -112,7 +112,7 @@ export default {
   async mounted() {
     document.title = "Asthriona - New Post";
     await axios
-      .get(process.env.VUE_APP_URI + "/auth/user", {
+      .get(process.env.VUE_APP_URI_V1 + "auth/user", {
         withCredentials: true
       })
       .then(res => {
@@ -124,7 +124,7 @@ export default {
     async onSubmit(event) {
       event.preventDefault();
       await axios
-        .post(process.env.VUE_APP_URI + "/ashblog/post/new", this.form, {
+        .post(process.env.VUE_APP_URI_V1 + "ashblog/post/new", this.form, {
           withCredentials: true
         })
         .then(this.$router.push("/user"));

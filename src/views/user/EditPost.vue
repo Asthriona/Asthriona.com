@@ -6,6 +6,7 @@
           <div v-if="message">
             <b-alert show :variant="variant">{{ message }}</b-alert>
           </div>
+          <h1 style="color:red;">it's broken rn dont use it mate.</h1>
           <b-form @submit="onSubmit" @reset="onReset">
             <b-form-group id="input-group-1" label="Title:" label-for="title">
               <b-form-input
@@ -71,11 +72,11 @@
 import axios from "axios";
 export default {
   name: "EditPosts",
+  props: ["user"],
   data() {
     return {
       message: "",
       variant: "",
-      isAdmin: "",
       postId: "",
       postSlug: "",
       title: "",
@@ -89,14 +90,6 @@ export default {
     };
   },
   async mounted() {
-    axios
-      .get(process.env.VUE_APP_URI + "/user", {
-        withCredentials: true
-      })
-      .then(res => {
-        this.username = res.data.username;
-        this.isAdmin = res.data.isAdmin;
-      });
     await axios
       .get(`${process.env.VUE_APP_URI}/ashblog/post/${this.$route.params.slug}`)
       .then(res => {

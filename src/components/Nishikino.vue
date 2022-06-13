@@ -50,7 +50,7 @@
             rel="noopener noreferrer"
           >
             <b-img
-              src="https://pbs.twimg.com/profile_images/1174208080164327424/beWGObS1_400x400.jpg"
+              src="https://pbs.twimg.com/profile_images/1494567163612614664/yTrKN8KL_400x400.jpg"
               width="20px"
               alt="Rainboom Studio"
             ></b-img>

@@ -327,7 +327,7 @@ export default {
     },
     updateLast() {
       setInterval(() => {
-        axios.get(`${process.env.VUE_APP_URI}/lastfm`).then(res => {
+        axios.get(`${process.env.VUE_APP_URI_V1}lastfm`).then(res => {
           this.title = res.data.title;
           this.artist = res.data.artist;
           this.img = res.data.img;

@@ -97,7 +97,7 @@
 <script>
 import axios from "axios";
 export default {
-  props: ["postId", "authorId"],
+  props: ["user", "postId", "authorId"],
   data() {
     return {
       loading: true,
@@ -118,7 +118,7 @@ export default {
     refreshAuthor() {
       this.loading = true;
       axios
-        .get(`${process.env.VUE_APP_URI}/user/author/${this.authorId}`)
+        .get(`${process.env.VUE_APP_URI_V1}user/author/${this.authorId}`)
         .then(res => {
           const data = res.data;
           if (data.error == 404) {

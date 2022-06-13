@@ -22,6 +22,12 @@
         </b-col>
         <b-col cols="6">
           <h3>UPDATE USERS DATA</h3>
+          <p style="color:red;">
+            Due to changes in the API and the new websites, you cannot update
+            your account on Asthriona.com at the moment, please head to
+            <a href="https://asthriona.space">Asthriona.space</a> to update your
+            profile.
+          </p>
           <b-form @submit="onSubmit">
             <label for="avatar">Avatar</label> <br />
             <b-form-input
@@ -42,16 +48,16 @@
             <br />
             <label for="username">Username</label>
             <b-form-input
-              id="username"
+              id="displayName"
               class="mb-2 mr-sm-2 mb-sm-0"
-              name="username"
-              :placeholder="username ? username : 'USERNAME'"
+              name="displayName"
+              :placeholder="displayName ? displayName : 'USERNAME'"
               v-model="new_username"
             >
             </b-form-input>
-            <b-button type="submit" variant="primary">Save</b-button>
+            <b-button type="submit" variant="primary" disabled>Save</b-button>
           </b-form>
-          <small
+          <!-- <small
             ><i
               >I'm actually working on the profile feature, its sadly pretty low
               in the road map, but soon you will be able to change pretty much
@@ -63,7 +69,7 @@
               or the Nishikino Networks Teams. No need to send me an email to
               get verified.</i
             ></small
-          >
+          > -->
         </b-col>
       </b-row>
     </b-container>
@@ -89,34 +95,39 @@ export default {
   },
   async beforeMount() {
     await axios
-      .get(`${process.env.VUE_APP_URI}/user`, { withCredentials: true })
-      .then(user => {
-        const data = user.data;
+      .get(`${process.env.VUE_APP_URI}login/whoami`, {
+        headers: {
+          Authorization: localStorage.getItem("token")
+        }
+      })
+      .then(res => {
+        const data = res.data.user;
         this.avatar = data.avatar;
         this.username = data.username;
-        this.id = data.userId;
+        this.displayName = data.displayName;
+        this.id = data.id;
         this.verified = data.isVerified;
         this.admin = data.isAdmin;
         this.email = data.email;
       });
   },
   methods: {
-    onSubmit(event) {
-      event.preventDefault();
-      axios
-        .post(
-          `${process.env.VUE_APP_URI}/user`,
-          {
-            username: this.new_username,
-            avatar: this.new_avatar
-          },
-          { withCredentials: true }
-        )
-        .then(res => {
-          this.avatar = res.data.avatar;
-          this.message = res.data.message;
-        });
-    },
+    // onSubmit(event) {
+    //   event.preventDefault();
+    //   axios
+    //     .post(
+    //       `${process.env.VUE_APP_URI}/user`,
+    //       {
+    //         username: this.new_username,
+    //         avatar: this.new_avatar
+    //       },
+    //       { withCredentials: true }
+    //     )
+    //     .then(res => {
+    //       this.avatar = res.data.avatar;
+    //       this.message = res.data.message;
+    //     });
+    // },
     onReset(event) {
       event.preventDefault();
       // Reset our form values
