@@ -1,33 +1,33 @@
 <template>
   <div id="app">
-    <div class="logic" v-if="AsthrionaIsDead == true">
+    <!-- <div class="logic" v-if="AsthrionaIsDead == true">
       <Nishikino />
       <AsthrionaIsDead />
       <TheHeader />
       <router-view />
       <TheFooter />
     </div>
-    <div class="logic" v-else>
-      <Nishikino />
-      <TheHeader :user="user" />
-      <router-view :user="user" />
-      <TheFooter />
-    </div>
+    <div class="logic" v-else> -->
+    <Nishikino />
+    <TheHeader :user="user" />
+    <router-view :user="user" />
+    <TheFooter />
   </div>
+  <!-- </div> -->
 </template>
 
 <script>
 import TheHeader from "./components/TheHeader";
 import TheFooter from "./components/TheFooter";
 import Nishikino from "./components/Nishikino";
-import AsthrionaIsDead from "./components/AsthrionaIsDead";
+// import AsthrionaIsDead from "./components/AsthrionaIsDead";
 import axios from "axios";
 export default {
   components: {
     TheHeader,
     TheFooter,
     Nishikino,
-    AsthrionaIsDead
+    // AsthrionaIsDead
   },
   data() {
     return {
@@ -47,21 +47,24 @@ export default {
         headers: { Authorization: token }
       })
       .then(res => {
+        if (!this.user) {
+          return this.user == null;
+        }
         this.user = res.data.user;
       });
-    axios
-      .get(`${process.env.VUE_APP_URI_V1}admin/asthriona`)
-      .then(res => {
-        const data = res.data;
-        if (data.isLiving == true) {
-          this.AsthrionaIsDead = false;
-        } else {
-          this.AsthrionaIsDead = true;
-        }
-      })
-      .catch(error => {
-        return error;
-      });
+    // axios
+    //   .get(`${process.env.VUE_APP_URI_V1}admin/asthriona`)
+    //   .then(res => {
+    //     const data = res.data;
+    //     if (data.isLiving == true) {
+    //       this.AsthrionaIsDead = false;
+    //     } else {
+    //       this.AsthrionaIsDead = true;
+    //     }
+    //   })
+    //   .catch(error => {
+    //     return error;
+    //   });
   }
 };
 </script>
