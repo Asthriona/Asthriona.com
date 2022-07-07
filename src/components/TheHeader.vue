@@ -39,7 +39,7 @@
               </div>
             </li>
             |
-            <div class="no-user" v-if="!user.username">
+            <div class="no-user" v-if="!user">
               <router-link to="/user/login"
                 ><b-icon icon="people-fill"></b-icon
               ></router-link>
