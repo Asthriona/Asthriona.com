@@ -5,23 +5,16 @@
         <b-col cols="12" class="text-center">
           <h3>Servers</h3>
           <h5>List of my actual and owned servers</h5>
-          <h5>Online Servers:</h5>
+          <h5><span style="color:greenyellow;">◉</span> Online Servers ({{ OnlineServers.length }}):</h5>
         </b-col>
         <b-col v-for="server in OnlineServers" :key="server.name">
           <b-card-group>
-            <b-card
-              bg-variant="dark"
-              text-variant="white"
-              :title="server.name"
-              tag="article"
-              style="
+            <b-card bg-variant="dark" text-variant="white" :title="server.name" tag="article" style="
                 max-width: 20rem;
                 min-width: 15rem;
                 min-height: 130px;
                 text-align: center;
-              "
-              class="mb-2 col-5"
-            >
+              " class="mb-2 col-5">
               <b-card-text>
                 {{ server.usage }} <br />
                 Location: <i>{{ server.location || "NA" }}</i>
@@ -36,27 +29,15 @@
         </b-col>
         <b-col cols="12">
           <b-card-group>
-            <b-card
-              v-for="cluster in clusters"
-              :key="cluster.name"
-              bg-variant="dark"
-              text-variant="white"
-              :title="cluster.name"
-              tag="article"
-              style="
+            <b-card v-for="cluster in clusters" :key="cluster.name" bg-variant="dark" text-variant="white"
+              :title="cluster.name" tag="article" style="
                 max-width: 20rem;
                 min-width: 15rem;
                 min-height: 130px;
                 text-align: center;
-              "
-              class="mb-2 col-6"
-            >
+              " class="mb-2 col-6">
               <b-card-text>
-                <li
-                  style="list-style-type: none"
-                  v-for="server in cluster.server"
-                  :key="server"
-                >
+                <li style="list-style-type: none" v-for="server in cluster.server" :key="server">
                   {{ server }}
                 </li>
                 <hr />
@@ -65,39 +46,28 @@
               </b-card-text>
             </b-card>
           </b-card-group>
-          <i
-            >Info: The location indicate the Physical location of all the
+          <i>Info: The location indicate the Physical location of all the
             servers in a cluster, and DC indicate what datacenter each server
-            within a cluster is located. Eg: OSK3</i
-          >
+            within a cluster is located. Eg: OSK3</i>
           <br />
-          <i
-            >Info 2: All server lister above are separate than my own
-            servers.</i
-          >
+          <i>Info 2: All server lister above are separate than my own
+            servers.</i>
         </b-col>
         <br />
         <b-col cols="12" class="spacer" style="margin-top: 50px"></b-col>
         <b-col cols="12">
           <div class="text-center">
-            <h5>Offline/Dead Servers</h5>
+            <h5><span style="color:red;">◉</span> Offline/Dead Servers ({{ OfflineServers.length }})</h5>
           </div>
         </b-col>
         <b-col v-for="server in OfflineServers" :key="server.name">
           <b-card-group>
-            <b-card
-              bg-variant="dark"
-              text-variant="white"
-              :title="server.name"
-              tag="article"
-              style="
+            <b-card bg-variant="dark" text-variant="white" :title="server.name" tag="article" style="
                 max-width: 20rem;
                 min-width: 15rem;
                 min-height: 130px;
                 text-align: center;
-              "
-              class="mb-2 col-5"
-            >
+              " class="mb-2 col-5">
               <b-card-text>
                 {{ server.usage }}
               </b-card-text>
@@ -140,7 +110,7 @@ export default {
         },
         {
           name: "Myth",
-          server: ["ZeroTwo", "Calliope", "Amelia", "Gura", "Ina"],
+          server: ["Ina", "Calliope", "Amelia", "Gura"],
           location: "Tokyo 1",
           usage: "Bot Cluster"
         },
@@ -173,7 +143,7 @@ export default {
           location: "Paris DC1"
         },
         {
-          name: "ZeroTwo",
+          name: "Ina",
           usage: "Main Yukiko server",
           location: "Paris DC1"
         },
@@ -271,6 +241,11 @@ export default {
           name: "Nijisansji",
           usage: "Labs.",
           location: "Tokyo 3"
+        },
+        {
+          name: "Ochaco",
+          usage: "Asthriona Gateway.",
+          location: "New York DC1"
         }
         // cov
         // {
@@ -374,7 +349,12 @@ export default {
         {
           name: " Cloudsdale",
           usage: "First Cloudsdale Radio Server"
-        }
+        },
+        {
+          name: "ZeroTwo",
+          usage: "Main Yukiko server",
+          location: "Paris DC1"
+        },
       ]
     };
   },
