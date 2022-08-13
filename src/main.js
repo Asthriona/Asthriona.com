@@ -14,6 +14,7 @@ import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap-vue/dist/bootstrap-vue.css";
 import './registerServiceWorker'
 import i18n from './i18n'
+import vuetify from './plugins/vuetify'
 Vue.use(require('vue-moment'));
 Vue.use(BootstrapVue);
 Vue.use(IconsPlugin);
@@ -23,5 +24,6 @@ Vue.use(mavonEditor);
 new Vue({
     router,
     i18n,
+    vuetify,
     render: h => h(App)
 }).$mount("#app");
