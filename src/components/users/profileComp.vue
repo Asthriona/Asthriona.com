@@ -1,143 +1,52 @@
 <template>
   <div>
-    <b-container>
-      <b-row>
-        <h1 v-if="message">Info: {{ message }}</h1>
-        <b-col cols="12" class="text-center">
-          <h1>User Profile</h1>
-        </b-col>
-        <b-col cols="6">
-          <h3>user infos</h3>
-          <h4>avatar:</h4>
-          <br />
-          <img :src="avatar" class="rounded" height="200px" alt="your avatar" />
-
-          <ul class="userData">
-            <li>userId: {{ id }}</li>
-            <li>Username: {{ username }}</li>
-            <li>e-mail: {{ email }}</li>
-            <li>Verified: {{ verified }}</li>
-            <li>Admin: {{ admin }}</li>
-          </ul>
-        </b-col>
-        <b-col cols="6">
-          <h3>UPDATE USERS DATA</h3>
-          <p style="color:red;">
-            Due to changes in the API and the new websites, you cannot update
-            your account on Asthriona.com at the moment, please head to
-            <a href="https://asthriona.space">Asthriona.space</a> to update your
-            profile.
-          </p>
-          <b-form @submit="onSubmit">
-            <label for="avatar">Avatar</label> <br />
-            <b-form-input
-              id="avatar"
-              class="mb-2 mr-sm-2 mb-sm-0"
-              name="avatar"
-              :placeholder="
-                avatar ? avatar : 'https://cdn.asthriona.com/user/avatar.png'
-              "
-              v-model="new_avatar"
-            ></b-form-input>
-            <small
-              ><i
-                >You cannot upload an avatar here for now, please upload it
-                somewhere else and past the link here.</i
-              ></small
-            >
-            <br />
-            <label for="username">Username</label>
-            <b-form-input
-              id="displayName"
-              class="mb-2 mr-sm-2 mb-sm-0"
-              name="displayName"
-              :placeholder="displayName ? displayName : 'USERNAME'"
-              v-model="new_username"
-            >
-            </b-form-input>
-            <b-button type="submit" variant="primary" disabled>Save</b-button>
-          </b-form>
-          <!-- <small
-            ><i
-              >I'm actually working on the profile feature, its sadly pretty low
-              in the road map, but soon you will be able to change pretty much
-              everything and see a real profile page. If you need to change your
-              email, please send me an email with the new one at
-              <a href="mailto:Support@asthrion.com">Support@Asthriona.com</a>
-              <br />
-              Also I do not accept Verification request, those are given by me
-              or the Nishikino Networks Teams. No need to send me an email to
-              get verified.</i
-            ></small
-          > -->
-        </b-col>
-      </b-row>
-    </b-container>
+    <div class="banner" v-if="user.profileBanner">
+      <v-img position="center" height="400px" :src="user.profileBanner"></v-img>
+    </div>
+    <v-container>
+      <v-row>
+        <v-col cols="12">
+          <div class="d-flex justify-center">
+            <v-avatar size="200">
+              <v-img class="avatar" :src="user.avatar"></v-img>
+            </v-avatar>
+          </div>
+        </v-col>
+        <v-col cols="12" class="text-center">
+          <h1>
+            {{ user.displayName }}
+            <v-icon> {{ user.selectedBadge }} </v-icon>
+          </h1>
+          <v-icon>mdi-format-quote-open</v-icon>
+          {{ user.description }}
+        </v-col>
+        <v-col cols="12" class="accountName d-flex justify-center">
+          <h3>
+            <v-icon>mdi-account</v-icon>
+            {{ user.username }}#{{ user.discriminator }}
+          </h3>
+        </v-col>
+        <v-col cols="12" class="accountName d-flex justify-center">
+          <v-btn color="primary" class="mr-4 mb-4" disabled>
+            <v-icon>mdi-account-edit</v-icon> Edit Profile</v-btn
+          >
+          <v-btn class="ml-4 mb-4" color="error" disabled
+            ><v-icon>mdi-account-off</v-icon> Logout</v-btn
+          >
+        </v-col>
+      </v-row>
+    </v-container>
   </div>
 </template>
 
 <script>
-import axios from "axios";
 export default {
   name: "UserProfile",
+  props: ["user"],
   data() {
     return {
-      avatar: "",
-      new_avatar: "",
-      new_username: "",
-      username: "",
-      admin: "",
-      verified: "",
-      email: "",
-      id: "",
-      message: ""
+      //
     };
-  },
-  async beforeMount() {
-    await axios
-      .get(`${process.env.VUE_APP_URI}login/whoami`, {
-        headers: {
-          Authorization: localStorage.getItem("token")
-        }
-      })
-      .then(res => {
-        const data = res.data.user;
-        this.avatar = data.avatar;
-        this.username = data.username;
-        this.displayName = data.displayName;
-        this.id = data.id;
-        this.verified = data.isVerified;
-        this.admin = data.isAdmin;
-        this.email = data.email;
-      });
-  },
-  methods: {
-    // onSubmit(event) {
-    //   event.preventDefault();
-    //   axios
-    //     .post(
-    //       `${process.env.VUE_APP_URI}/user`,
-    //       {
-    //         username: this.new_username,
-    //         avatar: this.new_avatar
-    //       },
-    //       { withCredentials: true }
-    //     )
-    //     .then(res => {
-    //       this.avatar = res.data.avatar;
-    //       this.message = res.data.message;
-    //     });
-    // },
-    onReset(event) {
-      event.preventDefault();
-      // Reset our form values
-      this.avatar = "";
-      // Trick to reset/clear native browser form validation state
-      this.show = false;
-      this.$nextTick(() => {
-        this.show = true;
-      });
-    }
   }
 };
 </script>
