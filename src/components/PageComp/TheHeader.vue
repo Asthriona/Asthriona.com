@@ -83,6 +83,7 @@
 <script>
 export default {
   name: "TheHeader",
+  props: ["user"],
   data() {
     return {
       otherItems: [
