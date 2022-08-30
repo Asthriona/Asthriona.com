@@ -1,8 +1,9 @@
 <template>
   <v-app dark>
-    <TheHeader />
+    <TheHeader :user="user" />
+    <IsBanned :user="user" v-if="user.isBanned" />
     <v-main>
-      <router-view />
+      <router-view :user="user" />
     </v-main>
     <TheFooter />
   </v-app>
@@ -11,16 +12,17 @@
 <script>
 import TheHeader from "@/components/PageComp/TheHeader.vue";
 import TheFooter from "@/components/PageComp/TheFooter.vue";
+import IsBanned from "./components/PageComp/isBanned.vue";
 import axios from "axios";
 export default {
   name: "App",
   components: {
     TheHeader,
-    TheFooter
-    // BanComp,
+    TheFooter,
+    IsBanned
   },
   data: () => ({
-    //
+    user: {}
   }),
   created() {
     // dark mode by default
@@ -47,3 +49,9 @@ export default {
   }
 };
 </script>
+
+<style>
+.avatarBanned {
+  filter: grayscale(100%);
+}
+</style>
