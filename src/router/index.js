@@ -51,8 +51,8 @@ const routes = [
     component: EditPost
   },
   {
-    path: "/user/userprofile",
-    name: "UserProfile",
+    path: "/profile",
+    name: "Profile",
     component: UserProfile
   },
   {
