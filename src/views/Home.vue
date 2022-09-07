@@ -32,7 +32,7 @@
     <v-container>
       <v-row>
         <div class="page-content text-center">
-          <v-col cols="9" class="whoami">
+          <v-col cols="12" class="whoami">
             <v-card class="p-4">
               <v-card-title class="display-1 justify-center"
                 >Who am I?</v-card-title
@@ -59,7 +59,7 @@
               <br />
             </v-card>
           </v-col>
-          <v-col cols="9" class="whoami">
+          <v-col cols="12" class="whoami">
             <v-card class="p-4">
               <v-card-title class="display-1 justify-center"
                 >What I do?</v-card-title
