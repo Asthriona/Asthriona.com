@@ -1,60 +1,74 @@
 <template>
   <div class="about">
-    <b-container>
-      <b-row>
-        <b-col cols="12" class="text-center">
-          <b-img
-            src="https://cdn.nishikino.xyz/asthriona/ProfilePict/mako.png"
-            rounded="circle"
-            alt="Asthriona Profile Picture"
-            height="200px"
-            class="MakoAvatar"
-          ></b-img>
-          <h1 class="display-4">Makoto "Asthriona" Kobayashi</h1>
-          <p>
-            <b>Welcome to my Website!</b> <br />
-            I am Asthriona, or Makoto, call me as you wish. I'm a full-stack
-            developer, and I'm currently working on serval project like Yukiko,
-            This website, and a game for
-            <a
-              href="https://raunboomStudio.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              >Rainboom Studio</a
-            >. Living in between Japan and france, I'll move to UK in a few
-            months for a while and then hopefully definitively to Japan. I love
-            japanese culture and learning the language. When I'm not working on
-            code, I use to work on cars, but sadly my last car got wreked. so
-            for now outside of work, i'm just doing more work, playing video
-            games, watching anime, and learning new things.
-            <br />
-            <!-- I'm a
-            big fan of the japanese culture, and learning the language. When not
-            coding, I like to work on cars, Drifting is in my blood. Also Video
-            games, I play those since I'm able to hold a controler, or use a
-            mouse as my first game was Minesweeper on Windows 95. -->
-          </p>
-          <p>
-            I have a bunch of project cars in mind, but most of them cannot be
-            releaved just yet! you will have to wait a bit longer :) <br />
-            all I can say is most of them will be drift build! gotta get better
-            at it soon! (*•̀ᴗ•́*)و ̑̑
-          </p>
-          <p>
-            About video games, with 20+ years of experience, I can say I have
-            some skills. Mostly when talking about racing sim. <br />
-            I always manage to get on top of any leaderboard very quick. I think
-            the funniest part is when I beat my friends on their own tracks In
-            real life.<br />
-            You know? Video games is not real life, but the result endup being
-            the same! <small>Sup Thony?</small> ( ͡° ͜ʖ ͡°)
-          </p>
-        </b-col>
+    <v-container>
+      <v-row>
+        <v-col cols="12" class="text-center">
+          <v-avatar size="300px">
+            <v-img
+              src="https://cdn.nishikino.xyz/asthriona/ProfilePict/mako.png"
+              alt="Asthriona Profile Picture"
+              class="MakoAvatar"
+            ></v-img>
+          </v-avatar>
+          <br />
+          <div class="name mb-4">
+            <v-tooltip bottom>
+              <template v-slot:activator="{ on, attrs }">
+                <span class="display-3" v-bind="attrs" v-on="on"
+                  >Makoto "Asthriona" Kobayashi</span
+                >
+              </template>
+              <span>まこと「アスリオナ」こばやし</span>
+            </v-tooltip>
+          </div>
+          <v-spacer class="mt-4 mb-4"></v-spacer>
+          <v-col cols="12" class="mt-4">
+            <div class="display-1 text-left">Welcome to my Website!</div>
+            <div class="intro-content">
+              <span class="text-left"
+                >Hi! I'm Makoto, a {{ age }} years old developper</span
+              >
+              <span class="intro">
+                <br />
+                I'm a full-stack developer, and I'm currently working on serval
+                project like Yukiko, This website, and a game for Rainboom
+                Studio. Living in between Japan and france, I'll move to UK in a
+                few months for a while and then hopefully definitively to Japan.
+                I love japanese culture and learning the language. When I'm not
+                working on code, I use to work on cars, but sadly my last car
+                got wreked. so for now outside of work, i'm just doing more
+                work, playing video games, watching anime, and learning new
+                things.
+              </span>
+            </div>
+            <div class="projects mt-4">
+              <span>
+                I have a bunch of project cars in mind, but most of them cannot
+                be releaved just yet! you will have to wait a bit longer :) all
+                I can say is most of them will be drift build! gotta get better
+                at it soon! (*•̀ᴗ•́*)و ̑̑
+              </span>
+            </div>
+            <div class="video-games mt-4">
+              <span>
+                About video games, with 20+ years of experience, I can say I
+                have some skills. Mostly when talking about racing sim. I always
+                manage to get on top of any leaderboard very quick. I think the
+                funniest part is when I beat my friends on their own tracks In
+                real life. You know? Video games is not real life, but the
+                result endup being the same! Sup Thony? ( ͡° ͜ʖ ͡°)
+              </span>
+            </div>
+          </v-col>
+        </v-col>
         <b-col cols="12">
           <table>
             <thead>
               <tr class="text-center">
-                <h2>Who is Makoto?</h2>
+                <h2>
+                  >_ Makoto.data
+                  <span class="blink">▋</span>
+                </h2>
               </tr>
             </thead>
             <tbody>
@@ -114,6 +128,12 @@
                       <i>[Húxiān] Rx7 FC3S</i>
                     </li>
                     <li>
+                      <i>[Nekomata] BMW M4 2020</i>
+                    </li>
+                    <li>
+                      <i>[Yoruichi v1.1] Citroën C5 Gen 3</i>
+                    </li>
+                    <li>
                       <strike style="color:red;"
                         >[Yoruichi] Citroën C5 Gen 3</strike
                       >
@@ -122,11 +142,13 @@
                       <strike>[Izanagi] Nissian Silvia S15</strike>
                     </li>
                     <li>
-                      <strike>[Húwáng] BMW M4 (2014, Drift Build)</strike>
+                      <strike style="color:red;"
+                        >[Húwáng] BMW M4 (2014, Drift Build)</strike
+                      >
                     </li>
                   </ul>
                   <strike>Stike = sold // not owned anymore </strike> <br />
-                  <span style="color:red;">Stike + red = crashed</span>
+                  <span style="color:red;">Stike + red = Totaled</span>
                 </td>
               </tr>
               <tr>
@@ -152,13 +174,16 @@
           <table class="mt-4">
             <thead>
               <tr class="text-center">
-                <h2>Website Sources</h2>
+                <h2>
+                  >_ Makoto.website.data
+                  <span class="blink">▋</span>
+                </h2>
               </tr>
             </thead>
             <tbody>
               <tr>
                 <th>Front End</th>
-                <th>Vue.js 3, Webpack, Boostrap Vue, core-js</th>
+                <th>Vue.js 3, Webpack, Vuetify, core-js, PWA</th>
               </tr>
               <tr></tr>
               <tr>
@@ -168,7 +193,7 @@
               <tr></tr>
               <tr>
                 <th>Back End</th>
-                <th>Node.js, Express, MongoDB</th>
+                <th>Node.js, Express, MongoDB, Socket.IO</th>
               </tr>
               <tr>
                 <th>DNS</th>
@@ -185,13 +210,32 @@
             </tbody>
           </table>
         </b-col>
-      </b-row>
-    </b-container>
+      </v-row>
+    </v-container>
   </div>
 </template>
 
 <script>
 export default {
+  name: "About",
+  data() {
+    return {
+      age: 0
+    };
+  },
+  methods: {
+    getAge() {
+      setInterval(() => {
+        let time =
+          (new Date() - new Date(840844800000)) /
+          (1000 * 60 * 60 * 24 * 365.25);
+        this.age = time.toString().substring(0, 12);
+      }, 50);
+    }
+  },
+  mounted() {
+    this.getAge();
+  },
   beforeMount() {
     document.title = "Asthriona - About";
   },
@@ -217,6 +261,20 @@ export default {
 </script>
 
 <style scoped>
+.blink {
+  animation: blink-animation 1s steps(5, start) infinite;
+  -webkit-animation: blink-animation 1s steps(5, start) infinite;
+}
+@keyframes blink-animation {
+  to {
+    visibility: hidden;
+  }
+}
+@-webkit-keyframes blink-animation {
+  to {
+    visibility: hidden;
+  }
+}
 ul li {
   text-decoration: none;
   list-style-type: "⇒ ";
