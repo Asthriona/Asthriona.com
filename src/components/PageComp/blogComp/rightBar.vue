@@ -134,18 +134,12 @@ export default {
           name: "Unreal Engine",
           url: "https://unrealengine.com",
           logo:
-            "https://cdn.asthriona.com/static/UE_Logo_stacked_unreal-engine_white.svg"
+            "https://cdn.nishikino.xyz/global/UE_Logo_horizontal_unreal-engine_white.svg"
         },
         {
           name: "DigitalOcean",
           url: "https://digitalocean.com",
-          logo: "https://cdn.nishikino.xyz/global/DO_Logo_horizontal_black.svg"
-        },
-        {
-          name: "Cover Corporation",
-          url: "https://cover-corp.com/",
-          logo:
-            "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Cover_Corp_horizontal_logo_1.png/1200px-Cover_Corp_horizontal_logo_1.png"
+          logo: "https://cdn.nishikino.xyz/global/DO_Logo_horizontal_white.svg"
         }
       ],
       socials: [
