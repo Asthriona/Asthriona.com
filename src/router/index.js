@@ -6,7 +6,7 @@ import PostShow from "../views/_postShow.vue";
 import Login from "../views/user/login.vue";
 import Admin from "../views/admin/index.vue";
 import NewPost from "../views/user/newPost.vue";
-import EditPost from "../views/user/EditPost.vue";
+import EditPost from "../views/admin/blog/editPost.vue";
 import UserProfile from "../views/user/UserProfile.vue";
 import Server from "../views/Server.vue";
 import Friends from "../views/Friends.vue";
@@ -72,6 +72,7 @@ const routes = [
     name: "AdminHome",
     component: AdminHome
   },
+  // Admin blog routes
   {
     path: "/admin/blog",
     name: "AdminBlog",
@@ -81,6 +82,11 @@ const routes = [
     path: "/admin/blog/new",
     name: "AdminBlogNew",
     component: AdminBlogNew
+  },
+  {
+    path: "/admin/blog/edit/:id",
+    name: "AdminBlogEdit",
+    component: EditPost
   },
   {
     path: "/about",
