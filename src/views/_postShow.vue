@@ -12,12 +12,16 @@
           </div>
           <div class="subtitle text-center">
             <i class="muted"
-              >posted on {{ new Date() | moment("MM Do YYYY") }}</i
+              >posted on
+              {{ new Date(date) | moment("do, MMMM YYYY [at] hh:mm") }}</i
             >
             <br />
             <i v-if="post.updatedAt"
               >last Update:
-              {{ new Date(post.updatedAt) | moment("dddd, MM Do YYYY") }}</i
+              {{
+                new Date(parseInt(post.updatedAt))
+                  | moment("Do, MMMM YYYY [at] hh:mm")
+              }}</i
             >
           </div>
         </v-col>
@@ -180,7 +184,8 @@ export default {
       loading: {
         post: true,
         comment: true
-      }
+      },
+      date: ""
     };
   },
   mounted() {
@@ -191,6 +196,8 @@ export default {
       .then(res => {
         this.post = res.data.post;
         this.author = res.data.author;
+        // convert timestamp to date
+        this.date = new Date(parseInt(this.post.createdAt)).toDateString();
       })
       .catch(err => {
         if (err.response.status == 404) {
