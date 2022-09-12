@@ -1,442 +1,259 @@
-/* eslint-disable */
 <template>
-  <div class="div">
-    <b-container class="h-100" fluid>
-      <div class="masterhead">
-        <b-row class="vh-100" align-v="center">
-          <div class="headinStuff">
-            <h1 class="logo">Asthriona</h1>
-            <br />
-            <b-col cols="12" class="text-center">
-              <h3 class="void" v-if="AsthrionaIsDead == false">
-                {{ random[Math.round(Math.random() * random.length)] }}
-              </h3>
-              <h3 class="void" v-else>
-                Error Asthriona is dead,
-                <span style="color:red;">mismatch</span>.
-              </h3>
-            </b-col>
-            <h3 class="snsHeader">
-              <a
-                href="https://twitter.com/asthriona"
-                target="_blank"
-                rel="noopener noreferrer"
-                ><b-icon icon="twitter" variant="light"></b-icon
-              ></a>
-              ●
-              <a
-                href="https://instagram.com/asthriona.dev"
-                target="_blank"
-                rel="noopener noreferrer"
-                ><b-icon icon="instagram" variant="light"></b-icon
-              ></a>
-              ●
-              <a
-                href="https://github.com/asthriona"
-                target="_blank"
-                rel="noopener noreferrer"
-                ><b-icon icon="github" variant="light"></b-icon
-              ></a>
-            </h3>
+  <div class="home">
+    <div class="head-banner">
+      <div class="header-content">
+        <v-col cols="12" class="avatar d-flex justify-center">
+          <v-avatar size="250" class="mt-4">
+            <v-img
+              src="https://pbs.twimg.com/profile_images/1523324400245825537/zQiBhAZV_400x400.jpg"
+            ></v-img>
+          </v-avatar>
+        </v-col>
+        <span>
+          <div class="display-4 text-center font-logo">Asthriona</div>
+        </span>
+        <span>
+          <div class="display-1 text-center randomText">
+            {{
+              randomSubLine[Math.floor(Math.random() * randomSubLine.length)]
+            }}
           </div>
-        </b-row>
+        </span>
       </div>
-    </b-container>
-    <b-container>
-      <b-row>
-        <b-col cols="12">
-          <div class="spotify">
-            <h4 class="text-center">
-              <b-img
-                rounded="circle"
-                :src="
-                  img ? img : 'https://cdn.asthriona.com/static/spotify.png'
-                "
-                alt=""
-                height="50px"
-              />
-              <a :href="trackURL" target="_blank" rel="noopener noreferrer">
-                Now Playin: {{ title ? title : "Loading..." }} -
-                {{ artist ? artist : "Loading..." }}
-              </a>
-              {{ updateLast() }}
-            </h4>
-          </div>
-        </b-col>
-        <p>
-          <select
-            class="custom-select"
-            v-model="lang"
-            @change="handleChange(e)"
-            disabled
-          >
-            <option value="ja">日本語</option>
-            <option value="en">English</option>
-            <option value="fr">Francais</option>
-          </select>
-        </p>
-        <div class="content text-left">
-          <div class="who">
-            <b-col cols="12" offset-lg="0"
-              ><h1>{{ $t("home.who.title") }}</h1></b-col
-            >
-            <b-col cols="12" offset-lg="1">
-              <p v-html="$t('home.who.text')"></p>
-            </b-col>
-          </div>
-          <div class="what">
-            <b-col cols="12">
-              <h1>{{ $t("home.what.title") }}</h1>
-            </b-col>
-            <b-col cols="12" offset-lg="1">
-              <p v-html="$t('home.what.text')"></p>
-            </b-col>
-          </div>
-          <div class="works">
-            <b-col cols="12">
-              <h1>{{ $t("home.works.title") }}</h1>
-            </b-col>
-            <b-col cols="12">
-              <b-card-group>
-                <!-- THE WALL CARD -->
-                <b-card
-                  bg-variant="dark"
-                  title="Asthriona.space"
-                  img-src="https://cdn.asthriona.com/i/2022/05/asthriona.spacebig.png"
-                  img-alt="Image"
-                  img-top
-                  tag="article"
-                  style="min-width: 10rem;"
-                  class="mb-2"
-                >
-                  <b-card-text>
-                    Asthriona.space<br />
-                    > Vue.js
-                  </b-card-text>
-                  <b-button href="https://asthriona.space" variant="primary">{{
-                    $t("home.works.visite")
-                  }}</b-button>
-                </b-card>
-                <!-- YUKIKO CARD -->
-                <b-card
-                  bg-variant="dark"
-                  title="Yukiko"
-                  img-src="https://cdn.nishikino.xyz/asthriona/YukikoAsh.webp"
-                  img-alt="Image"
-                  img-top
-                  tag="article"
-                  style="min-width: 10rem;"
-                  class="mb-2"
-                >
-                  <b-card-text>
-                    {{ $t("home.works.web.Yukiko.desc") }} <br />
-                    > Discord.js
-                  </b-card-text>
-                  <b-button href="https://yukiko.app" variant="primary">{{
-                    $t("home.works.visite")
-                  }}</b-button>
-                </b-card>
-                <!-- ANIMEFM CARD -->
-                <b-card
-                  bg-variant="dark"
-                  title="AnimeFM"
-                  img-src="https://cdn.nishikino.xyz/asthriona/AnimeFMAsh.webp"
-                  img-alt="Image"
-                  img-top
-                  tag="article"
-                  style="min-width: 10rem;"
-                  class="mb-2"
-                >
-                  <b-card-text>
-                    {{ $t("home.works.web.anime.desc") }}<br />
-                    > Vue & Azuracast
-                  </b-card-text>
-                  <b-button
-                    href="https://animefm.co"
-                    variant="primary"
-                    disabled
-                    >{{ $t("home.works.visite") }}</b-button
-                  >
-                </b-card>
-                <!-- Asthriona CARD -->
-                <b-card
-                  bg-variant="dark"
-                  title="Asthriona.com"
-                  img-src="https://cdn.nishikino.xyz/asthriona/AshASh.webp"
-                  img-alt="Image"
-                  img-top
-                  tag="article"
-                  style="min-width: 10rem;"
-                  class="mb-2"
-                >
-                  <b-card-text>
-                    {{ $t("home.works.web.asthriona.desc") }}<br />
-                    > VueJS
-                  </b-card-text>
-                  <b-button href="javascript:;" variant="primary">{{
-                    $t("home.works.visite")
-                  }}</b-button>
-                </b-card>
-                <!-- Cloudsde Radio CARD -->
-                <b-card
-                  bg-variant="dark"
-                  title="Cloudsdale Radio"
-                  img-src="https://cdn.nishikino.xyz/asthriona/CRAsh.webp"
-                  img-alt="Image"
-                  img-top
-                  tag="article"
-                  style="min-width: 12rem;"
-                  class="mb-2"
-                >
-                  <b-card-text>
-                    {{ $t("home.works.web.cloudsdale.desc") }}<br />
-                    > Express.js
-                  </b-card-text>
-                  <b-button
-                    href="https://CloudsdaleRadio.com"
-                    variant="primary"
-                    >{{ $t("home.works.visite") }}</b-button
-                  >
-                </b-card>
-              </b-card-group>
-            </b-col>
-          </div>
-          <div class="wow mt-4">
-            <b-col cols="12" class="mt-4">
-              <h1>{{ $t("home.wow.title") }}</h1>
-            </b-col>
-            <b-col cols="12" offset-lg="1">
-              <p v-html="$t('home.wow.text')"></p>
-            </b-col>
-          </div>
-          <div class="contact">
-            <b-col cols="12">
-              <h1>{{ $t("home.contact.title") }}</h1>
-            </b-col>
-            <b-col cols="12" offset-lg="1">
-              <ul>
-                <li>
-                  Twitter:
-                  <a
-                    href="https://twitter.com/asthriona"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    >@Asthriona</a
-                  >
-                </li>
+      <div class="sns">
+        <v-col cols="12" class="display-1 d-flex justify-center">
+          <span v-for="sns in sns" :key="sns.name" class="ml-4">
+            <v-icon size="40">{{ sns.icon }}</v-icon>
+          </span>
+        </v-col>
+      </div>
+    </div>
+    <hr />
+    <v-container>
+      <v-row>
+        <div class="page-content text-center">
+          <v-col cols="12" class="whoami">
+            <v-card class="p-4">
+              <v-card-title class="display-1 justify-center"
+                >Who am I?</v-card-title
+              >
+              Hi, I'm Makoto "Asthriona" Kobayashi, Lots of my friends just call
+              me Mako, feel free to do so (Or Mako-san if you feel extra format
+              :)) <br />
+              I'm a web developer and network engineer, who like to play with
+              servers, and learn new stuff. <br />
+              I sometimes am a race driver as well, beating lap times has this
+              little something to it, that just make me feels good. <br />
+              Sometimes I also like to do community related stuff, For exemple I
+              took part in r/place with the r/vtuber group, we were focusing on
+              v-tuber and mostly Hololive talent, but our alliances with other
+              groups focued on v-shojo and hololive memes, and Nijisanji made us
+              draw a lots of Vtuber and defend them. I myself focused on
+              defending Fubuking, The fox girl on a burger in the banner image
+              :) <br />
+              I can be super dedicated to a task if asked nicely or if I have
+              any kind of interest, like placing pixel for 3 day straight with
+              no pause. <br />
+              When not putting my health on the line for Pixel wars, I do code,
+              Watch Anime or Netflix show, read Manga, and play games.
+              <br />
+            </v-card>
+          </v-col>
+          <v-col cols="12" class="whoami">
+            <v-card class="p-4">
+              <v-card-title class="display-1 justify-center"
+                >What I do?</v-card-title
+              >
+              <v-card-text
+                >Mostly code to be honest, learning new things, languages and
+                frameworks. <br />
+                The language I main is JavaScript, but I am learning GO, C, C++,
+                and pretty much whatever I can use for project. <br />
+                Talking of project I am currently working on
+                <a
+                  href="https://yukiko.app"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Yukiko</a
+                >, a utility Discord Bot that can help you manage your server.
                 <br />
-                <li>
-                  Discord:
-                  <a
-                    href="https://dsc.bio/asthriona"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    >Asthriona#0001</a
-                  >
-                </li>
-                <br />
-                <li>
-                  Mastodont:
-                  <a
-                    href="https://mstdn.jp/@Asthriona"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    >@Asthriona@mstdn.jp</a
-                  >
-                </li>
-                <br />
-                <li>
-                  {{ $t("home.contact.email") }}:
-                  <a href="mailto:ping@asthriona.com">ping@Asthriona.com</a>
-                </li>
-                <br />
-                <li>
-                  GPG:
-                  <a
-                    href="/pubkey.txt"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    >0xC7D7BC3411B759FE</a
-                  >
-                  |
-                  <a
-                    href="http://pgp.mit.edu/pks/lookup?op=get&search=0xC7D7BC3411B759FE"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    >[pgp.mit.edu]</a
-                  >
-                </li>
-              </ul>
-            </b-col>
-          </div>
+                and my own websites at the moment, trying to add feature and
+                expend to avoid being bind to Social Network
+                Services.</v-card-text
+              >
+            </v-card>
+          </v-col>
         </div>
-      </b-row>
-    </b-container>
+        <div class="display-1">My Works:</div>
+        <v-col
+          v-for="work in works"
+          :key="work.title"
+          xs="12"
+          sm="6"
+          md="6"
+          lg="4"
+          xl="4"
+        >
+          <!-- Works -->
+          <v-card>
+            <v-img :src="work.img" lazy></v-img>
+            <v-card-title>{{ work.title }}</v-card-title>
+            <v-card-text>{{ work.description }}</v-card-text>
+            <v-card-actions>
+              <v-btn
+                :href="work.url"
+                target="_blank"
+                color="primary"
+                dark
+                :disabled="!work.url"
+              >
+                <v-icon>mdi-link</v-icon>
+                Visit
+              </v-btn>
+            </v-card-actions>
+          </v-card>
+        </v-col>
+        <v-col cols="12">
+          <v-col cols="9">
+            <v-card>
+              <v-card-title>Contact</v-card-title>
+              <v-card-text>
+                <ul class="headline">
+                  <li>
+                    Email:
+                    <a href="mailto:ping@asthriona.com"> ping@asthriona.com</a>
+                  </li>
+                  <li>
+                    Twitter
+                    <a
+                      href="https://twitter.com/asthriona"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      @Asthriona</a
+                    >
+                  </li>
+                  <li>
+                    Mastodon:
+                    <a
+                      href="https://mstdn.jp/@Asthriona"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      @asthriona@mstdn.jp</a
+                    >
+                  </li>
+                  <li>
+                    Discord:
+                    <a
+                      href="https://dsc.bio/asthriona"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Asthriona#0001</a
+                    >
+                  </li>
+                </ul>
+              </v-card-text>
+            </v-card>
+          </v-col>
+        </v-col>
+      </v-row>
+    </v-container>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import allBackgroundImages from "../assets/images/backgrounds/allbg";
-import axios from "axios";
 export default {
   name: "Home",
   data() {
     return {
-      allBackgroundImages,
-      title: "",
-      artist: "",
-      img: "",
-      trackURL: "",
-      lang: localStorage.getItem("lang") || "en",
-      AsthrionaIsDead: false,
-      random: [
+      sns: [
+        {
+          name: "Twitter",
+          url: "https://twitter.com/asthriona",
+          icon: "mdi-twitter"
+        },
+        {
+          name: "Github",
+          url: "https://github.com/Asthriona",
+          icon: "mdi-github"
+        },
+        {
+          name: "Instagram",
+          url: "https://www.instagram.com/asthriona.dev/",
+          icon: "mdi-instagram"
+        }
+      ],
+      works: [
+        {
+          title: "Asthriona.com",
+          img: "https://cdn.asthriona.com/i/2022/05/Asthriona.png",
+          description: "My professional website",
+          url: "https://asthriona.com"
+        },
+        {
+          title: "Asthriona.space",
+          img: "https://cdn.asthriona.com/i/2022/05/asthrionaSpace.png",
+          description: "My personal website",
+          url: "https://asthriona.space"
+        },
+        {
+          title: "Yukiko",
+          img:
+            "https://cdn.asthriona.com/i/2022/05/Yukiko%20-%20Discord%20Bot.png",
+          description: "A Utility Discord bot",
+          url: "https://yukiko.app"
+        },
+        {
+          title: "CablePorn",
+          img: "https://cdn.asthriona.com/i/2022/05/cablePorn.png",
+          description: "Automated Twitter account about organized cables",
+          url: "https://twitter.com/cableporn_"
+        },
+        {
+          title: "Cable Gore",
+          img: "https://cdn.asthriona.com/i/2022/05/cablePorn.png",
+          description:
+            "An automated Twitter account about dis-organized cables",
+          url: "https://twitter.com/cablegore"
+        }
+      ],
+      randomSubLine: [
         "/*This line is disabled*/",
         // "死にたい",
         // "空に消えたい",
-        // "Better keep it “just me”, It’s better that way, trust me",
-        // "it’s Me, Myself and I again",
+        "Better keep it “just me”, It’s better that way, trust me",
+        "it’s Me, Myself and I again",
         "Hello from Speedtest.net!",
         "Welcome to 2020 Season 3!",
         "You can now play 2021 as luigi",
         "Click here to cancel your subscription to 2022"
       ]
     };
-  },
-  beforeMount() {
-    if (localStorage.getItem("lang") === "ja") {
-      document.title = "アストリオナ";
-    } else {
-      document.title = "Asthriona";
-    }
-    if (!localStorage.getItem("lang")) {
-      localStorage.setItem("lang", "en");
-    }
-    axios.get(`${process.env.VUE_APP_URI}/lastfm`).then(res => {
-      this.title = res.data.title;
-      this.artist = res.data.artist;
-      this.img = res.data.img;
-      this.trackURL = res.data.url;
-    });
-  },
-  methods: {
-    handleChange(e) {
-      e.preventDefault();
-      localStorage.setItem("lang", e.target.value);
-      window.location.reload();
-    },
-    updateLast() {
-      setInterval(() => {
-        axios.get(`${process.env.VUE_APP_URI_V1}lastfm`).then(res => {
-          this.title = res.data.title;
-          this.artist = res.data.artist;
-          this.img = res.data.img;
-          this.trackURL = res.data.url;
-        });
-      }, 10000);
-    }
-  },
-  metaInfo: {
-    meta: [
-      // twitter card
-      { name: "twitter:card", content: "summary" },
-      { name: "twitter:site", content: "@Asthriona" },
-      { name: "twitter:title", content: "Asthriona" },
-      {
-        name: "twitter:description",
-        content:
-          "Full-Stack dev | Maker of @YukikoApp | Japan/car Enthusiast. | Like: Miku. / Dislike: The world. | Links: http://bio.link/asthriona | pfp @lgisdead"
-      },
-      {
-        name: "twitter:image",
-        content:
-          "https://cdn.nishikino.xyz/asthriona/blog/static/Fh6EIPrm_400x400.jpg"
-      }
-    ]
   }
-  // computed: {
-  //   backgroundImage() {
-  //     var bg = Math.floor(Math.random() * 6) + 1;
-  //     return {
-  //       backgroundImage: `${this.allBackgroundImages[bg]}`
-  //     };
-  //   }
-  // }
 };
 </script>
 
 <style scoped>
-@font-face {
-  font-family: Asthriona;
-  src: url(../assets/font/logofont.ttf) format("truetype");
-}
-.masterhead {
+.head-banner {
   background-image: url(https://cdn.asthriona.com/rplaceHoloBackground.jpg);
   background-size: cover;
-}
-.logo {
-  font-family: Asthriona;
-  font-size: 7em;
-  color: #fff;
-  text-shadow: 0 0 7px #000;
-  text-align: center;
-  margin-top: -1em;
-}
-.snsHeader {
-  font-family: Asthriona;
-  font-size: 2em;
-  color: #fff;
-  text-shadow: 0 0 10px #000;
-  text-align: center;
-  margin-top: -1em;
-}
-.headinStuff {
-  width: 100%;
-}
-.void {
-  position: relative;
-  top: -1.5em;
-  width: 100%;
-  font-size: 2rem;
-  color: #f5f5f5;
-  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
-    1px 1px 0 #000;
-}
-.masterhead {
-  height: 100vh;
-  min-height: 500px;
-  background-size: cover;
-  background-position: center;
   background-repeat: no-repeat;
-  background-color: rgba(0, 0, 0, 0);
-  z-index: -1;
+  background-position: center;
+  height: 100vh;
+  width: 100%;
+  /* -webkit-text-stroke: 3px;
+  -webkit-text-stroke-color: #000; */
+}
+.font-logo {
+  font-family: "Asthriona", cursive;
+  font-size: 3rem;
+  color: #fff;
 }
 ul {
   list-style-type: none;
   padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-  color: #fff;
-  font-size: 1.2rem;
-}
-.content {
-  margin-top: 2rem;
-}
-.spotify {
-  margin-top: 2rem;
-}
-.spotify a:link {
-  color: #cccccc;
-}
-.spotify a:visited {
-  color: #cccccc;
-}
-.spotify a:hover {
-  color: #cccccc;
-}
-.spotify a:active {
-  color: #cccccc;
+  margin: 0;
 }
 </style>

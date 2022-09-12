@@ -1,110 +1,58 @@
 <template>
-  <div id="app">
-    <!-- <div class="logic" v-if="AsthrionaIsDead == true">
-      <Nishikino />
-      <AsthrionaIsDead />
-      <TheHeader />
-      <router-view />
-      <TheFooter />
-    </div>
-    <div class="logic" v-else> -->
-    <Nishikino />
+  <v-app dark>
     <TheHeader :user="user" />
-    <router-view :user="user" />
+    <IsBanned :user="user" v-if="user != null && user.isBanned" />
+    <v-main>
+      <router-view :user="user" />
+    </v-main>
     <TheFooter />
-  </div>
-  <!-- </div> -->
+  </v-app>
 </template>
 
 <script>
-import TheHeader from "./components/TheHeader";
-import TheFooter from "./components/TheFooter";
-import Nishikino from "./components/Nishikino";
-// import AsthrionaIsDead from "./components/AsthrionaIsDead";
+import TheHeader from "@/components/PageComp/TheHeader.vue";
+import TheFooter from "@/components/PageComp/TheFooter.vue";
+import IsBanned from "./components/PageComp/isBanned.vue";
 import axios from "axios";
 export default {
+  name: "App",
   components: {
     TheHeader,
     TheFooter,
-    Nishikino,
-    // AsthrionaIsDead
+    IsBanned
   },
-  data() {
-    return {
-      AsthrionaIsDead: false,
-      maintenance: false,
-      user: {}
-    };
-  },
-  beforeMount() {
-    // get user
-    const token = localStorage.getItem("token");
-    if (!token) {
-      this.user = null;
-    }
+  data: () => ({
+    user: null
+  }),
+  created() {
+    // dark mode by default
+    this.$vuetify.theme.dark = true;
+    // get user data from backend
     axios
       .get(`${process.env.VUE_APP_URI}login/whoami`, {
-        headers: { Authorization: token }
+        headers: { Authorization: localStorage.getItem("token") }
       })
       .then(res => {
-        if (!this.user) {
-          return this.user == null;
+        console.log(res.data);
+        if (res.data.msg == "Invalid token.") {
+          return (this.user = null);
         }
-        this.user = res.data.user;
+        if (!res.data.user) {
+          this.user = null;
+        }
+        if (res.data.user) {
+          this.user = res.data.user;
+        }
+      })
+      .catch(() => {
+        this.user = null;
       });
-    // axios
-    //   .get(`${process.env.VUE_APP_URI_V1}admin/asthriona`)
-    //   .then(res => {
-    //     const data = res.data;
-    //     if (data.isLiving == true) {
-    //       this.AsthrionaIsDead = false;
-    //     } else {
-    //       this.AsthrionaIsDead = true;
-    //     }
-    //   })
-    //   .catch(error => {
-    //     return error;
-    //   });
   }
 };
 </script>
 
 <style>
-html body {
-  background-color: #212226;
-  overflow-x: hidden;
-}
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  color: #cccccc;
-}
-
-#nav {
-  padding: 30px;
-}
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-.SiteTitle {
-  margin-top: 5%;
-  margin-bottom: 5%;
-}
-.SiteTitle .MainLine {
-  font-family: Asthriona;
-  font-size: 4.5rem;
-}
-
-::-moz-selection {
-  color: white;
-  background: #d86100;
-}
-
-::selection {
-  color: white;
-  background: #d86100;
+.avatarBanned {
+  filter: grayscale(100%);
 }
 </style>

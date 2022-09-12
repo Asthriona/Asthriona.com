@@ -4,13 +4,15 @@ import Home from "../views/Home.vue";
 import Blog from "../views/blog.vue";
 import PostShow from "../views/_postShow.vue";
 import Login from "../views/user/login.vue";
-import Admin from "../views/user/userHome.vue";
+import Admin from "../views/admin/index.vue";
 import NewPost from "../views/user/newPost.vue";
-import EditPost from "../views/user/EditPost.vue";
+import EditPost from "../views/admin/blog/editPost.vue";
 import UserProfile from "../views/user/UserProfile.vue";
 import Server from "../views/Server.vue";
 import Friends from "../views/Friends.vue";
 import AdminHome from "../views/admin/index.vue";
+import AdminBlog from "../views/admin/blog/BlogManagement.vue";
+import AdminBlogNew from "../views/admin/blog/newPost.vue";
 
 Vue.use(VueRouter);
 
@@ -31,7 +33,7 @@ const routes = [
     component: PostShow
   },
   {
-    path: "/user",
+    path: "/admin",
     name: "Admin",
     component: Admin
   },
@@ -51,8 +53,8 @@ const routes = [
     component: EditPost
   },
   {
-    path: "/user/userprofile",
-    name: "UserProfile",
+    path: "/profile",
+    name: "Profile",
     component: UserProfile
   },
   {
@@ -69,6 +71,22 @@ const routes = [
     path: "/admin",
     name: "AdminHome",
     component: AdminHome
+  },
+  // Admin blog routes
+  {
+    path: "/admin/blog",
+    name: "AdminBlog",
+    component: AdminBlog
+  },
+  {
+    path: "/admin/blog/new",
+    name: "AdminBlogNew",
+    component: AdminBlogNew
+  },
+  {
+    path: "/admin/blog/edit/:id",
+    name: "AdminBlogEdit",
+    component: EditPost
   },
   {
     path: "/about",

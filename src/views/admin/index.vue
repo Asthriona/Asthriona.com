@@ -1,109 +1,47 @@
 <template>
-  <b-container class="mt-4">
-    <b-row>
-      <b-col cols="12" class="text-center">
-        <h1>S T A T S</h1>
-      </b-col>
-    </b-row>
-    <b-row class="mt-4">
-      <b-col cols="3">
-        <b-card
-          title="Users"
-          tag="article"
-          style="max-width: 20rem;"
-          class="mb-2"
+  <v-container>
+    <v-row>
+      <v-col cols="12">
+        <span class="display-1">Admin stuff</span>
+        <!-- This page aint made to be pretty but functional for now, users dont see it, so I dont care :) -->
+      </v-col>
+      <v-col cols="12">
+        <span class="headline">M A N A G M E N T</span>
+        <br />
+        <v-btn class="ml-4 mt-4" color="primary" disabled
+          ><v-icon>mdi-account-alert</v-icon>Users</v-btn
         >
-          <b-card-text>
-            {{ NbUser }} <br />
-            Users
-          </b-card-text>
-        </b-card>
-      </b-col>
-      <b-col cols="3">
-        <b-card
-          title="Posts"
-          tag="article"
-          style="max-width: 20rem;"
-          class="mb-2"
+        <v-btn class="ml-4 mt-4" color="primary" href="/admin/blog"
+          ><v-icon>mdi-newspaper</v-icon>Blog</v-btn
         >
-          <b-card-text>
-            {{ NbPosts }} <br />
-            Posts
-          </b-card-text>
-        </b-card>
-      </b-col>
-      <b-col cols="3">
-        <b-card
-          title="Comments"
-          tag="article"
-          style="max-width: 20rem;"
-          class="mb-2"
+        <v-btn class="ml-4 mt-4" color="primary" disabled
+          ><v-icon>mdi-message-bulleted</v-icon>Comments</v-btn
         >
-          <b-card-text>
-            {{ NbComents }} <br />
-            Comments
-          </b-card-text>
-        </b-card>
-      </b-col>
-      <b-col cols="3">
-        <b-card
-          title="Banned Users"
-          tag="article"
-          style="max-width: 20rem;"
-          class="mb-2"
+        <v-btn class="ml-4 mt-4" color="primary" disabled
+          ><v-icon>mdi-shield-alert</v-icon>Sanctions</v-btn
         >
-          <b-card-text>
-            {{ bannedUsers }} <br />
-            banned Users
-          </b-card-text>
-        </b-card>
-      </b-col>
-    </b-row>
-    <b-row>
-      <b-col cols="12" class="text-center">
-        <h1>M A N A G M E N T</h1>
-      </b-col>
-      <b-col cols="6">
-        <form>
-          <label for="userBan">Ban Users</label>
-          <b-form-input placeholder="UserID"></b-form-input>
-          <b-button variant="danger" onclick="banUser" type="submit"
-            >Submit</b-button
-          >
-        </form>
-      </b-col>
-    </b-row>
-  </b-container>
+        <v-btn class="ml-4 mt-4" color="primary" disabled
+          ><v-icon>mdi-database-arrow-right</v-icon>Web-Data</v-btn
+        >
+      </v-col>
+    </v-row>
+  </v-container>
 </template>
 
 <script>
-import axios from "axios";
+// import axios from "axios";
 export default {
   data() {
     return {
-      NbUser: "156431",
-      NbComents: "564546131",
-      NbPosts: "20",
-      bannedUsers: "1",
-      serverOnline: [],
-      serverOffline: []
+      //
     };
   },
   methods: {
-    async getServerStatus() {
-      await axios.get("/api/server/status").then(res => {
-        this.serverOnline = res.data.online;
-        this.serverOffline = res.data.offline;
-      });
-    }
+    //
   }
 };
 </script>
 
 <style scoped>
-article {
-  background-color: #212226;
-  color: #fff;
-  text-align: center;
-}
+/*  */
 </style>
