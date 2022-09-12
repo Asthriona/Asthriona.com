@@ -1,7 +1,7 @@
 <template>
   <v-app dark>
     <TheHeader :user="user" />
-    <IsBanned :user="user" v-if="user.isBanned" />
+    <IsBanned :user="user" v-if="user != null && user.isBanned" />
     <v-main>
       <router-view :user="user" />
     </v-main>
@@ -22,7 +22,7 @@ export default {
     IsBanned
   },
   data: () => ({
-    user: {}
+    user: null
   }),
   created() {
     // dark mode by default
@@ -33,7 +33,8 @@ export default {
         headers: { Authorization: localStorage.getItem("token") }
       })
       .then(res => {
-        if (res.data.msg == "Invalid token") {
+        console.log(res.data);
+        if (res.data.msg == "Invalid token.") {
           return (this.user = null);
         }
         if (!res.data.user) {
