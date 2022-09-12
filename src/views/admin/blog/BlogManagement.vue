@@ -18,7 +18,7 @@
         <div class="posts" v-else>
           <v-col cols="12" v-for="p in posts" :key="p._id">
             <v-card>
-              <v-img :src="p.img" height="200px"></v-img>
+              <v-img :src="p.image" height="200px"></v-img>
               <v-card-title>
                 <span class="headline">{{ p.title }}</span>
               </v-card-title>
@@ -29,7 +29,7 @@
                 <v-btn color="primary" @click="PostRead(p._id)" text
                   >Read More</v-btn
                 >
-                <v-btn color="primary" @click="PostEdit(p._id)" text
+                <v-btn color="primary" :href="`/admin/blog/edit/${p.slug}`" text
                   >Edit</v-btn
                 >
                 <v-btn color="primary" @click="PostDelete(p._id)" text
