@@ -30,8 +30,8 @@
           <v-btn color="primary" class="mr-4 mb-4" disabled>
             <v-icon>mdi-account-edit</v-icon> Edit Profile</v-btn
           >
-          <v-btn class="ml-4 mb-4" color="error" disabled
-            ><v-icon>mdi-account-off</v-icon> Logout</v-btn
+          <v-btn class="ml-4 mb-4" color="error" @click="logout">
+            <v-icon>mdi-account-off</v-icon> Logout</v-btn
           >
         </v-col>
       </v-row>
@@ -47,6 +47,12 @@ export default {
     return {
       //
     };
+  },
+  methods: {
+    logout() {
+      localStorage.removeItem("token");
+      window.location.href = "/";
+    }
   }
 };
 </script>
