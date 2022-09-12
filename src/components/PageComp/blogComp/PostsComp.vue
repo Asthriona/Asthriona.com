@@ -21,7 +21,7 @@
       </div>
       <div class="blogPosts" v-if="isLoading == false">
         <v-card v-for="p in posts" :key="p._id" class="mt-4">
-          <v-img :src="p.img" height="200px" v-if="p.img"></v-img>
+          <v-img :src="p.image" height="200px" v-if="p.image"></v-img>
           <v-card-title>{{ p.title }}</v-card-title>
           <v-card-text>{{ p.description }}</v-card-text>
           <v-card-actions>
