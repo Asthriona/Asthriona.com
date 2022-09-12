@@ -129,7 +129,7 @@ export default {
             image: this.form.image,
             keywords: this.form.keywords,
             tags: this.form.tags,
-            isPosted: this.isPosted,
+            isPosted: this.form.isPosted,
             authorId: this.user.id
           })
           .then(res => {
