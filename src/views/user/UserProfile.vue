@@ -1,13 +1,11 @@
 <template>
   <div class="profile">
     <Profile :user="user" />
-    <!-- <Friends :user="user" v-if="comp != 'Profile'" /> -->
   </div>
 </template>
 
 <script>
 import Profile from "../../components/users/profileComp";
-// import Friends from "../../components/users/friendsComp";
 export default {
   name: "UserProfile",
   props: ["user"],
