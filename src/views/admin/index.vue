@@ -11,7 +11,7 @@
         <v-btn class="ml-4 mt-4" color="primary" disabled
           ><v-icon>mdi-account-alert</v-icon>Users</v-btn
         >
-        <v-btn class="ml-4 mt-4" color="primary" href="/admin/blog"
+        <v-btn class="ml-4 mt-4" color="primary" to="/admin/blog"
           ><v-icon>mdi-newspaper</v-icon>Blog</v-btn
         >
         <v-btn class="ml-4 mt-4" color="primary" disabled
