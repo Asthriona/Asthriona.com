@@ -1,7 +1,7 @@
 /* eslint-disable */
 <template>
   <div>
-    <div class="LoginView" v-if="AsthrionaIsDead == false">
+    <div class="LoginView">
       <h3>
         <ul>
           <li @click="comp = '1'">
@@ -27,29 +27,6 @@
       </div>
       <RegisterComp v-if="comp == '2'" />
       <PasswdReset v-if="comp == '3'" />
-    </div>
-    <div class="loginView" v-else>
-      <b-container>
-        <b-row class="text-center">
-          <b-col cols="12">
-            <h1>
-              <b-icon
-                icon="exclamation-triangle"
-                size="3x"
-                class="text-danger"
-              ></b-icon>
-              Protocol Asthriona Is Dead Engaged.
-              <b-icon
-                icon="exclamation-triangle"
-                size="3x"
-                class="text-danger"
-              ></b-icon>
-              <br />
-              Login and registration are disabled.
-            </h1>
-          </b-col>
-        </b-row>
-      </b-container>
     </div>
   </div>
 </template>
