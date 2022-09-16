@@ -49,7 +49,7 @@
             <v-icon>mdi-account</v-icon>
           </v-btn>
         </router-link>
-        <router-link :to="{ name: 'Login', params: { comp: 'register' } }">
+        <router-link :to="{ name: 'Login', query: { register: true } }">
           <v-btn icon target="_blank" text>
             <v-icon>mdi-account-plus</v-icon>
           </v-btn>

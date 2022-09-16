@@ -51,7 +51,11 @@ export default {
     PasswdReset
   },
   beforeMount() {
-    //
+    if (this.$route.query.register) {
+      this.comp = "2";
+    } else {
+      this.comp = "1";
+    }
   }
 };
 </script>
