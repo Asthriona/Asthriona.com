@@ -35,7 +35,7 @@
 import loginComp from "../../components/auth/login";
 import RegisterComp from "../../components/auth/register";
 import PasswdReset from "../../components/auth/Passwd-Reset";
-import axios from "axios";
+// import axios from "axios";
 
 export default {
   name: "Login",
@@ -51,19 +51,7 @@ export default {
     PasswdReset
   },
   beforeMount() {
-    axios
-      .get(`${process.env.VUE_APP_URI}/admin/asthriona`)
-      .then(res => {
-        const data = res.data;
-        if (data.isLiving == true) {
-          this.AsthrionaIsDead = false;
-        } else {
-          this.AsthrionaIsDead = true;
-        }
-      })
-      .catch(error => {
-        return error;
-      });
+    //
   }
 };
 </script>
