@@ -5,7 +5,6 @@ import Blog from "../views/blog.vue";
 import PostShow from "../views/_postShow.vue";
 import Login from "../views/user/login.vue";
 import Admin from "../views/admin/index.vue";
-import NewPost from "../views/user/newPost.vue";
 import EditPost from "../views/admin/blog/editPost.vue";
 import UserProfile from "../views/user/UserProfile.vue";
 import Server from "../views/Server.vue";
@@ -41,16 +40,6 @@ const routes = [
     path: "/user/login",
     name: "Login",
     component: Login
-  },
-  {
-    path: "/user/newPost",
-    name: "NewPost",
-    component: NewPost
-  },
-  {
-    path: "/user/editPost/:slug",
-    name: "EditPost",
-    component: EditPost
   },
   {
     path: "/profile",
