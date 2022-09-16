@@ -1,5 +1,19 @@
 <template>
   <v-container>
+    <div class="alert" v-if="alert.type">
+      <v-row>
+        <v-col cols="12">
+          <v-alert
+            border="right"
+            colored-border
+            :type="alert.type"
+            elevation="2"
+          >
+            {{ alert.text }}
+          </v-alert>
+        </v-col>
+      </v-row>
+    </div>
     <v-row>
       <!-- Blog Management Header -->
       <v-col cols="12" class="text-center">
@@ -8,7 +22,7 @@
     </v-row>
     <v-row>
       <v-col cols="12">
-        <v-btn href="/admin/blog/new" @click="NewPost">New Post!</v-btn>
+        <v-btn to="/admin/blog/new">New Post!</v-btn>
       </v-col>
       <v-col cols="12">
         <!-- display all posts -->
@@ -29,10 +43,10 @@
                 <v-btn color="primary" @click="PostRead(p._id)" text
                   >Read More</v-btn
                 >
-                <v-btn color="primary" :href="`/admin/blog/edit/${p.slug}`" text
+                <v-btn color="primary" :to="`/admin/blog/edit/${p.slug}`" text
                   >Edit</v-btn
                 >
-                <v-btn color="primary" @click="PostDelete(p._id)" text
+                <v-btn color="primary" @click="PostDelete(p.slug)" text
                   >Delete</v-btn
                 >
               </v-card-actions>
@@ -49,9 +63,14 @@ import axios from "axios";
 
 export default {
   name: "Blog-Management",
+  props: ["user"],
   data() {
     return {
-      posts: []
+      posts: [],
+      alert: {
+        type: "",
+        text: ""
+      }
     };
   },
   methods: {
@@ -63,13 +82,41 @@ export default {
       // TODO: get the post from the back-end and open an editor in a modal
       return id;
     },
-    PostDelete(id) {
+    PostDelete(slug) {
       // TODO: delete the post from the back-end
-      return id;
+      console.log(slug);
+      axios
+        .delete(`${process.env.VUE_APP_URI}blog/posts/asthriona.com/${slug}`, {
+          headers: {
+            Authorization: localStorage.getItem("token")
+          }
+        })
+        .then(res => {
+          if (res.data.status === 1) {
+            this.alert.type = "success";
+            this.alert.text = res.data.message;
+            this.alert.show = true;
+            this.posts = this.posts.filter(post => post.slug !== slug);
+          } else {
+            this.alert.type = "error";
+            this.alert.text = res.data.message + "<br>" + res.data.error;
+            this.alert.show = true;
+            console.log(`else error: ${res.data.error}`);
+          }
+        })
+        .catch(err => {
+          this.alert.type = "error";
+          this.alert.text = err.response.data.error;
+          this.alert.show = true;
+        });
     },
     newPost() {
       // TODO: open a modal with a form to create a new post
     }
+  },
+  beforeMount() {
+    if (!this.user || this.user.isAdmin == false)
+      return this.$router.push({ name: "Home" });
   },
   mounted() {
     document.title = "Asthriona - Blog Management";
