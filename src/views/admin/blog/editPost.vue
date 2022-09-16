@@ -91,7 +91,7 @@
 <script>
 import axios from "axios";
 export default {
-  name: "BlogNewPost",
+  name: "BlogEditPost",
   props: ["user"],
   data() {
     return {
@@ -112,6 +112,8 @@ export default {
     };
   },
   beforeMount() {
+    if (!this.user || !this.user.isAdmin == true)
+      return this.$router.push({ name: "Home" });
     axios
       .get(
         `${process.env.VUE_APP_URI}blog/posts/asthriona.com/${this.$route.params.id}`
@@ -120,12 +122,6 @@ export default {
         this.form = res.data;
         this.post = res.data.post;
       });
-  },
-  created() {
-    if (!this.user) return this.$router.push("/wp-admin#noLogin");
-    if (this.user.isAdmin == false) {
-      return this.$router.push("/wp-admin#NoAdmin");
-    }
   },
   methods: {
     submit() {
