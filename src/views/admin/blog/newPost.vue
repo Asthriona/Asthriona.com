@@ -121,17 +121,25 @@ export default {
     submit() {
       if (this.valid) {
         axios
-          .post(`${process.env.VUE_APP_URI}blog/posts`, {
-            website: "asthriona.com",
-            title: this.form.title,
-            description: this.form.description,
-            markdown: this.form.markdown,
-            image: this.form.image,
-            keywords: this.form.keywords,
-            tags: this.form.tags,
-            isPosted: this.form.isPosted,
-            authorId: this.user.id
-          })
+          .post(
+            `${process.env.VUE_APP_URI}blog/posts`,
+            {
+              website: "asthriona.com",
+              title: this.form.title,
+              description: this.form.description,
+              markdown: this.form.markdown,
+              image: this.form.image,
+              keywords: this.form.keywords,
+              tags: this.form.tags,
+              isPosted: this.form.isPosted,
+              authorId: this.user.id
+            },
+            {
+              headers: {
+                Authorization: localStorage.getItem("token")
+              }
+            }
+          )
           .then(res => {
             console.log(res.data);
             this.alert.type = "success";
