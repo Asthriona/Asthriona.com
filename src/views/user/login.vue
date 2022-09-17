@@ -1,7 +1,7 @@
 /* eslint-disable */
 <template>
   <div>
-    <div class="LoginView" v-if="AsthrionaIsDead == false">
+    <div class="LoginView">
       <h3>
         <ul>
           <li @click="comp = '1'">
@@ -28,29 +28,6 @@
       <RegisterComp v-if="comp == '2'" />
       <PasswdReset v-if="comp == '3'" />
     </div>
-    <div class="loginView" v-else>
-      <b-container>
-        <b-row class="text-center">
-          <b-col cols="12">
-            <h1>
-              <b-icon
-                icon="exclamation-triangle"
-                size="3x"
-                class="text-danger"
-              ></b-icon>
-              Protocol Asthriona Is Dead Engaged.
-              <b-icon
-                icon="exclamation-triangle"
-                size="3x"
-                class="text-danger"
-              ></b-icon>
-              <br />
-              Login and registration are disabled.
-            </h1>
-          </b-col>
-        </b-row>
-      </b-container>
-    </div>
   </div>
 </template>
 
@@ -58,7 +35,7 @@
 import loginComp from "../../components/auth/login";
 import RegisterComp from "../../components/auth/register";
 import PasswdReset from "../../components/auth/Passwd-Reset";
-import axios from "axios";
+// import axios from "axios";
 
 export default {
   name: "Login",
@@ -74,19 +51,11 @@ export default {
     PasswdReset
   },
   beforeMount() {
-    axios
-      .get(`${process.env.VUE_APP_URI}/admin/asthriona`)
-      .then(res => {
-        const data = res.data;
-        if (data.isLiving == true) {
-          this.AsthrionaIsDead = false;
-        } else {
-          this.AsthrionaIsDead = true;
-        }
-      })
-      .catch(error => {
-        return error;
-      });
+    if (this.$route.query.register) {
+      this.comp = "2";
+    } else {
+      this.comp = "1";
+    }
   }
 };
 </script>

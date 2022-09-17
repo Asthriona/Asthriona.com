@@ -5,7 +5,6 @@ import Blog from "../views/blog.vue";
 import PostShow from "../views/_postShow.vue";
 import Login from "../views/user/login.vue";
 import Admin from "../views/admin/index.vue";
-import NewPost from "../views/user/newPost.vue";
 import EditPost from "../views/admin/blog/editPost.vue";
 import UserProfile from "../views/user/UserProfile.vue";
 import Server from "../views/Server.vue";
@@ -13,6 +12,8 @@ import Friends from "../views/Friends.vue";
 import AdminHome from "../views/admin/index.vue";
 import AdminBlog from "../views/admin/blog/BlogManagement.vue";
 import AdminBlogNew from "../views/admin/blog/newPost.vue";
+import TOS from "../views/legal/tos.vue";
+import privacy from "../views/legal/privacy.vue";
 
 Vue.use(VueRouter);
 
@@ -41,16 +42,6 @@ const routes = [
     path: "/user/login",
     name: "Login",
     component: Login
-  },
-  {
-    path: "/user/newPost",
-    name: "NewPost",
-    component: NewPost
-  },
-  {
-    path: "/user/editPost/:slug",
-    name: "EditPost",
-    component: EditPost
   },
   {
     path: "/profile",
@@ -87,6 +78,17 @@ const routes = [
     path: "/admin/blog/edit/:id",
     name: "AdminBlogEdit",
     component: EditPost
+  },
+  // Legal shits
+  {
+    path: "/tos",
+    name: "TOS",
+    component: TOS
+  },
+  {
+    path: "/privacy",
+    name: "privacy",
+    component: privacy
   },
   {
     path: "/about",
