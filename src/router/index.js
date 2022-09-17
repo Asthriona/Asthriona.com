@@ -12,6 +12,8 @@ import Friends from "../views/Friends.vue";
 import AdminHome from "../views/admin/index.vue";
 import AdminBlog from "../views/admin/blog/BlogManagement.vue";
 import AdminBlogNew from "../views/admin/blog/newPost.vue";
+import TOS from "../views/legal/tos.vue";
+import privacy from "../views/legal/privacy.vue";
 
 Vue.use(VueRouter);
 
@@ -76,6 +78,17 @@ const routes = [
     path: "/admin/blog/edit/:id",
     name: "AdminBlogEdit",
     component: EditPost
+  },
+  // Legal shits
+  {
+    path: "/tos",
+    name: "TOS",
+    component: TOS
+  },
+  {
+    path: "/privacy",
+    name: "privacy",
+    component: privacy
   },
   {
     path: "/about",
