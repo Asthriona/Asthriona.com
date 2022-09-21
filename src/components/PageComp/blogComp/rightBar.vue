@@ -15,7 +15,7 @@
               allways end up with something usefull. My main side project is
               Yukiko a powerfull discord bot with lot and lot of feature. I do
               code to keep my head out of the water, and I also play a lot of
-              World Of Warcraft and Valorant. I'm the main Tank and Admin of
+              World Of Warcraft, Valorant and Sim Racing. I'm the main Tank and Admin of
               <b>&#60;Eternal Vengeance&#62;</b>. I'm also their own developper.
               I like to code to help other people and make this world a bit
               better! I'm sure I'm nowhere near to change the world but I think
