@@ -47,6 +47,13 @@ export default {
       .catch(() => {
         this.user = null;
       });
+  },
+  metaInfo: {
+    title: "Asthriona",
+    htmlAttrs: {
+      lang: "en",
+      amp: true
+    }
   }
 };
 </script>
