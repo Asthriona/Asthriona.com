@@ -87,7 +87,7 @@ export default {
           "Invalid email",
         password: value =>
           (value &&
-            /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/.test(
+            /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/.test(
               value
             )) ||
           "Password must contain at least one lowercase letter, one uppercase letter, one number, and one special character",
