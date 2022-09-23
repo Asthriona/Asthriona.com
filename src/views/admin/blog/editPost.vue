@@ -148,10 +148,9 @@ export default {
             }
           )
           .then(res => {
-            console.log(res.data);
             this.alert.type = "success";
             this.alert.text = "Post created successfully";
-            console.log(this.form.isPosted);
+            return res.data;
             //   this.$router.push('/admin/blog');
           })
           .catch(err => {
