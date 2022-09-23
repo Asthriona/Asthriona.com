@@ -137,7 +137,7 @@ export default {
               image: this.post.image,
               keywords: this.post.keywords,
               tags: this.post.tags,
-              isPosted: this.post.isPosted,
+              isPosted: this.post.isPosted || false,
               authorId: this.user.id
             },
             {
