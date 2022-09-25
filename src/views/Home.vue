@@ -91,8 +91,8 @@
           xs="12"
           sm="6"
           md="6"
-          lg="4"
-          xl="4"
+          lg="3"
+          xl="3"
         >
           <!-- Works -->
           <v-card>
@@ -210,14 +210,14 @@ export default {
           img: "https://cdn.asthriona.com/i/2022/05/cablePorn.png",
           description: "Automated Twitter account about organized cables",
           url: "https://twitter.com/cableporn_"
-        },
-        {
-          title: "Cable Gore",
-          img: "https://cdn.asthriona.com/i/2022/05/cablePorn.png",
-          description:
-            "An automated Twitter account about dis-organized cables",
-          url: "https://twitter.com/cablegore"
         }
+        // {
+        //   title: "Cable Gore",
+        //   img: "https://cdn.asthriona.com/i/2022/05/cablePorn.png",
+        //   description:
+        //     "An automated Twitter account about dis-organized cables",
+        //   url: "https://twitter.com/cablegore"
+        // }
       ],
       randomSubLine: [
         "/*This line is disabled*/",
