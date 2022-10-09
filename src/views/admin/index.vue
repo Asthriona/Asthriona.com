@@ -8,20 +8,20 @@
       <v-col cols="12">
         <span class="headline">M A N A G M E N T</span>
         <br />
-        <v-btn class="ml-4 mt-4" color="primary" disabled
-          ><v-icon>mdi-account-alert</v-icon>Users</v-btn
+        <v-btn class="ml-4 mt-4" color="primary" to="/admin/users"
+          ><v-icon class="mr-2">mdi-account-alert</v-icon>Users</v-btn
         >
         <v-btn class="ml-4 mt-4" color="primary" to="/admin/blog"
-          ><v-icon>mdi-newspaper</v-icon>Blog</v-btn
+          ><v-icon class="mr-2">mdi-newspaper</v-icon>Blog</v-btn
         >
         <v-btn class="ml-4 mt-4" color="primary" disabled
-          ><v-icon>mdi-message-bulleted</v-icon>Comments</v-btn
+          ><v-icon class="mr-2">mdi-message-bulleted</v-icon>Comments</v-btn
         >
         <v-btn class="ml-4 mt-4" color="primary" disabled
-          ><v-icon>mdi-shield-alert</v-icon>Sanctions</v-btn
+          ><v-icon class="mr-2">mdi-shield-alert</v-icon>Sanctions</v-btn
         >
         <v-btn class="ml-4 mt-4" color="primary" disabled
-          ><v-icon>mdi-database-arrow-right</v-icon>Web-Data</v-btn
+          ><v-icon class="mr-2">mdi-database-arrow-right</v-icon>Web-Data</v-btn
         >
       </v-col>
     </v-row>
