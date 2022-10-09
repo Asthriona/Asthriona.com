@@ -43,10 +43,10 @@
                 <v-btn color="primary" :to="`/blog/${p.slug}`" text
                   >Read More</v-btn
                 >
-                <v-btn color="primary" :to="`/admin/blog/edit/${p.slug}`" text
+                <v-btn color="warning" :to="`/admin/blog/edit/${p.slug}`" text
                   >Edit</v-btn
                 >
-                <v-btn color="primary" @click="PostDelete(p.slug)" text
+                <v-btn color="error" @click="PostDelete(p.slug)" text
                   >Delete</v-btn
                 >
               </v-card-actions>
