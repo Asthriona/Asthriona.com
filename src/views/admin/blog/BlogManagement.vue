@@ -40,7 +40,7 @@
                 {{ p.content }}
               </v-card-text>
               <v-card-actions>
-                <v-btn color="primary" @click="PostRead(p._id)" text
+                <v-btn color="primary" :to="`/blog/${p.slug}`" text
                   >Read More</v-btn
                 >
                 <v-btn color="primary" :to="`/admin/blog/edit/${p.slug}`" text
