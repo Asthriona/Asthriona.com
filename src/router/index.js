@@ -12,6 +12,7 @@ import Friends from "../views/Friends.vue";
 import AdminHome from "../views/admin/index.vue";
 import AdminBlog from "../views/admin/blog/BlogManagement.vue";
 import AdminBlogNew from "../views/admin/blog/newPost.vue";
+import AdminUser from "../views/admin/users/adminUsers.vue";
 import TOS from "../views/legal/tos.vue";
 import privacy from "../views/legal/privacy.vue";
 
@@ -78,6 +79,12 @@ const routes = [
     path: "/admin/blog/edit/:id",
     name: "AdminBlogEdit",
     component: EditPost
+  },
+  // Admin user routes
+  {
+    path: "/admin/users",
+    name: "AdminUser",
+    component: AdminUser
   },
   // Legal shits
   {
