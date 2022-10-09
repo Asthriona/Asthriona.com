@@ -45,12 +45,12 @@
 
       <div class="users" v-if="!user">
         <router-link :to="{ name: 'Login', params: { comp: 'login' } }">
-          <v-btn icon target="_blank" text>
+          <v-btn icon target="_blank">
             <v-icon>mdi-account</v-icon>
           </v-btn>
         </router-link>
         <router-link :to="{ name: 'Login', query: { register: true } }">
-          <v-btn icon target="_blank" text>
+          <v-btn icon target="_blank">
             <v-icon>mdi-account-plus</v-icon>
           </v-btn>
         </router-link>

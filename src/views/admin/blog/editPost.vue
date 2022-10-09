@@ -137,7 +137,7 @@ export default {
               image: this.post.image,
               keywords: this.post.keywords,
               tags: this.post.tags,
-              isPosted: this.post.isPosted,
+              isPosted: this.post.isPosted || false,
               authorId: this.user.id
             },
             {
@@ -148,10 +148,9 @@ export default {
             }
           )
           .then(res => {
-            console.log(res.data);
             this.alert.type = "success";
             this.alert.text = "Post created successfully";
-            console.log(this.form.isPosted);
+            return res.data;
             //   this.$router.push('/admin/blog');
           })
           .catch(err => {

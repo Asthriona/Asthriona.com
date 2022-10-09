@@ -9,10 +9,11 @@
         </v-col>
         <v-col cols="12" v-if="error.type"></v-col>
         <v-col xl="5" xs="12">
-          <v-form>
+          <v-form @submit="login">
             <v-text-field
               label="Email"
               v-model="email"
+              autofocus
               :rules="[v => !!v || 'Email is required']"
             ></v-text-field>
             <v-text-field
@@ -22,6 +23,7 @@
               :append-icon="PWDdisplay ? 'mdi-eye' : 'mdi-eye-off'"
               :type="PWDdisplay ? 'text' : 'password'"
               @click:append="PWDdisplay = !PWDdisplay"
+              @keydown.enter="login"
             ></v-text-field>
             <v-btn
               color="primary"
