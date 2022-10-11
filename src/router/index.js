@@ -15,6 +15,8 @@ import AdminBlogNew from "../views/admin/blog/newPost.vue";
 import AdminUser from "../views/admin/users/adminUsers.vue";
 import TOS from "../views/legal/tos.vue";
 import privacy from "../views/legal/privacy.vue";
+import profileView from "../views/user/profiles.vue";
+import YukikoEnd from "../views/tempPage/YukikoEnd.vue";
 
 Vue.use(VueRouter);
 
@@ -48,6 +50,11 @@ const routes = [
     path: "/profile",
     name: "Profile",
     component: UserProfile
+  },
+  {
+    path: "/profile/:username",
+    name: "profileView",
+    component: profileView
   },
   {
     path: "/server",
@@ -96,6 +103,12 @@ const routes = [
     path: "/privacy",
     name: "privacy",
     component: privacy
+  },
+  // To delete later
+  {
+    path: "/yukiko",
+    name: "YukikoEnd",
+    component: YukikoEnd
   },
   {
     path: "/about",
