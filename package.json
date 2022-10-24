@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "axios": "^0.27.2",
-    "bootstrap": "^5.2.0",
+    "bootstrap": "^5.2.2",
     "bootstrap-vue": "^2.22.0",
     "core-js": "^3.25.1",
     "mavon-editor": "^2.10.4",
