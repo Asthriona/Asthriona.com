@@ -20,8 +20,8 @@
     "vue-i18n": "^8.27.2",
     "vue-meta": "^2.4.0",
     "vue-moment": "^4.1.0",
-    "vue-router": "^3.6.5",
-    "vuetify": "^2.6.12"
+    "vue-router": "^3.5.4",
+    "vuetify": "^2.6.11"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^4.5.19",
