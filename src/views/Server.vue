@@ -154,8 +154,8 @@ export default {
         },
         {
           name: "Council",
-          server: ["Korone", "Pekora", "Skye", "Sage", "Jett"],
-          location: "Singapore 3",
+          server: ["Nanashi", "Ouro", "Ceres", "Hakos", "Tsukumo"],
+          location: "Tokyo 2",
           usage: "Bot Cluster"
         }
       ],
@@ -284,7 +284,17 @@ export default {
           name: "Ochaco",
           usage: "Asthriona Gateway.",
           location: "New York DC1"
+        },
+        {
+          name: "Mumei-sgp1",
+          usage: "Web Hosting.",
+          location: "Singapore 1"
         }
+        // {
+        //   name: "Marine",
+        //   usage: "Web Hosting.",
+        //   location: "Singapore 1"
+        // },
         // cov
         // {
         //   name: "cover-1",
