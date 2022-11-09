@@ -158,6 +158,25 @@
             </v-card>
           </v-col>
         </v-col>
+        <v-col cols="12" class="mt-4">
+          <h1 class="text-center display-1 mt-4">
+            Asthriona proudly sponsors:
+          </h1>
+          <!-- <p class="muted text-center mb-4">sponsoring for 30 000 yen</p> -->
+          <v-col
+            cols="12"
+            class="d-flex justify-space-around mb-6 mt-6 sponsor"
+          >
+            <img
+              src="https://cdn.asthriona.com/static/good-smile-racing.png"
+              height="120px"
+            />
+            <img
+              src="https://cdn.asthriona.com/static/personal-sponsor-2022.png"
+              height="120px"
+            />
+          </v-col>
+        </v-col>
       </v-row>
     </v-container>
   </div>
