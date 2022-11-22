@@ -124,31 +124,31 @@ export default {
       clusters: [
         {
           name: "Fallen",
-          server: ["Shiro", "Suzune", "Makoto", "Sadayo"],
+          server: ["Shiro", "Suzune", "Makoto", "Sadayo", "Ishii"],
           location: "Glasgow DC1",
           usage: "Web Cluster"
         },
         {
           name: "fantasy",
-          server: ["Mitsuru", "Orpheus", "Sumire", "Sadayo"],
+          server: ["Mitsuru", "Orpheus", "Sumire", "Chito", "Yuuri"],
           location: "Tokyo DC1",
           usage: "Web Cluster"
         },
         {
           name: "Force",
-          server: ["Tali", "Rukia", "Winry", "Yoruichi"],
+          server: ["Tali", "Rukia", "Winry", "Yoruichi", "Tomori"],
           location: "New York DC3",
           usage: "Web Cluster"
         },
         {
           name: "Hope",
-          server: ["Cadenza", "Aqua", "Kurisu", "Megumin"],
+          server: ["Cadenza", "Aqua", "Kurisu", "Megumin", "Enomoto"],
           location: "New York DC3",
           usage: "Web Cluster"
         },
         {
           name: "Myth",
-          server: ["Ina", "Calliope", "Amelia", "Gura"],
+          server: ["Ina", "Calliope", "Amelia", "Gura", "Kiara"],
           location: "Tokyo 1",
           usage: "Bot Cluster"
         },
@@ -289,12 +289,27 @@ export default {
           name: "Mumei-sgp1",
           usage: "Web Hosting.",
           location: "Singapore 1"
+        },
+        {
+          name: "Seele",
+          usage: "Remote Desktop.",
+          location: "Paris-OC1"
+        },
+        {
+          name: "Marine",
+          usage: "Web Hosting.",
+          location: "Singapore 1"
+        },
+        {
+          name: "Kronii",
+          usage: "Game Host.",
+          location: "Tokyo 1"
+        },
+        {
+          name: "Okayu",
+          usage: "Internal Tools.",
+          location: "Tokyo 1"
         }
-        // {
-        //   name: "Marine",
-        //   usage: "Web Hosting.",
-        //   location: "Singapore 1"
-        // },
         // cov
         // {
         //   name: "cover-1",
@@ -400,7 +415,7 @@ export default {
         },
         {
           name: "ZeroTwo",
-          usage: "Main Yukiko server",
+          usage: "Main Yukiko server (Hardware Failure)",
           location: "Paris DC1"
         }
       ]
