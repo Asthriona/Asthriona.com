@@ -3,14 +3,17 @@
     <div class="head-banner">
       <div class="header-content">
         <v-col cols="12" class="avatar d-flex justify-center">
-          <v-avatar size="250" class="mt-4">
+          <v-avatar size="250" class="mt-4" color="black">
             <v-img
               src="https://pbs.twimg.com/profile_images/1523324400245825537/zQiBhAZV_400x400.jpg"
+              style="opacity: 0.3"
             ></v-img>
           </v-avatar>
         </v-col>
         <span>
-          <div class="display-4 text-center font-logo">Asthriona</div>
+          <div class="display-4 text-center font-logo text--black">
+            Asthriona
+          </div>
         </span>
         <span>
           <div class="display-1 text-center randomText">
@@ -239,15 +242,16 @@ export default {
         // }
       ],
       randomSubLine: [
-        "/*This line is disabled*/",
+        "Remembrance | 1943 - 2022"
+        // "/*This line is disabled*/",
         // "死にたい",
         // "空に消えたい",
-        "Better keep it “just me”, It’s better that way, trust me",
-        "it’s Me, Myself and I again",
-        "Hello from Speedtest.net!",
-        "Welcome to 2020 Season 3!",
-        "You can now play 2021 as luigi",
-        "Click here to cancel your subscription to 2022"
+        // "Better keep it “just me”, It’s better that way, trust me",
+        // "it’s Me, Myself and I again",
+        // "Hello from Speedtest.net!",
+        // "Welcome to 2020 Season 3!",
+        // "You can now play 2021 as luigi",
+        // "Click here to cancel your subscription to 2022"
       ]
     };
   }
@@ -255,6 +259,10 @@ export default {
 </script>
 
 <style scoped>
+img,
+.v-card {
+  filter: grayscale(100%);
+}
 .head-banner {
   background-image: url(https://cdn.asthriona.com/rplaceHoloBackground.jpg);
   background-size: cover;
@@ -262,13 +270,14 @@ export default {
   background-position: center;
   height: 100vh;
   width: 100%;
-  /* -webkit-text-stroke: 3px;
-  -webkit-text-stroke-color: #000; */
+  filter: grayscale(100%);
 }
 .font-logo {
   font-family: "Asthriona", cursive;
   font-size: 3rem;
-  color: #fff;
+  font-weight: 400;
+  color: #000;
+  -webkit-text-stroke: 2px rgba(255, 255, 255, 0.5);
 }
 ul {
   list-style-type: none;
