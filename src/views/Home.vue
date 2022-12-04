@@ -259,10 +259,7 @@ export default {
 </script>
 
 <style scoped>
-img,
-.v-card {
-  filter: grayscale(100%);
-}
+
 .head-banner {
   background-image: url(https://cdn.asthriona.com/rplaceHoloBackground.jpg);
   background-size: cover;
