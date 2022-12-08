@@ -242,16 +242,15 @@ export default {
         // }
       ],
       randomSubLine: [
-        "Remembrance | 1943 - 2022"
-        // "/*This line is disabled*/",
-        // "死にたい",
-        // "空に消えたい",
-        // "Better keep it “just me”, It’s better that way, trust me",
-        // "it’s Me, Myself and I again",
-        // "Hello from Speedtest.net!",
-        // "Welcome to 2020 Season 3!",
-        // "You can now play 2021 as luigi",
-        // "Click here to cancel your subscription to 2022"
+        "/*This line is disabled*/",
+        "死にたい",
+        "空に消えたい",
+        "Better keep it “just me”, It’s better that way, trust me",
+        "it’s Me, Myself and I again",
+        "Hello from Speedtest.net!",
+        "Welcome to 2020 Season 3!",
+        "You can now play 2021 as luigi",
+        "Click here to cancel your subscription to 2022"
       ]
     };
   }
@@ -267,7 +266,6 @@ export default {
   background-position: center;
   height: 100vh;
   width: 100%;
-  filter: grayscale(100%);
 }
 .font-logo {
   font-family: "Asthriona", cursive;
