@@ -6,7 +6,6 @@
           <v-avatar size="250" class="mt-4" color="black">
             <v-img
               src="https://pbs.twimg.com/profile_images/1523324400245825537/zQiBhAZV_400x400.jpg"
-              style="opacity: 0.3"
             ></v-img>
           </v-avatar>
         </v-col>
@@ -243,8 +242,8 @@ export default {
       ],
       randomSubLine: [
         "/*This line is disabled*/",
-        "死にたい",
-        "空に消えたい",
+        // "死にたい",
+        // "空に消えたい",
         "Better keep it “just me”, It’s better that way, trust me",
         "it’s Me, Myself and I again",
         "Hello from Speedtest.net!",
@@ -258,7 +257,6 @@ export default {
 </script>
 
 <style scoped>
-
 .head-banner {
   background-image: url(https://cdn.asthriona.com/rplaceHoloBackground.jpg);
   background-size: cover;
