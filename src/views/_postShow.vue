@@ -65,7 +65,7 @@
             <div class="headline">
               <p>post new comments</p>
               <!-- if no user -->
-              <div v-if="!user || !user.length">
+              <div v-if="!user">
                 <p>
                   <router-link to="/login">login</router-link> to post a comment
                 </p>
@@ -128,12 +128,12 @@
                   <div class="comment-body-text ml-4">
                     <span class="content" v-html="comment.content"></span>
                     <div class="admin-edit" v-if="comment.adminEdit == true">
-                      <p class="admin-reason text-muted">
+                      <p class="admin-reason text-muted small">
                         <v-icon>mdi-alert-circle-outline</v-icon> This comment
                         has been edited by Asthriona's staff for the following
                         reason: <br />
                         <i
-                          ><u>
+                          ><u class="red--text">
                             {{ comment.adminReason || "No reason provided." }}
                           </u></i
                         >
@@ -145,7 +145,22 @@
                   class="comment-user-action"
                   v-if="comment.author.id == user.id && user.isAdmin == false"
                 >
-                  <v-btn text class="ml-4">Edit</v-btn>
+                  <v-dialog v-model="adminDialogComEdit" width="500">
+                    <template>
+                      <v-btn text class="ml-4" v-bind="attrs" v-on="on"
+                        >Edit</v-btn
+                      >
+                    </template>
+                    <v-card>
+                      <v-card-title>
+                        <span class="headline">Edit comment as Admin</span>
+                      </v-card-title>
+                      <v-textarea v-model="comment.content"> </v-textarea>
+                      <v-btn type="submit" @click="AdminUpdate(comment)"
+                        >Submit</v-btn
+                      >
+                    </v-card>
+                  </v-dialog>
                   <v-btn text class="ml-4">Delete.</v-btn>
                 </div>
                 <div class="comment-admin-action" v-if="user.isAdmin == true">
@@ -181,6 +196,7 @@ export default {
       newComment: {},
       newCommentSent: false,
       commentRules: [v => !!v || "Comment is required"],
+      adminDialogComEdit: false,
       loading: {
         post: true,
         comment: true
@@ -250,6 +266,9 @@ export default {
               });
           });
       }
+    },
+    AdminUpdate(comment) {
+      console.log(comment);
     }
   }
 };
