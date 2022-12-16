@@ -290,7 +290,7 @@ export default {
   width: 100% !important;
 }
 .content pre {
-  color: #aa3f81 !important;
+  color: #ffbbe5 !important;
   background-color: #35373b;
   border-radius: 5px;
   padding: 10px;
@@ -299,10 +299,10 @@ export default {
   margin: 10px 0;
 }
 .content pre code {
-  color: #aa3f81 !important;
+  color: #ffbbe5 !important;
 }
 .content code {
-  color: #aa3f81 !important;
+  color: #ffbbe5 !important;
 }
 .content img {
   max-width: 100%;
