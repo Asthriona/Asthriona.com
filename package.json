@@ -21,7 +21,7 @@
     "vue-meta": "^2.4.0",
     "vue-moment": "^4.1.0",
     "vue-router": "^3.5.4",
-    "vuetify": "^2.6.11"
+    "vuetify": "^3.0.4"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^4.5.19",
