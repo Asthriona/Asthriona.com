@@ -33,6 +33,11 @@
             </b-card>
           </b-card-group>
         </b-col>
+        <ul>
+          <li v-for="info in infos" :key="info.id" class="muted">
+            {{ info.data }}
+          </li>
+        </ul>
         <hr />
         <b-col cols="12" class="spacer" style="margin-top: 50px"></b-col>
         <b-col cols="12" class="text-center">
@@ -47,12 +52,7 @@
               text-variant="white"
               :title="cluster.name"
               tag="article"
-              style="
-                max-width: 20rem;
-                min-width: 15rem;
-                min-height: 130px;
-                text-align: center;
-              "
+              style="max-width: 20rem;min-width: 15rem;min-height: 130px;text-align: center;"
               class="mb-2 col-6"
             >
               <b-card-text>
@@ -98,12 +98,7 @@
               text-variant="white"
               :title="server.name"
               tag="article"
-              style="
-                max-width: 20rem;
-                min-width: 15rem;
-                min-height: 130px;
-                text-align: center;
-              "
+              style="max-width: 20rem;min-width: 15rem;min-height: 130px;text-align: center;"
               class="mb-2 col-5"
             >
               <b-card-text>
@@ -162,7 +157,7 @@ export default {
       OnlineServers: [
         {
           name: "Yukiko-01",
-          usage: "Hosting some Yukiko's code and comisisons bot",
+          usage: "Yukiko Alternate bots",
           location: "Paris DC1"
         },
         {
@@ -172,12 +167,12 @@ export default {
         },
         {
           name: "Stardust-01",
-          usage: "Hosting Nishikino Network's Gateway",
+          usage: "Nishikino Network's Gateway",
           location: "Paris DC1"
         },
         {
           name: "Stardust-02",
-          usage: "Static files hosting + Bot hosting for YDT",
+          usage: "Yukiko Alternate bots",
           location: "Paris DC1"
         },
         {
@@ -187,13 +182,8 @@ export default {
         },
         {
           name: "Lyra",
-          usage: "Speedtest.net and main server",
+          usage: "Speedtest.net host",
           location: "Paris DC2"
-        },
-        {
-          name: "AfterLife",
-          usage: "DNS Server",
-          location: "Tokyo 1"
         },
         {
           name: "Cadenza",
@@ -213,17 +203,17 @@ export default {
         {
           name: "Afterlife-SGP1",
           usage: "Yukiko Internal tools",
-          location: "Singapore 1"
+          location: "Tokyo 3"
         },
         {
           name: "Yuno",
           usage: "Yukiko Bot Testing",
-          location: "West Virginia 3"
+          location: "New York DC1"
         },
         {
           name: "Yuki",
           usage: "Yukiko Web Testing",
-          location: "West Virginia 3"
+          location: "New York DC1"
         },
         {
           name: "Maki-osk3",
@@ -310,27 +300,6 @@ export default {
           usage: "Internal Tools.",
           location: "Tokyo 1"
         }
-        // cov
-        // {
-        //   name: "cover-1",
-        //   usage: "Server Managed by my work place.",
-        //   location: "ap-northeast-1"
-        // },
-        // {
-        //   name: "cover-2",
-        //   usage: "Server Managed by my work place.",
-        //   location: "us-east-1"
-        // },
-        // {
-        //   name: "cover-3",
-        //   usage: "Server Managed by my work place.",
-        //   location: "ap-southeast-1"
-        // },
-        // {
-        //   name: "cover-4",
-        //   usage: "Server Managed by my work place.",
-        //   location: "ap-northeast-1"
-        // }
       ],
       OfflineServers: [
         {
@@ -417,6 +386,28 @@ export default {
           name: "ZeroTwo",
           usage: "Main Yukiko server (Hardware Failure)",
           location: "Paris DC1"
+        },
+        {
+          name: "AfterLife",
+          usage: "DNS Server (Hardware Failure)",
+          location: "Tokyo 1"
+        }
+      ],
+      infos: [
+        {
+          id: 1,
+          data:
+            "All servers with a name ending with -osk were moved from Osaka to Tokyo."
+        },
+        {
+          id: 2,
+          data:
+            "Servers labeled 'testing' or 'labs' are labs cluster. (Mostly running Debian and Kubernetes)"
+        },
+        {
+          id: 3,
+          data:
+            "All Servers are running in different datacenters for network stability and redondency reasons."
         }
       ]
     };
@@ -441,3 +432,10 @@ export default {
   }
 };
 </script>
+
+<style scoped>
+.muted {
+  color: #999 !important;
+  font-size: smaller !important;
+}
+</style>
