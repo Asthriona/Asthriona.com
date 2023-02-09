@@ -17,7 +17,7 @@
               <small>@{{ user.username }}</small>
             </v-card-text>
             <v-card-action>
-              <router-link :to="`/admin/users/${user.userId}`">
+              <router-link :to="`/admin/users/${user.id}`">
                 <v-btn color="primary" text>View</v-btn>
               </router-link>
               <router-link :to="`/profile/${user.username}`">
