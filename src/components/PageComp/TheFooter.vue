@@ -89,20 +89,20 @@ export default {
         },
         {
           name: "mdi-account",
-          url: "/account"
+          url: "/profile"
         },
         {
           name: "mdi-email",
-          url: "/contact"
+          url: "mailto:ping@asthriona.com"
         },
         {
           name: "mdi-github",
-          url: "/"
-        },
-        {
-          name: "mdi-twitter",
-          url: "/"
+          url: "https://github.com"
         }
+        // {
+        //   name: "mdi-twitter",
+        //   url: "/"
+        // }
       ],
       longTime: 0,
       padless: true,
