@@ -13,10 +13,10 @@ import AdminHome from "../views/admin/index.vue";
 import AdminBlog from "../views/admin/blog/BlogManagement.vue";
 import AdminBlogNew from "../views/admin/blog/newPost.vue";
 import AdminUser from "../views/admin/users/adminUsers.vue";
+import AdminProfile from "../views/admin/users/adminProfile.vue";
 import TOS from "../views/legal/tos.vue";
 import privacy from "../views/legal/privacy.vue";
 import profileView from "../views/user/profiles.vue";
-import YukikoEnd from "../views/tempPage/YukikoEnd.vue";
 
 Vue.use(VueRouter);
 
@@ -93,6 +93,11 @@ const routes = [
     name: "AdminUser",
     component: AdminUser
   },
+  {
+    path: "/admin/users/:id",
+    name: "AdminProfile",
+    component: AdminProfile
+  },
   // Legal shits
   {
     path: "/tos",
@@ -103,12 +108,6 @@ const routes = [
     path: "/privacy",
     name: "privacy",
     component: privacy
-  },
-  // To delete later
-  {
-    path: "/yukiko",
-    name: "YukikoEnd",
-    component: YukikoEnd
   },
   {
     path: "/about",
