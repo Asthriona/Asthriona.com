@@ -5,7 +5,10 @@
       <span>Reason: {{ user.banReason }}</span> <br />
       <span
         >Expires:
-        {{ user.banHistory[0].expires | moment("MM/DD/YYYY hh:mm a") }}</span
+        {{
+          user.banHistory[user.banHistory.length - 1].expires
+            | moment("MM/DD/YYYY hh:mm a")
+        }}</span
       >
     </div>
     <!-- for more information please visit <router-link :to="{ name: 'Sanction' }">Sanction page</router-link></p> -->

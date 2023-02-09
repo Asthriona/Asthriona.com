@@ -54,6 +54,9 @@
                         require
                       ></v-text-field>
                     </v-col>
+                    <v-col cols="12" sm="6" md="4">
+                      <v-date-picker v-model="banExpires"> </v-date-picker>
+                    </v-col>
                   </v-row>
                 </v-container>
               </v-card-text>
@@ -178,6 +181,7 @@ export default {
       banDialog: false,
       unBanDialog: false,
       banReason: "",
+      banExpires: "",
       alert: {
         type: "",
         text: "",
@@ -187,13 +191,14 @@ export default {
   },
   methods: {
     banAccount() {
-      console.log(this.banReason);
+      const banDate = new Date(this.banExpires).getTime();
       axios
         .post(
           `${process.env.VUE_APP_URI}admin/ban`,
           {
-            userId: this.user.userId,
-            reason: this.banReason
+            userId: this.user.id,
+            reason: this.banReason,
+            banDate: banDate
           },
           {
             headers: { Authorization: localStorage.getItem("token") }
@@ -212,7 +217,7 @@ export default {
         .catch(error => {
           console.log(error.response);
           this.alert.type = "error";
-          this.alert.text = error.response.data.error;
+          this.alert.text = error.response.data.message;
           this.alert.show = true;
         });
     },
