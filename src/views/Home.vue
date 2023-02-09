@@ -125,7 +125,7 @@
                     Email:
                     <a href="mailto:ping@asthriona.com"> ping@asthriona.com</a>
                   </li>
-                  <li>
+                  <!-- <li>
                     Twitter
                     <a
                       href="https://twitter.com/asthriona"
@@ -134,7 +134,7 @@
                     >
                       @Asthriona</a
                     >
-                  </li>
+                  </li> -->
                   <li>
                     Mastodon:
                     <a
@@ -190,11 +190,11 @@ export default {
   data() {
     return {
       sns: [
-        {
-          name: "Twitter",
-          url: "https://twitter.com/asthriona",
-          icon: "mdi-twitter"
-        },
+        // {
+        //   name: "Twitter",
+        //   url: "https://twitter.com/asthriona",
+        //   icon: "mdi-twitter"
+        // },
         {
           name: "Github",
           url: "https://github.com/Asthriona",
