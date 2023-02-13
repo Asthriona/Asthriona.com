@@ -125,16 +125,6 @@
                     Email:
                     <a href="mailto:ping@asthriona.com"> ping@asthriona.com</a>
                   </li>
-                  <!-- <li>
-                    Twitter
-                    <a
-                      href="https://twitter.com/asthriona"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      @Asthriona</a
-                    >
-                  </li> -->
                   <li>
                     Mastodon:
                     <a
@@ -143,16 +133,6 @@
                       rel="noopener noreferrer"
                     >
                       @asthriona@mstdn.jp</a
-                    >
-                  </li>
-                  <li>
-                    Discord:
-                    <a
-                      href="https://dsc.bio/asthriona"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      Asthriona#0001</a
                     >
                   </li>
                 </ul>
@@ -190,21 +170,11 @@ export default {
   data() {
     return {
       sns: [
-        // {
-        //   name: "Twitter",
-        //   url: "https://twitter.com/asthriona",
-        //   icon: "mdi-twitter"
-        // },
         {
           name: "Github",
           url: "https://github.com/Asthriona",
           icon: "mdi-github"
         },
-        {
-          name: "Instagram",
-          url: "https://www.instagram.com/asthriona.dev/",
-          icon: "mdi-instagram"
-        }
       ],
       works: [
         {
