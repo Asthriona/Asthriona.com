@@ -11,10 +11,7 @@
             <span>{{ post.title }}</span>
           </div>
           <div class="subtitle text-center">
-            <i class="muted"
-              >posted on
-              {{ new Date(date) | moment("do, MMMM YYYY [at] hh:mm") }}</i
-            >
+            <i class="muted">posted {{ date }}</i>
             <br />
             <i v-if="post.updatedAt"
               >last Update:
@@ -210,10 +207,21 @@ export default {
         `${process.env.VUE_APP_URI}blog/posts/asthriona.com/${this.$route.params.slug}`
       )
       .then(res => {
-        this.post = res.data.post;
-        this.author = res.data.author;
-        // convert timestamp to date
-        this.date = new Date(parseInt(this.post.createdAt)).toDateString();
+        this.post = res.data;
+        this.author = res.data.authorId.authorId;
+        this.date = new Date(parseInt(res.data.createdAt, 10));
+        this.loading.post = false;
+        // Format date to display [minutes] ago or [hours] ago or [days] ago unless it's more than 7 days, then display the date
+        if (this.date.getMinutes() < 60) {
+          this.date = `${this.date.getMinutes()} minutes ago`;
+        } else if (this.date.getHours() < 24) {
+          this.date = `${this.date.getHours()} hours ago`;
+        } else if (this.date.getDate() < 7) {
+          this.date = `${this.date.getDate()} days ago`;
+        } else {
+          this.date = `${this.date.getDate()}/${this.date.getMonth() +
+            1}/${this.date.getFullYear()}`;
+        }
       })
       .catch(err => {
         if (err.response.status == 404) {
