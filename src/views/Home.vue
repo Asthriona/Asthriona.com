@@ -174,7 +174,7 @@ export default {
           name: "Github",
           url: "https://github.com/Asthriona",
           icon: "mdi-github"
-        },
+        }
       ],
       works: [
         {
