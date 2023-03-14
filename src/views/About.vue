@@ -36,15 +36,14 @@
                 few months for a while and then hopefully definitively to Japan.
                 I love japanese culture and learning the language. When I'm not
                 working on code, I use to work on cars, but sadly my last car
-                got wreked. so for now outside of work, i'm just doing more
+                got wrecked. so for now outside of work, i'm just doing more
                 work, playing video games, watching anime, and learning new
                 things.
               </span>
             </div>
             <div class="projects mt-4">
               <span>
-                I have a bunch of project cars in mind, but most of them cannot
-                be releaved just yet! you will have to wait a bit longer :) all
+                I have a bunch of project cars in mind, but most of them I cannot talk about just yet! you will have to wait a bit longer :) all
                 I can say is most of them will be drift build! gotta get better
                 at it soon! (*•̀ᴗ•́*)و ̑̑
               </span>
@@ -53,7 +52,7 @@
               <span>
                 About video games, with 20+ years of experience, I can say I
                 have some skills. Mostly when talking about racing sim. I always
-                manage to get on top of any leaderboard very quick. I think the
+                manage to get on top of any leaderboard very quickly. I think the
                 funniest part is when I beat my friends on their own tracks In
                 real life. You know? Video games is not real life, but the
                 result endup being the same! Sup Thony? ( ͡° ͜ʖ ͡°)
@@ -74,7 +73,7 @@
             <tbody>
               <tr>
                 <td>Name:</td>
-                <td>Makoto "Asthriona" Konayashi</td>
+                <td>Makoto "Asthriona" Kobayashi</td>
               </tr>
               <tr>
                 <td>Included features:</td>
@@ -86,8 +85,7 @@
               <tr>
                 <td>Favorite Anime:</td>
                 <td>
-                  Angel Beats, Charlotte, Toradora, Black Bullet,DARLING in tde
-                  FRANXX, Steins;Gate, Hitoribocchi no Marumaruseikatsu
+                  Angel Beats, Charlotte, Toradora, Black Bullet, To Your Eternity, Steins;Gate, Hitoribocchi no Marumaruseikatsu
                 </td>
               </tr>
               <tr>
