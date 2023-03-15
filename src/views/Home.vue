@@ -40,7 +40,7 @@
                 >Who am I?</v-card-title
               >
               Hi, I'm Makoto "Asthriona" Kobayashi, Lots of my friends just call
-              me Mako, feel free to do so (Or Mako-san if you feel extra format
+              me Mako, feel free to do so (Or Mako-san if you feel extra formal
               :)) <br />
               I'm a web developer and network engineer, who like to play with
               servers, and learn new stuff. <br />
@@ -49,7 +49,7 @@
               Sometimes I also like to do community related stuff, For exemple I
               took part in r/place with the r/vtuber group, we were focusing on
               v-tuber and mostly Hololive talent, but our alliances with other
-              groups focued on v-shojo and hololive memes, and Nijisanji made us
+              groups focused on v-shojo and hololive memes, and Nijisanji made us
               draw a lots of Vtuber and defend them. I myself focused on
               defending Fubuking, The fox girl on a burger in the banner image
               :) <br />
