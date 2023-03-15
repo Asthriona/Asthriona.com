@@ -120,7 +120,7 @@ export default {
       )
       .then(res => {
         this.form = res.data;
-        this.post = res.data.post;
+        this.post = res.data;
       });
   },
   methods: {
