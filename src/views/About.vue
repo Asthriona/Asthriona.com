@@ -86,8 +86,8 @@
               <tr>
                 <td>Favorite Anime:</td>
                 <td>
-                  Angel Beats, Charlotte, Toradora, To Your
-                  Eternity, Steins;Gate, Hitoribocchi no Marumaruseikatsu
+                  Angel Beats, Charlotte, Toradora, To Your Eternity,
+                  Steins;Gate, Hitoribocchi no Marumaruseikatsu
                 </td>
               </tr>
               <tr>
@@ -221,7 +221,7 @@
 
 <script>
 export default {
-  name: "About",
+  name: "About-page",
   data() {
     return {
       age: 0
