@@ -37,7 +37,6 @@
             <li>How to contact us</li>
             <li>How to contact the appropriate authorities</li>
           </ul>
-        </p>
         <p class="headline">What data do we collect?</p>
         <p>
           Asthriona ltd. collects the following data:
@@ -146,3 +145,9 @@
     </v-row>
   </v-container>
 </template>
+
+<script>
+export default {
+  name: "PrivacyPolicy"
+}
+</script>

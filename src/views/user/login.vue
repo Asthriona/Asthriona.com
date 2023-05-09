@@ -38,7 +38,7 @@ import PasswdReset from "../../components/auth/Passwd-Reset";
 // import axios from "axios";
 
 export default {
-  name: "Login",
+  name: "Login-page",
   data() {
     return {
       comp: "1",

@@ -49,8 +49,8 @@
               Sometimes I also like to do community related stuff, For exemple I
               took part in r/place with the r/vtuber group, we were focusing on
               v-tuber and mostly Hololive talent, but our alliances with other
-              groups focused on v-shojo and hololive memes, and Nijisanji made us
-              draw a lots of Vtuber and defend them. I myself focused on
+              groups focused on v-shojo and hololive memes, and Nijisanji made
+              us draw a lots of Vtuber and defend them. I myself focused on
               defending Fubuking, The fox girl on a burger in the banner image
               :) <br />
               I can be super dedicated to a task if asked nicely or if I have
@@ -166,7 +166,7 @@
 
 <script>
 export default {
-  name: "Home",
+  name: "Home-page",
   data() {
     return {
       sns: [

@@ -17,7 +17,7 @@
 
 <script>
 export default {
-  name: "Banned",
+  name: "Banned-comp",
   props: ["user"]
 };
 </script>

@@ -114,6 +114,7 @@
 
 <script>
 export default {
+  name: "ServerList",
   data() {
     return {
       clusters: [
