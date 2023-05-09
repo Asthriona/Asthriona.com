@@ -30,15 +30,14 @@
               >
               <span class="intro">
                 <br />
-                I'm a full-stack developer, and I'm currently working on serval
-                project like Yukiko, This website, and a game for Rainboom
-                Studio. Living in between Japan and france, I'll move to UK in a
-                few months for a while and then hopefully definitively to Japan.
-                I love japanese culture and learning the language. When I'm not
-                working on code, I use to work on cars, but sadly my last car
-                got wrecked. so for now outside of work, i'm just doing more
-                work, playing video games, watching anime, and learning new
-                things.
+                I'm a full-stack developer, and I'm currently working on several
+                projects, including Yukiko, this website, and a game for
+                Rainboom Studio. I live between Japan and France, but I'll be
+                moving to the UK for a few months soon, and then hopefully to
+                Japan permanently. I love Japanese culture and am learning the
+                language. When I'm not working on code, I enjoy working on cars.
+                So for now, outside of work, I'm mostly playing video games,
+                watching anime, and learning new things.
               </span>
             </div>
             <div class="projects mt-4">

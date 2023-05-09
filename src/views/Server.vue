@@ -1,8 +1,8 @@
 <template>
   <div>
-    <b-container>
-      <b-row>
-        <b-col cols="12" class="text-center">
+    <v-container>
+      <v-row>
+        <v-col cols="12" class="text-center">
           <h3>Servers</h3>
           <h5>List of my actual and owned servers</h5>
           <h5>
@@ -10,13 +10,12 @@
               OnlineServers.length
             }}):
           </h5>
-        </b-col>
-        <b-col v-for="server in OnlineServers" :key="server.name">
-          <b-card-group>
-            <b-card
+        </v-col>
+        <v-col v-for="server in OnlineServers" :key="server.name">
+          <v-card-group>
+            <v-card
               bg-variant="dark"
               text-variant="white"
-              :title="server.name"
               tag="article"
               style="
                 max-width: 20rem;
@@ -26,13 +25,16 @@
               "
               class="mb-2 col-5"
             >
-              <b-card-text>
+              <v-card class="title">
+                {{ server.name }}
+              </v-card>
+              <v-card-text>
                 {{ server.usage }} <br />
                 Location: <i>{{ server.location || "NA" }}</i>
-              </b-card-text>
-            </b-card>
-          </b-card-group>
-        </b-col>
+              </v-card-text>
+            </v-card>
+          </v-card-group>
+        </v-col>
         <ul>
           <li v-for="info in infos" :key="info.id" class="muted">
             {{ info.data }}
@@ -40,49 +42,44 @@
         </ul>
         <hr />
         <b-col cols="12" class="spacer" style="margin-top: 50px"></b-col>
-        <b-col cols="12" class="text-center">
+        <v-col cols="12" class="text-center">
           <h5>Yukiko Clusters:</h5>
-        </b-col>
-        <b-col cols="12">
-          <b-card-group>
-            <b-card
-              v-for="cluster in clusters"
-              :key="cluster.name"
-              bg-variant="dark"
-              text-variant="white"
-              :title="cluster.name"
-              tag="article"
-              style="max-width: 20rem;min-width: 15rem;min-height: 130px;text-align: center;"
-              class="mb-2 col-6"
+        </v-col>
+        <v-card
+          v-for="cluster in clusters"
+          :key="cluster.name"
+          bg-variant="dark"
+          text-variant="white"
+          tag="article"
+          style="max-width: 20rem;min-width: 15rem;min-height: 130px;text-align: center;"
+          class="mb-2 ml-2 col-6"
+        >
+          <v-card-title>
+            {{ cluster.name }}
+          </v-card-title>
+          <v-card-text>
+            <li
+              style="list-style-type: none"
+              v-for="server in cluster.server"
+              :key="server"
             >
-              <b-card-text>
-                <li
-                  style="list-style-type: none"
-                  v-for="server in cluster.server"
-                  :key="server"
-                >
-                  {{ server }}
-                </li>
-                <hr />
-                Location: {{ cluster.location }} <br />
-                Usage: {{ cluster.usage }}
-              </b-card-text>
-            </b-card>
-          </b-card-group>
-          <i
-            >Info: The location indicate the Physical location of all the
-            servers in a cluster, and DC indicate what datacenter each server
-            within a cluster is located. Eg: OSK3</i
-          >
-          <br />
-          <i
-            >Info 2: All server lister above are separate than my own
-            servers.</i
-          >
-        </b-col>
+              {{ server }}
+            </li>
+            <hr />
+            Location: {{ cluster.location }} <br />
+            Usage: {{ cluster.usage }}
+          </v-card-text>
+        </v-card>
+        <i
+          >Info: The location indicate the Physical location of all the servers
+          in a cluster, and DC indicate what datacenter each server within a
+          cluster is located. Eg: OSK3</i
+        >
         <br />
-        <b-col cols="12" class="spacer" style="margin-top: 50px"></b-col>
-        <b-col cols="12">
+        <i>Info 2: All server lister above are separate than my own servers.</i>
+        <br />
+        <v-col cols="12" class="spacer" style="margin-top: 50px"></v-col>
+        <v-col cols="12">
           <div class="text-center">
             <h5>
               <span style="color:red;">◉</span> Offline/Dead Servers ({{
@@ -90,25 +87,27 @@
               }})
             </h5>
           </div>
-        </b-col>
-        <b-col v-for="server in OfflineServers" :key="server.name">
-          <b-card-group>
-            <b-card
+        </v-col>
+        <v-col v-for="server in OfflineServers" :key="server.name">
+          <v-card-group>
+            <v-card
               bg-variant="dark"
               text-variant="white"
-              :title="server.name"
               tag="article"
               style="max-width: 20rem;min-width: 15rem;min-height: 130px;text-align: center;"
               class="mb-2 col-5"
             >
-              <b-card-text>
+              <v-card-title>
+                {{ server.name }}
+              </v-card-title>
+              <v-card-text>
                 {{ server.usage }}
-              </b-card-text>
-            </b-card>
-          </b-card-group>
-        </b-col>
-      </b-row>
-    </b-container>
+              </v-card-text>
+            </v-card>
+          </v-card-group>
+        </v-col>
+      </v-row>
+    </v-container>
   </div>
 </template>
 
@@ -156,11 +155,6 @@ export default {
         }
       ],
       OnlineServers: [
-        {
-          name: "Yukiko-01",
-          usage: "Yukiko Alternate bots",
-          location: "Paris DC1"
-        },
         {
           name: "Asthriona-mail",
           usage: "Main Mail server",
@@ -303,6 +297,10 @@ export default {
         }
       ],
       OfflineServers: [
+        {
+          name: "Yukiko-01",
+          usage: "Alternate Server for Yukiko"
+        },
         {
           name: "Yukiko-02",
           usage: "Rescue Server for Yukiko"
