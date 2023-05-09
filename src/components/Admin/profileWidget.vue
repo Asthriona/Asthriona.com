@@ -205,7 +205,9 @@ export default {
           }
         )
         .then(() => {
+          // eslint-disable-next-line vue/no-mutating-props
           this.user.isBanned = true;
+          // eslint-disable-next-line vue/no-mutating-props
           this.user.selectedBadge = "mdi-shield-off-outline";
           this.alert.type = "success";
           this.alert.text = "Account banned";
@@ -233,6 +235,7 @@ export default {
           }
         )
         .then(() => {
+          // eslint-disable-next-line vue/no-mutating-props
           this.user.isBanned = false;
           this.alert.type = "success";
           this.alert.text = "Account unbanned";
@@ -278,6 +281,7 @@ export default {
           }
         )
         .then(() => {
+          // eslint-disable-next-line vue/no-mutating-props
           this.user.isVerified = true;
           this.alert.type = "success";
           this.alert.text = "Account verified";
@@ -300,6 +304,7 @@ export default {
           }
         )
         .then(() => {
+          // eslint-disable-next-line vue/no-mutating-props
           this.user.isVerified = false;
           this.alert.type = "success";
           this.alert.text = "Account unverified";
@@ -320,6 +325,7 @@ export default {
           }
         )
         .then(() => {
+          // eslint-disable-next-line vue/no-mutating-props
           this.user.isMod = true;
           this.alert.type = "success";
           this.alert.text = "Account modded";
@@ -340,6 +346,7 @@ export default {
           }
         )
         .then(() => {
+          // eslint-disable-next-line vue/no-mutating-props
           this.user.isMod = false;
           this.alert.type = "success";
           this.alert.text = "Account unmodded";
@@ -362,6 +369,7 @@ export default {
           }
         )
         .then(() => {
+          // eslint-disable-next-line vue/no-mutating-props
           this.user.isAdmin = true;
           this.alert.type = "success";
           this.alert.text = "Account admined";
@@ -384,6 +392,7 @@ export default {
           }
         )
         .then(() => {
+          // eslint-disable-next-line vue/no-mutating-props
           this.user.isAdmin = false;
           this.alert.type = "success";
           this.alert.text = "Account unadmined";

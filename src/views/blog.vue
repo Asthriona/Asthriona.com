@@ -34,7 +34,7 @@ import axios from "axios";
 import RightBar from "../components/PageComp/blogComp/rightBar.vue";
 import PostsComp from "../components/PageComp/blogComp/PostsComp.vue";
 export default {
-  name: "Blog",
+  name: "Blog-home",
   components: {
     RightBar,
     PostsComp

@@ -165,27 +165,34 @@
         </p>
         <p class="display-1">Termination Appeal</p>
         <p>
-            If you think that you have been banned unfairly, you can appeal the
-            sanction by sending an email to
-            <a href="mailto:bans@asthriona.com">bans@asthriona.com</a>
-            <br />
-            You will need to provide the following information:
-            <ul>
-              <li>Your username</li>
-              <li>The reason you think you have been banned unfairly</li>
-              <li>Any other information that you think may be relevant</li>
-            </ul>
-            <br />
-            We will review your appeal, and if we find that you have been banned
-            unfairly, we will remove the sanction.
-            <br />
-            If we find that you have been banned fairly, we will not remove the
-            sanction.
-            <br />
-            If the appeal has been denied, you wont be able to send a new one, as we will consider that you have been banned fairly.
+          If you think that you have been banned unfairly, you can appeal the
+          sanction by sending an email to
+          <a href="mailto:bans@asthriona.com">bans@asthriona.com</a>
+          <br />
+          You will need to provide the following information:
         </p>
-        
+
+        <ul>
+          <li>Your username</li>
+          <li>The reason you think you have been banned unfairly</li>
+          <li>Any other information that you think may be relevant</li>
+        </ul>
+        <br />
+        We will review your appeal, and if we find that you have been banned
+        unfairly, we will remove the sanction.
+        <br />
+        If we find that you have been banned fairly, we will not remove the
+        sanction.
+        <br />
+        If the appeal has been denied, you wont be able to send a new one, as we
+        will consider that you have been banned fairly.
       </v-col>
     </v-row>
   </v-container>
 </template>
+
+<script>
+export default {
+  name: "TermsOfService"
+};
+</script>

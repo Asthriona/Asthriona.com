@@ -35,7 +35,7 @@
 <script>
 import axios from "axios";
 export default {
-  name: "Friends!!!",
+  name: "Friends!!!-page",
   data() {
     return {
       blogs: []
