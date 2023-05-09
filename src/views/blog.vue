@@ -38,7 +38,7 @@ export default {
   components: {
     RightBar,
     PostsComp
-},
+  },
   data() {
     return {
       posts: "",
