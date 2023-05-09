@@ -11,17 +11,16 @@
           <v-card-text>
             <p>
               Hi! I'm Asthriona, or you can call me Makoto. I'm some sort of web
-              developer, I like to code usefull or useless stuff, in the end I
-              allways end up with something usefull. My main side project is
-              Yukiko a powerfull discord bot with lot and lot of feature. I do
-              code to keep my head out of the water, and I also play a lot of
+              developer, I like to code useful or useless stuff, in the end I
+              always end up with something useful. My main side project is
+              Yukiko, a powerful Discord bot with lots and lots of features. I
+              do code to keep my head out of the water, and I also play a lot of
               World Of Warcraft, Valorant and Sim Racing. I'm the main Tank and
-              Admin of
-              <b>&#60;Eternal Vengeance&#62;</b>. I'm also their own developper.
-              I like to code to help other people and make this world a bit
-              better! I'm sure I'm nowhere near to change the world but I think
-              if everyone put their own little rock in the end we will make a
-              differance.
+              leader of <b>&#60;Eternal Vengeance&#62;</b>. I'm also their own
+              developper. I like to code to help other people and make this
+              world a bit better! I'm sure I'm nowhere near to change the world
+              but I think if everyone put their own little rock, in the end we
+              will make a difference.
             </p>
           </v-card-text>
         </v-card>
@@ -70,17 +69,18 @@
           </v-card-text>
         </v-card>
       </v-col>
-      <!-- <v-col cols="12">
+      <v-col cols="12">
         <v-card>
           <v-card-title>My Github Stats</v-card-title>
           <v-card-text>
             <img
               src="https://github-readme-stats.vercel.app/api?username=asthriona&show_icons=true&theme=dark"
               alt="My Github Stats"
+              height="170"
             />
           </v-card-text>
         </v-card>
-      </v-col> -->
+      </v-col>
       <v-col cols="12">
         <v-card class="text-center">
           <v-card-title>Like the blog?</v-card-title>
@@ -114,12 +114,6 @@ export default {
   data() {
     return {
       parthners: [
-        {
-          name: "Scaleway",
-          url: "https://scaleway.com",
-          logo:
-            "https://asthriona.s3.fr-par.scw.cloud/ShareX/2021/01/5185491.png"
-        },
         {
           name: "Cloudflare",
           url: "https://cloudflare.com",
@@ -179,10 +173,18 @@ export default {
   },
   methods: {
     gura() {
-      var audio = new Audio(
-        "https://cdn.nishikino.xyz/asthriona/blog/static/gawr-gura-a.wav"
-      );
-      audio.play();
+      // generate a number between 1 and 10
+      // 10% of chance that another audio is played instead of the gura one
+      if (Math.floor(Math.random() * 10) + 1 === 1) {
+        const audio = new Audio("https://cdn.yukiko.app/web/suisei-ugly.mp3");
+        audio.play();
+        return;
+      } else {
+        const audio = new Audio(
+          "https://cdn.nishikino.xyz/asthriona/blog/static/gawr-gura-a.wav"
+        );
+        audio.play();
+      }
     }
   }
 };
@@ -193,6 +195,7 @@ export default {
   display: inline-block;
   margin: 10px;
 }
+
 .parthner img {
   height: 40px !important;
 }

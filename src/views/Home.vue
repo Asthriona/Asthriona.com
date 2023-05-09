@@ -39,25 +39,27 @@
               <v-card-title class="display-1 justify-center"
                 >Who am I?</v-card-title
               >
-              Hi, I'm Makoto "Asthriona" Kobayashi, Lots of my friends just call
-              me Mako, feel free to do so (Or Mako-san if you feel extra formal
-              :)) <br />
-              I'm a web developer and network engineer, who like to play with
-              servers, and learn new stuff. <br />
-              I sometimes am a race driver as well, beating lap times has this
-              little something to it, that just make me feels good. <br />
-              Sometimes I also like to do community related stuff, For exemple I
-              took part in r/place with the r/vtuber group, we were focusing on
-              v-tuber and mostly Hololive talent, but our alliances with other
-              groups focused on v-shojo and hololive memes, and Nijisanji made
-              us draw a lots of Vtuber and defend them. I myself focused on
-              defending Fubuking, The fox girl on a burger in the banner image
-              :) <br />
-              I can be super dedicated to a task if asked nicely or if I have
-              any kind of interest, like placing pixel for 3 day straight with
-              no pause. <br />
-              When not putting my health on the line for Pixel wars, I do code,
-              Watch Anime or Netflix show, read Manga, and play games.
+              <v-card-text>
+                Hi, I'm Makoto "Asthriona" Kobayashi. Lots of my friends just
+                call me Mako, feel free to do so (or Mako-san if you feel extra
+                formal :)). <br />
+                I'm a web developer and network engineer who enjoys messing
+                around with servers and learning new things. <br />
+                Sometimes I'm a race driver as well. Beating lap times has a
+                little something to it that just makes me feel good. <br />
+                Sometimes I also like to do community-related stuff. For
+                example, I took part in r/place with the r/vtuber group. We were
+                focusing on VTubers, mostly Hololive talent. Our alliances with
+                other groups focused on v-shojo and Hololive memes, and
+                Nijisanji made us draw a lot of VTuber art and defend them. I
+                myself focused on defending "Fubuking", the fox girl on a burger
+                in the banner image. <br />
+                I can be super dedicated to a task if asked nicely or if I have
+                any kind of interest, like placing pixels for three days
+                straight with no pause. <br />
+                When not putting my health on the line for Pixel wars, I code,
+                watch anime or Netflix shows, read manga, and play games.
+              </v-card-text>
               <br />
             </v-card>
           </v-col>
@@ -80,7 +82,7 @@
                 >, a utility Discord Bot that can help you manage your server.
                 <br />
                 and my own websites at the moment, trying to add feature and
-                expend to avoid being bind to Social Network
+                expending to avoid being bind to Social Network
                 Services.</v-card-text
               >
             </v-card>
