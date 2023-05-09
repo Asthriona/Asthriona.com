@@ -43,19 +43,18 @@
             </div>
             <div class="projects mt-4">
               <span>
-                I have a bunch of project cars in mind, but most of them I
-                cannot talk about just yet! you will have to wait a bit longer
-                :) all I can say is most of them will be drift build! gotta get
-                better at it soon! (*•̀ᴗ•́*)و ̑̑
+                I have a bunch of project cars in mind, but most of them I cannot talk about just yet! you will have to wait a bit longer :) all
+                I can say is most of them will be drift build! gotta get better
+                at it soon! (*•̀ᴗ•́*)و ̑̑
               </span>
             </div>
             <div class="video-games mt-4">
               <span>
                 About video games, with 20+ years of experience, I can say I
                 have some skills. Mostly when talking about racing sim. I always
-                manage to get on top of any leaderboard very quickly. I think
-                the funniest part is when I beat my friends on their own tracks
-                In real life. You know? Video games is not real life, but the
+                manage to get on top of any leaderboard very quickly. I think the
+                funniest part is when I beat my friends on their own tracks In
+                real life. You know? Video games is not real life, but the
                 result endup being the same! Sup Thony? ( ͡° ͜ʖ ͡°)
               </span>
             </div>
@@ -86,8 +85,7 @@
               <tr>
                 <td>Favorite Anime:</td>
                 <td>
-                  Angel Beats, Charlotte, Toradora, To Your Eternity,
-                  Steins;Gate, Hitoribocchi no Marumaruseikatsu
+                  Angel Beats, Charlotte, Toradora, Black Bullet, To Your Eternity, Steins;Gate, Hitoribocchi no Marumaruseikatsu
                 </td>
               </tr>
               <tr>
@@ -95,10 +93,10 @@
                 <td>
                   Curently working as Developper for
                   <a
-                    href="https://stellar-corp.net"
+                    href="https://team.yukiko.app"
                     target="_blank"
                     rel="noopener noreferrer"
-                    >Stellar Corporation</a
+                    >Yukiko Dev Team</a
                   >
                 </td>
               </tr>
@@ -108,13 +106,12 @@
                   <ul class="aboutLists">
                     <li><b>Custom Build</b></li>
                     <li>AMD Ryzen 1500X OC 4.0Ghz</li>
-                    <li>Nvidia GTX 2060 OC</li>
+                    <li>Nvidia GTX 1050 OC</li>
                     <li>16GB DDR4 RAM</li>
+                    <li><b>Pre built Asus Laptop</b></li>
                     <li><b>Keyboard:</b></li>
                     <li>Leopold FC900R PD</li>
                     <li>Custom Keycaps US/JP layout</li>
-                    <li><b>Pre built Asus Laptop</b></li>
-                    <li><b>Pre built HP Laptop</b></li>
                   </ul>
                 </td>
               </tr>
@@ -133,9 +130,6 @@
                     </li>
                     <li>
                       <i>[Yoruichi v1.1] Citroën C5 Gen 3</i>
-                    </li>
-                    <li>
-                      <i>[Kitsune] AMG GT Black Series</i>
                     </li>
                     <li>
                       <strike style="color:red;"
@@ -161,10 +155,10 @@
               </tr>
               <tr>
                 <td>Spoken Language:</td>
-                <td>French, English, Japanese</td>
+                <td>French, English, Japanese (learning)</td>
               </tr>
               <tr>
-                <td>Language I learn:</td>
+                <td>Language I plan to learn:</td>
                 <td>Chinese, Korean</td>
               </tr>
               <tr>
@@ -192,7 +186,7 @@
               <tr></tr>
               <tr>
                 <th>Hosting</th>
-                <th>Cloudflare, Nishikino Network, Digital Ocean</th>
+                <th>Cloudflare, Nishikino Network, Scaleway, Digital Ocean</th>
               </tr>
               <tr></tr>
               <tr>
@@ -221,7 +215,7 @@
 
 <script>
 export default {
-  name: "About-page",
+  name: "About",
   data() {
     return {
       age: 0
