@@ -5,7 +5,7 @@
         <v-col cols="12" class="avatar d-flex justify-center">
           <v-avatar size="250" class="mt-4" color="black">
             <v-img
-              src="https://pbs.twimg.com/profile_images/1523324400245825537/zQiBhAZV_400x400.jpg"
+              src="https://cdn.asthriona.com/i/2023/05/99f234627faa917ace3998fa29755d5b"
             ></v-img>
           </v-avatar>
         </v-col>
