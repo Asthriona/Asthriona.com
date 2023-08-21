@@ -220,7 +220,7 @@ export default {
         "it’s Me, Myself and I again",
         "Hello from Speedtest.net!",
         "Welcome to 2020 Season 3!",
-        "You can now play 2021 as luigi",
+        "You can now play 2022 as luigi",
         "Click here to cancel your subscription to 2022"
       ]
     };
