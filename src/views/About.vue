@@ -34,8 +34,7 @@
                 projects, including Yukiko, this website, and a game for
                 Rainboom Studio. I live between Japan and France, but I'll be
                 moving to the UK for a few months soon, and then hopefully to
-                Japan permanently. I love Japanese culture and am learning the
-                language. When I'm not working on code, I enjoy working on cars.
+                Japan permanently. When I'm not working on code, I enjoy working on cars.
                 So for now, outside of work, I'm mostly playing video games,
                 watching anime, and learning new things.
               </span>
