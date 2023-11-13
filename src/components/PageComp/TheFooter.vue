@@ -71,6 +71,17 @@
               src="https://web-platforms.sfo2.cdn.digitaloceanspaces.com/WWW/Badge%201.svg"
               alt="DigitalOcean Referral Badge"
           /></a>
+          <a
+            href="https://www.abuseipdb.com/user/130766"
+            class="ml-4"
+            title="AbuseIPDB is an IP address blacklist for webmasters and sysadmins to report IP addresses engaging in abusive behavior on their networks"
+          >
+            <img
+              src="https://www.abuseipdb.com/contributor/130766.svg"
+              alt="AbuseIPDB Contributor Badge"
+              style="width: 200px;height: 65px;border-radius: 5px;background: #35c246 linear-gradient(rgba(255,255,255,0), rgba(255,255,255,.3) 50%, rgba(0,0,0,.2) 51%, rgba(0,0,0,0));padding: 5px;"
+            />
+          </a>
         </v-card-text>
       </v-card>
     </v-footer>
