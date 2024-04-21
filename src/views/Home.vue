@@ -1,6 +1,25 @@
 <template>
   <div class="home">
-    <div class="head-banner">
+    <v-container fill-height fluid>
+      <v-layout row wrap align-center text-center>
+        <v-flex>
+          <img
+            src="@/assets/images/asthriona_logo.png"
+            width="50%"
+            alt="Asthriona Logo"
+          />
+          <h1>Website Unavailable - We Apologize for the Inconvenience</h1>
+          <h4>
+            We're currently experiencing technical difficulties and the website
+            is unavailable. We're working hard to resolve the issues and will
+            have the website back online as soon as possible. Thank you for your
+            patience.
+          </h4>
+        </v-flex>
+      </v-layout>
+    </v-container>
+
+    <!-- <div class="head-banner">
       <div class="header-content">
         <v-col cols="12" class="avatar d-flex justify-center">
           <v-avatar size="250" class="mt-4" color="black">
@@ -98,7 +117,6 @@
           lg="3"
           xl="3"
         >
-          <!-- Works -->
           <v-card>
             <v-img :src="work.img" lazy></v-img>
             <v-card-title>{{ work.title }}</v-card-title>
@@ -146,7 +164,6 @@
           <h1 class="text-center display-1 mt-4">
             Asthriona proudly sponsors:
           </h1>
-          <!-- <p class="muted text-center mb-4">sponsoring for 30 000 yen</p> -->
           <v-col
             cols="12"
             class="d-flex justify-space-around mb-6 mt-6 sponsor"
@@ -162,7 +179,7 @@
           </v-col>
         </v-col>
       </v-row>
-    </v-container>
+    </v-container> -->
   </div>
 </template>
 
@@ -229,6 +246,9 @@ export default {
 </script>
 
 <style scoped>
+.home {
+  margin-top: 200px;
+}
 .head-banner {
   background-image: url(https://cdn.asthriona.com/rplaceHoloBackground.jpg);
   background-size: cover;
