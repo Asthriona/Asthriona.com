@@ -28,8 +28,12 @@
     </section>
     <section>
         <h2 class="text-3xl font-bold mt-8">Latest Blog Posts</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- if we find posts we show them, else we show a message -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" v-if="posts.length">
             <ThePost :posts="posts" />
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" v-else>
+            <h2 class="text-xl font-bold mt-8">I haven't posted anything yet!</h2>
         </div>
     </section>
 </template>
