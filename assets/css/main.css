@@ -1,0 +1,7 @@
+@font-face {
+    font-family: 'LINE Seed';
+    src: url(~/assets/fonts/LINESeedSans_A_Rg.otf);
+}
+body {
+    font-family: 'LINE Seed';
+}
