@@ -18,8 +18,10 @@
 </script>
 
 <style>
-h1 {
-    color: #94a3b8 !important;
+.prose h1,
+.prose h2 a,
+.prose h3 a {
+    color: #78879b !important;
 }
 strong {
     color: #556070 !important;
