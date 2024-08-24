@@ -40,7 +40,9 @@
 
 <script setup>
 const { data: posts } = await useAsyncData("latest-posts", () =>
+    // find post set as published
     queryContent('/blog')
+        .where({ published: true })
         .sort({ publishedDate: 1 })
         .limit(3)
         .find()
@@ -51,7 +53,7 @@ useSeoMeta({
     ogTitle: 'Asthriona',
     description: 'Welcome to my personal Website! Click to learn more!',
     ogDescription: 'Welcome to my personal Website! Click to learn more!',
-    ogImage: 'https://pbs.twimg.com/profile_images/1767869339519111168/KtnuMyuQ_400x400.jpg',
+    ogImage: 'https://cdn.asthriona.com/i/2024/08/04853fceaae02025080e4b40392ff247.png',
     twitterCard: 'summary_large_image',
 })
 </script>
