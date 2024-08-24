@@ -14,6 +14,6 @@ Here are all my posts. Can be about anything, an idea went through my mind, and 
 
 <script setup>
     const { data: posts } = await useAsyncData('posts', () => 
-        queryContent('/blog').find()
+        queryContent('/blog').where({ published: true }).find()
     )
 </script>
