@@ -31,4 +31,8 @@ strong {
 code {
     color:tomato !important;
 }
+strong {
+    color: aliceblue !important;
+    font-weight: 900 !important;
+}
 </style>
