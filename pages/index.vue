@@ -55,4 +55,12 @@ useSeoMeta({
     ogImage: 'https://cdn.asthriona.com/i/2024/08/04853fceaae02025080e4b40392ff247.png',
     twitterCard: 'summary_large_image',
 })
+// The metadata stuff for ranking and whatnot. 
+useHead({
+    title: "Asthriona",
+    meta: [{
+        name: "description",
+        content: "Welcome to my personal website! Here i post about anything and everything! Come have fun with me! :)"
+    }]
+})
 </script>
