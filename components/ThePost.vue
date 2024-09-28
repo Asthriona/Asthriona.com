@@ -6,7 +6,7 @@
         </NuxtLink>
         <div class="p-6">
             <h2 class="text-xl font-bold mb-2">{{ post.title }}</h2>
-            <p class="text-gray-700 mb-4">{{ post.description }}</p>
+            <p class="text-gray-400 mb-4">{{ post.description }}</p>
             <NuxtLink :to="post._path"
                 class="inline-block outline hover:outline-pink-500 outline-offset-4 outline-1 bg-black text-white py-2 px-4 rounded float-right mb-4">Read
                 More</NuxtLink>
