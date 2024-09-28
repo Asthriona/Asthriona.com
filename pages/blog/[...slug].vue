@@ -17,6 +17,24 @@
         .where({ _path: path })
         .findOne()
     })
+    
+    // The metadata stuff for ranking and whatnot. 
+useHead({
+    title: `Asthriona - ${data.title}`,
+    meta: [{
+        name: "description",
+        content: `${data.description.substring(1,96)}...`
+    }]
+})
+// This is only testing, Need to be check with some card validator. 
+useSeoMeta({
+    title: `Asthriona - ${data.title}`,
+    ogTitle: `Asthriona - ${data.title}`,
+    description: `${data.description.substring(1,96)}...`,
+    ogDescription: `${data.description.substring(1,96)}...`,
+    ogImage: data.banner,
+    twitterCard: 'summary_large_image',
+})
 </script>
 
 <style>
