@@ -23,7 +23,7 @@
                 project, and dev-logs.
             </p>
         </div>
-        <img src="https://cdn.asthriona.com/i/2024/08/04853fceaae02025080e4b40392ff247.png" alt="me"
+        <img src="https://cdn.asthriona.com/ShareX/2024/09/04853fceaae02025080e4b40392ff247.webp" alt="me"
             class="w-1/2 h-1/2 md:max-w-sm p8 mx-auto rounded">
     </section>
     <section>
