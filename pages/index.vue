@@ -23,7 +23,7 @@
                 project, and dev-logs.
             </p>
         </div>
-        <NuxtImg format="webp" src="https://cdn.asthriona.com/i/2024/08/04853fceaae02025080e4b40392ff247.png" alt="me" class="w-1/2 h-1/2 md:max-w-sm p8 mx-auto rounded"/>
+        <img format="webp" src="https://cdn.asthriona.com/i/2024/08/04853fceaae02025080e4b40392ff247.png" alt="me" class="w-1/2 h-1/2 md:max-w-sm p8 mx-auto rounded"/>
     </section>
     <section>
         <h2 class="text-3xl font-bold mt-8">Latest Blog Posts</h2>
