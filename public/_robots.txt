@@ -1,0 +1,7 @@
+If you are a human please use /humans.txt
+If you are a hacker, please use /hacker.txt
+
+User-agent: *
+Disallow: 
+Crawl-delay: 5
+Disallow: /cgi-bin/

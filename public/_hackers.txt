@@ -1,0 +1,8 @@
+If you are a robot, use /robots.txt
+if you are a human, use humans.txt
+if you are a hacker, please sign below.
+
+Contacts: ping@asthriona.con
+Twitter: @Asthriona
+Github: Github.com/Asthriona
+Repo: Github: Github.com/Asthriona/asthriona.com

@@ -1,0 +1,25 @@
+If you are a hacker, please use /hacker.txt
+If you are a robot, use /robots.txt
+
+           
+    /* TEAM */
+
+                                
+Name: Makoto Kobayashi
+Site: ping@asthriona.com, Asthriona.com
+Twitter: @Asthriona
+Location: Shinagawa City, Tokyo, Japan
+
+    /* THANKS */
+Name: Takahashi Kyoko
+                                
+    /* SITE */
+Last update: 2024/10/07 
+Standards: HTML5, CSS3, JS
+Components: Nuxt, Vue, NodeJS, Tailwind
+Software: VSCode, Nuxt, Vue, Nvim (And so many plugins, please check https://github.com/asthriona/nvim)
+       
+                            
+
+
+                    
