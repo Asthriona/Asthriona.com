@@ -31,7 +31,7 @@
 
     <!-- Currently Watching List -->
     <section href="#current" id="current" class="mb-12">
-      <h2 class="text-2xl font-semibold mb-4">Currently Watching</h2>
+      <h2 class="text-2xl font-semibold mb-4">Currently Watching ({{ currentAnimeList.length }})</h2>
       <ul v-if="currentAnimeList" class="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-4 gap-6">
         <li v-for="anime in currentAnimeList" :key="anime.media.title.native"
           class="bg-black rounded-lg shadow-md overslow-hidden p-4 border border-gradient-to-r from-cyan-500 to-blue-500">
@@ -48,7 +48,7 @@
 
     <!-- Anime History -->
     <section href="#history" id="history" class="mb-12">
-      <h2 class="text-2xl font-semibold mb-4">Anime History</h2>
+      <h2 class="text-2xl font-semibold mb-4">Anime History ({{ animeHistory.length }})</h2>
       <ul v-if="animeHistory" class="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-4 gap-6">
         <li v-for="anime in animeHistory" :key="anime.media.title.romaji"
           class="bg-black rounded-lg shadow-md overslow-hidden p-4 border border-gradient-to-r from-cyan-500 to-blue-500">
@@ -95,7 +95,7 @@ import { useAsyncData } from 'nuxt/app';
 // Fetch the anime data from the API
 const { data } = await useAsyncData('animeList', async () => {
   const response = await $fetch('/api/anilist');
-  return response?.data?.MediaListCollection?.lists.flatMap(list => list.entries);
+  return response?.data?.MediaListCollection?.lists.filter((_, index) => index !== 3).flatMap(list => list.entries);
 });
 
 // Process the data: filter for currently watching and history
