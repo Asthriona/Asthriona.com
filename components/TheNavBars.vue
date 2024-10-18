@@ -42,6 +42,6 @@
     { name: 'Blog', href: '/blog', current: route.name.includes("blog") },
     { name: 'Projects', href: '/projects', current: route.name.includes("projects") },
     { name: 'About', href: '/about', current: route.name == "about" },
-    { name: ' ', href: '/fuck-you', current: route.name == "fuck-you" },
+    { name: 'Anime', href: '/anime', current: route.name == "anime" },
   ]
   </script>
