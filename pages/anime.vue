@@ -3,7 +3,7 @@
     <!-- Profile Banner and Info Section -->
     <div class="relative mb-12">
       <!-- Banner Image -->
-      <img src="https://s4.anilist.co/file/anilistcdn/media/anime/banner/170942-v2GO5YNO0Q5I.jpg" alt="Profile Banner"
+      <img src="https://cdn.asthriona.com/i/2024/10/%25pn_241021-082337.jpg" alt="Profile Banner"
         class="w-full h-48 object-cover">
 
       <!-- Profile Picture and Username -->
