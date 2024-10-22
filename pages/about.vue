@@ -1,4 +1,32 @@
 <template>
+    <!-- Pahe header -->
+      <header class="bg-black text-gray-300 p-6 mt-4">
+    <div class="max-w-7xl mx-auto flex items-center justify-between">
+      <!-- Profile Image -->
+      <div class="flex items-center space-x-4">
+        <img 
+          src="https://cdn.asthriona.com/i/2024/08/04853fceaae02025080e4b40392ff247.png" 
+          alt="Profile" 
+          class="w-24 h-24 rounded-full border-4 border-gray-600"
+        />
+        <!-- Name and Bio -->
+        <div>
+          <h1 class="text-3xl font-semibold">Makoto "<b>Asthriona</b>" Kobayahsi</h1>
+          <p class="text-gray-400">I do the code thing, and sometimes it works.</p>
+        </div>
+      </div>
+
+      <!-- Social Links -->
+      <div class="space-x-4 flex">
+        <a v-for="link in links" :key="link.name" :href="link.href" target="_blank" rel="noopener noreferrer">
+                <Icon :name="link.icon" size="1.5rem" class="text-gray-300" />
+                <span class="sr-only">{{ link.name }}</span>
+            </a>
+      </div>
+    </div>
+  </header>
+  <!-- Github Sponsor Link -->
+  <iframe src="https://github.com/sponsors/Asthriona/button" title="Sponsor Asthriona" height="32" width="114" style="border: 0; border-radius: 6px;"></iframe>
     <section class="text-3xl mt-20">About this website</section>
     <section class="text-lg py-2">
         <h2 class="text-2xl">Licenses and Open Source Software</h2>
@@ -37,3 +65,12 @@
         </p>
     </section>
 </template>
+
+<script setup>
+const links = [
+        { name: "GitHub", href: "https://github.com/Asthriona", icon: "mdi:github" },
+        { name: "Twitter", href: "https://twitter.com/Asthriona", icon: "mdi:twitter" },
+        { name: "YouTube", href: "https://youtube.com/@Asthriona", icon: "mdi:youtube" },
+        { name: "Instagram", href: "https://www.instagram.com/asthriona.dev/", icon: "mdi:instagram" },
+    ]
+</script>
