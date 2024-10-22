@@ -7,7 +7,7 @@
         <img 
           src="https://cdn.asthriona.com/i/2024/08/04853fceaae02025080e4b40392ff247.png" 
           alt="Profile" 
-          class="w-24 h-24 rounded-full border-4 border-gray-600"
+          class="w-24 h-24 rounded-full border-4 border-green-500"
         />
         <!-- Name and Bio -->
         <div>
