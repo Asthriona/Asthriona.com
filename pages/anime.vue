@@ -20,7 +20,13 @@
       </div>
     </div>
 
-    <h1 class="text-4xl font-bold text-center mb-8">My Anime List</h1>
+    <h1 class="text-4xl font-bold text-center mb-8">Anime List</h1>
+    <p class="text-center mb-8">
+      This is a list of anime i'm currently watching, or things I have already watched. <br />
+      I keep my Anilist profile updated as if it was a religious obligation (<b>I... LOVE... STATS!</b>).
+      <br />
+      A <Icon name="mdi-heart" class="text-red-600"></Icon> Icon means it's my Favorite list.
+    </p>
 
     <h2 class="text-2xl font-bold text-center mb-8">
       Navigation:<br />
@@ -54,7 +60,23 @@
           class="bg-black rounded-lg shadow-md overslow-hidden p-4 border border-gradient-to-r from-cyan-500 to-blue-500">
           <img :src="anime.media.coverImage.large" :alt="anime.media.title.romaji"
             class="w-full object-cover rounded-lg mb-4" />
-          <p class="text-xl font-semibold">{{ anime.media.title.romaji }} ({{ anime.media.title.english }})</p>
+          <p class="text-xl font-semibold"> <span class="faved" v-if="FavArray.includes(anime.media.id)"><Icon name="mdi-heart" class="text-red-600" /></span>{{ anime.media.title.native }} ({{ anime.media.title.english }})</p>
+          <p class="text-gray-600">Start: {{ formatDate(anime.startedAt) }} - Finish: {{ formatDate(anime.completedAt)
+            }}</p>
+          <p class="text-gray-600">Episodes: {{ anime.media.episodes }} <span v-if="anime.score">| Score: {{ anime.score
+              }}/10</span></p>
+        </li>
+      </ul>
+    </section>
+ <!-- Anime Paused -->
+    <section href="#paused" id="paused" class="mb-12">
+      <h2 class="text-2xl font-semibold mb-4">Anime I need to get back to ({{ pausedAnimeList.length }})</h2>
+      <ul v-if="pausedAnimeList" class="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-4 gap-6">
+        <li v-for="anime in pausedAnimeList" :key="anime.media.title.romaji"
+          class="bg-black rounded-lg shadow-md overslow-hidden p-4 border border-gradient-to-r from-cyan-500 to-blue-500">
+          <img :src="anime.media.coverImage.large" :alt="anime.media.title.romaji"
+            class="w-full object-cover rounded-lg mb-4" />
+          <p class="text-xl font-semibold"> <span class="faved" v-if="FavArray.includes(anime.media.id)"><Icon name="mdi-heart" class="text-red-600" /></span>{{ anime.media.title.native }} ({{ anime.media.title.english }})</p>
           <p class="text-gray-600">Start: {{ formatDate(anime.startedAt) }} - Finish: {{ formatDate(anime.completedAt)
             }}</p>
           <p class="text-gray-600">Episodes: {{ anime.media.episodes }} <span v-if="anime.score">| Score: {{ anime.score
@@ -95,11 +117,26 @@ import { useAsyncData } from 'nuxt/app';
 // Fetch the anime data from the API
 const { data } = await useAsyncData('animeList', async () => {
   const response = await $fetch('/api/anilist');
-  return response?.data?.MediaListCollection?.lists.filter((_, index) => index !== 3).flatMap(list => list.entries);
+  const animeList = response?.data?.MediaListCollection?.lists.filter((_, index) => index !== 3).flatMap(list => list.entries);
+  const userFavorites = response?.data?.User?.favourites?.anime?.nodes || [];
+
+  return {
+    animeList,
+    user: {
+      favorites: userFavorites
+    }
+  };
+});
+
+const userFavorites = data?.value.user.favorites;
+const FavArray = []
+// Get a list of ID from the fav list: 
+userFavorites.forEach(a => {
+  FavArray.push(a.id);
 });
 
 // Process the data: filter for currently watching and history
-const currentAnimeList = data?.value
+const currentAnimeList = data?.value.animeList
   .filter(entry => entry.status === 'CURRENT')
   .sort((a, b) => {
     const aIsAiring = a.media.nextAiringEpisode ? 1 : 0;
@@ -113,7 +150,7 @@ const currentAnimeList = data?.value
     // Prioritize airing anime first
     return bIsAiring - aIsAiring;
   });
-const animeHistory = data?.value
+const animeHistory = data?.value.animeList
   ?.filter(entry => entry.status === 'COMPLETED')
   ?.sort((a, b) => {
     // Convert the completedAt object into a Date object for sorting
@@ -122,8 +159,8 @@ const animeHistory = data?.value
 
     return dateB - dateA;
   });
-const pausedAnimeList = data?.value?.filter(entry => entry.status === 'PAUSED');
-const droppedAnimeList = data?.value?.filter(entry => entry.status === 'DROPPED');
+const pausedAnimeList = data?.value.animeList.filter(entry => entry.status === 'PAUSED');
+const droppedAnimeList = data?.value.animeList.filter(entry => entry.status === 'DROPPED');
 
 // Helper function to format the date
 const formatDate = (date) => {
