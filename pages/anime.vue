@@ -57,7 +57,7 @@
       <h2 class="text-2xl font-semibold mb-4">Anime History ({{ animeHistory.length }})</h2>
       <ul v-if="animeHistory" class="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-4 gap-6">
         <li v-for="anime in animeHistory" :key="anime.media.title.romaji"
-          class="bg-black rounded-lg shadow-md overslow-hidden p-4 border border-gradient-to-r from-cyan-500 to-blue-500">
+          class="bg-black rounded-lg shadow-md overflow-hidden p-4 border border-gradient-to-r from-cyan-500 to-blue-500">
           <img :src="anime.media.coverImage.large" :alt="anime.media.title.romaji"
             class="w-full object-cover rounded-lg mb-4" />
           <p class="text-xl font-semibold"> <span class="faved" v-if="FavArray.includes(anime.media.id)"><Icon name="mdi-heart" class="text-red-600" /></span>{{ anime.media.title.native }} ({{ anime.media.title.english }})</p>
