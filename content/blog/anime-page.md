@@ -7,20 +7,20 @@ publishedDate: 10/25/2024
 editedDate: null
 tags:
   - Blog
-  - Developement
+  - development
 ---
 # Creating a Dynamic anime page!
 
 Hello friends!  
-I've been working a lot on this website recently, getting back into developement after a while, and on a project that's just for fun it's... well been fun you know?  
-So what have I done? You clicked on this article, so you already know! I made myself an Anime page!  
+I've been working a lot on this website recently, getting back into development after a while, and on a project that's just for fun it's... well been fun you know?  
+So what have I done? You clicked on this article, so you already know! I made myself an anime page!  
 It's nothing fancy really, I just get the data from my Anilist profile. Since it's always updated (Me being a stats nerds helps a lot!)  
 I took a few days to get it working, and while i'm happy with it, I really want to improve it in the near future.  
-Adds some features, and fix the responsiveness of the UI.  
+Add some features, and fix the responsiveness of the UI.  
 That also helped me learn a lot about how Nuxt works. I like not having to manage an expensive army of server to serve all the data from a back-end.  
 Instead nuxt takes care of it!  
   
-Now, How did I made it and what was my thought process?  
+Now, How did I make it and what was my thought process?  
 **LET ME EXPLAIN!!**  
 ![An image in referance of Persona 5 when the player makes coffee and Sojiro explain the tast, but here represented as Neon Genesis Evangelion](https://cdn.asthriona.com/i/2024/10/%25pn_241025-090205.webp)
 
@@ -227,7 +227,7 @@ so for exemple as I write those lines I have:
 ```js
 ["DAN DA DAN", "Blue Box", "SPY×FAMILY", "Mr. Osomatsu"]
 ```
-In that array, we have 4 anime, 2 releasing, and 2 that's finished releasing, but I'm still watching.  
+In that array, we have 4 anime, 2 releasing, and 2 that are finished releasing, but I'm still watching.  
 I want `DAN DA DAN` and `Blue Box` to be first, regardless of their number of episodes watched.  
 Then `SPY×FAMILY` and `Mr. Osomatsu` needs to be ordered depending on the number of episodes watched, since they have finished releasing.  
 `Mr. Osomatsu`: Progress: 5/25  
@@ -255,7 +255,7 @@ const currentAnimeList = data?.value.animeList
 ```
 ![screenshot of the order of the anime](https://cdn.asthriona.com/i/2024/10/firefox_241025-083636.png)  
 After changing the "data" in the template to "currentAnimeList" we get a smaller list with only what is currently being watched.   
-this list is in the right order, now we just need to make it pretty and decide what we want to show or not.   
+this list is in the right order; now we just need to make it pretty and decide what we want to show or not.   
   
 ```html
 <!-- src/pages/anime.vue -->
@@ -266,9 +266,9 @@ this list is in the right order, now we just need to make it pretty and decide w
       <h2 class="text-2xl font-semibold mb-4">Currently Watching ({{ currentAnimeList.length }})</h2>
       <!-- Create a list of those -->
       <ul v-if="currentAnimeList" class="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-4 gap-6">
-      <!-- V-for is like a ForEach loop, in JS. -->
+      <!-- v-for is like a forEach loop, in JS. -->
         <li v-for="anime in currentAnimeList" :key="anime.media.title.native"
-          class="bg-black rounded-lg shadow-md overslow-hidden p-4 border border-gradient-to-r from-cyan-500 to-blue-500">
+          class="bg-black rounded-lg shadow-md overflow-hidden p-4 border border-gradient-to-r from-cyan-500 to-blue-500">
           <!-- Get the anime cover and display it with the title as "alt" -->
           <img :src="anime.media.coverImage.large" :alt="anime.media.title.romaji"
             class="w-full object-cover rounded-lg mb-4" />
