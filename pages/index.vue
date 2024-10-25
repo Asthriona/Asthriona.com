@@ -42,7 +42,7 @@ const { data: posts } = await useAsyncData("latest-posts", () =>
     // find post set as published
     queryContent('/blog')
         .where({ published: true })
-        .sort({ publishedDate: 1 })
+        .sort({ publishedDate: -1 })
         .limit(3)
         .find()
 )

@@ -59,4 +59,7 @@ strong {
     color: aliceblue !important;
     font-weight: 900 !important;
 }
+a {
+    color: #78879b !important;
+}
 </style>
