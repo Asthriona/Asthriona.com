@@ -22,7 +22,7 @@ Instead nuxt takes care of it!
   
 Now, How did I make it and what was my thought process?  
 **LET ME EXPLAIN!!**  
-![An image in referance of Persona 5 when the player makes coffee and Sojiro explain the tast, but here represented as Neon Genesis Evangelion](https://cdn.asthriona.com/i/2024/10/%25pn_241025-090205.webp)
+![An image in referance of Persona 5 when the player makes coffee and Sojiro explain the tast, but here represented as Neon Genesis Evangelion](https://cdn.asthriona.com/i/2024/10/%25pn_241031-194631.png)
 
 I wanted something that simply displays all the anime I'm watching, and order them in a specific order.  
 First things first, We need to query Anilist:  
