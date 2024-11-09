@@ -26,6 +26,7 @@
     const year = new Date().getFullYear()
     const links = [
         { name: "GitHub", href: "https://github.com/Asthriona", icon: "mdi:github" },
+        { name: "BlueSky", href: "https://bsky.app/profile/asthriona.bsky.social", icon: "fa6-brands:bluesky" },
         { name: "Twitter", href: "https://twitter.com/Asthriona", icon: "mdi:twitter" },
         { name: "YouTube", href: "https://youtube.com/@Asthriona", icon: "mdi:youtube" },
         { name: "Instagram", href: "https://www.instagram.com/asthriona.dev/", icon: "mdi:instagram" },
