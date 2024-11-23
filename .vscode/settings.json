@@ -1,6 +1,7 @@
 {
     "conventionalCommits.scopes": [
         "Blog",
-        "Template"
+        "Template",
+        "Framework"
     ]
 }
