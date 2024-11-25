@@ -1,2 +1,2 @@
 [images]
-  remote_images = ["https://cdn.asthriona.com/*", "https://avatars.githubusercontent.com/*", "s4.anilist.co"]
+  remote_images = ["https://cdn.asthriona.com/*", "https://avatars.githubusercontent.com/*", "https://raw.githubusercontent.com/*", "https://s4.anilist.co/*"]
