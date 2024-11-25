@@ -9,7 +9,7 @@
           class="w-24 h-24 rounded-full border-4 border-green-500" />
         <!-- Name and Bio -->
         <div>
-          <h1 class="text-3xl font-semibold">Makoto "<b>Asthriona</b>" Kobayahsi</h1>
+          <h1 class="text-3xl font-semibold">Makoto "<b>Asthriona</b>" Kobayashi</h1>
           <p class="text-gray-400">I do the code thing, and sometimes it works.</p>
         </div>
       </div>
