@@ -1,7 +1,7 @@
 ---
 title: "Creating a Dynamic anime page!"
 description: "Are you wondering how I made my anime page? Let me Explain!"
-banner: "https://cdn.asthriona.com/i/2024/11/%25pn_241111-001426.jpg"
+banner: "https://cdn.asthriona.com/i/2024/11/anime-page-banner.jpg"
 published: true
 publishedDate: 10/25/2024
 editedDate: null
