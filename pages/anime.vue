@@ -2,10 +2,10 @@
   <div class="content">
     <div class="isError" v-if="isError == true">
       <div class="mt-7 max-sw-sm mx-auto text-center card">
-        <img class="mt-7 mx-auto w-1/2 h-1/2" src="~/assets/img/403.png" v-if="errorData.status == 403" />
-        <img class="mt-7 mx-auto w-1/2 h-1/2" src="~/assets/img/404.png" v-if="errorData.status == 404" />
-        <img class="mt-7 mx-auto w-1/2 h-1/2" src="~/assets/img/500.png" v-if="errorData.status == 500" />
-        <img class="mt-7 mx-auto w-1/2 h-1/2" src="~/assets/img/503.png" v-if="errorData.status == 503" />
+        <NuxtImg format="webp" quality="80" class="mt-7 mx-auto w-1/2 h-1/2" src="~/assets/img/403.png" v-if="errorData.status == 403" />
+        <NuxtImg format="webp" quality="80" class="mt-7 mx-auto w-1/2 h-1/2" src="~/assets/img/404.png" v-if="errorData.status == 404" />
+        <NuxtImg format="webp" quality="80" class="mt-7 mx-auto w-1/2 h-1/2" src="~/assets/img/500.png" v-if="errorData.status == 500" />
+        <NuxtImg format="webp" quality="80" class="mt-7 mx-auto w-1/2 h-1/2" src="~/assets/img/503.png" v-if="errorData.status == 503" />
 
         <p class="mt-7 text-3xl">{{ errorData.message }}</p>
         <a href="/"><button
@@ -18,13 +18,13 @@
       <!-- Hero Section -->
       <div class="relative h-[300px] mb-24">
         <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black">
-          <img src="https://cdn.asthriona.com/i/2024/10/%25pn_241021-082337.jpg" alt="Profile Banner"
+          <NuxtImg format="webp" quality="80" height="300" width="1216" fit="cover" src="https://cdn.asthriona.com/i/2024/11/bluebox-banner.jpg" alt="Profile Banner"
             class="w-full h-full object-cover opacity-60" />
         </div>
 
         <!-- Profile Info -->
         <div class="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-1/2 flex flex-col items-center">
-          <img src="https://cdn.asthriona.com/i/2024/08/04853fceaae02025080e4b40392ff247.png" alt="Profile Picture"
+          <NuxtImg format="webp" quality="80" src="https://cdn.asthriona.com/i/2024/08/04853fceaae02025080e4b40392ff247.png" alt="Profile Picture"
             class="w-32 h-32 rounded-full border-4 border-cyan-500 shadow-lg shadow-cyan-500/20" />
           <div class="mt-4 text-center">
             <h1 class="text-3xl font-bold text-white">Asthriona</h1>
@@ -75,7 +75,7 @@
               <a :href="`https://anilist.co/anime/${anime.media.id}`" target="_blank">
                 <!-- Image Container -->
                 <div class="relative aspect-[3/4] overflow-hidden">
-                  <img :src="anime.media.coverImage.large" :alt="anime.media.title.romaji"
+                  <NuxtImg format="webp"  quality="80" :src="anime.media.coverImage.large" :alt="anime.media.title.romaji"
                     class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110" />
                   <div
                     class="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -149,7 +149,7 @@
               class="group bg-slate-900/30 backdrop-blur-sm rounded-xl overflow-hidden transition-all duration-300 hover:scale-102 hover:shadow-xl hover:shadow-blue-500/10">
               <!-- Image Container -->
               <div class="relative aspect-[3/4] overflow-hidden">
-                <img :src="anime.media.coverImage.large" :alt="anime.media.title.romaji"
+                <NuxtImg format="webp"  quality="80" :src="anime.media.coverImage.large" :alt="anime.media.title.romaji"
                   class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110" />
                 <div
                   class="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -211,7 +211,7 @@
               class="group bg-slate-900/30 backdrop-blur-sm rounded-xl overflow-hidden transition-all duration-300 hover:scale-102 hover:shadow-xl hover:shadow-blue-500/10">
               <!-- Image Container -->
               <div class="relative aspect-[3/4] overflow-hidden">
-                <img :src="anime.media.coverImage.large" :alt="anime.media.title.romaji"
+                <NuxtImg format="webp"  quality="80" :src="anime.media.coverImage.large" :alt="anime.media.title.romaji"
                   class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110" />
                 <div
                   class="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -275,7 +275,7 @@
               class="group bg-slate-900/30 backdrop-blur-sm rounded-xl overflow-hidden transition-all duration-300 hover:scale-102 hover:shadow-xl hover:shadow-blue-500/10">
               <!-- Image Container -->
               <div class="relative aspect-[3/4] overflow-hidden">
-                <img :src="anime.media.coverImage.large" :alt="anime.media.title.native"
+                <NuxtImg format="webp"  quality="80" :src="anime.media.coverImage.large" :alt="anime.media.title.native"
                   class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110" />
                 <div
                   class="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />

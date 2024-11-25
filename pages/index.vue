@@ -8,7 +8,8 @@
         <div class="md:w-2/4">
             <h2 class="text-3xl font-bold mt-8">Who am I?</h2>
             <p class="text-lg py-2">
-                I'm Asthriona, You can call me <i class="text-white">Makoto</i>, but most of my English speaking friends call me "<i class="text-white">Mako</i>" (except TheJudge who likes to call me "Mako-san").
+                I'm Asthriona, You can call me <i class="text-white">Makoto</i>, but most of my English speaking friends
+                call me "<i class="text-white">Mako</i>" (except TheJudge who likes to call me "Mako-san").
                 I'm a Full-Stack JS developper, who like to pick-up any sorts of skills, such as anything related to
                 cars, and computer science, lock picking, Video Games, whatever.
                 As a programer, I'm self-taught. I went to school for networking and datacenter management.
@@ -18,12 +19,14 @@
                 also anime, music, I can also enjoy some fine TV Shows and movies.
                 Meaning that I make this website as a hobby and for simple online presence, I really like the
                 "<i class="text-white">old-school</i>" internet, when it was filled with small blogs,
-                and places to share our daily lives and hobbies. In here I might share programing tips, Anime/TV Show/Movies review,
+                and places to share our daily lives and hobbies. In here I might share programing tips, Anime/TV
+                Show/Movies review,
                 but also try to keep the "project" page updated with my latests
                 project, and dev-logs.
             </p>
         </div>
-        <img format="webp" src="https://cdn.asthriona.com/i/2024/08/04853fceaae02025080e4b40392ff247.png" alt="me" class="w-1/2 h-1/2 md:max-w-sm p8 mx-auto rounded"/>
+        <NuxtImg src="https://cdn.asthriona.com/i/2024/08/04853fceaae02025080e4b40392ff247.png" height="384" width="384"
+            fit="cover" format="webp" quality="80" class="w-1/2 h-1/2 md:max-w-sm p8 mx-auto rounded" />
     </section>
     <section>
         <h2 class="text-3xl font-bold mt-8">Latest Blog Posts</h2>

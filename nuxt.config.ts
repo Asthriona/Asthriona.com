@@ -1,6 +1,10 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   compatibilityDate: '2024-04-03',
+  image: {
+    provider: 'netlify',
+    domains: ["cdn.asthriona.com"]
+  },
   devtools: {
     enabled: true,
 

@@ -1,7 +1,7 @@
 ---
 title: "Creating a Dynamic anime page!"
 description: "Are you wondering how I made my anime page? Let me Explain!"
-banner: "https://cdn.asthriona.com/i/2024/11/%25pn_241111-001426.jpg"
+banner: "https://cdn.asthriona.com/i/2024/11/anime-page-banner.jpg"
 published: true
 publishedDate: 10/25/2024
 editedDate: null
@@ -22,7 +22,7 @@ Instead nuxt takes care of it!
   
 Now, How did I make it and what was my thought process?  
 **LET ME EXPLAIN!!**  
-![An image in referance of Persona 5 when the player makes coffee and Sojiro explain the tast, but here represented as Neon Genesis Evangelion](https://cdn.asthriona.com/i/2024/10/%25pn_241031-194631.png)
+![An image in referance of Persona 5 when the player makes coffee and Sojiro explain the tast, but here represented as Neon Genesis Evangelion](https://cdn.asthriona.com/i/2024/11/letmeexplain.png)
 
 I wanted something that simply displays all the anime I'm watching, and order them in a specific order.  
 First things first, We need to query Anilist:  
