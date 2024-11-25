@@ -22,7 +22,7 @@ Instead nuxt takes care of it!
   
 Now, How did I make it and what was my thought process?  
 **LET ME EXPLAIN!!**  
-![An image in referance of Persona 5 when the player makes coffee and Sojiro explain the tast, but here represented as Neon Genesis Evangelion](/i/2024/10/%25pn_241031-194631.png)
+![An image in referance of Persona 5 when the player makes coffee and Sojiro explain the tast, but here represented as Neon Genesis Evangelion](https://cdn.asthriona.com/i/2024/11/letmeexplain.png)
 
 I wanted something that simply displays all the anime I'm watching, and order them in a specific order.  
 First things first, We need to query Anilist:  
@@ -253,7 +253,7 @@ const currentAnimeList = data?.value.animeList
     return bIsAiring - aIsAiring;
   });
 ```
-![screenshot of the order of the anime](/i/2024/10/firefox_241025-083636.png)  
+![screenshot of the order of the anime](https://cdn.asthriona.com/i/2024/10/firefox_241025-083636.png)  
 After changing the "data" in the template to "currentAnimeList" we get a smaller list with only what is currently being watched.   
 this list is in the right order; now we just need to make it pretty and decide what we want to show or not.   
   
@@ -287,7 +287,7 @@ this list is in the right order; now we just need to make it pretty and decide w
 ```
 with this instead of the "\{\{ currentAnimeList \}\}" at the top and with Tailwind, it looks pretty good already.  
 Feel free to make it your own, by editing the HTML or the data shown.
-![Screenshot of the result so far](/i/2024/10/explorer_241025-085713.png)  
+![Screenshot of the result so far](https://cdn.asthriona.com/i/2024/10/explorer_241025-085713.png)  
   
 I mentioned in the exemple a custom function to format the Airing time. Anilist has a funny way to display it, so here is the function:   
 ```javascript
