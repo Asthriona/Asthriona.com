@@ -2,10 +2,14 @@
   <div class="content">
     <div class="isError" v-if="isError == true">
       <div class="mt-7 max-sw-sm mx-auto text-center card">
-        <NuxtImg format="webp" quality="80" class="mt-7 mx-auto w-1/2 h-1/2" src="~/assets/img/403.png" v-if="errorData.status == 403" />
-        <NuxtImg format="webp" quality="80" class="mt-7 mx-auto w-1/2 h-1/2" src="~/assets/img/404.png" v-if="errorData.status == 404" />
-        <NuxtImg format="webp" quality="80" class="mt-7 mx-auto w-1/2 h-1/2" src="~/assets/img/500.png" v-if="errorData.status == 500" />
-        <NuxtImg format="webp" quality="80" class="mt-7 mx-auto w-1/2 h-1/2" src="~/assets/img/503.png" v-if="errorData.status == 503" />
+        <NuxtImg format="webp" quality="80" class="mt-7 mx-auto w-1/2 h-1/2" src="~/assets/img/403.png"
+          v-if="errorData.status == 403" />
+        <NuxtImg format="webp" quality="80" class="mt-7 mx-auto w-1/2 h-1/2" src="~/assets/img/404.png"
+          v-if="errorData.status == 404" />
+        <NuxtImg format="webp" quality="80" class="mt-7 mx-auto w-1/2 h-1/2" src="~/assets/img/500.png"
+          v-if="errorData.status == 500" />
+        <NuxtImg format="webp" quality="80" class="mt-7 mx-auto w-1/2 h-1/2" src="~/assets/img/503.png"
+          v-if="errorData.status == 503" />
 
         <p class="mt-7 text-3xl">{{ errorData.message }}</p>
         <a href="/"><button
@@ -18,13 +22,15 @@
       <!-- Hero Section -->
       <div class="relative h-[300px] mb-24">
         <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black">
-          <NuxtImg format="webp" quality="80" height="300" width="1216" fit="cover" src="https://cdn.asthriona.com/i/2024/11/bluebox-banner.jpg" alt="Profile Banner"
+          <NuxtImg format="webp" quality="80" height="300" width="1216" fit="cover"
+            src="https://cdn.asthriona.com/i/2024/11/bluebox-banner.jpg" alt="Profile Banner"
             class="w-full h-full object-cover opacity-60" />
         </div>
 
         <!-- Profile Info -->
         <div class="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-1/2 flex flex-col items-center">
-          <NuxtImg format="webp" quality="80" src="https://cdn.asthriona.com/i/2024/08/04853fceaae02025080e4b40392ff247.png" alt="Profile Picture"
+          <NuxtImg format="webp" quality="80"
+            src="https://cdn.asthriona.com/i/2024/08/04853fceaae02025080e4b40392ff247.png" alt="Profile Picture"
             class="w-32 h-32 rounded-full border-4 border-cyan-500 shadow-lg shadow-cyan-500/20" />
           <div class="mt-4 text-center">
             <h1 class="text-3xl font-bold text-white">Asthriona</h1>
@@ -75,7 +81,8 @@
               <a :href="`https://anilist.co/anime/${anime.media.id}`" target="_blank">
                 <!-- Image Container -->
                 <div class="relative aspect-[3/4] overflow-hidden">
-                  <NuxtImg format="webp"  quality="80" :src="anime.media.coverImage.large" :alt="anime.media.title.romaji"
+                  <NuxtImg format="webp" quality="80" :src="anime.media.coverImage.large"
+                    :alt="anime.media.title.romaji"
                     class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110" />
                   <div
                     class="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -102,7 +109,7 @@
                       {{ anime.media.title.native }}
                     </h3>
                     <p class="text-sm text-gray-400 line-clamp-1">
-                      {{ anime.media.title.english }}
+                      {{ anime.media.title.english || anime.media.title.romaji }}
                     </p>
                   </div>
 
@@ -147,53 +154,56 @@
           <ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
             <li v-for="anime in animeHistory" :key="anime.media.title.romaji"
               class="group bg-slate-900/30 backdrop-blur-sm rounded-xl overflow-hidden transition-all duration-300 hover:scale-102 hover:shadow-xl hover:shadow-blue-500/10">
-              <!-- Image Container -->
-              <div class="relative aspect-[3/4] overflow-hidden">
-                <NuxtImg format="webp"  quality="80" :src="anime.media.coverImage.large" :alt="anime.media.title.romaji"
-                  class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110" />
-                <div
-                  class="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <a :href="`https://anilist.co/anime/${anime.media.id}`" target="_blank">
+                <!-- Image Container -->
+                <div class="relative aspect-[3/4] overflow-hidden">
+                  <NuxtImg format="webp" quality="80" :src="anime.media.coverImage.large"
+                    :alt="anime.media.title.romaji"
+                    class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110" />
+                  <div
+                    class="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
-                <!-- Badges -->
-                <div class="absolute top-3 right-3 flex gap-2">
-                  <div v-if="anime.score"
-                    class="bg-blue-500/90 backdrop-blur-sm px-3 py-1 rounded-full text-white font-bold flex items-center gap-1">
-                    <Icon name="mdi-star" class="text-yellow-300" />
-                    {{ anime.score }}
+                  <!-- Badges -->
+                  <div class="absolute top-3 right-3 flex gap-2">
+                    <div v-if="anime.score"
+                      class="bg-blue-500/90 backdrop-blur-sm px-3 py-1 rounded-full text-white font-bold flex items-center gap-1">
+                      <Icon name="mdi-star" class="text-yellow-300" />
+                      {{ anime.score }}
+                    </div>
+                    <div v-if="FavArray.includes(anime.media.id)"
+                      class="bg-red-500/90 backdrop-blur-sm px-3 py-1 rounded-full text-white">
+                      <Icon name="mdi-heart" />
+                    </div>
                   </div>
-                  <div v-if="FavArray.includes(anime.media.id)"
-                    class="bg-red-500/90 backdrop-blur-sm px-3 py-1 rounded-full text-white">
-                    <Icon name="mdi-heart" />
+                </div>
+
+                <!-- Content -->
+                <div class="p-5 space-y-4">
+                  <div>
+                    <h3 class="text-lg font-bold text-white line-clamp-1 mb-1">
+                      {{ anime.media.title.native }}
+                    </h3>
+                    <p class="text-sm text-gray-400 line-clamp-1">
+                      {{ anime.media.title.english || anime.media.title.romaji }}
+                    </p>
+                  </div>
+
+                  <div class="space-y-1 text-sm text-gray-400">
+                    <p class="flex justify-between">
+                      <span>Started:</span>
+                      <span>{{ formatDate(anime.startedAt) }}</span>
+                    </p>
+                    <p class="flex justify-between">
+                      <span>Completed:</span>
+                      <span>{{ formatDate(anime.completedAt) }}</span>
+                    </p>
+                    <p class="flex justify-between">
+                      <span>Episodes:</span>
+                      <span>{{ anime.media.episodes }}</span>
+                    </p>
                   </div>
                 </div>
-              </div>
-
-              <!-- Content -->
-              <div class="p-5 space-y-4">
-                <div>
-                  <h3 class="text-lg font-bold text-white line-clamp-1 mb-1">
-                    {{ anime.media.title.native }}
-                  </h3>
-                  <p class="text-sm text-gray-400 line-clamp-1">
-                    {{ anime.media.title.english }}
-                  </p>
-                </div>
-
-                <div class="space-y-1 text-sm text-gray-400">
-                  <p class="flex justify-between">
-                    <span>Started:</span>
-                    <span>{{ formatDate(anime.startedAt) }}</span>
-                  </p>
-                  <p class="flex justify-between">
-                    <span>Completed:</span>
-                    <span>{{ formatDate(anime.completedAt) }}</span>
-                  </p>
-                  <p class="flex justify-between">
-                    <span>Episodes:</span>
-                    <span>{{ anime.media.episodes }}</span>
-                  </p>
-                </div>
-              </div>
+              </a>
             </li>
           </ul>
         </section>
@@ -209,53 +219,56 @@
           <ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
             <li v-for="anime in pausedAnimeList" :key="anime.media.title.romaji"
               class="group bg-slate-900/30 backdrop-blur-sm rounded-xl overflow-hidden transition-all duration-300 hover:scale-102 hover:shadow-xl hover:shadow-blue-500/10">
-              <!-- Image Container -->
-              <div class="relative aspect-[3/4] overflow-hidden">
-                <NuxtImg format="webp"  quality="80" :src="anime.media.coverImage.large" :alt="anime.media.title.romaji"
-                  class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110" />
-                <div
-                  class="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <a :href="`https://anilist.co/anime/${anime.media.id}`" target="_blank">
+                <!-- Image Container -->
+                <div class="relative aspect-[3/4] overflow-hidden">
+                  <NuxtImg format="webp" quality="80" :src="anime.media.coverImage.large"
+                    :alt="anime.media.title.romaji"
+                    class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110" />
+                  <div
+                    class="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
-                <!-- Badges -->
-                <div class="absolute top-3 right-3 flex gap-2">
-                  <div v-if="anime.score"
-                    class="bg-blue-500/90 backdrop-blur-sm px-3 py-1 rounded-full text-white font-bold flex items-center gap-1">
-                    <Icon name="mdi-star" class="text-yellow-300" />
-                    {{ anime.score }}
+                  <!-- Badges -->
+                  <div class="absolute top-3 right-3 flex gap-2">
+                    <div v-if="anime.score"
+                      class="bg-blue-500/90 backdrop-blur-sm px-3 py-1 rounded-full text-white font-bold flex items-center gap-1">
+                      <Icon name="mdi-star" class="text-yellow-300" />
+                      {{ anime.score }}
+                    </div>
+                    <div v-if="FavArray.includes(anime.media.id)"
+                      class="bg-red-500/90 backdrop-blur-sm px-3 py-1 rounded-full text-white">
+                      <Icon name="mdi-heart" />
+                    </div>
                   </div>
-                  <div v-if="FavArray.includes(anime.media.id)"
-                    class="bg-red-500/90 backdrop-blur-sm px-3 py-1 rounded-full text-white">
-                    <Icon name="mdi-heart" />
+                </div>
+
+                <!-- Content -->
+                <div class="p-5 space-y-4">
+                  <div>
+                    <h3 class="text-lg font-bold text-white line-clamp-1 mb-1">
+                      {{ anime.media.title.native }}
+                    </h3>
+                    <p class="text-sm text-gray-400 line-clamp-1">
+                      {{ anime.media.title.english || anime.media.title.romaji }}
+                    </p>
+                  </div>
+
+                  <div class="space-y-1 text-sm text-gray-400">
+                    <p class="flex justify-between">
+                      <span>Started:</span>
+                      <span>{{ formatDate(anime.startedAt) }}</span>
+                    </p>
+                    <p class="flex justify-between">
+                      <span>Completed:</span>
+                      <span>{{ formatDate(anime.completedAt) }}</span>
+                    </p>
+                    <p class="flex justify-between">
+                      <span>Episodes:</span>
+                      <span>{{ anime.media.episodes }}</span>
+                    </p>
                   </div>
                 </div>
-              </div>
-
-              <!-- Content -->
-              <div class="p-5 space-y-4">
-                <div>
-                  <h3 class="text-lg font-bold text-white line-clamp-1 mb-1">
-                    {{ anime.media.title.native }}
-                  </h3>
-                  <p class="text-sm text-gray-400 line-clamp-1">
-                    {{ anime.media.title.english }}
-                  </p>
-                </div>
-
-                <div class="space-y-1 text-sm text-gray-400">
-                  <p class="flex justify-between">
-                    <span>Started:</span>
-                    <span>{{ formatDate(anime.startedAt) }}</span>
-                  </p>
-                  <p class="flex justify-between">
-                    <span>Completed:</span>
-                    <span>{{ formatDate(anime.completedAt) }}</span>
-                  </p>
-                  <p class="flex justify-between">
-                    <span>Episodes:</span>
-                    <span>{{ anime.media.episodes }}</span>
-                  </p>
-                </div>
-              </div>
+              </a>
             </li>
           </ul>
         </section>
@@ -273,53 +286,56 @@
           <ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
             <li v-for="anime in droppedAnimeList" :key="anime.media.title.romaji"
               class="group bg-slate-900/30 backdrop-blur-sm rounded-xl overflow-hidden transition-all duration-300 hover:scale-102 hover:shadow-xl hover:shadow-blue-500/10">
-              <!-- Image Container -->
-              <div class="relative aspect-[3/4] overflow-hidden">
-                <NuxtImg format="webp"  quality="80" :src="anime.media.coverImage.large" :alt="anime.media.title.native"
-                  class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110" />
-                <div
-                  class="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <a :href="`https://anilist.co/anime/${anime.media.id}`" target="_blank">
+                <!-- Image Container -->
+                <div class="relative aspect-[3/4] overflow-hidden">
+                  <NuxtImg format="webp" quality="80" :src="anime.media.coverImage.large"
+                    :alt="anime.media.title.native"
+                    class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110" />
+                  <div
+                    class="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
-                <!-- Badges -->
-                <div class="absolute top-3 right-3 flex gap-2">
-                  <div v-if="anime.score"
-                    class="bg-blue-500/90 backdrop-blur-sm px-3 py-1 rounded-full text-white font-bold flex items-center gap-1">
-                    <Icon name="mdi-star" class="text-yellow-300" />
-                    {{ anime.score }}
+                  <!-- Badges -->
+                  <div class="absolute top-3 right-3 flex gap-2">
+                    <div v-if="anime.score"
+                      class="bg-blue-500/90 backdrop-blur-sm px-3 py-1 rounded-full text-white font-bold flex items-center gap-1">
+                      <Icon name="mdi-star" class="text-yellow-300" />
+                      {{ anime.score }}
+                    </div>
+                    <div v-if="FavArray.includes(anime.media.id)"
+                      class="bg-red-500/90 backdrop-blur-sm px-3 py-1 rounded-full text-white">
+                      <Icon name="mdi-heart" />
+                    </div>
                   </div>
-                  <div v-if="FavArray.includes(anime.media.id)"
-                    class="bg-red-500/90 backdrop-blur-sm px-3 py-1 rounded-full text-white">
-                    <Icon name="mdi-heart" />
+                </div>
+
+                <!-- Content -->
+                <div class="p-5 space-y-4">
+                  <div>
+                    <h3 class="text-lg font-bold text-white line-clamp-1 mb-1">
+                      {{ anime.media.title.native }}
+                    </h3>
+                    <p class="text-sm text-gray-400 line-clamp-1">
+                      {{ anime.media.title.english || anime.media.title.romaji }}
+                    </p>
+                  </div>
+
+                  <div class="space-y-1 text-sm text-gray-400">
+                    <p class="flex justify-between">
+                      <span>Started:</span>
+                      <span>{{ formatDate(anime.startedAt) }}</span>
+                    </p>
+                    <p class="flex justify-between">
+                      <span>Completed:</span>
+                      <span>{{ formatDate(anime.completedAt) }}</span>
+                    </p>
+                    <p class="flex justify-between">
+                      <span>Episodes:</span>
+                      <span>{{ anime.media.episodes }}</span>
+                    </p>
                   </div>
                 </div>
-              </div>
-
-              <!-- Content -->
-              <div class="p-5 space-y-4">
-                <div>
-                  <h3 class="text-lg font-bold text-white line-clamp-1 mb-1">
-                    {{ anime.media.title.native }}
-                  </h3>
-                  <p class="text-sm text-gray-400 line-clamp-1">
-                    {{ anime.media.title.english }}
-                  </p>
-                </div>
-
-                <div class="space-y-1 text-sm text-gray-400">
-                  <p class="flex justify-between">
-                    <span>Started:</span>
-                    <span>{{ formatDate(anime.startedAt) }}</span>
-                  </p>
-                  <p class="flex justify-between">
-                    <span>Completed:</span>
-                    <span>{{ formatDate(anime.completedAt) }}</span>
-                  </p>
-                  <p class="flex justify-between">
-                    <span>Episodes:</span>
-                    <span>{{ anime.media.episodes }}</span>
-                  </p>
-                </div>
-              </div>
+              </a>
             </li>
           </ul>
         </section>
