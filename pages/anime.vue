@@ -2,13 +2,13 @@
   <div class="content">
     <div class="isError" v-if="isError == true">
       <div class="mt-7 max-sw-sm mx-auto text-center card">
-        <NuxtImg format="webp" quality="80" class="mt-7 mx-auto w-1/2 h-1/2" src="~/assets/img/403.png"
+        <NuxtImg format="webp" quality="80" alt="An error 403 looking like a V-tuber logo" class="mt-7 mx-auto w-1/2 h-1/2" src="~/assets/img/403.png"
           v-if="errorData.status == 403" />
-        <NuxtImg format="webp" quality="80" class="mt-7 mx-auto w-1/2 h-1/2" src="~/assets/img/404.png"
+        <NuxtImg format="webp" quality="80" alt="An error 404 looking like a V-tuber logo" class="mt-7 mx-auto w-1/2 h-1/2" src="~/assets/img/404.png"
           v-if="errorData.status == 404" />
-        <NuxtImg format="webp" quality="80" class="mt-7 mx-auto w-1/2 h-1/2" src="~/assets/img/500.png"
+        <NuxtImg format="webp" quality="80" alt="An error 500 looking like a V-tuber logo" class="mt-7 mx-auto w-1/2 h-1/2" src="~/assets/img/500.png"
           v-if="errorData.status == 500" />
-        <NuxtImg format="webp" quality="80" class="mt-7 mx-auto w-1/2 h-1/2" src="~/assets/img/503.png"
+        <NuxtImg format="webp" quality="80" alt="An error 503 looking like a V-tuber logo" class="mt-7 mx-auto w-1/2 h-1/2" src="~/assets/img/503.png"
           v-if="errorData.status == 503" />
 
         <p class="mt-7 text-3xl">{{ errorData.message }}</p>
@@ -23,14 +23,14 @@
       <div class="relative h-[300px] mb-24">
         <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black">
           <NuxtImg format="webp" quality="80" height="300" width="1216" fit="cover"
-            src="https://cdn.asthriona.com/i/2024/11/bluebox-banner.jpg" alt="Profile Banner"
+            src="https://cdn.asthriona.com/i/2024/11/bluebox-banner.jpg" alt="A banner image from the anime 'Blue Box' it represent one of the main character named 'Chiinatsu', she is sitting on a building steps reading a book."
             class="w-full h-full object-cover opacity-60" />
         </div>
 
         <!-- Profile Info -->
         <div class="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-1/2 flex flex-col items-center">
           <NuxtImg format="webp" quality="80"
-            src="https://cdn.asthriona.com/i/2024/08/04853fceaae02025080e4b40392ff247.png" alt="Profile Picture"
+            src="https://cdn.asthriona.com/i/2024/08/04853fceaae02025080e4b40392ff247.png" alt="Asthriona's Avatar, a female character with deep purple hairs, one eye is hidden by the hairs, and she has long pointy ears."
             class="w-32 h-32 rounded-full border-4 border-cyan-500 shadow-lg shadow-cyan-500/20" />
           <div class="mt-4 text-center">
             <h1 class="text-3xl font-bold text-white">Asthriona</h1>
@@ -82,7 +82,7 @@
                 <!-- Image Container -->
                 <div class="relative aspect-[3/4] overflow-hidden">
                   <NuxtImg format="webp" quality="80" :src="anime.media.coverImage.large"
-                    :alt="anime.media.title.romaji"
+                    :alt="`${anime.media.title.romaji}'s cover image'`"
                     class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110" />
                   <div
                     class="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -158,7 +158,7 @@
                 <!-- Image Container -->
                 <div class="relative aspect-[3/4] overflow-hidden">
                   <NuxtImg format="webp" quality="80" :src="anime.media.coverImage.large"
-                    :alt="anime.media.title.romaji"
+                    :alt="`${anime.media.title.romaji}'s cover image'`"
                     class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110" />
                   <div
                     class="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -223,7 +223,7 @@
                 <!-- Image Container -->
                 <div class="relative aspect-[3/4] overflow-hidden">
                   <NuxtImg format="webp" quality="80" :src="anime.media.coverImage.large"
-                    :alt="anime.media.title.romaji"
+                    :alt="`${anime.media.title.romaji}'s cover image'`"
                     class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110" />
                   <div
                     class="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -290,7 +290,7 @@
                 <!-- Image Container -->
                 <div class="relative aspect-[3/4] overflow-hidden">
                   <NuxtImg format="webp" quality="80" :src="anime.media.coverImage.large"
-                    :alt="anime.media.title.native"
+                    :alt="`${anime.media.title.romaji}'s cover image'`"
                     class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110" />
                   <div
                     class="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
