@@ -2,7 +2,7 @@
     <div v-for="post in props.posts" :key="post.slug"
         class="bg-black rounded-lg shadow-md overslow-hidden mt-8 border border-gradient-to-r from-cyan-500 to-blue-500">
         <NuxtLink :to="post._path">
-            <NuxtImg format="webp"  quality="80" :src="post.banner" alt="Blog Post cover image" class="w-full h-48 rounded object-cover object-center" />
+            <NuxtImg format="webp"  quality="80" :src="post.banner" :alt="`Blog post banner for a post titled '${post.title}'`" class="w-full h-48 rounded object-cover object-center" />
         </NuxtLink>
         <div class="p-6">
             <h2 class="text-xl font-bold mb-2">{{ post.title }}</h2>

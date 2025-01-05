@@ -1,5 +1,5 @@
 <template>
-    <NuxtImg format="webp" quality="80" fit="cover" :src="data.banner" class="banner-img mx-auto max-w-7xl rounded-lg h-64 w-full object-cover" alt="" />
+    <NuxtImg format="webp" quality="80" fit="cover" :src="data.banner" class="banner-img mx-auto max-w-7xl rounded-lg h-64 w-full object-cover" :alt="`${title}'s cover image.'`" />
     <span class="mx-auto mt-7 text-slate-800">Publised on: {{ data.publishedDate }}</span>
     <ContentRenderer :value="data" class="prose my-10 mx-auto max-w-7xl text-slate-300" />
     <span class="mx-auto mt-7 text-slate-800" v-if="data.editedDate !== null">Last edited: {{ data.editedDate }}</span>

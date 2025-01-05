@@ -25,7 +25,7 @@
                 project, and dev-logs.
             </p>
         </div>
-        <NuxtImg src="https://cdn.asthriona.com/i/2024/08/04853fceaae02025080e4b40392ff247.png" height="384" width="384"
+        <NuxtImg src="https://cdn.asthriona.com/i/2024/08/04853fceaae02025080e4b40392ff247.png" alt="Asthriona's Avatar, a female character with deep purple hairs, one eye is hidden by the hairs, and she has long pointy ears." height="384" width="384"
             fit="cover" format="webp" quality="80" class="w-1/2 h-1/2 md:max-w-sm p8 mx-auto rounded" />
     </section>
     <section>

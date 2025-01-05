@@ -6,7 +6,7 @@
         <!-- Brand Section -->
         <div class="space-y-4">
           <NuxtImg height="32" width="56" format="svg" quality="40"
-            src="https://cdn.asthriona.com/static/Asthriona-SL.svg" alt="Asthriona Ltd." class="h-8 w-auto" />
+            src="https://cdn.asthriona.com/static/Asthriona-SL.svg" alt="Asthriona Ltd. logo" class="h-8 w-auto" />
           <p class="text-gray-400 text-sm">
             Exploring technology, sharing knowledge, and building the future.
           </p>
