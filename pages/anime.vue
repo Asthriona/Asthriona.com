@@ -81,7 +81,7 @@
               <a :href="`https://anilist.co/anime/${anime.media.id}`" target="_blank">
                 <!-- Image Container -->
                 <div class="relative aspect-[3/4] overflow-hidden">
-                  <NuxtImg format="webp" quality="80" :src="anime.media.coverImage.large"
+                  <NuxtImg format="webp" quality="80" :src="anime.media.coverImage.extraLarge"
                     :alt="`${anime.media.title.romaji}'s cover image'`"
                     class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110" />
                   <div
@@ -157,7 +157,7 @@
               <a :href="`https://anilist.co/anime/${anime.media.id}`" target="_blank">
                 <!-- Image Container -->
                 <div class="relative aspect-[3/4] overflow-hidden">
-                  <NuxtImg format="webp" quality="80" :src="anime.media.coverImage.large"
+                  <NuxtImg format="webp" quality="80" :src="anime.media.coverImage.extraLarge"
                     :alt="`${anime.media.title.romaji}'s cover image'`"
                     class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110" />
                   <div
@@ -222,7 +222,7 @@
               <a :href="`https://anilist.co/anime/${anime.media.id}`" target="_blank">
                 <!-- Image Container -->
                 <div class="relative aspect-[3/4] overflow-hidden">
-                  <NuxtImg format="webp" quality="80" :src="anime.media.coverImage.large"
+                  <NuxtImg format="webp" quality="80" :src="anime.media.coverImage.extraLarge"
                     :alt="`${anime.media.title.romaji}'s cover image'`"
                     class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110" />
                   <div
@@ -289,7 +289,7 @@
               <a :href="`https://anilist.co/anime/${anime.media.id}`" target="_blank">
                 <!-- Image Container -->
                 <div class="relative aspect-[3/4] overflow-hidden">
-                  <NuxtImg format="webp" quality="80" :src="anime.media.coverImage.large"
+                  <NuxtImg format="webp" quality="80" :src="anime.media.coverImage.extraLarge"
                     :alt="`${anime.media.title.romaji}'s cover image'`"
                     class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110" />
                   <div
