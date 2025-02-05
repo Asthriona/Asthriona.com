@@ -14,6 +14,7 @@ query {
           }
           coverImage {
             extraLarge
+            large
           }
           episodes
           status
@@ -35,6 +36,7 @@ query {
               episodes
               coverImage {
                 extraLarge
+                large
               }
               startDate {
                 year
