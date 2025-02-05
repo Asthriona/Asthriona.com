@@ -13,7 +13,7 @@ query {
             native
           }
           coverImage {
-            large
+            extraLarge
           }
           episodes
           status
@@ -34,7 +34,7 @@ query {
               }
               episodes
               coverImage {
-                large
+                extraLarge
               }
               startDate {
                 year
@@ -48,7 +48,7 @@ query {
               status
               isFavourite
             }
-            progress  # Number of episodes you've watched
+            progress
             score
             status
             startedAt {
