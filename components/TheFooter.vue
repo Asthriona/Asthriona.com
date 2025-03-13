@@ -41,7 +41,7 @@
         <div>
           <h3 class="text-white font-semibold mb-4">Support My Work</h3>
           <div class="space-y-4">
-            <a href="buymeacoffee.com/Asthriona" target="_blank" rel="noopener noreferrer"
+            <a href="https://buymeacoffee.com/Asthriona" target="_blank" rel="noopener noreferrer"
               class="block w-fit transform transition-transform duration-200 hover:scale-105">
               <img class="h-8" src="https://cdn.asthriona.com/i/2024/10/%25pn_241022-191853.png"
                 alt="Buy Me a Coffee" />
