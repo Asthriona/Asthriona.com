@@ -47,7 +47,4 @@ pre {
     font-size: 1rem !important;
     line-height: 1.6 !important;
 }
-code {
-    color: tomato
-}
 </style>
