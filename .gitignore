@@ -26,3 +26,5 @@ logs
 # Local Netlify folder
 .netlify
 .qodo
+yarn.lock
+package-lock.json
