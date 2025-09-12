@@ -3,7 +3,7 @@ title: "The Great Bathroom Break: A Critical Analysis of Number Two"
 description: "it's a universal truth: when nature calls, we answer."
 banner: "https://cdn.asthriona.com/i/2024/08/04853fceaae02025080e4b40392ff247.png"
 published: false
-publishedDate: 01/01/2023
+date: 01/01/2023
 editedDate: 05/01/2023
 tags:
   - taking

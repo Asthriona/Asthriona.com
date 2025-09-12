@@ -3,7 +3,7 @@ title: "Asthriona.com V4!"
 description: "After being down for a while, My website comes back with a new look!"
 banner: "https://raw.githubusercontent.com/SAWARATSUKI/KawaiiLogos/main/ResponseCode/503%20ServiceUnavailable.png"
 published: true
-publishedDate: 09/09/2024
+date: 09/09/2024
 editedDate: null
 tags:
   - Blog
