@@ -23,11 +23,15 @@ export default defineNuxtConfig({
     }
   },
   css: ['~/assets/css/main.css'],
-  modules: ['@nuxtjs/tailwindcss', '@nuxt/icon', '@nuxt/content', "@nuxt/image"],
+  modules: ['@nuxtjs/tailwindcss', '@nuxt/icon', '@nuxt/content', "@nuxt/image", '@nuxt/content'],
   content: {
-    highlight: {
-      theme: 'nord',
-      preload: ['ts', 'js', 'css', 'java', 'json', 'bash', 'vue']
+    build: {
+      markdown: {
+        highlight: {
+          theme: "github-dark"
+        }
+      }
     }
   }
+
 })
