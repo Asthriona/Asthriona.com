@@ -23,11 +23,11 @@ useHead({
 })
 // This is only testing, Need to be check with some card validator. 
 useSeoMeta({
-    title: `Asthriona - ${data.title}`,
-    ogTitle: `Asthriona - ${data.title}`,
-    description: data.description,
-    ogDescription: data.description,
-    ogImage: "https://raw.githubusercontent.com/SAWARATSUKI/KawaiiLogos/main/ResponseCode/503%20ServiceUnavailable.png",
+    title: `Asthriona - ${data.value.seo.title}`,
+    ogTitle: `Asthriona - ${data.value.seo.description}`,
+    description: data.value.description,
+    ogDescription: data.value.description,
+    ogImage: data.value.meta.banner || "https://raw.githubusercontent.com/SAWARATSUKI/KawaiiLogos/main/ResponseCode/503%20ServiceUnavailable.png",
     twitterCard: 'summary_large_image',
 })
 </script>
