@@ -24,7 +24,7 @@ useHead({
 // This is only testing, Need to be check with some card validator. 
 useSeoMeta({
     title: `Asthriona - ${data.value.seo.title}`,
-    ogTitle: `Asthriona - ${data.value.seo.description}`,
+    ogTitle: `Asthriona - ${data.value.seo.title}`,
     description: data.value.description,
     ogDescription: data.value.description,
     ogImage: data.value.meta.banner || "https://raw.githubusercontent.com/SAWARATSUKI/KawaiiLogos/main/ResponseCode/503%20ServiceUnavailable.png",
