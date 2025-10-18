@@ -8,7 +8,6 @@
 
 <script setup>
 const route = useRoute()
-console.log(route.path)
 const { data } = await useAsyncData(route.path, () => {
     return queryCollection('blog').path(route.path).first()
 })
