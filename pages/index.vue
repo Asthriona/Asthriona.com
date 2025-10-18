@@ -30,27 +30,18 @@
     </section>
     <section>
         <h2 class="text-3xl font-bold mt-8">Latest Blog Posts</h2>
-        <!--<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" v-if="posts.length">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" v-if="posts.length">
             <ThePost :posts="posts" />
         </div> 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" v-else>
             <h2 class="text-xl font-bold mt-8">I haven't posted anything yet!</h2>
-        </div>-->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <h2 class="mt-8">Oh no!!! The posts bit is broken!!!</h2>
         </div>
     </section>
 </template>
 
 <script setup>
-const { data: posts } = await useAsyncData("latest-posts", () =>
-    // find post set as published
-    queryContent('/blog')
-        .where({ published: true })
-        .sort({ publishedDate: -1 })
-        .limit(3)
-        .find()
-)
+// Get the blog shits.
+const posts = await queryCollection('blog').where('published', '=', true).order('date', 'DESC').limit(3).all()
 // This is only testing, Need to be check with some card validator. 
 useSeoMeta({
     title: 'Asthriona',

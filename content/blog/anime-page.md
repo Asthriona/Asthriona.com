@@ -3,14 +3,12 @@ title: "Creating a Dynamic anime page!"
 description: "Are you wondering how I made my anime page? Let me Explain!"
 banner: "https://cdn.asthriona.com/i/2024/11/anime-page-banner.jpg"
 published: true
-publishedDate: 10/25/2024
+date: 10/25/2024
 editedDate: null
 tags:
   - Blog
   - development
 ---
-# Creating a Dynamic anime page!
-
 Hello friends!  
 I've been working a lot on this website recently, getting back into development after a while, and on a project that's just for fun it's... well been fun you know?  
 So what have I done? You clicked on this article, so you already know! I made myself an anime page!  
@@ -28,7 +26,7 @@ I wanted something that simply displays all the anime I'm watching, and order th
 First things first, We need to query Anilist:  
 I also had an idea of how I wanted things to be ordered, I'll explain that a bit later.  
 After a great time of figuring things out as I never understood how GraphQL works I ended up with this:  
-```js
+```javascript
 query {
       MediaListCollection(userName: "asthriona", type: ANIME) {
         lists {
@@ -76,7 +74,7 @@ query {
     }
 ```
 then we need to take care of the data, I knew how it would looks like since I was figuring things out in the [Anilist GraphQL UI](https://anilist.co/graphiql).  
-```js
+```javascript
 "MediaListCollection": {
       "lists": [
         {
@@ -177,12 +175,12 @@ query {
     const response = await fetch('https://graphql.anilist.co', {
         method: 'POST',
         headers: {
-            'Content-Type': 'application/json',
+            'Content-Type': 'application/jsxon',
         },
-        body: JSON.stringify({ query }),
+        body: jsxON.stringify({ query }),
     });
 
-    const data = await response.json();
+    const data = await response.jsxon();
     // return for the front to grab.
     return data;
 });
@@ -224,7 +222,7 @@ Then for the Currently watching list I had order for each anime: (by priority)
 2. Most watched episodes  
   
 so for exemple as I write those lines I have:  
-```js
+```javascript
 ["DAN DA DAN", "Blue Box", "SPY×FAMILY", "Mr. Osomatsu"]
 ```
 In that array, we have 4 anime, 2 releasing, and 2 that are finished releasing, but I'm still watching.  
@@ -266,7 +264,7 @@ this list is in the right order; now we just need to make it pretty and decide w
       <h2 class="text-2xl font-semibold mb-4">Currently Watching ({{ currentAnimeList.length }})</h2>
       <!-- Create a list of those -->
       <ul v-if="currentAnimeList" class="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-4 gap-6">
-      <!-- v-for is like a forEach loop, in JS. -->
+      <!-- v-for is like a forEach loop, in js. -->
         <li v-for="anime in currentAnimeList" :key="anime.media.title.native"
           class="bg-black rounded-lg shadow-md overflow-hidden p-4 border border-gradient-to-r from-cyan-500 to-blue-500">
           <!-- Get the anime cover and display it with the title as "alt" -->
