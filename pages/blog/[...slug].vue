@@ -7,19 +7,15 @@
 </template>
 
 <script setup>
-console.log("HELLO!!!")
 const route = useRoute()
 console.log(route.path)
 const { data } = await useAsyncData(route.path, () => {
     return queryCollection('blog').path(route.path).first()
 })
 
-console.log(data)
-
-
 // The metadata stuff for ranking and whatnot. 
 useHead({
-    title: `Asthriona - ${data.title}`,
+    title: `Asthriona - ${data.value.title}`,
     meta: [{
         name: "description",
         content: data.description
