@@ -30,7 +30,7 @@
         <!-- Profile Info -->
         <div class="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-1/2 flex flex-col items-center">
           <NuxtImg format="webp" quality="80"
-            src="https://cdn.asthriona.com/i/2024/08/04853fceaae02025080e4b40392ff247.png" alt="Asthriona's Avatar, a female character with deep purple hairs, one eye is hidden by the hairs, and she has long pointy ears."
+            src="https://cdn.asthriona.com/static/2026_pfp.jpg" alt="Asthriona's Avatar, a female character with deep purple hairs, one eye is hidden by the hairs, and she has long pointy ears."
             class="w-32 h-32 rounded-full border-4 border-cyan-500 shadow-lg shadow-cyan-500/20" />
           <div class="mt-4 text-center">
             <h1 class="text-3xl font-bold text-white">Asthriona</h1>

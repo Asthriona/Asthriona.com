@@ -11,7 +11,7 @@
                 I'm Asthriona, You can call me <i class="text-white">Makoto</i>, but most of my English speaking friends
                 call me "<i class="text-white">Mako</i>" (except TheJudge who likes to call me "Mako-san").
                 I'm a Full-Stack JS developper, who like to pick-up any sorts of skills, such as anything related to
-                cars, and computer science, lock picking, Video Games, whatever.
+                cars, and computer science, Video Games, whatever.
                 As a programer, I'm self-taught. I went to school for networking and datacenter management.
             </p>
             <p class="text-lg py-2">
@@ -25,7 +25,7 @@
                 project, and dev-logs.
             </p>
         </div>
-        <NuxtImg src="https://cdn.asthriona.com/i/2024/08/04853fceaae02025080e4b40392ff247.png" alt="Asthriona's Avatar, a female character with deep purple hairs, one eye is hidden by the hairs, and she has long pointy ears." height="384" width="384"
+        <NuxtImg src="https://cdn.asthriona.com/static/2026_pfp.jp" alt="Asthriona's Avatar, a female character with deep purple hairs, one eye is hidden by the hairs, and she has long pointy ears." height="384" width="384"
             fit="cover" format="webp" quality="80" class="w-1/2 h-1/2 md:max-w-sm p8 mx-auto rounded" />
     </section>
     <section>
@@ -48,7 +48,7 @@ useSeoMeta({
     ogTitle: 'Asthriona',
     description: 'Welcome to my personal Website! Click to learn more!',
     ogDescription: 'Welcome to my personal Website! Click to learn more!',
-    ogImage: 'https://cdn.asthriona.com/i/2024/08/04853fceaae02025080e4b40392ff247.png',
+    ogImage: 'https://cdn.asthriona.com/static/2026_pfp.jp',
     twitterCard: 'summary_large_image',
 })
 // The metadata stuff for ranking and whatnot. 
