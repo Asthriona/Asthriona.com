@@ -11,7 +11,7 @@
                 I'm Asthriona, You can call me <i class="text-white">Makoto</i>, but most of my English speaking friends
                 call me "<i class="text-white">Mako</i>" (except TheJudge who likes to call me "Mako-san").
                 I'm a Full-Stack JS developper, who like to pick-up any sorts of skills, such as anything related to
-                cars, and computer science, lock picking, Video Games, whatever.
+                cars, and computer science, Video Games, whatever.
                 As a programer, I'm self-taught. I went to school for networking and datacenter management.
             </p>
             <p class="text-lg py-2">
