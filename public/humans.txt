@@ -1,5 +1,5 @@
-If you are a hacker, please use /hacker.txt
-If you are a robot, use /robots.txt
+# If you are a hacker, please use /hacker.txt
+# If you are a robot, use /robots.txt
 
            
     /* TEAM */

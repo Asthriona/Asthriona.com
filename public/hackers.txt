@@ -1,8 +1,11 @@
-If you are a robot, use /robots.txt
-if you are a human, use humans.txt
-if you are a hacker, please sign below.
+# If you are a robot, use /robots.txt
+# if you are a human, use humans.txt
+# if you are a hacker, please sign below.
 
-Contacts: ping@asthriona.con
+Contacts: hackers@asthriona.con
 Twitter: @Asthriona
 Github: Github.com/Asthriona
 Repo: Github: Github.com/Asthriona/asthriona.com
+
+to report security vulnerabilities, please open an issue on GitHub.
+https://github.com/Asthriona/Asthriona.com/issues/new

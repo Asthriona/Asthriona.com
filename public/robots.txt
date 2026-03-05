@@ -1,5 +1,5 @@
-If you are a human please use /humans.txt
-If you are a hacker, please use /hacker.txt
+# If you are a human please use /humans.txt
+# If you are a hacker, please use /hacker.txt
 
 User-agent: *
 Disallow: 
