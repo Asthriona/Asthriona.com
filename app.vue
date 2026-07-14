@@ -8,6 +8,31 @@
   </div>
 </template>
 
+<script setup>
+useHead({
+  link: [
+    { 
+      rel: 'alternate', 
+      type: 'application/rss+xml', 
+      title: 'Asthriona - Blog Feed (RSS)', 
+      href: '/feed.xml' 
+    },
+    { 
+      rel: 'alternate', 
+      type: 'application/atom+xml', 
+      title: 'Asthriona - Blog Feed (Atom)', 
+      href: '/feed.atom' 
+    },
+    { 
+      rel: 'alternate', 
+      type: 'application/feed+json', 
+      title: 'Asthriona - Blog Feed (JSON)', 
+      href: '/feed.json' 
+    }
+  ]
+})
+</script>
+
 <style scoped>
   .ai-be-gone {
     display: none;
