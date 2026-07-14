@@ -2,10 +2,10 @@
 # if you are a human, use humans.txt
 # if you are a hacker, please sign below.
 
-Contacts: ping@asthriona.con
+Contacts: hackers@asthriona.com
 Twitter: @Asthriona
 Github: Github.com/Asthriona
 Repo: Github: Github.com/Asthriona/asthriona.com
 
 Vulnerability reporting:
-Please report security vulnerabilities privately to ping@asthriona.con. Do not open a public GitHub issue for security reports.
+Please report security vulnerabilities privately to hackers@asthriona.com. Do not open a public GitHub issue for security reports.
