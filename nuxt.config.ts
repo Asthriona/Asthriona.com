@@ -69,7 +69,7 @@ export default defineNuxtConfig({
       common: {
         revisit: "6h",
         fixDateFields: true,
-        feed: { title: "Asthriona" },
+        feed: { title: "Asthriona - Blog Feed" },
         collections: ["blog"],
         templateMapping: ["", "meta", "meta.feedme"],
         mapping: [["link", "path"]],
