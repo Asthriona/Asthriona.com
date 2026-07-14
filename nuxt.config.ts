@@ -3,7 +3,7 @@ export default defineNuxtConfig({
   compatibilityDate: "2024-04-03",
   image: {
     provider: "netlify",
-    domains: ["cdn.asthriona.com"],
+    domains: ["cdn.asthriona.com", "raw.githubusercontent.com"],
   },
   devtools: {
     enabled: true,
@@ -30,6 +30,7 @@ export default defineNuxtConfig({
     "@nuxt/image",
     "@nuxt/content",
     "@nuxtjs/sitemap",
+    "nuxt-feedme",
   ],
   content: {
     build: {
@@ -40,11 +41,45 @@ export default defineNuxtConfig({
       },
     },
   },
+  // The Sitemap shit, so when I drop Twitter I don't just drop off the face of the earth.
   site: {
     url: "https://asthriona.com",
     name: "Asthriona",
   },
   sitemap: {
     autoLastmod: true,
+  },
+
+  // FEED ME DADDY!!! (rss stuff.)
+
+  /* 
+  * TODO: Pre-production tests. 
+  * I have no idea how all of this shit works, and if the RSS readers or whatever will get the right links to access the pages as it only shows /blog/[post] in the feeds.
+  * So yeah. To be tested.
+  */
+
+  feedme: {
+    defaults: {
+      common: true,
+      routes: true,
+      mapping: true,
+      mappingTemplates: true,
+    },
+    feeds: {
+      common: {
+        revisit: "6h",
+        fixDateFields: true,
+        feed: { title: "Asthriona" },
+        collections: ["blog"],
+        templateMapping: ["", "meta", "meta.feedme"],
+        mapping: [["link", "path"]],
+        charset: "utf-8",
+      },
+      routes: {
+        "/feed.atom": { type: "atom1" },
+        "/feed.json": { type: "json1" },
+        "/feed.xml": { type: "rss2" },
+      },
+    },
   },
 });
