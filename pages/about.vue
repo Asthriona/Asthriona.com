@@ -104,4 +104,9 @@ const links = [
   { name: "YouTube", href: "https://youtube.com/@Asthriona", icon: "mdi:youtube" },
   { name: "Instagram", href: "https://www.instagram.com/asthriona.dev/", icon: "mdi:instagram" },
 ]
+
+useSeoMeta({
+  title: 'About Me - Asthriona',
+  description: 'Learn more about Asthriona, my background, and my work.'
+})
 </script>
