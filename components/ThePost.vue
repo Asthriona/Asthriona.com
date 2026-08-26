@@ -1,6 +1,6 @@
 <template>
     <div v-for="post in props.posts" :key="post.slug"
-        class="bg-black rounded-lg shadow-md overslow-hidden mt-8 border border-gradient-to-r from-cyan-500 to-blue-500">
+        class="bg-black rounded-lg shadow-md overflow-hidden mt-8 border border-gradient-to-r from-cyan-500 to-blue-500">
         <NuxtLink :to="post._path">
             <NuxtImg format="webp"  quality="80" :src="post.meta.banner" :alt="`Blog post banner for a post titled '${post.title}'`" class="w-full h-48 rounded object-cover object-center" />
         </NuxtLink>

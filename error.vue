@@ -1,5 +1,5 @@
 <template>
-    <div class="mt-7 max-sw-sm mx-auto text-center card">
+    <div class="mt-7 max-w-sm mx-auto text-center card">
         <img class="mt-7 mx-auto w-1/2 h-1/2" src="~/assets/img/403.png" v-if="error.statusCode== 403" />
         <img class="mt-7 mx-auto w-1/2 h-1/2" src="~/assets/img/404.png" v-if="error.statusCode== 404" />
         <img class="mt-7 mx-auto w-1/2 h-1/2" src="~/assets/img/500.png" v-if="error.statusCode== 500" />
