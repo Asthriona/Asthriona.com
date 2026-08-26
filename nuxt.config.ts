@@ -71,9 +71,9 @@ export default defineNuxtConfig({
         charset: "utf-8",
       },
       routes: {
-        "/feed.atom": { type: "atom1" },
-        "/feed.json": { type: "json1" },
-        "/feed.xml": { type: "rss2" },
+        "/feed.atom": { type: "atom1", feed: { title: "Asthriona - Blog Feed" } },
+        "/feed.json": { type: "json1", feed: { title: "Asthriona - Blog Feed" } },
+        "/feed.xml": { type: "rss2", feed: { title: "Asthriona - Blog Feed" } },
       },
     },
   },
