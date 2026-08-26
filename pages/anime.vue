@@ -391,40 +391,31 @@ const { data } = await useAsyncData('animeList', async () => {
   }
 });
 
-const userFavorites = data?.value.user.favorites;
+const userFavorites = data?.value?.user?.favorites || [];
 const FavArray = []
-// Get a list of ID from the fav list: 
 userFavorites.forEach(a => {
-  if (!userFavorites) return;
   FavArray.push(a.id);
 });
 
-// Process the data: filter for currently watching and history
-const currentAnimeList = data?.value.animeList
+const animeList = data?.value?.animeList || [];
+
+const currentAnimeList = animeList
   .filter(entry => entry.status === 'CURRENT')
   .sort((a, b) => {
     const aIsAiring = a.media.nextAiringEpisode ? 1 : 0;
     const bIsAiring = b.media.nextAiringEpisode ? 1 : 0;
-
-    if (aIsAiring === bIsAiring) {
-      // If both are either airing or not, sort by progress
-      return b.progress - a.progress;
-    }
-
-    // Prioritize airing anime first
+    if (aIsAiring === bIsAiring) return b.progress - a.progress;
     return bIsAiring - aIsAiring;
   });
-const animeHistory = data?.value.animeList
-  ?.filter(entry => entry.status === 'COMPLETED')
-  ?.sort((a, b) => {
-    // Convert the completedAt object into a Date object for sorting
+const animeHistory = animeList
+  .filter(entry => entry.status === 'COMPLETED')
+  .sort((a, b) => {
     const dateA = new Date(a.completedAt.year, a.completedAt.month - 1, a.completedAt.day);
     const dateB = new Date(b.completedAt.year, b.completedAt.month - 1, b.completedAt.day);
-
     return dateB - dateA;
   });
-const pausedAnimeList = data?.value.animeList.filter(entry => entry.status === 'PAUSED');
-const droppedAnimeList = data?.value.animeList.filter(entry => entry.status === 'DROPPED');
+const pausedAnimeList = animeList.filter(entry => entry.status === 'PAUSED');
+const droppedAnimeList = animeList.filter(entry => entry.status === 'DROPPED');
 
 // Helper function to format the date
 const formatDate = (date) => {
