@@ -1,5 +1,5 @@
 <template>
-<NuxtImg format="webp" quality="80" fit="cover" :src="data.meta.banner" class="banner-img mx-auto max-w-7xl rounded-lg h-64 w-full object-cover" :alt="`${data.title}'s cover image.'`" />
+<NuxtImg format="webp" quality="80" fit="cover" :src="data.meta.banner" class="banner-img mx-auto max-w-7xl rounded-lg h-64 w-full object-cover" :alt="`${data.title}'s cover image`" />
 <h1 class="text-4xl mt-8 mb-8">{{ data.title }}</h1>
  
     <ContentRenderer :value="data" />
