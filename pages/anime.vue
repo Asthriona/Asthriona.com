@@ -12,9 +12,9 @@
           v-if="errorData.status == 503" />
 
         <p class="mt-7 text-3xl">{{ errorData.message }}</p>
-        <a href="/"><button
-            class=" mt-7 text-sm font-semibold inline-block py-2 px-4 rounded-lg text-slate-300 uppercase last:mr-0 mr-4 border border-gradient-to-r from-cyan-500 to-blue-500">Go
-            home!</button></a>
+        <NuxtLink to="/"
+            class="mt-7 text-sm font-semibold inline-block py-2 px-4 rounded-lg text-slate-300 uppercase last:mr-0 mr-4 border border-gradient-to-r from-cyan-500 to-blue-500">Go
+            home!</NuxtLink>
       </div>
     </div>
     <!-- Main Content -->
@@ -369,15 +369,15 @@ useSeoMeta({
   ogImage: 'https://cdn.asthriona.com/static/2026_pfp.jpg'
 })
 
-let isError;
-let errorData;
+const isError = ref(false);
+const errorData = ref(null);
 // Fetch the anime data from the API
 const { data } = await useAsyncData('animeList', async () => {
   const response = await $fetch('/api/anilist');
   // Check for API errors and set custom error message
   if (response.errors) {
-    isError = true;
-    errorData = response.errors[0]
+    isError.value = true;
+    errorData.value = response.errors[0]
   } else {
     const animeList = response?.data?.MediaListCollection?.lists.filter((_, index) => index !== 3).flatMap(list => list.entries);
     const userFavorites = response?.data?.User?.favourites?.anime?.nodes || [];
