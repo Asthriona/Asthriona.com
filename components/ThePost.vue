@@ -16,6 +16,4 @@
 
 <script setup>
 const props = defineProps(['posts'])
-console.log(props.posts[0].children)
-
 </script>
