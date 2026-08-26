@@ -1,7 +1,7 @@
 <template>
   <div class="content">
     <div class="isError" v-if="isError == true">
-      <div class="mt-7 max-sw-sm mx-auto text-center card">
+      <div class="mt-7 max-w-sm mx-auto text-center card">
         <NuxtImg format="webp" quality="80" alt="An error 403 looking like a V-tuber logo" class="mt-7 mx-auto w-1/2 h-1/2" src="~/assets/img/403.png"
           v-if="errorData.status == 403" />
         <NuxtImg format="webp" quality="80" alt="An error 404 looking like a V-tuber logo" class="mt-7 mx-auto w-1/2 h-1/2" src="~/assets/img/404.png"
