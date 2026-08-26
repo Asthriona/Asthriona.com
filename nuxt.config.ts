@@ -52,12 +52,6 @@ export default defineNuxtConfig({
 
   // FEED ME DADDY!!! (rss stuff.)
 
-  /* 
-  * TODO: Pre-production tests. 
-  * I have no idea how all of this shit works, and if the RSS readers or whatever will get the right links to access the pages as it only shows /blog/[post] in the feeds.
-  * So yeah. To be tested.
-  */
-
   feedme: {
     defaults: {
       common: true,
@@ -73,6 +67,7 @@ export default defineNuxtConfig({
         collections: ["blog"],
         templateMapping: ["", "meta", "meta.feedme"],
         mapping: [["link", "path"]],
+        replace: [[/^(?=\/)/.toString(), "https://asthriona.com"]],
         charset: "utf-8",
       },
       routes: {
