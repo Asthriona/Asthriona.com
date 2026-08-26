@@ -26,7 +26,7 @@ useSeoMeta({
     ogTitle: `Asthriona - ${data.value.seo.title}`,
     description: data.value.description,
     ogDescription: data.value.description,
-    ogImage: data.value.meta.banner || "https://raw.githubusercontent.com/SAWARATSUKI/KawaiiLogos/main/ResponseCode/503%20ServiceUnavailable.png",
+    ogImage: data.value.meta.banner || "https://raw.githubusercontent.com/SAWARATSUKI/KawaiiLogos/refs/heads/main/ResponseCode/png/503%20ServiceUnavailable.png",
     twitterCard: 'summary_large_image',
 })
 </script>

@@ -16,5 +16,4 @@
 
 <script setup>
 const posts = await queryCollection('blog').where('published', '=', true).order('date', 'DESC').all()
-console.log(posts)
 </script>

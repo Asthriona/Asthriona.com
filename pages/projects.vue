@@ -72,4 +72,9 @@ const projects = [
         isActive: false
     },
 ]
+
+useSeoMeta({
+  title: 'Projects - Asthriona',
+  description: 'A showcase of my past and present development projects, including this website.'
+})
 </script>

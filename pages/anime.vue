@@ -364,6 +364,12 @@
 <script setup>
 import { useAsyncData } from 'nuxt/app';
 
+useSeoMeta({
+  title: 'My Anime List - Asthriona',
+  description: 'My current watching progress, completed shows, and ratings synced via AniList.',
+  ogImage: 'https://cdn.asthriona.com/static/2026_pfp.jpg'
+})
+
 let isError;
 let errorData;
 // Fetch the anime data from the API
