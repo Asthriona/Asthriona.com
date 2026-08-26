@@ -18,7 +18,6 @@
     "better-sqlite3": "^13.0.3",
     "nuxt": "^4.1.1",
     "nuxt-feedme": "2.1.0",
-    "nuxt-icon": "^1.0.0-beta.7",
     "vue": "3.5.41"
   },
   "devDependencies": {

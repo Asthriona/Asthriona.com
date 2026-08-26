@@ -28,7 +28,6 @@ export default defineNuxtConfig({
     "@nuxt/icon",
     "@nuxt/content",
     "@nuxt/image",
-    "@nuxt/content",
     "@nuxtjs/sitemap",
     "nuxt-feedme",
   ],

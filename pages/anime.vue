@@ -1,7 +1,7 @@
 <template>
   <div class="content">
     <div class="isError" v-if="isError == true">
-      <div class="mt-7 max-sw-sm mx-auto text-center card">
+      <div class="mt-7 max-w-sm mx-auto text-center card">
         <NuxtImg format="webp" quality="80" alt="An error 403 looking like a V-tuber logo" class="mt-7 mx-auto w-1/2 h-1/2" src="~/assets/img/403.png"
           v-if="errorData.status == 403" />
         <NuxtImg format="webp" quality="80" alt="An error 404 looking like a V-tuber logo" class="mt-7 mx-auto w-1/2 h-1/2" src="~/assets/img/404.png"
@@ -12,9 +12,9 @@
           v-if="errorData.status == 503" />
 
         <p class="mt-7 text-3xl">{{ errorData.message }}</p>
-        <a href="/"><button
-            class=" mt-7 text-sm font-semibold inline-block py-2 px-4 rounded-lg text-slate-300 uppercase last:mr-0 mr-4 border border-gradient-to-r from-cyan-500 to-blue-500">Go
-            home!</button></a>
+        <NuxtLink to="/"
+            class="mt-7 text-sm font-semibold inline-block py-2 px-4 rounded-lg text-slate-300 uppercase last:mr-0 mr-4 border border-gradient-to-r from-cyan-500 to-blue-500">Go
+            home!</NuxtLink>
       </div>
     </div>
     <!-- Main Content -->
@@ -82,7 +82,7 @@
                 <!-- Image Container -->
                 <div class="relative aspect-[3/4] overflow-hidden">
                   <NuxtImg format="webp" quality="80" :src="anime.media.coverImage.extraLarge"
-                    :alt="`${anime.media.title.romaji}'s cover image'`"
+                    :alt="`${anime.media.title.romaji}'s cover image`"
                     class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110" />
                   <div
                     class="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -158,7 +158,7 @@
                 <!-- Image Container -->
                 <div class="relative aspect-[3/4] overflow-hidden">
                   <NuxtImg format="webp" quality="80" :src="anime.media.coverImage.extraLarge"
-                    :alt="`${anime.media.title.romaji}'s cover image'`"
+                    :alt="`${anime.media.title.romaji}'s cover image`"
                     class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110" />
                   <div
                     class="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -223,7 +223,7 @@
                 <!-- Image Container -->
                 <div class="relative aspect-[3/4] overflow-hidden">
                   <NuxtImg format="webp" quality="80" :src="anime.media.coverImage.extraLarge"
-                    :alt="`${anime.media.title.romaji}'s cover image'`"
+                    :alt="`${anime.media.title.romaji}'s cover image`"
                     class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110" />
                   <div
                     class="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -290,7 +290,7 @@
                 <!-- Image Container -->
                 <div class="relative aspect-[3/4] overflow-hidden">
                   <NuxtImg format="webp" quality="80" :src="anime.media.coverImage.extraLarge"
-                    :alt="`${anime.media.title.romaji}'s cover image'`"
+                    :alt="`${anime.media.title.romaji}'s cover image`"
                     class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110" />
                   <div
                     class="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -362,7 +362,6 @@
 </template>
 
 <script setup>
-import { useAsyncData } from 'nuxt/app';
 
 useSeoMeta({
   title: 'My Anime List - Asthriona',
@@ -370,15 +369,15 @@ useSeoMeta({
   ogImage: 'https://cdn.asthriona.com/static/2026_pfp.jpg'
 })
 
-let isError;
-let errorData;
+const isError = ref(false);
+const errorData = ref(null);
 // Fetch the anime data from the API
 const { data } = await useAsyncData('animeList', async () => {
   const response = await $fetch('/api/anilist');
   // Check for API errors and set custom error message
   if (response.errors) {
-    isError = true;
-    errorData = response.errors[0]
+    isError.value = true;
+    errorData.value = response.errors[0]
   } else {
     const animeList = response?.data?.MediaListCollection?.lists.filter((_, index) => index !== 3).flatMap(list => list.entries);
     const userFavorites = response?.data?.User?.favourites?.anime?.nodes || [];
@@ -392,40 +391,31 @@ const { data } = await useAsyncData('animeList', async () => {
   }
 });
 
-const userFavorites = data?.value.user.favorites;
+const userFavorites = data?.value?.user?.favorites || [];
 const FavArray = []
-// Get a list of ID from the fav list: 
 userFavorites.forEach(a => {
-  if (!userFavorites) return;
   FavArray.push(a.id);
 });
 
-// Process the data: filter for currently watching and history
-const currentAnimeList = data?.value.animeList
+const animeList = data?.value?.animeList || [];
+
+const currentAnimeList = animeList
   .filter(entry => entry.status === 'CURRENT')
   .sort((a, b) => {
     const aIsAiring = a.media.nextAiringEpisode ? 1 : 0;
     const bIsAiring = b.media.nextAiringEpisode ? 1 : 0;
-
-    if (aIsAiring === bIsAiring) {
-      // If both are either airing or not, sort by progress
-      return b.progress - a.progress;
-    }
-
-    // Prioritize airing anime first
+    if (aIsAiring === bIsAiring) return b.progress - a.progress;
     return bIsAiring - aIsAiring;
   });
-const animeHistory = data?.value.animeList
-  ?.filter(entry => entry.status === 'COMPLETED')
-  ?.sort((a, b) => {
-    // Convert the completedAt object into a Date object for sorting
+const animeHistory = animeList
+  .filter(entry => entry.status === 'COMPLETED')
+  .sort((a, b) => {
     const dateA = new Date(a.completedAt.year, a.completedAt.month - 1, a.completedAt.day);
     const dateB = new Date(b.completedAt.year, b.completedAt.month - 1, b.completedAt.day);
-
     return dateB - dateA;
   });
-const pausedAnimeList = data?.value.animeList.filter(entry => entry.status === 'PAUSED');
-const droppedAnimeList = data?.value.animeList.filter(entry => entry.status === 'DROPPED');
+const pausedAnimeList = animeList.filter(entry => entry.status === 'PAUSED');
+const droppedAnimeList = animeList.filter(entry => entry.status === 'DROPPED');
 
 // Helper function to format the date
 const formatDate = (date) => {
