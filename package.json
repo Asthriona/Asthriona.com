@@ -18,7 +18,7 @@
     "better-sqlite3": "^13.0.3",
     "nuxt": "^4.1.1",
     "nuxt-feedme": "2.1.0",
-    "vue": "3.5.41"
+    "vue": "3.5.42"
   },
   "devDependencies": {
     "@iconify-json/mdi": "^1.2.1",
