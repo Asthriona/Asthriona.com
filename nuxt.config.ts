@@ -30,7 +30,6 @@ export default defineNuxtConfig({
     "@nuxt/icon",
     "@nuxt/content",
     "@nuxt/image",
-    "@nuxt/content",
     "@nuxtjs/sitemap",
     "nuxt-feedme",
   ],
@@ -54,12 +53,15 @@ export default defineNuxtConfig({
 
   // FEED ME DADDY!!! (rss stuff.)
 
+<<<<<<< HEAD
   /*
    * TODO: Pre-production tests.
    * I have no idea how all of this shit works, and if the RSS readers or whatever will get the right links to access the pages as it only shows /blog/[post] in the feeds.
    * So yeah. To be tested.
    */
 
+=======
+>>>>>>> e2c5df5e8445c298898d65d74cea512ed39a992f
   feedme: {
     defaults: {
       common: true,
@@ -74,6 +76,7 @@ export default defineNuxtConfig({
         collections: ["blog"],
         templateMapping: ["", "meta", "meta.feedme"],
         mapping: [["link", "path"]],
+<<<<<<< HEAD
         replace: [[/^(?=\/)/.toString(), baseUrl]],
         charset: "utf-8",
       },
@@ -91,6 +94,15 @@ export default defineNuxtConfig({
           type: "rss2",
           feed: { title: "Asthriona - Blog Feed" },
         },
+=======
+        replace: [[/^(?=\/)/.toString(), "https://asthriona.com"]],
+        charset: "utf-8",
+      },
+      routes: {
+        "/feed.atom": { type: "atom1", feed: { title: "Asthriona - Blog Feed" } },
+        "/feed.json": { type: "json1", feed: { title: "Asthriona - Blog Feed" } },
+        "/feed.xml": { type: "rss2", feed: { title: "Asthriona - Blog Feed" } },
+>>>>>>> e2c5df5e8445c298898d65d74cea512ed39a992f
       },
     },
   },

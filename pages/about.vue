@@ -33,7 +33,7 @@
   <div class="flex items-center justify-between py-4 border-b-2 border-gray-200"></div>
   <div class="contributor-list" v-for="contributor in data" :key="contributor.login">
     <div class="flex items-center space-x-4 mb-4 mt-4">
-      <NuxtImg :alt="`${contributor.login}'s avatar'`" height="48" width="48" fit="cover" format="webp" quality="40" :src="contributor.avatar_url" class="w-12 h-12 rounded-full" />
+      <NuxtImg :alt="`${contributor.login}'s avatar`" height="48" width="48" fit="cover" format="webp" quality="40" :src="contributor.avatar_url" class="w-12 h-12 rounded-full" />
       <div>
         <a :href="contributor.html_url" target="_blank" rel="noopener noreferrer">{{ contributor.login }}</a>
         <span class="text-gray-500"> - {{ contributor.contributions }} contributions</span>
@@ -90,7 +90,6 @@
 </template>
 
 <script setup>
-import { useAsyncData } from 'nuxt/app';
 
 const { data } = await useAsyncData('contributors', async () => {
   const response = await $fetch('/api/contributors');
