@@ -1,5 +1,5 @@
 <template>
-    <div class="h-14 bg-gradient-to-r from-cyan-500 to-fuchsia-500">
+    <div class="h-14 bg-linear-to-r from-cyan-500 to-fuchsia-500">
         <p class="text-white text-3xl text-center pt-2">There should be an image in here at some point.</p>
     </div>
     <h1 class="text-3xl my-8">

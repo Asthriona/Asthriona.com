@@ -63,12 +63,12 @@
 
           <!-- Version Badge -->
           <div class="relative group">
-            <div class="px-4 py-1 rounded-full bg-gradient-to-r from-purple-500/10 to-pink-500/10 
+            <div class="px-4 py-1 rounded-full bg-linear-to-r from-purple-500/10 to-pink-500/10 
            border border-purple-500/20 text-purple-400 text-xs font-medium">
               PROTOTYPE VERSION
             </div>
             <!-- Tooltip -->
-            <div class="absolute left-1/2 -translate-x-1/2 -top-10 w-max px-2 py-1 bg-gray-800 text-gray-200 text-xs rounded shadow-lg 
+            <div class="absolute left-1/2 -translate-x-1/2 -top-10 w-max px-2 py-1 bg-gray-800 text-gray-200 text-xs rounded-sm shadow-lg 
            opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none">
               Things may change at any time as I see fit.
             </div>

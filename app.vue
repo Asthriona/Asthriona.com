@@ -37,7 +37,4 @@ useHead({
   .ai-be-gone {
     display: none;
   }
-  .hidden {
-    display: none;
-  }
 </style>

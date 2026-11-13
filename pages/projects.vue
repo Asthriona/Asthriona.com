@@ -19,14 +19,14 @@
         </p>
         <section class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-8 mt-8">
             <div class="card" v-for="project in projects" :key="project.title">
-                <div class="max-w-sm p-6 bg-black text-gray-300 border border-gray-200 rounded-lg shadow" v-if="project.isActive == false">
+                <div class="max-w-sm p-6 bg-black text-gray-300 border border-gray-200 rounded-lg shadow-sm" v-if="project.isActive == false">
                     <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-300">
                         {{ project.title }}
                     </h5>
                     <p class="mb-3 font-normal text-gray-500">
                         {{ project.description }}
                     </p>
-                    <!-- <a :href="project.url" target="_blank" rel="noopener noreferrer" class="inline-block outline hover:outline-pink-500 outline-offset-4 outline-1 bg-black text-white py-2 px-4 rounded float-right mb-4">Visit</a> -->
+                    <!-- <a :href="project.url" target="_blank" rel="noopener noreferrer" class="inline-block outline hover:outline-pink-500 outline-offset-4 outline-1 bg-black text-white py-2 px-4 rounded-sm float-right mb-4">Visit</a> -->
                 </div>
             </div>
         </section>

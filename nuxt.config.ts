@@ -1,4 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
+import tailwindcss from "@tailwindcss/vite";
+
 const baseUrl = "https://asthriona.com";
 
 export default defineNuxtConfig({
@@ -26,13 +28,16 @@ export default defineNuxtConfig({
   },
   css: ["~/assets/css/main.css"],
   modules: [
-    "@nuxtjs/tailwindcss",
     "@nuxt/icon",
     "@nuxt/content",
     "@nuxt/image",
     "@nuxtjs/sitemap",
     "nuxt-feedme",
   ],
+  // Tailwind v4 runs as a Vite plugin now; @nuxtjs/tailwindcss only supports v3.
+  vite: {
+    plugins: [tailwindcss()],
+  },
   content: {
     build: {
       markdown: {
