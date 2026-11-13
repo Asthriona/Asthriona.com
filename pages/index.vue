@@ -26,7 +26,7 @@
             </p>
         </div>
         <NuxtImg src="https://cdn.asthriona.com/static/2026_pfp.jpg" alt="Asthriona's Avatar, a female character with deep purple hairs, one eye is hidden by the hairs, and she has long pointy ears." height="384" width="384"
-            fit="cover" format="webp" quality="80" class="w-1/2 h-1/2 md:max-w-sm p8 mx-auto rounded" />
+            fit="cover" format="webp" quality="80" class="w-1/2 h-1/2 md:max-w-sm p8 mx-auto rounded-sm" />
     </section>
     <section>
         <h2 class="text-3xl font-bold mt-8">Latest Blog Posts</h2>

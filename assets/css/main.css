@@ -1,7 +1,35 @@
-@font-face {
-    font-family: 'LINE Seed';
-    src: url(~/assets/fonts/LINESeedJP_OTF_Rg.woff2) format('woff2')
+@import "tailwindcss";
+
+/* Was a `plugins: [require(...)]` entry in tailwind.config.js. */
+@plugin "@tailwindcss/typography";
+
+/*
+ * Tailwind v4 does theming in CSS instead of tailwind.config.js.
+ * These become real custom properties (--font-line) and generate utilities (font-line).
+ */
+@theme {
+  --font-line: "LINE Seed", sans-serif;
 }
+
+@font-face {
+  font-family: "LINE Seed";
+  src: url("../fonts/LINESeedJP_OTF_Rg.woff2") format("woff2");
+  font-display: swap;
+}
+
+/*
+ * Tailwind v4 changed the default border color from gray-200 to currentColor.
+ * This restores the v3 default so the bare `border` utilities keep rendering
+ * the same as before. Drop this block once you've picked border colors on purpose.
+ */
+@layer base {
+  *,
+  ::before,
+  ::after {
+    border-color: #e5e7eb; /* gray-200 */
+  }
+}
+
 body {
-    font-family: 'LINE Seed';
+  font-family: "LINE Seed", sans-serif;
 }
