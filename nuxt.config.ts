@@ -1,4 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
+import tailwindcss from "@tailwindcss/vite";
+
 const baseUrl = "https://asthriona.com";
 
 export default defineNuxtConfig({
@@ -26,13 +28,16 @@ export default defineNuxtConfig({
   },
   css: ["~/assets/css/main.css"],
   modules: [
-    "@nuxtjs/tailwindcss",
     "@nuxt/icon",
     "@nuxt/content",
     "@nuxt/image",
     "@nuxtjs/sitemap",
     "nuxt-feedme",
   ],
+  // Tailwind v4 runs as a Vite plugin now; @nuxtjs/tailwindcss only supports v3.
+  vite: {
+    plugins: [tailwindcss()],
+  },
   content: {
     build: {
       markdown: {
@@ -53,15 +58,12 @@ export default defineNuxtConfig({
 
   // FEED ME DADDY!!! (rss stuff.)
 
-<<<<<<< HEAD
   /*
    * TODO: Pre-production tests.
    * I have no idea how all of this shit works, and if the RSS readers or whatever will get the right links to access the pages as it only shows /blog/[post] in the feeds.
    * So yeah. To be tested.
    */
 
-=======
->>>>>>> e2c5df5e8445c298898d65d74cea512ed39a992f
   feedme: {
     defaults: {
       common: true,
@@ -76,7 +78,6 @@ export default defineNuxtConfig({
         collections: ["blog"],
         templateMapping: ["", "meta", "meta.feedme"],
         mapping: [["link", "path"]],
-<<<<<<< HEAD
         replace: [[/^(?=\/)/.toString(), baseUrl]],
         charset: "utf-8",
       },
@@ -94,15 +95,6 @@ export default defineNuxtConfig({
           type: "rss2",
           feed: { title: "Asthriona - Blog Feed" },
         },
-=======
-        replace: [[/^(?=\/)/.toString(), "https://asthriona.com"]],
-        charset: "utf-8",
-      },
-      routes: {
-        "/feed.atom": { type: "atom1", feed: { title: "Asthriona - Blog Feed" } },
-        "/feed.json": { type: "json1", feed: { title: "Asthriona - Blog Feed" } },
-        "/feed.xml": { type: "rss2", feed: { title: "Asthriona - Blog Feed" } },
->>>>>>> e2c5df5e8445c298898d65d74cea512ed39a992f
       },
     },
   },
