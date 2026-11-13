@@ -18,7 +18,7 @@
     "better-sqlite3": "^13.0.3",
     "nuxt": "^4.1.1",
     "nuxt-feedme": "2.1.0",
-    "vue": "3.5.42"
+    "vue": "3.5.45"
   },
   "devDependencies": {
     "@iconify-json/mdi": "^1.2.1",
@@ -29,7 +29,7 @@
     "tailwindcss": "^4"
   },
   "resolutions": {
-    "vue": "3.5.42",
+    "vue": "3.5.45",
     "@vue/reactivity": "3.5.42",
     "@vue/runtime-core": "3.5.42",
     "@vue/runtime-dom": "3.5.42",
