@@ -14,11 +14,11 @@
     "@heroicons/vue": "^2.1.5",
     "@iconify-json/fa6-brands": "^1.2.1",
     "@nuxt/image": "^2.0.0",
-    "@nuxtjs/sitemap": "8.5.0",
+    "@nuxtjs/sitemap": "9.1.0",
     "better-sqlite3": "^13.0.3",
     "nuxt": "^4.1.1",
     "nuxt-feedme": "2.1.0",
-    "vue": "3.5.42"
+    "vue": "3.5.46"
   },
   "devDependencies": {
     "@iconify-json/mdi": "^1.2.1",
@@ -29,7 +29,7 @@
     "tailwindcss": "^4"
   },
   "resolutions": {
-    "vue": "3.5.42",
+    "vue": "3.5.46",
     "@vue/reactivity": "3.5.42",
     "@vue/runtime-core": "3.5.42",
     "@vue/runtime-dom": "3.5.42",
