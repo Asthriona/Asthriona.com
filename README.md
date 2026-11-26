@@ -23,7 +23,7 @@ A personal site and blog built with Nuxt 4, Tailwind CSS, and @nuxt/content. Inc
 
 Prerequisites:
 
-- Node.js (compatible with Nuxt 4)
+- Node.js `^22.22.3 || ^24.15.0 || >=26.0.0` (required by `@nuxtjs/sitemap` 9.x; see `.nvmrc`)
 - Yarn (project uses Yarn by `packageManager`) or npm/pnpm
 
 Install dependencies:
